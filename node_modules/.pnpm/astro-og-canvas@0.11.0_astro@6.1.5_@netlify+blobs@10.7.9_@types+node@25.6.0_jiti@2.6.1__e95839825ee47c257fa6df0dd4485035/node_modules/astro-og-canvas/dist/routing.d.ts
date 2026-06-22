@@ -1,0 +1,15 @@
+import type { APIRoute, GetStaticPaths } from 'astro';
+import type { OGImageOptions } from './types';
+export declare function OGImageRoute<T>(opts: OGImageRouteConfig<T>): Promise<{
+    getStaticPaths: GetStaticPaths;
+    GET: APIRoute;
+}>;
+interface OGImageRouteConfig<T extends unknown> {
+    pages: {
+        [path: string]: T;
+    };
+    param: string;
+    getSlug?: (path: string, page: T, imageOptions: OGImageOptions) => string;
+    getImageOptions: (path: string, page: T) => OGImageOptions | Promise<OGImageOptions>;
+}
+export {};

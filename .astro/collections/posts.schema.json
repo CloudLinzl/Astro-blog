@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "published": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "default": "",
+      "type": "string"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tags": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "pin": {
+      "default": 0,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
+    },
+    "toc": {
+      "default": true,
+      "type": "boolean"
+    },
+    "lang": {
+      "default": "",
+      "type": "string",
+      "enum": [
+        "",
+        "zh",
+        "en",
+        "es",
+        "ja",
+        "ru",
+        "zh-tw"
+      ]
+    },
+    "abbrlink": {
+      "default": "",
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "published",
+    "updated"
+  ]
+}

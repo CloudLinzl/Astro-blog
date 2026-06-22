@@ -1,0 +1,46 @@
+{
+  "name": "@waline/api",
+  "version": "1.1.0",
+  "description": "Client API for Waline comment system",
+  "keywords": [
+    "api",
+    "waline"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mister-hope.com"
+  },
+  "repository": {
+    "url": "https://github.com/walinejs/waline",
+    "directory": "packages/api"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/api.cjs",
+  "module": "./dist/api.js",
+  "browser": "./dist/api.umd.js",
+  "types": "./dist/api.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/api.d.ts",
+      "import": "./dist/api.js",
+      "require": "./dist/api.cjs",
+      "default": "./dist/api.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
