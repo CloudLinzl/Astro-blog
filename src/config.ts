@@ -27,30 +27,46 @@ export const themeConfig: ThemeConfig = {
   // COLOR SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   color: {
     // default theme mode
-    mode: 'light', // light | dark | auto
+    mode: 'auto', // light | dark | auto
     light: {
       // primary color
       // used for title, hover, etc
-      // oklch color picker: https://oklch.com/
-      primary: 'oklch(25% 0.005 298)',
+      // 偏黑紫灰，与绿色高亮形成轻微撞色
+      primary: 'oklch(25% 0.025 305)',
+
       // secondary color
       // used for post text
-      secondary: 'oklch(40% 0.005 298)',
+      // 正文偏黑，不影响阅读
+      secondary: 'oklch(36% 0.012 285)',
+
       // background color
-      background: 'oklch(96% 0.005 298)',
+      // 温和浅绿灰背景
+      background: 'oklch(97% 0.012 148)',
+
       // highlight color
       // used for navbar, selected text, etc
-      highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)', // rgba(255,235,0,0.5)
+      // #7FB286，半透明
+      highlight: 'oklch(71.56% 0.0834 148.23 / 0.6)',
     },
     dark: {
       // primary color
-      primary: 'oklch(92% 0.005 298)',
+      // used for title, hover, etc
+      // 浅紫灰标题色，和绿色高亮形成轻微撞色
+      primary: 'oklch(92% 0.018 305)',
+
       // secondary color
-      secondary: 'oklch(77% 0.005 298)',
+      // used for post text
+      // 正文浅灰，偏冷，不影响阅读
+      secondary: 'oklch(78% 0.010 285)',
+
       // background color
-      background: 'oklch(22% 0.005 298)',
+      // 深绿黑背景，呼应 #7FB286
+      background: 'oklch(22% 0.018 148)',
+
       // highlight color
-      highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)', // rgba(255,235,0,0.2)
+      // used for navbar, selected text, etc
+      // #7FB286，暗色模式下半透明
+      highlight: 'oklch(71.56% 0.0834 148.23 / 0.28)', // rgba(127,178,134,0.28)
     },
   },
   // COLOR SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
