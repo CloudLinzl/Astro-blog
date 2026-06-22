@@ -29,7 +29,7 @@ mkdirSync(dirname(fullPath), { recursive: true })
 const content = `---
 title: ${baseName}
 published: ${new Date().toISOString()}
-description: '课程评价：补充课程简介、老师风格和复习建议'
+description: '课程评价、课程简介、老师风格和复习建议'
 updated: ''
 tags:
   - 待分类
