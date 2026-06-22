@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/rss-style.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>再組版</title>
+        <link>https://CloudLin.ZJUlife.cc/ja/</link>
+        <description>Retypesetは、日本語では「再組版」と呼ばれる、Astroフレームワークをベースにした静的ブログテーマです。活版印字からデザインのインスピレーションを得て、新しい視覚的な規範を確立し、すべてのページのレイアウトを再構成することで、紙の書籍のような読書体験を提供し、版面の美しさを蘇らせます。見るものすべてが細部にこだわり、限られたスペースの中に優雅さを表現しています。</description>
+        <lastBuildDate>Mon, 22 Jun 2026 12:10:50 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Astro-Theme-Retypeset with Feed for Node.js</generator>
+        <language>ja</language>
+        <copyright>Copyright © 2026 CloudLin</copyright>
+        <atom:link href="https://cloudlin.zjulife.cc/ja/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Markdown 拡張機能]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/markdown-extended-features/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/markdown-extended-features/</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[この記事では、Retypeset テーマがサポートする Markdown 拡張機能について、構文例とその効果を紹介します。標準の Markd...]]></description>
+            <content:encoded><![CDATA[<p>この記事では、Retypeset テーマがサポートする Markdown 拡張機能について、構文例とその効果を紹介します。</p>
+<h2>図のキャプション</h2>
+<p>標準の Markdown 画像構文 <code>![alt](src)</code> を使用すると、自動的に図のキャプションが生成されます。<code>alt</code> テキストの前にアンダースコア <code>_</code> を追加するか、<code>alt</code> テキストを空にすると、キャプションが非表示になります。</p>
+<h3>構文</h3>
+<pre><code>![画像の説明](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_画像の説明](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre>
+<h3>効果</h3>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="画像の説明" /></p>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="_画像の説明" /></p>
+<h2>アドモニションブロック</h2>
+<p>GitHub 構文 <code>&gt; [!TYPE]</code> または三重コロン構文 <code>:::type</code> を使用して、アドモニションブロックを作成できます。<code>note</code>、<code>tip</code>、<code>important</code>、<code>warning</code>、<code>caution</code> の 5 種類がサポートされています。</p>
+<h3>構文</h3>
+<pre><code>&gt; [!NOTE]
+&gt; 内容を流し読みする場合でも、ユーザーに知ってほしい有益な情報。
+
+&gt; [!TIP]
+&gt; タスクをより簡単に完了するために役立つオプション情報。
+
+&gt; [!IMPORTANT]
+&gt; ユーザーが成功するために必要な重要な情報。
+
+:::warning
+潜在的なリスクがあり、ユーザーの即時の注意を必要とする重要な内容。
+:::
+
+:::caution
+特定の操作によって生じる可能性のある悪影響について。
+:::
+
+:::note[カスタムタイトル]
+これはカスタムタイトルの付いた注釈ブロックです。
+:::
+</code></pre>
+<h3>効果</h3>
+<blockquote>
+<p>[!NOTE]
+内容を流し読みする場合でも、ユーザーに知ってほしい有益な情報。</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+タスクをより簡単に完了するために役立つオプション情報。</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+ユーザーが成功するために必要な重要な情報。</p>
+</blockquote>
+<p>:::warning
+潜在的なリスクがあり、ユーザーの即時の注意を必要とする重要な内容。
+:::</p>
+<p>:::caution
+特定の操作によって生じる可能性のある悪影響について。
+:::</p>
+<p>:::note[カスタムタイトル]
+これはカスタムタイトルの付いた注釈ブロックです。
+:::</p>
+<h2>折りたたみ部分</h2>
+<p>三重コロン構文 <code>:::fold[title]</code> を使用すると、折りたたみ部分を作成できます。タイトルをクリックすると展開または折りたたむことができます。</p>
+<h3>構文</h3>
+<pre><code>:::fold[使用のヒント]
+すべての読者が興味を持たない可能性のあるコンテンツは、折りたたみ部分に配置できます。
+:::
+</code></pre>
+<h3>効果</h3>
+<p>:::fold[使用のヒント]
+すべての読者が興味を持たない可能性のあるコンテンツは、折りたたみ部分に配置できます。
+:::</p>
+<h2>Mermaid 図表</h2>
+<p>コードブロックで Mermaid 構文を囲み、言語タイプを <code>mermaid</code> として指定することで、Mermaid 図表を作成できます。</p>
+<h3>構文</h3>
+<pre><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre>
+<h3>効果</h3>
+<pre><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</code></pre>
+<h2>ギャラリー</h2>
+<p>三重コロン構文 <code>:::gallery</code> を使用すると、画像ギャラリーを作成できます。水平スクロールでより多くの画像を閲覧できます。</p>
+<h3>構文</h3>
+<pre><code>:::gallery
+![アルパカ](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![振り向く](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![見つめ合う](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![子アルパカ](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![可愛すぎる！](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre>
+<h3>効果</h3>
+<p>:::gallery
+<img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="アルパカ" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="振り向く" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="見つめ合う" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="子アルパカ" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="可愛すぎる！" />
+:::</p>
+<h2>GitHub リポジトリ</h2>
+<p>二重コロン構文 <code>::github{repo="owner/repo"}</code> を使用すると、GitHub リポジトリを埋め込みできます。</p>
+<h3>構文</h3>
+<pre><code>::github{repo="radishzzz/astro-theme-retypeset"}
+</code></pre>
+<h3>効果</h3>
+<p>::github{repo="radishzzz/astro-theme-retypeset"}</p>
+<h2>動画</h2>
+<p>二重コロン構文 <code>::youtube{id="video-id"}</code> を使用すると、動画を埋め込みできます。</p>
+<h3>構文</h3>
+<pre><code>::youtube{id="9pP0pIgP2kE"}
+
+::bilibili{id="BV1sK4y1Z7KG"}
+</code></pre>
+<h3>効果</h3>
+<p>::youtube{id="9pP0pIgP2kE"}</p>
+<p>::bilibili{id="BV1sK4y1Z7KG"}</p>
+<h2>Spotify</h2>
+<p>二重コロン構文 <code>::spotify{url="spotify-url"}</code> を使用すると、Spotify コンテンツを埋め込みできます。</p>
+<h3>構文</h3>
+<pre><code>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+
+::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
+</code></pre>
+<h3>効果</h3>
+<p>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}</p>
+<p>::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}</p>
+<h2>X ツイート</h2>
+<p>二重コロン構文 <code>::tweet{url="tweet-url"}</code> を使用すると、X ツイートを埋め込みできます。</p>
+<h3>構文</h3>
+<pre><code>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}
+</code></pre>
+<h3>効果</h3>
+<p>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}</p>
+<h2>CodePen</h2>
+<p>二重コロン構文 <code>::codepen{url="codepen-url"}</code> を使用すると、CodePen デモを埋め込みできます。</p>
+<h3>構文</h3>
+<pre><code>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
+</code></pre>
+<h3>効果</h3>
+<p>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[テーマカラースキーム]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/theme-color-schemes/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/theme-color-schemes/</guid>
+            <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset は、OKLCH カラースペースに基づいてテーマカラーを定義し、デフォルトでは印刷スタイルを模した白黒グレーの配色を採用し...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset は、<a href="https://oklch.com/">OKLCH</a> カラースペースに基づいてテーマカラーを定義し、デフォルトでは印刷スタイルを模した白黒グレーの配色を採用しています。</p>
+<p>個性的なニーズに応えるため、テーマ用にいくつかの配色スキームを作成しました。<a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> でデフォルトの配色を置き換え、開発サーバーを再起動して新しい配色をプレビューできます。</p>
+<h2>葱白色</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/1-light.ClVuZxd5_21HiG1.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/1-dark.BivCfSmu_Z1FcXLT.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0.03 211.86)',
+  secondary: 'oklch(0.40 0.03 211.86)',
+  background: 'oklch(0.99 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0015 106.47)',
+  secondary: 'oklch(0.79 0.0015 106.47)',
+  background: 'oklch(0.24 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>烏青</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/2-light.DLXS38ks_2j3zhb.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/2-dark.prgZMrfY_Z1i4yAx.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.0172 280.05)',
+  secondary: 'oklch(0.40 0.0172 280.05)',
+  background: 'oklch(0.98 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0172 280.05)',
+  secondary: 'oklch(0.79 0.0172 280.05)',
+  background: 'oklch(0.24 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>墨藍</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/4-light.DIUeDw9p_Z2fbxhe.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/4-dark.CKqTknpt_2n6Qrb.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.053 261.24)',
+  secondary: 'oklch(0.39 0.053 261.24)',
+  background: 'oklch(1 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0 0)',
+  secondary: 'oklch(0.79 0 0)',
+  background: 'oklch(0.24 0.016 265.21)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>米色</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/3-light.8aAAK8Ad_BewEA.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/3-dark.CGQcMuXC_Z2c4VKc.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0 0)',
+  secondary: 'oklch(0.41 0 0)',
+  background: 'oklch(0.95 0.0237 59.39)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.93 0.019 59.39)',
+  secondary: 'oklch(0.80 0.017 59.39)',
+  background: 'oklch(0.23 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[KaTeX 数学デモ]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/katex-mathematical-demo/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/katex-mathematical-demo/</guid>
+            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[KaTeX はクロスブラウザ対応の JavaScript ライブラリで、ウェブブラウザ上で数式を表示します。高速性と使いやすさに重点を置き...]]></description>
+            <content:encoded><![CDATA[<p>KaTeX はクロスブラウザ対応の JavaScript ライブラリで、ウェブブラウザ上で数式を表示します。高速性と使いやすさに重点を置き、カーンアカデミーによって開発され、GitHub で最も注目を集める上位 5 プロジェクトの一つとなりました。</p>
+<h2>群論</h2>
+<p>バーンサイドの補題（Burnside's lemma）は、バーンサイドの計数定理、コーシー・フロベニウスの補題、または軌道計数定理とも呼ばれます。</p>
+<p>有限群 $G$ の有限集合 $X$ への群作用を $\wedge$ とします。このとき、作用の軌道の数 $t$ は次の式で与えられます。</p>
+<p>$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</p>
+<p>各整数 $n\ge2$ に対して、商群 $\mathbb{Z}/n\mathbb{Z}$ は $1+n\mathbb{Z}$ によって生成される巡回群であり、したがって $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$ となります。</p>
+<p>商群 $\mathbb{R}/\mathbb{Z}$ は $([0,1),+_1)$ と同型です。これは区間 $[0,1)$ 上の実数のモジュロ 1 の加法群です。</p>
+<p>同型定理。準同型 $\phi\colon(G,\circ)\to(H,*)$ に対して、次の関数</p>
+<p>$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</p>
+<p>は同型であり、したがって</p>
+<p>$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</p>
+<h2>テイラーの定理</h2>
+<p>関数 $f$ が点 $a$ と $x$ を含む開区間で $(n+1)$ 回微分可能であるとします。このとき</p>
+<p>$$
+f(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</p>
+<p>ここで</p>
+<p>$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</p>
+<p>$a$ と $x$ の間のある点 $c$ に対してです。</p>
+<p>$\KaTeX$ には右揃えのオプションがないため、方程式番号のために追加の位置合わせ列が使用されています。これらは mkern 間隔（デフォルトは \mkern100mu）によって右側に押し出されます。align 環境と align* 環境の両方が使用でき、\tag と \notag も使用できます。</p>
+<h2>Align 環境</h2>
+<p>$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</p>
+<h2>Align* 環境</h2>
+<p>$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \
+&amp;= \frac{\pi^3}{16(N+1)} \
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \
+\text{したがって} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</p>
+<h2>級数の和</h2>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</p>
+<h2>積の表記</h2>
+<p>$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ ただし }\lvert q\rvert &lt; 1.
+$$</p>
+<h2>外積</h2>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</p>
+<h2>マクスウェル方程式</h2>
+<p>$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</p>
+<h2>ギリシャ文字</h2>
+<p>$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</p>
+<h2>矢印</h2>
+<p>$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</p>
+<h2>記号</h2>
+<p>$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</p>
+<p><em>サンプルは <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a> から抜粋しました</em></p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Markdown スタイルガイド]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/markdown-style-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/markdown-style-guide/</guid>
+            <pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[以下は基本的な Markdown 構文の例と、Retypeset テーマでのスタイル効果です。テキストの前にシャープ記号 # とスペースを追...]]></description>
+            <content:encoded><![CDATA[<p>以下は基本的な Markdown 構文の例と、Retypeset テーマでのスタイル効果です。</p>
+<h2>見出し</h2>
+<p>テキストの前にシャープ記号 <code>#</code> とスペースを追加することで、見出しを作成できます。シャープ記号の数が見出しのレベルに対応します。</p>
+<h3>構文</h3>
+<pre><code># 見出し 1
+## 見出し 2
+### 見出し 3
+#### 見出し 4
+##### 見出し 5
+###### 見出し 6
+</code></pre>
+<h3>効果</h3>
+<h1>見出し 1</h1>
+<h2>見出し 2</h2>
+<h3>見出し 3</h3>
+<h4>見出し 4</h4>
+<h5>見出し 5</h5>
+<h6>見出し 6</h6>
+<h2>段落</h2>
+<p>空行を使用してテキストを区切ることで、段落を作成できます。</p>
+<h3>構文</h3>
+<pre><code>孔乙己が店に入ると、酒を飲んでいた人々は皆彼を見て笑い、中には「孔乙己、顔にまた新しい傷ができたな！」と声をかける者もいた。彼は答えず、店の主人に「お酒を二杯温めて、茴香豆を一皿」と言い、九文の銭を出した。彼らはまた意図的に大声で「また人の物を盗んだに違いない！」と言った。孔乙己は目を大きく開いて「どうして人の清白を無実に汚すのか…」「何が清白だ？一昨日、何家の本を盗んで、吊るされて叩かれたのを見たぞ」と言われると、孔乙己は顔を赤くし、額の青筋が浮き上がり、「書を盗むのは盗みとは言えない…書を盗む！…読書人の行いが、どうして盗みと言えようか？」と反論し、続いて「君子固窮」や「者乎」などの難解な言葉を並べ立て、人々を大笑いさせた。店内外は陽気な空気に満ちていた。
+
+人々の裏話によると、孔乙己はもともと勉強していたが、結局科挙に合格せず、生計を立てる方法も知らなかった。そのため、だんだん貧しくなり、ついには物乞いをしなければならなくなった。
+</code></pre>
+<h3>効果</h3>
+<p>孔乙己が店に入ると、酒を飲んでいた人々は皆彼を見て笑い、中には「孔乙己、顔にまた新しい傷ができたな！」と声をかける者もいた。彼は答えず、店の主人に「お酒を二杯温めて、茴香豆を一皿」と言い、九文の銭を出した。彼らはまた意図的に大声で「また人の物を盗んだに違いない！」と言った。孔乙己は目を大きく開いて「どうして人の清白を無実に汚すのか…」「何が清白だ？一昨日、何家の本を盗んで、吊るされて叩かれたのを見たぞ」と言われると、孔乙己は顔を赤くし、額の青筋が浮き上がり、「書を盗むのは盗みとは言えない…書を盗む！…読書人の行いが、どうして盗みと言えようか？」と反論し、続いて「君子固窮」や「者乎」などの難解な言葉を並べ立て、人々を大笑いさせた。店内外は陽気な空気に満ちていた。</p>
+<p>人々の裏話によると、孔乙己はもともと勉強していたが、結局科挙に合格せず、生計を立てる方法も知らなかった。そのため、だんだん貧しくなり、ついには物乞いをしなければならなくなった。</p>
+<h2>画像</h2>
+<p>感嘆符 <code>!</code>、角括弧 <code>[]</code>、丸括弧 <code>()</code> を使用して画像を追加できます。これらは半角記号で、全角記号ではありません。</p>
+<h3>構文</h3>
+<pre><code>![画像の説明](../_images/image-01.jpeg)
+
+![画像の説明](https://image.example.com/image-01.webp)
+</code></pre>
+<h3>効果</h3>
+<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="画像の説明" /></p>
+<h2>引用ブロック</h2>
+<p>引用ブロックを作成するには、<code>&gt;</code> 記号とスペースをテキストの前に追加します。引用ブロックには複数の段落を含めることができます。出典を示すには <code>&lt;cite&gt;</code> または <code>&lt;footer&gt;</code> タグを使用し、脚注は <code>[^1]</code> または <code>[^note]</code> 形式で挿入できます。</p>
+<h3>複数段落の引用</h3>
+<h4>構文</h4>
+<pre><code>&gt; 天地不仁、以万物為芻狗。
+&gt;
+&gt; **注意**：引用ブロック内でも _Markdown 構文_ が使えます。
+</code></pre>
+<h4>効果</h4>
+<blockquote>
+<p>天地不仁、以万物為芻狗。</p>
+<p><strong>注意</strong>：引用ブロック内でも <em>Markdown 構文</em> が使えます。</p>
+</blockquote>
+<h3>出典付きの引用</h3>
+<h4>構文</h4>
+<pre><code>&gt; 私の裏庭からは塀の外に二本の木が見える。一本はナツメの木で、もう一本もナツメの木だ。
+&gt;
+&gt; —— &lt;cite&gt;『秋の夜』[^1]&lt;/cite&gt;
+
+[^1]: 『[秋の夜](https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85))』は魯迅の散文詩集『野草』の最初の散文詩で、1924 年に書かれました。
+</code></pre>
+<h4>効果</h4>
+<blockquote>
+<p>私の裏庭からは塀の外に二本の木が見える。一本はナツメの木で、もう一本もナツメの木だ。</p>
+<p>—— &lt;cite&gt;『秋の夜』[^1]&lt;/cite&gt;</p>
+</blockquote>
+<p>[^1]: 『<a href="https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85)">秋の夜</a>』は魯迅の散文詩集『野草』の最初の散文詩で、1924 年に書かれました。</p>
+<h2>表</h2>
+<p>ハイフン <code>---</code> を 3 つ以上使用してタイトルを区切り、パイプ記号 <code>|</code> を使用して列を区切ることで、表を作成できます。</p>
+<h3>構文</h3>
+<pre><code>| イタリック体 | 太字     | コード   |
+| ---------- | ------- | ------- |
+| _イタリック_  | **太字** | `コード` |
+| _イタリック_  | **太字** | `コード` |
+</code></pre>
+<h3>効果</h3>
+<table>
+<thead>
+<tr>
+<th>イタリック体</th>
+<th>太字</th>
+<th>コード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>イタリック</em></td>
+<td><strong>太字</strong></td>
+<td><code>コード</code></td>
+</tr>
+<tr>
+<td><em>イタリック</em></td>
+<td><strong>太字</strong></td>
+<td><code>コード</code></td>
+</tr>
+</tbody>
+</table>
+<h2>コードブロック</h2>
+<p>3 つのバッククォート <code>```</code> でコードを囲むことで、コードブロックを作成できます。上部のバッククォートの後に言語タイプ（html、javascript、css、markdown など）を指定することで、シンタックスハイライトを実現できます。</p>
+<h3>構文</h3>
+<pre><code>```html
+&lt;!doctype html&gt;
+&lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;HTML5 サンプル文書&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;テスト&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+<h3>効果</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;HTML5 サンプル文書&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;テスト&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>リスト</h2>
+<h3>順序付きリスト</h3>
+<h4>構文</h4>
+<pre><code>1. 最初の項目
+2. 二番目の項目
+3. 三番目の項目
+</code></pre>
+<h4>効果</h4>
+<ol>
+<li>最初の項目</li>
+<li>二番目の項目</li>
+<li>三番目の項目</li>
+</ol>
+<h3>順序なしリスト</h3>
+<h4>構文</h4>
+<pre><code>- リスト項目
+- 図表項目
+- さらに別の項目
+</code></pre>
+<h4>効果</h4>
+<ul>
+<li>リスト項目</li>
+<li>図表項目</li>
+<li>さらに別の項目</li>
+</ul>
+<h3>ネストされたリスト</h3>
+<h4>構文</h4>
+<pre><code>- フルーツ
+  - リンゴ
+  - オレンジ
+  - バナナ
+- 野菜
+  - 青菜
+  - 大根
+</code></pre>
+<h4>効果</h4>
+<ul>
+<li>フルーツ
+<ul>
+<li>リンゴ</li>
+<li>オレンジ</li>
+<li>バナナ</li>
+</ul>
+</li>
+<li>野菜
+<ul>
+<li>青菜</li>
+<li>大根</li>
+</ul>
+</li>
+</ul>
+<h2>その他の要素</h2>
+<p><code>&lt;sup&gt;</code> 上付き文字、<code>&lt;sub&gt;</code> 下付き文字、<code>&lt;abbr&gt;</code> 略語、<code>&lt;del&gt;</code> 取り消し線、<code>&lt;u&gt;</code> 波線、<code>&lt;kbd&gt;</code> キーボード入力、<code>&lt;mark&gt;</code> ハイライト、<code>&lt;hr&gt;</code> 水平線などが含まれます。</p>
+<h3>構文</h3>
+<pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+
+X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+
+&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; はビットマップ画像形式の一種です。
+
+本は人類の進歩の&lt;del&gt;階段&lt;/del&gt;梯子である。
+
+優れた作家は常に&lt;u title="スペリング"&gt;つづり&lt;/u&gt;の間違いをチェックします。
+
+&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; を押してセッションを終了します。
+
+ほとんどの&lt;mark&gt;サンショウウオ&lt;/mark&gt;は夜行性で、昆虫や虫などの小さな生き物を捕食します。
+
+3 つのハイフン `---` または `&lt;hr&gt;` タグを使用して、以下のような水平線を作成できます。
+
+---
+</code></pre>
+<h3>効果</h3>
+<p>H&lt;sub&gt;2&lt;/sub&gt;O</p>
+<p>X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;</p>
+<p>&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; はビットマップ画像形式の一種です。</p>
+<p>本は人類の進歩の&lt;del&gt;階段&lt;/del&gt;梯子である。</p>
+<p>優れた作家は常に&lt;u title="スペリング"&gt;つづり&lt;/u&gt;の間違いをチェックします。</p>
+<p>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; を押してセッションを終了します。</p>
+<p>ほとんどの&lt;mark&gt;サンショウウオ&lt;/mark&gt;は夜行性で、昆虫や虫などの小さな生き物を捕食します。</p>
+<p>3 つのハイフン <code>---</code> または <code>&lt;hr&gt;</code> タグを使用して、以下のような水平線を作成できます。</p>
+<hr />
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[テーマ使用ガイド]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/theme-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/theme-guide/</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset は、日本語では「再組版」と呼ばれる、Astro フレームワークをベースにした静的ブログテーマです。本ガイドではテーマの設...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset は、日本語では「再組版」と呼ばれる、<a href="https://astro.build/">Astro</a> フレームワークをベースにした静的ブログテーマです。本ガイドではテーマの設定変更方法と新しい記事の作成方法を紹介し、個人ブログを素早く構築できるよう支援します。</p>
+<h2>テーマ設定</h2>
+<p>設定ファイル <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> を変更してあなたのブログをカスタマイズできます。</p>
+<h3>サイト情報</h3>
+<pre><code>site: {
+  // サイトタイトル
+  title: 'Retypeset'
+  // サイトサブタイトル
+  subtitle: 'Revive the beauty of typography'
+  // サイト説明
+  description: 'Retypeset is a static blog theme...'
+  // 上記の静的設定の代わりに src/i18n/ui.ts の多言語タイトル/サブタイトル/説明を使用
+  i18nTitle: true // true | false
+  // 著者名
+  author: 'radishzz'
+  // サイト URL
+  url: 'https://retypeset.radishzz.cc'
+  // ベースパス
+  // すべてのページとアセットのルートディレクトリ
+  base: '/' // 例：'/blog', '/docs'
+  // ファビコン URL
+  // 推奨フォーマット：svg, png, ico
+  favicon: '/icons/favicon.svg' // または https://example.com/favicon.svg
+}
+</code></pre>
+<h3>テーマカラー</h3>
+<pre><code>color: {
+  // デフォルトテーマモード
+  mode: 'light' // light | dark | auto
+  // ライトモード
+  light: {
+    // プライマリカラー
+    // サイトタイトル、ホバー効果などに使用
+    primary: 'oklch(25% 0.005 298)'
+    // セカンダリカラー
+    // 通常テキストに使用
+    secondary: 'oklch(40% 0.005 298)'
+    // 背景色
+    background: 'oklch(96% 0.005 298)'
+    // ハイライトカラー
+    // ナビゲーションバー、選択されたテキストなどに使用
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+  // ダークモード
+  dark: {
+    // プライマリカラー
+    primary: 'oklch(92% 0.005 298)'
+    // セカンダリカラー
+    secondary: 'oklch(77% 0.005 298)'
+    // 背景色
+    background: 'oklch(22% 0.005 298)'
+    // ハイライトカラー
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)'
+  }
+}
+</code></pre>
+<h3>グローバル設定</h3>
+<pre><code>global: {
+  // デフォルト言語
+  // サイトのルートパス '/' の言語
+  locale: 'zh' // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
+  // その他の言語
+  // '/en/' '/es/' などの多言語パスを生成
+  // デフォルト言語を重複して入力しないでください、空の配列 [] も可能です
+  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // 記事のフォントスタイル
+  fontStyle: 'sans' // sans | serif
+  // 記事の日付フォーマット
+  // YYYY-MM-DD | MM-DD-YYYY | DD-MM-YYYY | MMM D YYYY | D MMM YYYY
+  // 2025-04-13, 04-13-2025, 13-04-2025, Apr 13 2025，13 Apr 2025
+  dateFormat: 'YYYY-MM-DD'
+  // 記事の目次を有効にする
+  toc: true // true | false
+  // katex 数式レンダリングを有効にする
+  katex: true // true | false
+  // アニメーション効果を減らす
+  reduceMotion: false // true | false
+}
+</code></pre>
+<h3>コメントシステム</h3>
+<pre><code>comment: {
+  // コメントシステムを有効にする
+  enabled: true // true | false
+  // giscus コメントシステム
+  giscus: {
+    repo: ''
+    repoId: ''
+    category: ''
+    categoryId: ''
+    mapping: 'pathname'
+    strict: '0'
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    inputPosition: 'bottom'
+  }
+  // twikoo コメントシステム
+  twikoo: {
+    envId: ''
+    // version: フロントエンドのバージョンは package.json で変更できます
+  }
+  // waline コメントシステム
+  waline: {
+    // サーバー URL
+    serverURL: 'https://retypeset-comment.radishzz.cc'
+    // 絵文字 URL
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'
+      // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji'
+      // その他の絵文字：https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // gif 検索
+    search: false // true | false
+    // 画像アップローダー
+    imageUploader: false // true | false
+  }
+}
+</code></pre>
+<h3>検索エンジン最適化</h3>
+<pre><code>seo: {
+  // @twitter ID
+  twitterID: '@radishzz_'
+  // サイト認証
+  verification: {
+    // Google Search Console
+    google: 'AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM'
+    // Bing ウェブマスターツール
+    bing: '64708CD514011A7965C84DDE1D169F87'
+    // Yandex ウェブマスター
+    yandex: ''
+    // Baidu 検索
+    baidu: ''
+  }
+  // Google Analytics
+  googleAnalyticsID: ''
+  // Umami Analytics
+  umamiAnalyticsID: 'dab0e4b9-9cbf-43c3-af60-b09d3b545c38'
+  // folo 認証
+  folo: {
+    // フィード ID
+    feedID: ''
+    // ユーザーID
+    userID: ''
+  }
+  // APIFlash アクセスキー
+  // OpenGraph 用のウェブサイトスクリーンショットを生成
+  // アクセスキーの取得：https://apiflash.com/
+  apiflashKey: ''
+}
+</code></pre>
+<h3>フッター設定</h3>
+<pre><code>footer: {
+  // ソーシャルリンク
+  links: [
+    {
+      name: 'RSS',
+      url: '/atom.xml', // または /rss.xml
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/radishzzz/astro-theme-retypeset',
+    },
+    {
+      name: 'Email',
+      url: 'email@radishzz.cc',
+    }
+    // {
+    //   name: 'X',
+    //   url: 'https://x.com/radishzz_',
+    // },
+  ]
+  // サイト開始年
+  startYear: 2025
+}
+</code></pre>
+<h3>リソースプリロード</h3>
+<pre><code>preload: {
+  // 画像ホスティング URL
+  // リモート画像を最適化し、低品質のプレースホルダーを生成
+  imageHostURL: 'image.radishzz.cc'
+  // カスタム Google Analytics トラッキングスクリプト
+  // トラッキングスクリプトをカスタムドメインにプロキシするユーザー向け
+  customGoogleAnalyticsJS: ''
+  // カスタム Umami トラッキングスクリプト
+  // Umami を自己デプロイするか、トラッキングスクリプトをカスタムドメインにプロキシするユーザー向け
+  customUmamiAnalyticsJS: 'https://views.radishzz.cc/script.js'
+}
+</code></pre>
+<h2>その他の設定</h2>
+<p>設定ファイル <code>src/config.ts</code> 以外にも、一部の設定は他のファイルにあります。</p>
+<h3>シンタックスハイライト</h3>
+<p>コードブロックのシンタックスハイライトテーマ。</p>
+<pre><code>// astro.config.ts
+
+shikiConfig: {
+  // 利用可能なテーマ：https://shiki.style/themes
+  // 背景色はデフォルトでシンタックスハイライトテーマではなく、ブログテーマに従います
+  themes: {
+    light: 'github-light' // ライトテーマ
+    dark: 'github-dark' // ダークテーマ
+  }
+}
+</code></pre>
+<h3>記事の抜粋</h3>
+<p>記事の自動抜粋の文字数。</p>
+<pre><code>// src/utils/description.ts
+
+const excerptLengths: Record&lt;ExcerptScene, {
+  cjk: number // 中国語、日本語、韓国語
+  other: number // その他の言語
+}&gt; = {
+  list: { // ホームページ記事リスト
+    cjk: 120, // 先頭から 120 文字を自動抜粋
+    other: 240, // 先頭から 240 文字を自動抜粋
+  },
+}
+</code></pre>
+<h3>Open Graph</h3>
+<p><a href="https://orcascan.com/tools/open-graph-validator?url=https%3A%2F%2Fretypeset.radishzz.cc%2Fja%2Fposts%2Ftheme-guide%2F">Open Graph ソーシャルカード</a> スタイル。</p>
+<pre><code>// src/pages/og/[...image].ts
+
+getImageOptions: (_path, page) =&gt; ({
+  logo: {
+    path: './public/icons/og-logo.png', // ローカルパスの PNG 形式が必要
+    size: [250], // ロゴの幅
+  },
+  font: {
+    title: { // タイトル
+      families: ['Noto Sans SC'], // フォント
+      weight: 'Bold', // 太さ
+      color: [34, 33, 36], // 色
+      lineHeight: 1.5, // 行の高さ
+    },
+  },
+  fonts: [ // フォントパス（ローカルまたはリモート）
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+  ],
+  bgGradient: [[242, 241, 245]], // 背景色
+  // その他の設定：https://github.com/delucis/astro-og-canvas/tree/latest/packages/astro-og-canvas
+})
+</code></pre>
+<h3>RSS フィード</h3>
+<p><a href="https://retypeset.radishzz.cc/ja/atom.xml">RSS フィードページ</a> スタイル。</p>
+<pre><code>
+
+&lt;style type="text/css"&gt;
+body{color:oklch(25% 0.005 298)} /* フォントカラー */
+.bg-white{background-color:oklch(0.96 0.005 298)!important} /* 背景色 */
+.text-gray{color:oklch(0.25 0.005 298 / 75%)!important} /* セカンダリフォントカラー */
+&lt;/style&gt;
+</code></pre>
+<h2>新しい記事の作成</h2>
+<p><code>pnpm new-post &lt;filename&gt;</code> を実行して新しい記事を作成し、<code>src/content/posts/</code> ディレクトリで編集できます。</p>
+<pre><code>pnpm new-post                      -&gt;  src/content/posts/new-post.md
+pnpm new-post first-post           -&gt;  src/content/posts/first-post.md
+pnpm new-post 2025/03/first-post   -&gt;  src/content/posts/2025/03/first-post.md
+pnpm new-post first-post.mdx       -&gt;  src/content/posts/first-post.mdx
+</code></pre>
+<h3>Front Matter</h3>
+<p><code>title</code> と <code>published</code> のみが必須フィールドで、他のすべての設定は省略できます。</p>
+<pre><code>---
+# 必須
+title: テーマ使用ガイド
+published: 2025-01-26
+
+# 任意
+description: 記事の最初の 120 文字が自動的に要約として選択されます。
+updated: 2025-03-26
+tags:
+  - ブログテーマ
+  - ガイド
+
+# 高度な設定（任意）
+draft: true/false
+pin: 0-99
+toc: true/false
+lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+abbrlink: theme-guide
+---
+</code></pre>
+<h3>高度な設定</h3>
+<h4>draft</h4>
+<p>記事を下書きとしてマークします。true に設定すると、記事は公開されず、ローカル開発プレビューでのみ利用可能です。デフォルトは false です。</p>
+<h4>pin</h4>
+<p>記事をトップに固定します。数字が大きいほど、固定された記事の優先度が高くなります。デフォルトは 0 で、固定されていないことを意味します。</p>
+<h4>toc</h4>
+<p>目次を生成するかどうか。h2 から h4 までの見出しを表示します。デフォルトではグローバル設定項目 <code>global.toc</code> によって決定されますが、記事ごとに個別に設定して上書きすることもできます。</p>
+<h4>lang</h4>
+<p>記事の言語を指定します。一つの言語のみ指定できます。指定しない場合、記事はデフォルトですべての言語パスに表示されます。</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+
+# lang: ''
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+                             -&gt;  example.com/es/posts/apple/
+                             -&gt;  example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md   -&gt;  example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md   -&gt;  example.com/ru/posts/apple/
+</code></pre>
+<h4>abbrlink</h4>
+<p>記事の URL をカスタマイズします。小文字、数字、ハイフン <code>-</code> のみ使用できます。</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+# lang: 'es'
+
+# abbrlink: ''
+src/content/posts/apple.md           -&gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: 'banana'
+src/content/posts/apple.md           -&gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/banana/
+</code></pre>
+<h3>混植の最適化</h3>
+<p><code>pnpm format-posts</code> コマンドを実行すると、<code>src/content/</code> ディレクトリ内の Markdown ファイルの書式を最適化できます。特に CJK（日本語や中国語、韓国語）と英字が混在する場合に、適切なスペースを追加し、句読点を修正するなどの処理を行います。</p>
+<pre><code>pnpm format-posts
+🔍 Scanning Markdown files...
+📦 Found 56 Markdown files
+✅ src/content/posts/guides/Theme Guide-ja.md
+✅ src/content/posts/guides/Theme Guide-zh-tw.md
+✅ src/content/posts/guides/Theme Guide-zh.md
+✨ Formatted 3 files successfully
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[寛容と自由]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/tolerance-freedom/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/tolerance-freedom/</guid>
+            <pubDate>Mon, 16 Mar 1959 00:00:00 GMT</pubDate>
+            <description><![CDATA[今から 17、18 年前、私は母校コニヤース大学の歴史学修士ジョージ・リンカーン・バー氏と最後に会った。私たちは、生前に執筆を準備していた...]]></description>
+            <content:encoded><![CDATA[<p>今から 17、18 年前、私は母校コニヤース大学の歴史学修士ジョージ・リンカーン・バー氏と最後に会った。私たちは、生前に執筆を準備していた『自由の歴史』を書かずに亡くなった英国の歴史家アクトン卿について話していた。その日、バー氏は多くの会話を交わしたが、その中で私が今でも忘れられない一文があった。年を取れば取るほど、自由よりも寛容の方が大切だと感じるようになる」と。</p>
+<p>ブリュワー氏が亡くなって 10 年以上が経つが、彼のこの言葉は考えれば考えるほど、忘れられない格言だと感じる。私自身、「年を取れば取るほど、自由よりも寛容さの方が大切だと感じるようになる」という思いもある。寛容さこそがすべての自由の本質であり、それなくして自由はないとさえ思うことがある。</p>
+<p>私が 17 歳のとき（1908 年）、私は『競争倫敦新聞』にいくつかの記事を掲載した。その中には、小説『西遊記』や『風神榜』をこき下ろしたものもあり、私はこう言った：</p>
+<p>「幽霊や神々の捏造、時日占いで群衆を疑い、殺す"。私はただ権力の数千年の行支配を責めて、世界と人民の自己期待への道を助けるために、無知で注意を払わないで、世界と虚偽の人民の教義を混同して実践することができて、そして私の神の状態を闇の世界に引き上げた！</p>
+<p>これは「道の守護」に対する子供の非常に不寛容な態度だった。当時、私はすでに無霊・無神論者であったので、迷信を滅ぼすというあのような荒唐無稽な主張をし、『王制』の古典の一つ（『礼記』の一篇）である「幽霊や神を根拠に占いで民衆を疑えば、殺される」という言葉を実行に移したかったのである！</p>
+<p>このように言った小さな子供が、15 年後（1923 年）、西遊記について 2 万字に及ぶ考察をするほどの熱意を持つようになるとは、その時は夢にも思わなかった！その小さな子供が、20 年後、30 年後も『神々のタブレット』の作者であることを証明できる資料を探し続けているとは、その時は夢にも思わなかった！また、『王制』の一節が歴史的に重要であるなどとは、当時はまったく考えてもいなかった。その『王制』の一節の全文はこうだ：</p>
+<p>言葉を解析して法を破り、人の名を変え、左の道をたどって政を乱す者は殺せ。わいせつな音を立てたり、奇妙な衣装を着たりして、人々に不審を抱かせる者は殺せ。線は偽りで堅く、言葉は偽りで弁証法的であり、学問は広くはないが、滑らかな非ゼファーは群衆を疑うことであり、殺すことである。幽霊、神、時、日、占いのふりをして民衆を疑い、殺すことである。この 4 人の殺し屋の言うことは聞いてはいけない。</p>
+<p>50 年前、私はこの一節の「罰」が、中国の権威主義体制下で新しい思想、新しい学問、新しい信仰、新しい芸術を禁止する古典的な根拠であることをまったく理解していなかった。当時、私は「迷信を打破する」という熱意を抱いていたので、「四刑」の 4 番目の「幽霊や神、時日占いを偽って大衆を疑う者は殺せ」を支持した。当時は、四罪の「幽霊や神......大衆を疑う」と一罪の「政府を混乱させる左翼」が、信教の自由を破壊するために使われるとは思っていなかった。その時、私はまた、鄭玄のメモが「奇妙な技法と外国の武器」として、公図蛮の例を用いていることに気づかなかった。さらに言えば、孔英大の『正義』が「孔子は 7 日間魯の参謀だったが、邵正茂を処刑した」という例を挙げて、「......」と説明していることにも気づかなかった。第二の刑罰は、その人の行動を禁止するために用いることができるが、その人の言論を禁止するために用いることはできない。したがって、第二の罰は芸術創作の自由を禁止するために使用することができ、また「奇妙な技術や奇妙な武器」を発明した多くの科学者を「殺す」ために使用することができる。したがって、第三の刑罰は、思想の自由、言論の自由、出版の自由を破壊するために使われる可能性がある。</p>
+<p>50 年前、私は『西遊記』と『神々の創世』の著者を「殺す」ために、王制の第 4 の罰を発動した。その時はもちろん、10 年後、私が北京大学で教鞭をとっていた時、同じ「道の擁護者」でありながら、私と私の友人を「殺す」ために「王制」の第三の刑罰を発動しようとする正義の人々が現れるとは夢にも思わなかった。当時、私は人を「殺したい」と思い、後に人は私を「殺したい」と思ったが、動機は同じで、ちょっとした正義の怒りのために寛容さを失ったのである。</p>
+<p>私が 50 年前、幽霊や神や時間や日に頼って占いをする人々を殺すことを提唱した話をしたのは、年を取れば取るほど、「自由」よりも「寛容」の方が大切だと感じるようになることを説明するためである。私は今日も無神論者である。</p>
+<p>私は現在も無神論者であり、意志を持った神を信じていないし、魂の不滅を信じているわけでもない。しかし、私の無神論と共産党の無神論には根本的な違いがある。私は神を信じるすべての宗教を容認することができるし、宗教を心から信じるすべての人々を容認することができる。無神論を標榜する共産党自身が、神への信仰をすべて破壊し、神のいる宗教への信仰をすべて禁止しようとしている-- 50 年前の私の幼稚で傲慢な不寛容は、そのようなものだった。</p>
+<p>私自身は、国民の大多数が神を信じているこの国、この社会、この世界には、私の無神論を容認し、神も魂の不滅も信じていない私を容認し、私が国内外で無神論的な考えを自由に表現することを容認する優しさがあり、そのために私を石で投げつけたり、牢獄に閉じ込めたり、薪の上に束ねて火で焼いたりする人はいないと、いつも感じていた。実際、私はこの世界で 40 年以上も寛容と自由を享受してきた。この国、この社会、この世界が私に示してくれた寛容の尺度は素敵なものであり、感謝に値するものだと感じている。</p>
+<p>だから私自身は、社会の私に対する寛容さに寛容さで報いるべきだと常に思っている。したがって、私は神を信じていないが、神を信じるすべての人々を心から理解することができるし、神を信じるすべての宗教を心から許容し、尊重することができる。</p>
+<p>私は社会の寛容さに寛容さで報いたい。年を重ねるごとに、寛容さの大切さを感じるようになったからだ。もし社会が寛容でなかったら、私は 40 年以上にわたって大胆な懐疑の自由を享受することも、無神論を公に主張する自由を得ることもできなかっただろう。</p>
+<p>宗教の自由の歴史を見ても、知的自由の歴史を見ても、政治的自由の歴史を見ても、寛容という態度が最も稀有なものであることがわかる。人間は常に、異なるものよりも同じものを好み、自分とは異なる信念、思考、行動を嫌う習性がある。これが不寛容の根源である。不寛容とは単に、自分とは異なる新しい考えや新しい信念に対する不寛容である。宗教団体は常に、自分たちの宗教的信念が正しく、間違っているはずがないと信じているので、自分たちと異なる宗教的信念は間違っているに違いない、異端であるに違いない、カルトであるに違いないと常に信じている。政治団体は常に、自分たちの政治的意見は正しく、間違ってはならないと信じている。だから、自分たちと異なる政治的意見は間違っているに違いなく、敵に違いないと常に信じている。</p>
+<p>異端者に対する迫害も、「異論者」に対する破壊も、信教の自由の禁止も、思想や言論の弾圧も、すべて「人は間違ってはならない」という信念によるものだ。自分が間違っているはずがないという信念があるからこそ、人は自分と異なる思想や信念を容認することができない。</p>
+<p>ヨーロッパにおける宗教刷新運動の歴史を見てみよう。マルティン・ルターとジョン・カルヴァンが宗教に革命を起こそうと立ち上がったのは、もともと古いローマ宗教の不寛容さと自由のなさに不満を持っていたからだ。しかし、中欧と北欧でプロテスタンティズムが勝利した後、プロテスタンティズムの指導者たちは次第に不寛容に戻り、自分たちの新しい教義を他人が批判することを許さなくなった。ジュネーブで宗教的権力を握っていたガルヴァンは、ガルヴァンの教義を批判し、独自の思想を持つことを敢えてした学者セルヴェトゥスを、実際に「異端」として有罪にし、杭に鎖でつないで薪を積み上げ、ゆっくりと生きたまま焼き殺した。1553 年 10 月 23 日の出来事である。</p>
+<p>この殉教者セビトゥスの悲劇的な歴史は、想起と考察に最も値するものである。宗教刷新運動の本来の目的は、「キリスト教的人間の自由」と「良心の自由」のために戦うことだった。なぜガルヴァンとその信奉者たちは、独立心の強いプロテスタントを徐火で焼き殺したのか？ガルヴァンの弟子の一人であるド・ベーズ（後にガルヴァンの後継者としてジュネーブの宗教独裁者となる）が、「良心の自由は悪魔の教義である」と宣言したのはなぜか。</p>
+<p>その基本的な理由は、自分自身は「悪いことはできない」という小さな確信にある。もしガルヴァンのような敬虔な改革者が、自分の良心が本当に神の命令を表しており、自分の口とペンが本当に神の意志を表していると確信していたとしたら、彼の意見が間違っている可能性はあるのだろうか？彼が間違っている可能性はあるのだろうか？セルベトゥスの火刑の後、ガルヴァンは多くの人々から批判を受けたが、1554 年、彼は自分自身を弁護する文章を発表し、その中で、「悪を語る者を厳しく罰する権威は疑う余地がない。...... この仕事は神の栄光のために戦っている」</p>
+<p>神ご自身が語ることが悪いことだろうか？神の栄光のために戦うことが悪いことだろうか？この「私は間違っていない」という小さな考え方が、あらゆる不寛容の根源なのだ。自分の信念は絶対であり、自分の意見は「正義」であり、反対する者はもちろん「異端者」である。私の意見は神の意志を代弁するものであり、私に反対する者の意見はもちろん「悪魔の教義」である。</p>
+<p>これは信教の自由の歴史が教えてくれる教訓である。寛容はすべての自由の基礎であり、「異端者」を寛容する恵みがなければ、「異端」の宗教的信念が自由を享受することは認められない。しかし、不寛容は「私の信念は間違っていない」という精神的習慣に基づくものであるため、「異論」に対する寛容は、寛容の中でも最も希少で、最も培われていないものである。</p>
+<p>政治的思考や社会問題の議論においても、不寛容は一般的であり、寛容は常に稀であると感じる。例として、亡くなった旧友の話を挙げよう。40 年以上前、雑誌『新青年』で方言文学を提唱する運動を始めたとき、私はアメリカから全斗秀に手紙を送り、こう言った：</p>
+<p>この問題の善悪は一朝一夕に決められるものではないし、一人や二人で決められるものでもない。私は、国内の人々が冷静かつ平和的な方法で、私たちとともにこの問題を研究してくれることを強く望んでいる。議論が成熟すれば、善悪は明らかになるだろう。私たちは革命の旗を掲げたが、後退することはできないが、私たちが主張することを必ずそうでなければならないとし、他者にそれを修正させない勇気はない。</p>
+<p>杜秀は『新青年』で私にこう答えた：</p>
+<p>私は、異論を受け入れることを意味し、自由な議論は、学術発展の原則であり、唯一の本格的な格言として、中国語の文学の改善で、その正誤は非常に明確であり、反対派が部屋の議論を持って許可されません。</p>
+<p>当時、私はこれは非常に独断的な態度だと思った。それから 40 年以上たった今でも、私は杜秀のこの言葉を忘れることができない。そして、この「自分たちの主張することを絶対的な権利とする」という態度は、非常に不寛容な態度であり、他人の悪感情を最も呼び起こしやすく、最も反発を招きやすい態度だと今でも思っている。</p>
+<p>私はかつて、社会が私に対して寛容であることに寛容な態度で報いるべきだと言ったことがある。もし他人に自分の意見を許容し、理解してもらいたいのであれば、まず自分が他人の意見を許容し、理解する尺度を身につけなければならない。少なくとも、「自分の主張が絶対的に正しいと思い込む」ようなことは決してしてはならない。実験主義の訓練を受けてきた私たちは、「絶対的なイエス」を認めないし、ましてや私たちが主張することを「絶対的なイエスとする」ことなどできない。</p>
+<p>4-8, 3-12 朝</p>
+<p>（原文：『自由中国』台北、1959 年 3 月 16 日、第 20 巻、第 6 号）</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[故郷]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/my-native-heath/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/my-native-heath/</guid>
+            <pubDate>Mon, 10 Jan 1921 00:00:00 GMT</pubDate>
+            <description><![CDATA[わたしは厳寒を冒して、二千余里を隔て二十余年も別れていた故郷に帰って来た。時はもう冬の最中で故郷に近づくに従って天気は小闇くなり、身を切る...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="_Here's the description of the picture" /></p>
+<p>わたしは厳寒を冒して、二千余里を隔て二十余年も別れていた故郷に帰って来た。時はもう冬の最中で故郷に近づくに従って天気は小闇くなり、身を切るような風が船室に吹き込んでびゅうびゅうと鳴る。苫の隙間から外を見ると、蒼黄いろい空の下にしめやかな荒村があちこちに横たわっていささかの活気もない。わたしはうら悲しき心の動きが抑え切れなくなった。</p>
+<p>おお！これこそ二十年来ときどき想い出す我が故郷ではないか。</p>
+<p>わたしの想い出す故郷はまるきり、こんなものではない。わたしの故郷はもっと佳いところが多いのだ。しかしその佳いところを記すには姿もなく言葉もないので、どうやらまずこんなものだとしておこう。そうしてわたし自身解釈して、故郷はもともとこんなものだと言っておく。――進歩はしないがわたしの感ずるほどうら悲しいものでもなかろう。これはただわたし自身の心境の変化だ。今度の帰省はもともと何のたのしみもないからだ。</p>
+<p>わたしどもが永い間身内と一緒に棲んでいた老屋がすでに公売され、家を明け渡す期限が本年一ぱいになっていたから、ぜひとも正月元日前に行かなければならない。それが今度の帰省の全部の目的であった。住み慣れた老屋と永別して、その上また住み慣れた故郷に遠く離れて、今食い繋ぎをしているよそ国に家移りするのである。</p>
+<p>わたしは二日目の朝早く我が家の門口に著いた。屋根瓦のうえに茎ばかりの枯草が風に向って顫えているのは、ちょうどこの老屋が主を更えなければならない原因を説明するようである。同じ屋敷内に住む本家の家族は大概もう移転したあとで、あたりはひっそりしていた。わたしが部屋の外側まで来た時、母は迎えに出て来た。八歳になる甥の宏兒も飛出して来た。</p>
+<p>母は非常に喜んだ。何とも言われぬ淋しさを押包みながら、お茶を入れて、話をよそ事に紛らしていた。宏兒は今度初めて逢うので遠くの方へ突立って真正面からわたしを見ていた。</p>
+<p>わたしどもはとうとう家移りのことを話した。「あちらの家も借りることに極めて、家具もあらかた調えましたが、まだ少し足らないものもありますから、ここにある嵩張物を売払って向うで買うことにしましょう」 「それがいいよ。わたしもそう思ってね。荷拵えをした時、嵩張物は持運びに不便だから半分ばかり売ってみたがなかなかお銭にならないよ」</p>
+<p>こんな話をしたあとで母は語を継いだ。「お前さんは久しぶりで来たんだから、本家や親類に暇乞いを済まして、それから出て行くことにしましょう」 「ええそうしましょう」 「あの閏土がね、家へ来るたんびにお前のことをきいて、ぜひ一度逢いたいと言っているんだよ」と母はにこにこして「今度到著の日取を知らせてやったから、たぶん来るかもしれないよ」 「おお、閏土！ずいぶん昔のことですね」</p>
+<p>この時わたしの頭の中に一つの神さびた画面が閃き出した。深藍色の大空にかかる月はまんまろの黄金色であった。下は海辺の砂地に作られた西瓜畑で、果てしもなき碧緑の中に十一二歳の少年がぽつりと一人立っている。項には銀の輪を掛け、手には鋼鉄の叉棒を握って一疋の土竜に向って力任せに突き刺すと、土竜は身をひねって彼の跨ぐらを潜って逃げ出す。</p>
+<p>この少年が閏土であった。わたしが彼を知ったのは十幾つかの歳であったが、別れて今は三十年にもなる。あの時分は父も在世して家事の都合もよく、わたしは一人の坊ッちゃまであった。その年はちょうど三十何年目に一度廻って来る家の大祭の年に当り、祭は鄭重を極め、正月中掲げられた影像の前には多くの供え物をなし、祭器の撰択が八釜しく行われ、参詣人が雑沓するので泥棒の用心をしなければならぬ。わたしの家には忙月が一人きりだから手廻りかね、祭器の見張番に倅をよびたいと申出たので父はこれを許した。（この村の小作人は三つに分れている。一年契約の者を長年といい、日雇いの者を短工という。自分で地面を持ち節期時や刈入時に臨時に人の家に行って仕事をする者を忙月という）</p>
+<p>わたしは閏土が来ると聞いて非常に嬉しく思った。というのはわたしは前から閏土の名前を聞き及んでいるし、年頃もわたしとおつかつだし、閏月生れで五行の土が欠けているから閏土と名づけたわけも知っていた。彼は仕掛罠で小鳥を取ることが上手だ。</p>
+<p>わたしは日々に新年の来るのを待ちかねた。新年が来ると閏土も来るのだ。まもなく年末になり、ある日の事、母はわたしを呼んで「閏土が来たよ」と告げた。わたしは馳け出して行ってみると、彼は炊事部屋にいた。紫色の丸顔！頭に小さな漉羅紗帽をかぶり、項にキラキラした銀の頸輪を掛け、――これを見ても彼の父親がいかに彼を愛しているかが解る。彼の死去を恐れて神仏に願を掛け、頸に輪を掛け、彼を庇護しているのである――人を見て大層はにかんだが、わたしに対して特別だった。誰もいない時に好く話をして、半日経たぬうちに我々はすっかり仲よしになった。</p>
+<p>われわれはその時、何か知らんいろんな事を話したが、ただ覚えているのは、閏土が非常にハシャいで、まだ見たことのないいろいろの物を街へ来て初めて見たとの話だった。</p>
+<p>次の日わたしは彼に鳥をつかまえてくれと頼んだ。「それは出来ません。大雪が降ればいいのですがね。わたしどもの沙地の上に雪が降ると、わたしは雪を掻き出して小さな一つの空地を作り、短い棒で大きな箕を支え、小米を撒きちらしておきます。小鳥が食いに来た時、わたしは遠くの方で棒の上に縛ってある縄を引くと、小鳥は箕の下へ入ってしまいます。何でも皆ありますよ。稲鶏、角鶏、※鴣［＃「孛＋鳥」、105-11］、藍背……」</p>
+<p>そこでわたしは雪の降るのを待ちかねた。閏土はまた左のような話をした。「今は寒くていけませんが、夏になったらわたしの処へ被入っしゃい。わたしどもは昼間海辺に貝殻取に行きます。赤いのや青いのや、鬼が見て恐れるのや、観音様の手もあります。晩にはお父さんと一緒に西瓜の見張りに行きますから、あなたも被入っしゃい」 「泥棒の見張をするのかえ」 「いいえ、旅の人が喉が渇いて一つぐらい取って食べても、家の方では泥棒の数に入れません。見張が要るのは猪、山あらし、土竜の類です。月明りの下でじっと耳を澄ましているとララと響いて来ます。土竜が瓜を噛んでるんですよ。その時あなたは叉棒を攫んでそっと行って御覧なさい」わたしはそのいわゆる土竜というものがどんなものか、その時ちっとも知らなかった。――今でも解らない――ただわけもなく、小犬のような形で非常に猛烈のように感じた。「彼は咬みついて来るだろうね」 「こちらには叉棒がありますからね。歩いて行って見つけ次第、あなたはそれを刺せばいい。こん畜生は馬鹿に利巧な奴で、あべこべにあなたの方へ馳け出して来て、跨の下から逃げてゆきます。あいつの毛皮は油のように滑ッこい」</p>
+<p>わたしは今までこれほど多くの珍らしいことが世の中にあろうとは知らなかった。海辺にこんな五色の貝殻があったり、西瓜にこんな危険性があったり――わたしは今の先きまで西瓜は水菓子屋の店に売っているものとばかし思っていた。「わたしどもの沙地の中には大潮の来る前に、たくさん跳ね魚が集って来て、ただそれだけが跳ね廻っています。青蛙のように二つの脚があって……」ああ閏土の胸の中には際限もなく不思議な話が繋がっていた。それはふだんわたしどもの往来している友達の知らぬことばかりで、彼等は本当に何一つ知らなかった。閏土が海辺にいる時彼等はわたしと同じように、高塀に囲まれた屋敷の上の四角な空ばかり眺めていたのだから。</p>
+<p>惜しいかな、正月は過ぎ去り、閏土は彼の郷里に帰ることになった。わたしは大哭きに哭いた。閏土もまた泣き出し、台所に隠れて出て行くまいとしたが、遂に彼の父親に引張り出された。</p>
+<p>彼はその後父親に託けて貝殻一包と見事な鳥の毛を何本か送って寄越した。わたしの方でも一二度品物を届けてやったこともあるが、それきり顔を見たことが無い。</p>
+<p>現在わたしの母が彼のことを持出したので、わたしのあの時の記憶が電の如くよみがえって来て、本当に自分の美しい故郷を見きわめたように覚えた。わたしは声に応じて答えた。「そりゃ面白い。彼はどんな風です」 「あの人かえ、あの人の景気もあんまりよくないようだよ」</p>
+<p>母はそういいながら室の外を見た。「おやまた誰か来たよ。木器買うと言っては手当り次第に持って行くんだから、わたしがちょっと見て来ましょう」</p>
+<p>母が出て行くと門外の方で四五人の女の声がした。わたしは宏兒を側へ喚んで彼と話をした。字が書けるか、この家を出て行きたいと思うか、などということを訊いてみた。「わたしどもは汽車に乗ってゆくのですか」 「汽車に乗ってゆくんだよ」 「船は？」 「まず船に乗るんだ」 「おや、こんなになったんですかね。お鬚がまあ長くなりましたこと」</p>
+<p>一種尖ったおかしな声が突然わめき出した。</p>
+<p>わたしは喫驚して頭を上げると、頬骨の尖った唇の薄い、五十前後の女が一人、わたしの眼の前に突立っていた。袴も無しに股引穿きの両足を踏ん張っている姿は、まるで製図器のコンパスみたいだ。</p>
+<p>わたしはぎょっとした。「解らないかね、わたしはお前を抱いてやったことが幾度もあるよ」</p>
+<p>わたしはいよいよ驚いたが、いい塩梅にすぐあとから母が入って来て側から「この人は永い間外に出ていたから、みんな忘れてしまったんです。お前、覚えておいでだろうね」</p>
+<p>とわたしの方へ向って「これはすじ向うの楊二嫂だよ。そら豆腐屋さんの」</p>
+<p>おおそう言われると想い出した。わたしの子供の時分、すじ向うの豆腐屋の奥に一日坐り込んでいたのがたしか楊二嫂とか言った。彼女は近処で評判の「豆腐西施」で白粉をコテコテ塗っていたが、頬骨もこんなに高くはなく、唇もこんなに薄くはなく、それにまたいつも坐っていたので、こんな分廻しのような姿勢を見るのはわたしも初めてで、その時分彼女があるためにこの豆腐屋の商売が繁盛するという噂をきいていたが、それも年齢の関係で、わたしは未だかつて感化を受けたことがないからまるきり覚えていない。ところがコンパス西施はわたしに対してはなはだ不平らしく、たちまち侮りの色を現し、さながらフランス人にしてナポレオンを知らず、亜米利加人にしてワシントンを知らざるを嘲る如く冷笑した。「忘れたの？出世すると眼の位まで高くなるというが、本当だね」 「いえ、決してそんなことはありません、わたし……」</p>
+<p>わたしは慌てて立上がった。「そんなら迅ちゃん、お前さんに言うがね。お前はお金持になったんだから、引越しだってなかなか御大層だ。こんな我楽多道具なんか要るもんかね。わたしに譲っておくれよ、わたしども貧乏人こそ使い道があるわよ」 「わたしは決して金持ではありません。こんなものでも売ったら何かの足しまえになるかと思って……」 「おやおやお前は結構な道台さえも捨てたという話じゃないか。それでもお金持じゃないの？お前は今三人のお妾さんがあって、外に出る時には八人舁きの大轎に乗って、それでもお金持じゃないの？ホホ何と被仰ろうが、私を瞞すことは出来ないよ」</p>
+<p>わたしは話のしようがなくなって口を噤んで立っていると「全くね、お金があればあるほど塵ッ葉一つ出すのはいやだ。塵ッ葉一つ出さなければますますお金が溜るわけだ」</p>
+<p>コンパスはむっとして身を翻し、ぶつぶつ言いながら出て行ったが、なお、行きがけの駄賃に母の手袋を一双、素早く掻っ払ってズボンの腰に捻じ込んで立去った。</p>
+<p>そのあとで近処の本家や親戚の人達がわたしを訪ねて来たので、わたしはそれに応酬しながら暇を偸んで行李をまとめ、こんなことで三四日も過した。</p>
+<p>非常に寒い日の午後、わたしは昼飯を済ましてお茶を飲んでいると、外から人が入って来た。見ると思わず知らず驚いた。この人はほかでもない閏土であった。わたしは一目見てそれと知ったが、それは記憶の上の閏土ではなかった。身の丈けは一倍も伸びて、紫色の丸顔はすでに変じてどんよりと黄ばみ、額には溝のような深皺が出来ていた。目許は彼の父親ソックリで地腫れがしていたが、これはわたしも知っている。海辺地方の百姓は年じゅう汐風に吹かれているので皆が皆こんな風になるのである。彼の頭の上には破れた漉羅紗帽が一つ、身体の上にはごく薄い棉入れが一枚、その著こなしがいかにも見すぼらしく、手に紙包と長煙管を持っていたが、その手もわたしの覚えていた赤く丸い、ふっくらしたものではなく、荒っぽくざらざらして松皮のような裂け目があった。</p>
+<p>わたしは非常に亢奮して何と言っていいやら「あ、閏土さん、よく来てくれた」</p>
+<p>とまず口を切って、続いて連珠の如く湧き出す話、角鶏、飛魚、貝殻、土竜……けれど結局何かに弾かれたような工合になって、ただ頭の中をぐるぐる廻っているだけで口外へ吐き出すことが出来ない。</p>
+<p>彼はのそりと立っていた。顔の上には喜びと淋しさを現わし、唇は動かしているが声が出ない。彼の態度は結局敬い奉るのであった。「旦那様」</p>
+<p>と一つハッキリ言った。わたしはぞっとして身顫いが出そうになった。なるほどわたしどもの間にはもはや悲しむべき隔てが出来たのかと思うと、わたしはもう話も出来ない。</p>
+<p>彼は頭を後ろに向け「水生や、旦那様にお辞儀をしなさい」</p>
+<p>と背中に躱れている子供を引出した。これはちょうど三十年前の閏土と同じような者であるが、それよりずっと痩せ黄ばんで頸のまわりに銀の輪がない。「これは五番目の倅ですが、人様の前に出たことがありませんから、はにかんで困ります」</p>
+<p>母は宏兒を連れて二階から下りて来た。大方われわれの話声を聞きつけて来たのだろう。閏土は丁寧に頭を低げて「大奥様、お手紙を有難く頂戴致しました。わたしは旦那様がお帰りになると聞いて、何しろハアこんな嬉しいことは御座いません」 「まあお前はなぜそんな遠慮深くしているの、先にはまるで兄弟のようにしていたじゃないか。やっぱり昔のように迅ちゃんとお言いよ」</p>
+<p>母親はいい機嫌であった。「奥さん、今はそんなわけにはゆきません。あの時分は子供のことで何もかも解りませんでしたが」</p>
+<p>閏土はそう言いながら子供を前に引出してお辞儀をさせようとしたが、子供は羞しがって背中にこびりついて離れない。「その子は水生だね。五番目かえ。みんなうぶだから懼がるのは当前だよ。宏兒がちょうどいい相手だ。さあお前さん達は向うへ行ってお遊び」</p>
+<p>宏兒はこの話を聞くとすぐに水生をさし招いた。水生は俄に元気づいて一緒になって馳け出して行った。母は閏土に席をすすめた。彼はしばらくうじうじして遂に席に著いた。長煙管を卓の側に寄せ掛け、一つの紙包を持出した。「冬のことで何も御座いませんが、この青豆は家の庭で乾かしたんですから旦那様に差上げて下さい」</p>
+<p>わたしは彼に暮向のことを訊ねると、彼は頭を揺り動かした。「なかなか大変です。あの下の子供にも手伝わせておりますが、どうしても足りません。……世の中は始終ゴタついておりますし、……どちらを向いてもお金の費ることばかりで、方途が知れません……実りが悪いし、種物を売り出せば幾度も税金を掛けられ、元を削って売らなければ腐れるばかりです」</p>
+<p>彼はひたすら頭を振った。見ると顔の上にはたくさんの皺が刻まれているが、石像のようにまるきり動かない。たぶん苦しみを感ずるだけで表現することが出来ないのだろう。しばらく思案に沈んでいたが煙管を持出して煙草を吸った。</p>
+<p>母は彼の多忙を察してあしたすぐに引取らせることにした。まだ昼飯も食べていないので台所へ行って自分で飯を焚いておあがりと吩付けた。</p>
+<p>あとで母とわたしは彼の境遇について歎息した。子供は殖えるし、飢饉年は続くし、税金は重なるし、土匪や兵隊が乱暴するし、官吏や地主がのしかかって来るし、凡ての苦しみは彼をして一つの木偶とならしめた。「要らないものは何でも彼にやるがいいよ。勝手に撰り取らせてもいい」と母は言った。</p>
+<p>午後、彼は入用の物を幾つか撰り出していた。長卓二台、椅子四脚、香炉と燭台一対ずつ、天秤一本。またここに溜っている藁灰も要るのだが、（わたしどもの村では飯を焚く時藁を燃料とするので、その灰は砂地の肥料に持って来いだ）わたしどもの出発前に船を寄越して積取ってゆく。</p>
+<p>晩になってわたしどもはゆっくり話をしたが、格別必要な話でもなかった。そうして次の朝、彼は水生を連れて帰った。</p>
+<p>九日目にわたしどもの出発の日が来た。閏土は朝早くから出て来た。今度は水生の代りに五つになる女の児を連れて来て船の見張をさせた。その日は一日急がしく、もう彼と話をしている暇もない。来客もまた少からずあった。見送りに来た者、品物を持出しに来た者、見送りと持出しを兼ねて来た者などがゴタゴタして、日暮れになってわたしどもがようやく船に乗った時には、この老屋の中にあった大小の我楽多道具はキレイに一掃されて、塵ッ葉一つ残らずガラ空きになった。</p>
+<p>船はずんずん進んで行った。両岸の青山はたそがれの中に深黛色の装いを凝らし、皆連れ立って船後の梢に向って退く。</p>
+<p>わたしは船窓に凭って外のぼんやりした景色を眺めていると、たちまち宏兒が質問を発した。「叔父さん、わたしどもはいつここへ帰って来るんでしょうね」 「帰る？ハハハ。お前は向うに行き著きもしないのにもう帰ることを考えているのか」 「あの水生がね、自分の家へ遊びに来てくれと言っているんですよ」</p>
+<p>宏兒は黒目勝ちの眼をみはってうっとりと外を眺めている。</p>
+<p>わたしどもはうすら睡くなって来た。そこでまた閏土の話を持出した。母は語った。「あの豆腐西施は家で荷造りを始めてから毎日きっとやって来るんだよ。きのうは灰溜の中から皿小鉢を十幾枚も拾い出し、論判の挙句、これはきっと閏土が埋めておいたに違いない、彼は灰を運ぶ時一緒に持帰る積りだろうなどと言って、この事を非常に手柄にして『犬ぢらし』を掴んでまるで飛ぶように馳け出して行ったが、あの纏足の足でよくまああんなに早く歩けたものだね」</p>
+<p>（犬ぢらしはわたしどもの村の養鶏の道具で、木盤の上に木柵を嵌め、中には餌を入れておく。鶏は嘴が長いから柵をとおして啄むことが出来る。犬は柵に鼻が閊えて食うことが出来ない。故に犬じ［＃「じ」はママ］らしという）</p>
+<p>だんだん故郷の山水に遠ざかり、一時ハッキリした少年時代の記憶がまたぼんやりして来た。わたしは今の故郷に対して何の未練も残らないが、あの美しい記憶が薄らぐことが何よりも悲しかった。</p>
+<p>母も宏兒も睡ってしまった。</p>
+<p>わたしは横になって船底のせせらぎを聴き、自分の道を走っていることを知った。わたしは遂に閏土と隔絶してこの位置まで来てしまった。けれど、わたしの後輩はやはり一脈の気を通わしているではないか。宏兒は水生を思念しているではないか。わたしは彼等の間に再び隔膜が出来ることを望まない。しかしながら彼等は一脈の気を求むるために、凡てがわたしのように辛苦展転して生活することを望まない。また彼等の凡てが閏土のように辛苦麻痺して生活することを望まない。また凡てが別人のように辛苦放埒して生活することを望まない。彼等はわたしどものまだ経験せざる新しき生活をしてこそ然る可きだ。</p>
+<p>わたしはそう思うとたちまち羞しくなった。閏土が香炉と燭台が要ると言った時、わたしは内々彼を笑っていた。彼はどうしても偶像崇拝で、いかなる時にもそれを忘れ去ることが出来ないと。ところが現在わたしのいわゆる希望はわたしの手製の偶像ではなかろうか。ただ彼の希望は遠くの方でぼんやりしているだけの相違だ。</p>
+<p>夢うつつの中に眼の前に野広い海辺の緑の沙地が展開して来た。上には深藍色の大空に掛るまんまろの月が黄金色であった。</p>
+<p>希望は本来有というものでもなく、無というものでもない。これこそ地上の道のように、初めから道があるのではないが、歩く人が多くなると初めて道が出来る。</p>
+<p>一九二一年一月。</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[羅生門]]></title>
+            <link>https://cloudlin.zjulife.cc/ja/posts/rashomon/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ja/posts/rashomon/</guid>
+            <pubDate>Fri, 05 Nov 1915 00:00:00 GMT</pubDate>
+            <description><![CDATA[或日の暮方の事である。一人の下人が、羅生門の下で雨やみを待つてゐた。廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剝げた、大きな圓...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/06.webp" alt="_Here's the description of the picture" /></p>
+<p>或日の暮方の事である。一人の下人が、羅生門の下で雨やみを待つてゐた。</p>
+<p>廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剝げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人はありさうなものである。それが、この男の外には誰もゐない。</p>
+<p>何故かと云ふと、この二三年、京都には、地震とか辻風とか火事とか饑饉とか云ふ災がつゞいて起つた。そこで洛中のさびれ方は一通りでない。舊記によると、佛像や佛具を打碎いて、その丹がついたり、金銀の箔がついたりした木を、路ばたにつみ重ねて、薪の料に賣つてゐたと云ふ事である。洛中がその始末であるから、羅生門の修理などは、元より誰も捨てゝ顧る者がなかつた。するとその荒れ果てたのをよい事にして、狐狸が棲む。盜人が棲む。とうとうしまひには、引取り手のない死人を、この門へ持つて來て、棄てゝ行くと云ふ習慣さへ出來た。そこで、日の目が見えなくなると、誰でも氣味を惡るがつて、この門の近所へは足ぶみをしない事になつてしまつたのである。</p>
+<p>その代り又鴉が何處からか、たくさん集つて來た。晝間見ると、その鴉が何羽となく輪を描いて高い鴟尾のまはりを啼きながら、飛びまはつてゐる。殊に門の上の空が、夕燒けであかくなる時には、それが胡麻をまいたやうにはつきり見えた。鴉は、勿論、門の上にある死人の肉を、啄みに來るのである。――尤も今日は、刻限が遲いせいか、一羽も見えない。唯、所々、崩れかゝつた、さうしてその崩れ目に長い草のはへた石段の上に、鴉の糞が、點々と白くこびりついてゐるのが見える。下人は七段ある石段の一番上の段に洗ひざらした紺の襖の尻を据ゑて、右の頰に出來た、大きな面皰を氣にしながら、ぼんやり、雨のふるのを眺めてゐるのである。</p>
+<p>作者はさつき、「下人が雨やみを待つてゐた」と書いた。しかし、下人は、雨がやんでも格別どうしようと云ふ當てはない。ふだんなら、勿論、主人の家へ歸る可き筈である。所がその主人からは、四五日前に暇を出された。前にも書いたやうに、當時京都の町は一通りならず衰微してゐた。今この下人が、永年、使はれてゐた主人から、暇を出されたのも、この衰微の小さな餘波に外ならない。だから「下人が雨やみを待つてゐた」と云ふよりも、「雨にふりこめられた下人が、行き所がなくて、途方にくれてゐた」と云ふ方が、適當である。その上、今日の空模樣も少からずこの平安朝の下人の Sentimentalisme に影響した。申の刻下りからふり出した雨は、未に上るけしきがない。そこで、下人は、何を措いても差當り明日の暮しをどうにかしようとして――云はゞどうにもならない事を、どうにかしようとして、とりとめもない考へをたどりながら、さつきから朱雀大路にふる雨の音を、聞くともなく聞いてゐた。</p>
+<p>雨は、羅生門をつゝんで、遠くから、ざあつと云ふ音をあつめて來る。夕闇は次第に空を低くして、見上げると、門の屋根が、斜につき出した甍の先に、重たくうす暗い雲を支へてゐる。</p>
+<p>どうにもならない事を、どうにかする爲には、手段を選んでゐる遑はない。選んでゐれば、築土の下か、道ばたの土の上で、饑死をするばかりである。さうして、この門の上へ持つて來て、犬のやうに棄てられてしまふばかりである。選ばないとすれば――下人の考へは、何度も同じ道を低徊した揚句に、やつとこの局所へ逢着した。しかしこの「すれば」は、何時までたつても、結局「すれば」であつた。下人は、手段を選ばないといふ事を肯定しながらも、この「すれば」のかたをつける爲に、當然、その後に來る可き「盜人になるより外に仕方がない」と云ふ事を、積極的に肯定する丈の、勇氣が出ずにゐたのである。</p>
+<p>下人は、大きな嚏をして、それから、大儀さうに立上つた。夕冷えのする京都は、もう火桶が欲しい程の寒さである。風は門の柱と柱との間を、夕闇と共に遠慮なく、吹きぬける。丹塗の柱にとまつてゐた蟋蟀も、もうどこかへ行つてしまつた。</p>
+<p>下人は、頸をちゞめながら、山吹の汗衫に重ねた、紺の襖の肩を高くして門のまはりを見まはした。雨風の患のない、人目にかゝる惧のない、一晚樂にねられさうな所があれば、そこでともかくも、夜を明かさうと思つたからである。すると、幸門の上の樓へ上る、幅の廣い、之も丹を塗つた梯子が眼についた。上なら、人がゐたにしても、どうせ死人ばかりである。下人は、そこで腰にさげた聖柄の太刀が鞘走らないやうに氣をつけながら、藁草履をはいた足を、その梯子の一番下の段へふみかけた。</p>
+<p>それから、何分かの後である。羅生門の樓の上へ出る、幅の廣い梯子の中段に、一人の男が、猫のやうに身をちゞめて、息を殺しながら、上の容子を窺つてゐた。樓の上からさす火の光が、かすかに、その男の右の頰をぬらしてゐる。短い鬚の中に、赤く膿を持つた面皰のある頰である。下人は、始めから、この上にゐる者は、死人ばかりだと高を括つてゐた。それが、梯子を二三段上つて見ると、上では誰か火をとぼして、しかもその火を其處此處と動かしてゐるらしい。これは、その濁つた、黃いろい光が、隅々に蜘蛛の巢をかけた天井裏に、ゆれながら映つたので、すぐにそれと知れたのである。この雨の夜に、この羅生門の上で、火をともしてゐるからは、どうせ唯の者ではない。</p>
+<p>下人は、守宮のやうに足音をぬすんで、やつと急な梯子を、一番上の段まで這ふやうにして上りつめた。さうして體を出來る丈、平にしながら、頸を出來る丈、前へ出して、恐る恐る、樓の內を覗いて見た。</p>
+<p>見ると、樓の內には、噂に聞いた通り、幾つかの屍骸が、無造作に棄てゝあるが、火の光の及ぶ範圍が、思つたより狹いので、數は幾つともわからない。唯、おぼろげながら、知れるのは、その中に裸の屍骸と、着物を着た屍骸とがあると云ふ事である。勿論、中には女も男もまじつてゐるらしい。さうして、その屍骸は皆、それが、甞、生きてゐた人間だと云ふ事實さへ疑はれる程、土を捏ねて造つた人形のやうに、口を開いたり手を延ばしたりしてごろごろ床の上にころがつてゐた。しかも、肩とか胸とかの高くなつてゐる部分に、ぼんやりした火の光をうけて、低くなつてゐる部分の影を一層暗くしながら、永久に啞の如く默つていた。</p>
+<p>下人は、それらの屍骸の腐爛した臭氣に思はず、鼻を掩つた。しかし、その手は、次の瞬間には、もう鼻を掩ふ事を忘れてゐた。或る强い感情が、殆悉この男の嗅覺を奪つてしまつたからである。</p>
+<p>下人の眼は、その時、はじめて、其屍骸の中に蹲つている人間を見た。檜肌色の着物を著た、背の低い、瘦せた、白髮頭の、猿のやうな老婆である。その老婆は、右の手に火をともした松の木片を持つて、その屍骸の一つの顏を覗きこむやうに眺めてゐた。髮の毛の長い所を見ると、多分女の屍骸であらう。</p>
+<p>下人は、六分の恐怖と四分の好奇心とに動かされて、暫時は呼吸をするのさへ忘れてゐた。舊記の記者の語を借りれば、「頭身の毛も太る」やうに感じたのである。すると、老婆は、松の木片を、床板の間に挿して、それから、今まで眺めてゐた屍骸の首に兩手をかけると、丁度、猿の親が猿の子の虱をとるやうに、その長い髮の毛を一本づゝ拔きはじめた。髮は手に從つて拔けるらしい。</p>
+<p>その髮の毛が、一本ずゝ拔けるのに從つて下人の心からは、恐怖が少しづつ消えて行つた。さうして、それと同時に、この老婆に對するはげしい憎惡が、少しづゝ動いて來た。――いや、この老婆に對すると云つては、語弊があるかも知れない。寧、あらゆる惡に對する反感が、一分每に强さを增して來たのである。この時、誰かがこの下人に、さつき門の下でこの男が考へてゐた、饑死をするか盜人になるかと云ふ問題を、改めて持出したら、恐らく下人は、何の未練もなく、饑死を選んだ事であらう。それほど、この男の惡を憎む心は、老婆の床に挿した松の木片のやうに、勢よく燃え上り出してゐたのである。</p>
+<p>下人には、勿論、何故老婆が死人の髮の毛を拔くかわからなかつた。從つて、合理的には、それを善惡の何れに片づけてよいか知らなかつた。しかし下人にとつては、この雨の夜に、この羅生門の上で、死人の髮の毛を拔くと云ふ事が、それ丈で既に許す可らざる惡であつた。勿論、下人は、さつき迄自分が、盜人になる氣でゐた事なぞは、とうに忘れてゐるのである。</p>
+<p>そこで、下人は、兩足に力を入れて、いきなり、梯子から上へ飛び上つた。さうして聖柄の太刀に手をかけながら、大股に老婆の前へ步みよつた。老婆が驚いたのは、云ふ迄もない。
+老婆は、一目下人を見ると、まるで弩にでも彈かれたやうに、飛び上つた。</p>
+<p>「おのれ、どこへ行く。」</p>
+<p>下人は、老婆が屍骸につまづきながら、慌てふためいて逃げようとする行手を塞いで、こう罵つた。老婆は、それでも下人をつきのけて行かうとする。下人は又、それを行かすまいとして、押しもどす。二人は屍骸の中で、暫、無言のまゝ、つかみ合つた。しかし勝敗は、はじめから、わかつている。下人はとうとう、老婆の腕をつかんで、無理にそこへ扭ぢ倒した。丁度、鷄の脚のやうな、骨と皮ばかりの腕である。</p>
+<p>「何をしてゐた。さあ何をしてゐた。云へ。云はぬと、これだぞよ。」</p>
+<p>下人は、老婆をつき放すと、いきなり、太刀の鞘を拂つて、白い鋼の色をその眼の前へつきつけた。けれども、老婆は默つてゐる。兩手をわなわなふるはせて、肩で息を切りながら、眼を、眼球が眶の外へ出さうになる程、見開いて、啞のやうに執拗く默つてゐる。これを見ると、下人は始めて明白にこの老婆の生死が、全然、自分の意志に支配されてゐると云ふ事を意識した。さうして、この意識は、今まではげしく燃えてゐた憎惡の心を何時の間にか冷ましてしまつた。後に殘つたのは、唯、或仕事をして、それが圓滿に成就した時の、安らかな得意と滿足とがあるばかりである。そこで、下人は、老婆を見下しながら、少し聲を柔げてかう云つた。</p>
+<p>「己は檢非違使の廳の役人などではない。今し方この門の下を通りかゝつた旅の者だ。だからお前に繩をかけて、どうしようと云ふやうな事はない。唯、今時分、この門の上で、何をして居たのだか、それを己に話しさへすればいいのだ。」</p>
+<p>すると、老婆は、見開いてゐた眼を、一層大きくして、ぢつとその下人の顏を見守つた。眶の赤くなつた、肉食鳥のやうな、銳い眼で見たのである。それから、皺で、殆、鼻と一つになつた唇を、何か物でも嚙んでゐるやうに動かした。細い喉で、尖つた喉佛の動いてゐるのが見える。その時、その喉から、鴉の啼くやうな聲が、喘ぎ喘ぎ、下人の耳へ傳はつて來た。</p>
+<p>「この髮を拔いてな、この女の髮を拔いてな、鬘にせうと思うたのぢや。」</p>
+<p>下人は、老婆の答が存外、平凡なのに失望した。さうして失望すると同時に、又前の憎惡が、冷な侮蔑と一しよに、心の中へはいつて來た。すると、その氣色が、先方へも通じたのであらう。老婆は、片手に、まだ屍骸の頭から奪つた長い拔け毛を持つたなり、蟇のつぶやくやうな聲で、口ごもりながら、こんな事を云つた。</p>
+<p>成程、死人の髮の毛を拔くと云ふ事は、惡い事かも知れぬ。しかし、かう云ふ死人の多くは、皆、その位な事を、されてもいゝ人間ばかりである。現に、自分が今、髮を拔いた女などは、蛇を四寸ばかりづゝに切つて干したのを、干魚だと云つて、太刀帶の陣へ賣りに行つた。疫病にかゝつて死ななかつたなら、今でも賣りに行つてゐたかもしれない。しかも、この女の賣る干魚は、味がよいと云ふので、太刀帶たちが、缺かさず菜料に買つてゐたのである。自分は、この女のした事が惡いとは思はない。しなければ、饑死をするので、仕方がなくした事だからである。だから、又今、自分のしてゐた事も惡い事とは思はない。これもやはりしなければ、饑死をするので、仕方がなくする事だからである。さうして、その仕方がない事を、よく知つてゐたこの女は、自分のする事を許してくれるのにちがひないと思ふからである。――老婆は、大體こんな意味の事を云つた。</p>
+<p>下人は、太刀を鞘におさめて、その太刀の柄を左の手でおさへながら、冷然として、この話を聞いてゐた。勿論、右の手では、赤く頰に膿を持つた大きな面皰を氣にしながら、聞いてゐるのである。しかし、之を聞いてゐる中に、下人の心には、或勇氣が生まれて來た。それは、さつき、門の下でこの男に缺けてゐた勇氣である。さうして、又さつき、この門の上へ上つて、この老婆を捕へた時の勇氣とは、全然、反對な方向に動かうとする勇氣である。下人は、饑死をするか盜人になるかに迷はなかつたばかりではない。その時のこの男の心もちから云へば、饑死などと云ふ事は、殆、考へる事さへ出來ない程、意識の外に追ひ出されてゐた。</p>
+<p>「きつと、そうか。」</p>
+<p>老婆の話が完ると、下人は嘲るやうな聲で念を押した。さうして、一足前へ出ると、不意に、右の手を面皰から離して、老婆の襟上をつかみながら、かう云つた。</p>
+<p>「では、己が引剝をしようと恨むまいな。己もさうしなければ、饑死をする體なのだ。」</p>
+<p>下人は、すばやく、老婆の着物を剝ぎとつた。それから、足にしがみつかうとする老婆を、手荒く屍骸の上へ蹴倒した。梯子の口までは、僅に五步を數へるばかりである。下人は、剝ぎとつた檜肌色の着物をわきにかゝへて、またゝく間に急な梯子を夜の底へかけ下りた。</p>
+<p>暫、死んだやうに倒れてゐた老婆が、屍骸の中から、その裸の體を起したのは、それから間もなくの事である。老婆は、つぶやくやうな、うめくやうな聲を立てながら、まだ燃えてゐる火の光をたよりに、梯子の口まで、這つて行つた。さうして、そこから、短い白髮を倒にして、門の下を覗きこんだ。外には、唯、黑洞々たる夜があるばかりである。</p>
+<p>下人は、既に、雨を冐して、京都の町へ强盜を働きに急いでゐた。</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+    </channel>
+</rss>

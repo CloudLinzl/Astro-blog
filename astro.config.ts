@@ -19,7 +19,6 @@ import { remarkContainerDirectives } from './src/plugins/remark-container-direct
 import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
-import netlify from '@astrojs/netlify';
 
 const { url: site } = themeConfig.site
 const { imageHostURL } = themeConfig.preload ?? {}
@@ -120,6 +119,4 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-
-  adapter: netlify(),
 })

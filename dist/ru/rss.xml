@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/rss-style.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Переверстка</title>
+        <link>https://CloudLin.ZJUlife.cc/ru/</link>
+        <description>Retypeset — это статическая тема блога, основанная на фреймворке Astro. Вдохновленная Typography, Retypeset устанавливает новый визуальный стандарт и переосмысливает компоновку всех страниц, создавая опыт чтения, напоминающий печатные книги, возрождая красоту типографики. Детали в каждом взгляде, элегантность в каждом пространстве.</description>
+        <lastBuildDate>Mon, 22 Jun 2026 12:10:50 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Astro-Theme-Retypeset with Feed for Node.js</generator>
+        <language>ru</language>
+        <copyright>Copyright © 2026 CloudLin</copyright>
+        <atom:link href="https://cloudlin.zjulife.cc/ru/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Расширенные функции Markdown]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/markdown-extended-features/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/markdown-extended-features/</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Здесь представлены некоторые расширенные функции Markdown, поддерживаемые темой Retypeset, включая примеры синтаксиса и их стилистические эф...]]></description>
+            <content:encoded><![CDATA[<p>Здесь представлены некоторые расширенные функции Markdown, поддерживаемые темой Retypeset, включая примеры синтаксиса и их стилистические эффекты.</p>
+<h2>Подписи к изображениям</h2>
+<p>Для создания автоматических подписей к изображениям используйте стандартный синтаксис изображений Markdown <code>![alt](src)</code>. Чтобы скрыть подпись, добавьте подчёркивание <code>_</code> перед текстом <code>alt</code> или оставьте текст <code>alt</code> пустым.</p>
+<h3>Синтаксис</h3>
+<pre><code>![Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre>
+<h3>Результат</h3>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="Описание изображения" /></p>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="_Описание изображения" /></p>
+<h2>Блоки примечаний</h2>
+<p>Для создания блоков примечаний используйте синтаксис GitHub <code>&gt; [!TYPE]</code> или контейнерную директиву <code>:::type</code>. Поддерживаются следующие типы: <code>note</code>, <code>tip</code>, <code>important</code>, <code>warning</code> и <code>caution</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>&gt; [!NOTE]
+&gt; Полезная информация, которую пользователи должны знать, даже при беглом просмотре.
+
+&gt; [!TIP]
+&gt; Полезные советы, как делать что-то лучше или проще.
+
+&gt; [!IMPORTANT]
+&gt; Ключевая информация, которую пользователи должны знать для достижения своей цели.
+
+:::warning
+Срочная информация, требующая немедленного внимания пользователя для предотвращения проблем.
+:::
+
+:::caution
+Предупреждает о рисках или негативных последствиях определённых действий.
+:::
+
+:::note[ПОЛЬЗОВАТЕЛЬСКИЙ ЗАГОЛОВОК]
+Это примечание с пользовательским заголовком.
+:::
+</code></pre>
+<h3>Результат</h3>
+<blockquote>
+<p>[!NOTE]
+Полезная информация, которую пользователи должны знать, даже при беглом просмотре.</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+Полезные советы, как делать что-то лучше или проще.</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+Ключевая информация, которую пользователи должны знать для достижения своей цели.</p>
+</blockquote>
+<p>:::warning
+Срочная информация, требующая немедленного внимания пользователя для предотвращения проблем.
+:::</p>
+<p>:::caution
+Предупреждает о рисках или негативных последствиях определённых действий.
+:::</p>
+<p>:::note[ПОЛЬЗОВАТЕЛЬСКИЙ ЗАГОЛОВОК]
+Это примечание с пользовательским заголовком.
+:::</p>
+<h2>Сворачиваемые разделы</h2>
+<p>Для создания сворачиваемых разделов используйте синтаксис контейнерной директивы <code>:::fold[title]</code>. Нажмите на заголовок, чтобы развернуть или свернуть раздел.</p>
+<h3>Синтаксис</h3>
+<pre><code>:::fold[Советы по использованию]
+Контент, который может не заинтересовать всех читателей, можно поместить в сворачиваемый раздел.
+:::
+</code></pre>
+<h3>Результат</h3>
+<p>:::fold[Советы по использованию]
+Контент, который может не заинтересовать всех читателей, можно поместить в сворачиваемый раздел.
+:::</p>
+<h2>Диаграммы Mermaid</h2>
+<p>Для создания диаграмм Mermaid оберните синтаксис Mermaid в блоки кода и укажите тип языка как <code>mermaid</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre>
+<h3>Результат</h3>
+<pre><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</code></pre>
+<h2>Галереи</h2>
+<p>Для создания галерей изображений используйте контейнерную директиву <code>:::gallery</code>. Прокручивайте горизонтально, чтобы просмотреть больше изображений.</p>
+<h3>Синтаксис</h3>
+<pre><code>:::gallery
+![Альпака](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![Поворачивает голову](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![Зрительный контакт](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![Детёныш альпаки](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![Ой, какая прелесть!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre>
+<h3>Результат</h3>
+<p>:::gallery
+<img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="Альпака" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="Поворачивает голову" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="Зрительный контакт" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="Детёныш альпаки" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="Ой, какая прелесть!" />
+:::</p>
+<h2>Репозитории GitHub</h2>
+<p>Для встраивания репозиториев GitHub используйте листовую директиву <code>::github{repo="owner/repo"}</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>::github{repo="radishzzz/astro-theme-retypeset"}
+</code></pre>
+<h3>Результат</h3>
+<p>::github{repo="radishzzz/astro-theme-retypeset"}</p>
+<h2>Видео</h2>
+<p>Для встраивания видео используйте листовую директиву <code>::youtube{id="video-id"}</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>::youtube{id="9pP0pIgP2kE"}
+
+::bilibili{id="BV1sK4y1Z7KG"}
+</code></pre>
+<h3>Результат</h3>
+<p>::youtube{id="9pP0pIgP2kE"}</p>
+<p>::bilibili{id="BV1sK4y1Z7KG"}</p>
+<h2>Spotify</h2>
+<p>Для встраивания контента Spotify используйте листовую директиву <code>::spotify{url="spotify-url"}</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+
+::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
+</code></pre>
+<h3>Результат</h3>
+<p>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}</p>
+<p>::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}</p>
+<h2>Твиты</h2>
+<p>Для встраивания твитов используйте листовую директиву <code>::tweet{url="tweet-url"}</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}
+</code></pre>
+<h3>Результат</h3>
+<p>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}</p>
+<h2>CodePen</h2>
+<p>Для встраивания демо CodePen используйте листовую директиву <code>::codepen{url="codepen-url"}</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
+</code></pre>
+<h3>Результат</h3>
+<p>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Цветовые Схемы Темы]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/theme-color-schemes/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/theme-color-schemes/</guid>
+            <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset определяет цветовые схемы темы на основе цветового пространства OKLCH, с предустановленной схемой черного, белого и серого цветов...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset определяет цветовые схемы темы на основе цветового пространства <a href="https://oklch.com/">OKLCH</a>, с предустановленной схемой черного, белого и серого цветов, имитирующей печатный стиль.</p>
+<p>Для удовлетворения потребностей в персонализации я создал несколько цветовых схем для темы. Вы можете заменить стандартную цветовую схему в <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> и перезапустить сервер разработки, чтобы просмотреть новую цветовую схему.</p>
+<h2>Бледно-зелёный</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/1-light.ClVuZxd5_21HiG1.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/1-dark.BivCfSmu_Z1FcXLT.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0.03 211.86)',
+  secondary: 'oklch(0.40 0.03 211.86)',
+  background: 'oklch(0.99 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0015 106.47)',
+  secondary: 'oklch(0.79 0.0015 106.47)',
+  background: 'oklch(0.24 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Воронёный</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/2-light.DLXS38ks_2j3zhb.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/2-dark.prgZMrfY_Z1i4yAx.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.0172 280.05)',
+  secondary: 'oklch(0.40 0.0172 280.05)',
+  background: 'oklch(0.98 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0172 280.05)',
+  secondary: 'oklch(0.79 0.0172 280.05)',
+  background: 'oklch(0.24 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Чернильно-синий</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/4-light.DIUeDw9p_Z2fbxhe.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/4-dark.CKqTknpt_2n6Qrb.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.053 261.24)',
+  secondary: 'oklch(0.39 0.053 261.24)',
+  background: 'oklch(1 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0 0)',
+  secondary: 'oklch(0.79 0 0)',
+  background: 'oklch(0.24 0.016 265.21)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Кремовый</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/3-light.8aAAK8Ad_BewEA.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/3-dark.CGQcMuXC_Z2c4VKc.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0 0)',
+  secondary: 'oklch(0.41 0 0)',
+  background: 'oklch(0.95 0.0237 59.39)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.93 0.019 59.39)',
+  secondary: 'oklch(0.80 0.017 59.39)',
+  background: 'oklch(0.23 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[KaTeX Математическая демонстрация]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/katex-mathematical-demo/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/katex-mathematical-demo/</guid>
+            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[KaTeX — это кросс-браузерная JavaScript-библиотека для отображения математических формул в веб-браузерах. Она делает акцент на скорости и уд...]]></description>
+            <content:encoded><![CDATA[<p>KaTeX — это кросс-браузерная JavaScript-библиотека для отображения математических формул в веб-браузерах. Она делает акцент на скорости и удобстве использования, изначально разработана Khan Academy и стала одним из пяти самых популярных проектов на GitHub.</p>
+<h2>Теория групп</h2>
+<p>Лемма Бернсайда, иногда также называемая теоремой подсчёта Бернсайда, леммой Коши-Фробениуса или теоремой о подсчёте орбит.</p>
+<p>Пусть $\wedge$ — групповое действие конечной группы $G$ на конечном множестве $X$. Тогда число орбит действия $t$ задаётся формулой.</p>
+<p>$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</p>
+<p>Для каждого целого числа $n\ge2$ фактор-группа $\mathbb{Z}/n\mathbb{Z}$ является циклической группой, порождённой элементом $1+n\mathbb{Z}$, и поэтому $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$.</p>
+<p>Фактор-группа $\mathbb{R}/\mathbb{Z}$ изоморфна $([0,1),+_1)$, группе вещественных чисел в интервале $[0,1)$ с операцией сложения по модулю 1.</p>
+<p>Теорема об изоморфизме. Пусть $\phi\colon(G,\circ)\to(H,*)$ — гомоморфизм. Тогда функция</p>
+<p>$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</p>
+<p>является изоморфизмом, и поэтому</p>
+<p>$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</p>
+<h2>Теорема Тейлора</h2>
+<p>Пусть функция $f$ является $(n+1)$-раз дифференцируемой на открытом интервале, содержащем точки $a$ и $x$. Тогда</p>
+<p>$$
+f(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</p>
+<p>где</p>
+<p>$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</p>
+<p>для некоторого $c$ между $a$ и $x$.</p>
+<p>В $\KaTeX$ нет опции выравнивания по правому краю, поэтому для нумерации уравнений используется дополнительный выровненный столбец. Они смещаются вправо с помощью интервала mkern, по умолчанию \mkern100mu. Можно использовать как окружение align, так и align*, а также \tag и \notag.</p>
+<h2>Окружение Align</h2>
+<p>$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</p>
+<h2>Окружение Align*</h2>
+<p>$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \
+&amp;= \frac{\pi^3}{16(N+1)} \
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \
+\text{таким образом} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</p>
+<h2>Сумма ряда</h2>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</p>
+<h2>Символ произведения</h2>
+<p>$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ для }\lvert q\rvert &lt; 1.
+$$</p>
+<h2>Векторное произведение</h2>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</p>
+<h2>Уравнения Максвелла</h2>
+<p>$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</p>
+<h2>Греческие буквы</h2>
+<p>$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</p>
+<h2>Стрелки</h2>
+<p>$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</p>
+<h2>Символы</h2>
+<p>$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</p>
+<p><em>Примеры взяты из <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a></em></p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Руководство по стилю Markdown]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/markdown-style-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/markdown-style-guide/</guid>
+            <pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Вот несколько примеров базового синтаксиса Markdown и их стилистических эффектов в теме Retypeset. Чтобы создать заголовки, добавьте знаки р...]]></description>
+            <content:encoded><![CDATA[<p>Вот несколько примеров базового синтаксиса Markdown и их стилистических эффектов в теме Retypeset.</p>
+<h2>Заголовки</h2>
+<p>Чтобы создать заголовки, добавьте знаки решётки <code>#</code> перед словом или фразой. Количество знаков решётки должно соответствовать уровню заголовка.</p>
+<h3>Синтаксис</h3>
+<pre><code># Заголовок 1
+## Заголовок 2
+### Заголовок 3
+#### Заголовок 4
+##### Заголовок 5
+###### Заголовок 6
+</code></pre>
+<h3>Результат</h3>
+<h1>Заголовок 1</h1>
+<h2>Заголовок 2</h2>
+<h3>Заголовок 3</h3>
+<h4>Заголовок 4</h4>
+<h5>Заголовок 5</h5>
+<h6>Заголовок 6</h6>
+<h2>Абзацы</h2>
+<p>Для создания абзацев используйте пустую строку для разделения одной или нескольких строк текста.</p>
+<h3>Синтаксис</h3>
+<pre><code>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+
+Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+</code></pre>
+<h3>Результат</h3>
+<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
+<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
+<h2>Изображения</h2>
+<p>Чтобы добавить изображения, добавьте восклицательный знак <code>!</code>, за которым следует альтернативный текст в квадратных скобках <code>[]</code> и путь или URL к изображению в круглых скобках <code>()</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>![Описание изображения](../_images/image-01.jpeg)
+
+![Описание изображения](https://image.example.com/image-01.webp)
+</code></pre>
+<h3>Результат</h3>
+<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="Описание изображения" /></p>
+<h2>Цитаты</h2>
+<p>Чтобы создать цитаты, добавьте символ <code>&gt;</code> и пробел перед текстом. Цитаты могут содержать несколько абзацев. Для указания источников используйте теги <code>&lt;cite&gt;</code> или <code>&lt;footer&gt;</code>, а сноски можно вставить с помощью синтаксиса <code>[^1]</code> или <code>[^note]</code>.</p>
+<h3>Цитата с несколькими абзацами</h3>
+<h4>Синтаксис</h4>
+<pre><code>&gt; Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&gt;
+&gt; **Обратите внимание**, что внутри цитаты можно использовать _синтаксис Markdown_.
+</code></pre>
+<h4>Результат</h4>
+<blockquote>
+<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.</p>
+<p><strong>Обратите внимание</strong>, что внутри цитаты можно использовать <em>синтаксис Markdown</em>.</p>
+</blockquote>
+<h3>Цитата с указанием источников</h3>
+<h4>Синтаксис</h4>
+<pre><code>&gt; Не общайтесь путём разделения памяти, разделяйте память путём общения.
+&gt;
+&gt; — &lt;cite&gt;Роб Пайк[^1]&lt;/cite&gt;
+
+[^1]: Приведённая выше цитата взята из [выступления](https://www.youtube.com/watch?v=PAAkCSZUG1c) Роба Пайка на Gopherfest, 18 ноября 2015 года.
+</code></pre>
+<h4>Результат</h4>
+<blockquote>
+<p>Не общайтесь путём разделения памяти, разделяйте память путём общения.</p>
+<p>— &lt;cite&gt;Роб Пайк[^1]&lt;/cite&gt;</p>
+</blockquote>
+<p>[^1]: Приведённая выше цитата взята из <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">выступления</a> Роба Пайка на Gopherfest, 18 ноября 2015 года.</p>
+<h2>Таблицы</h2>
+<p>Чтобы добавить таблицы, используйте три или более дефиса <code>---</code> для создания заголовка каждого столбца и вертикальные линии <code>|</code> для разделения столбцов.</p>
+<h3>Синтаксис</h3>
+<pre><code>| Курсив     | Жирный      | Код    |
+| ---------- | ----------- | ------ |
+| _курсив_   | **жирный**  | `код`  |
+| _курсив_   | **жирный**  | `код`  |
+</code></pre>
+<h3>Результат</h3>
+<table>
+<thead>
+<tr>
+<th>Курсив</th>
+<th>Жирный</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>курсив</em></td>
+<td><strong>жирный</strong></td>
+<td><code>код</code></td>
+</tr>
+<tr>
+<td><em>курсив</em></td>
+<td><strong>жирный</strong></td>
+<td><code>код</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Блоки кода</h2>
+<p>Чтобы создать блоки кода, оберните ваш код тремя обратными апострофами <code>```</code>. Вы можете указать язык программирования после открывающих обратных апострофов, чтобы указать, как раскрашивать и стилизовать ваш код, например: html, javascript, css, markdown и т.д.</p>
+<h3>Синтаксис</h3>
+<pre><code>```html
+&lt;!doctype html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Пример документа HTML5&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Тест&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+<h3>Результат</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Пример документа HTML5&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Тест&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Типы списков</h2>
+<h3>Упорядоченный список</h3>
+<h4>Синтаксис</h4>
+<pre><code>1. Первый пункт
+2. Второй пункт
+3. Третий пункт
+</code></pre>
+<h4>Результат</h4>
+<ol>
+<li>Первый пункт</li>
+<li>Второй пункт</li>
+<li>Третий пункт</li>
+</ol>
+<h3>Неупорядоченный список</h3>
+<h4>Синтаксис</h4>
+<pre><code>- Пункт списка
+- Графический элемент
+- И ещё один пункт
+</code></pre>
+<h4>Результат</h4>
+<ul>
+<li>Пункт списка</li>
+<li>Графический элемент</li>
+<li>И ещё один пункт</li>
+</ul>
+<h3>Вложенный список</h3>
+<h4>Синтаксис</h4>
+<pre><code>- Фрукты
+  - Яблоко
+  - Апельсин
+  - Банан
+- Молочные продукты
+  - Молоко
+  - Сыр
+</code></pre>
+<h4>Результат</h4>
+<ul>
+<li>Фрукты
+<ul>
+<li>Яблоко</li>
+<li>Апельсин</li>
+<li>Банан</li>
+</ul>
+</li>
+<li>Молочные продукты
+<ul>
+<li>Молоко</li>
+<li>Сыр</li>
+</ul>
+</li>
+</ul>
+<h2>Другие элементы</h2>
+<p>Включая верхний индекс <code>&lt;sup&gt;</code>, нижний индекс <code>&lt;sub&gt;</code>, аббревиатуру <code>&lt;abbr&gt;</code>, зачёркнутый текст <code>&lt;del&gt;</code>, волнистое подчёркивание <code>&lt;u&gt;</code>, ввод с клавиатуры <code>&lt;kbd&gt;</code>, выделение <code>&lt;mark&gt;</code> и горизонтальную линию <code>&lt;hr&gt;</code>.</p>
+<h3>Синтаксис</h3>
+<pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+
+X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+
+&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; — это формат растровых изображений.
+
+Хорошие писатели всегда проверяют &lt;u title="правописание"&gt;правописание&lt;/u&gt;.
+
+Нажмите &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt;, чтобы завершить сеанс.
+
+Нет &lt;del&gt;ничего&lt;/del&gt; ни хорошего, ни плохого кода, но запуск делает его таковым.
+
+Большинство &lt;mark&gt;саламандр&lt;/mark&gt; ведут ночной образ жизни и охотятся на насекомых, червей и других мелких существ.
+
+Используйте три дефиса `---` или тег `&lt;hr&gt;` для создания горизонтальной линии, как показано ниже.
+
+---
+</code></pre>
+<h3>Результат</h3>
+<p>H&lt;sub&gt;2&lt;/sub&gt;O</p>
+<p>X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;</p>
+<p>&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; — это формат растровых изображений.</p>
+<p>Хорошие писатели всегда проверяют &lt;u title="правописание"&gt;правописание&lt;/u&gt;.</p>
+<p>Нажмите &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt;, чтобы завершить сеанс.</p>
+<p>Нет &lt;del&gt;ничего&lt;/del&gt; ни хорошего, ни плохого кода, но запуск делает его таковым.</p>
+<p>Большинство &lt;mark&gt;саламандр&lt;/mark&gt; ведут ночной образ жизни и охотятся на насекомых, червей и других мелких существ.</p>
+<p>Используйте три дефиса <code>---</code> или тег <code>&lt;hr&gt;</code> для создания горизонтальной линии, как показано ниже.</p>
+<hr />
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Руководство по теме]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/theme-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/theme-guide/</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset — это статическая тема блога, основанная на фреймворке Astro. Данное руководство знакомит с тем, как изменять настройки темы и соз...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset — это статическая тема блога, основанная на фреймворке <a href="https://astro.build/">Astro</a>. Данное руководство знакомит с тем, как изменять настройки темы и создавать новые статьи, помогая вам быстро настроить личный блог.</p>
+<h2>Конфигурация темы</h2>
+<p>Настройте свой блог путем изменения конфигурационного файла <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a>.</p>
+<h3>Информация о сайте</h3>
+<pre><code>site: {
+  // заголовок сайта
+  title: 'Retypeset'
+  // подзаголовок сайта
+  subtitle: 'Revive the beauty of typography'
+  // описание сайта
+  description: 'Retypeset is a static blog theme...'
+  // использовать многоязычные заголовок/подзаголовок/описание из src/i18n/ui.ts вместо статических выше
+  i18nTitle: true // true | false
+  // имя автора
+  author: 'radishzz'
+  // адрес сайта
+  url: 'https://retypeset.radishzz.cc'
+  // базовый путь
+  // корневая директория для всех страниц и ресурсов
+  base: '/' // например, '/blog', '/docs'
+  // url фавикона
+  // рекомендуемые форматы: svg, png или ico
+  favicon: '/icons/favicon.svg' // или https://example.com/favicon.svg
+}
+</code></pre>
+<h3>Цвет темы</h3>
+<pre><code>color: {
+  // режим темы по умолчанию
+  mode: 'light' // light | dark | auto
+  // светлый режим
+  light: {
+    // основной цвет
+    // используется для заголовков, эффекта наведения и т.д.
+    primary: 'oklch(25% 0.005 298)'
+    // вторичный цвет
+    // используется для текста постов
+    secondary: 'oklch(40% 0.005 298)'
+    // цвет фона
+    background: 'oklch(96% 0.005 298)'
+    // цвет выделения
+    // используется для панели навигации, выделенного текста и т.д.
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+  // темный режим
+  dark: {
+    // основной цвет
+    primary: 'oklch(92% 0.005 298)'
+    // вторичный цвет
+    secondary: 'oklch(77% 0.005 298)'
+    // цвет фона
+    background: 'oklch(22% 0.005 298)'
+    // цвет выделения
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)'
+  }
+}
+</code></pre>
+<h3>Глобальные настройки</h3>
+<pre><code>global: {
+  // язык по умолчанию
+  // язык корневого пути сайта '/'
+  locale: 'zh' // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
+  // дополнительные языки
+  // создает многоязычные пути, такие как '/en/' '/es/'
+  // не указывайте код языка, указанный выше, можно оставить пустым массивом []
+  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // стиль шрифта статьи
+  fontStyle: 'sans' // sans | serif
+  // формат даты статьи
+  // YYYY-MM-DD | MM-DD-YYYY | DD-MM-YYYY | MMM D YYYY | D MMM YYYY
+  // 2025-04-13, 04-13-2025, 13-04-2025, Apr 13 2025，13 Apr 2025
+  dateFormat: 'YYYY-MM-DD'
+  // включить оглавление
+  toc: true // true | false
+  // включить математический рендеринг katex
+  katex: true // true | false
+  // уменьшить движение
+  reduceMotion: false // true | false
+}
+</code></pre>
+<h3>Система комментариев</h3>
+<pre><code>comment: {
+  // включить систему комментариев
+  enabled: true // true | false
+  // система комментариев giscus
+  giscus: {
+    repo: ''
+    repoId: ''
+    category: ''
+    categoryId: ''
+    mapping: 'pathname'
+    strict: '0'
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    inputPosition: 'bottom'
+  }
+  // система комментариев twikoo
+  twikoo: {
+    envId: ''
+    // version: версию фронтенда можно изменить в package.json
+  }
+  // система комментариев waline
+  waline: {
+    // URL сервера
+    serverURL: 'https://retypeset-comment.radishzz.cc'
+    // URL эмодзи
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'
+      // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji'
+      // дополнительные эмодзи: https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // поиск gif
+    search: false // true | false
+    // загрузчик изображений
+    imageUploader: false // true | false
+  }
+}
+</code></pre>
+<h3>SEO</h3>
+<pre><code>seo: {
+  // @twitter ID
+  twitterID: '@radishzz_'
+  // верификация сайта
+  verification: {
+    // консоль поиска Google
+    google: 'AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM'
+    // инструменты вебмастера Bing
+    bing: '64708CD514011A7965C84DDE1D169F87'
+    // вебмастер Яндекса
+    yandex: ''
+    // поиск Baidu
+    baidu: ''
+  }
+  // Google Analytics
+  googleAnalyticsID: ''
+  // Umami Analytics
+  umamiAnalyticsID: 'dab0e4b9-9cbf-43c3-af60-b09d3b545c38'
+  // верификация folo
+  folo: {
+    // ID ленты
+    feedID: ''
+    // ID пользователя
+    userID: ''
+  }
+  // ключ доступа apiflash
+  // генерировать скриншоты веб-сайта для изображений open graph
+  // получите ключ доступа на: https://apiflash.com/
+  apiflashKey: ''
+}
+</code></pre>
+<h3>Настройки подвала</h3>
+<pre><code>footer: {
+  // социальные ссылки
+  links: [
+    {
+      name: 'RSS',
+      url: '/atom.xml', // или /rss.xml
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/radishzzz/astro-theme-retypeset',
+    },
+    {
+      name: 'Email',
+      url: 'email@radishzz.cc',
+    }
+    // {
+    //   name: 'X',
+    //   url: 'https://x.com/radishzz_',
+    // },
+  ]
+  // год начала работы веб-сайта
+  startYear: 2025
+}
+</code></pre>
+<h3>Предзагрузка ресурсов</h3>
+<pre><code>preload: {
+  // URL хостинга изображений
+  // оптимизировать удаленные изображения и создавать заполнители низкого качества
+  imageHostURL: 'image.radishzz.cc'
+  // пользовательский скрипт Google Analytics
+  // для пользователей, которые проксируют скрипты отслеживания через собственный домен
+  customGoogleAnalyticsJS: ''
+  // пользовательский скрипт Umami Analytics
+  // для пользователей, которые самостоятельно разворачивают Umami или проксируют скрипты отслеживания через собственный домен
+  customUmamiAnalyticsJS: 'https://views.radishzz.cc/script.js'
+}
+</code></pre>
+<h2>Дополнительная конфигурация</h2>
+<p>Кроме файла конфигурации <code>src/config.ts</code>, некоторые параметры находятся в других файлах.</p>
+<h3>Подсветка синтаксиса</h3>
+<p>Темы подсветки синтаксиса для блоков кода.</p>
+<pre><code>// astro.config.ts
+
+shikiConfig: {
+  // Доступные темы: https://shiki.style/themes
+  // Цвет фона по умолчанию следует теме блога, а не теме подсветки синтаксиса
+  themes: {
+    light: 'github-light' // Светлая тема
+    dark: 'github-dark' // Темная тема
+  }
+}
+</code></pre>
+<h3>Отрывок статьи</h3>
+<p>Количество символов для автоматических отрывков статей.</p>
+<pre><code>// src/utils/description.ts
+
+const excerptLengths: Record&lt;ExcerptScene, {
+  cjk: number // Китайский, Японский, Корейский
+  other: number // Другие языки
+}&gt; = {
+  list: { // Список записей на главной странице
+    cjk: 120, // Автоматически берет первые 120 символов
+    other: 240, // Автоматически берет первые 240 символов
+  },
+}
+</code></pre>
+<h3>Open Graph</h3>
+<p>Стили <a href="https://orcascan.com/tools/open-graph-validator?url=https%3A%2F%2Fretypeset.radishzz.cc%2Fru%2Fposts%2Ftheme-guide%2F">карточек Open Graph для социальных сетей</a>.</p>
+<pre><code>// src/pages/og/[...image].ts
+
+getImageOptions: (_path, page) =&gt; ({
+  logo: {
+    path: './public/icons/og-logo.png', // Требуется локальный путь и формат PNG
+    size: [250], // Ширина логотипа
+  },
+  font: {
+    title: { // Заголовок
+      families: ['Noto Sans SC'], // Шрифт
+      weight: 'Bold', // Вес
+      color: [34, 33, 36], // Цвет
+      lineHeight: 1.5, // Высота строки
+    },
+  },
+  fonts: [ // Пути к шрифтам (локальные или удаленные)
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+  ],
+  bgGradient: [[242, 241, 245]], // Цвет фона
+  // Дополнительные настройки: https://github.com/delucis/astro-og-canvas/tree/latest/packages/astro-og-canvas
+})
+</code></pre>
+<h3>RSS-лента</h3>
+<p>Стили <a href="https://retypeset.radishzz.cc/ru/atom.xml">страницы RSS-ленты</a>.</p>
+<pre><code>
+
+&lt;style type="text/css"&gt;
+body{color:oklch(25% 0.005 298)} /* Цвет шрифта */
+.bg-white{background-color:oklch(0.96 0.005 298)!important} /* Цвет фона */
+.text-gray{color:oklch(0.25 0.005 298 / 75%)!important} /* Вторичный цвет шрифта */
+&lt;/style&gt;
+</code></pre>
+<h2>Создание новой статьи</h2>
+<p>Выполните команду <code>pnpm new-post &lt;filename&gt;</code> для создания новой статьи, которую затем можно редактировать в директории <code>src/content/posts/</code>.</p>
+<pre><code>pnpm new-post                      -&gt;  src/content/posts/new-post.md
+pnpm new-post first-post           -&gt;  src/content/posts/first-post.md
+pnpm new-post 2025/03/first-post   -&gt;  src/content/posts/2025/03/first-post.md
+pnpm new-post first-post.mdx       -&gt;  src/content/posts/first-post.mdx
+</code></pre>
+<h3>Front Matter</h3>
+<p>Только поля <code>title</code> и <code>published</code> являются обязательными, все остальные конфигурации можно опустить.</p>
+<pre><code>---
+# Обязательные
+title: Руководство по теме
+published: 2025-01-26
+
+# Опциональные
+description: Первые 240 символов статьи будут автоматически выбраны в качестве отрывка.
+updated: 2025-03-26
+tags:
+  - Тема блога
+  - Руководство
+
+# Расширенные, опциональные
+draft: true/false
+pin: 0-99
+toc: true/false
+lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+abbrlink: theme-guide
+---
+</code></pre>
+<h3>Расширенные настройки</h3>
+<h4>draft</h4>
+<p>Отметить статью как черновик. Когда установлено значение true, статью нельзя опубликовать, и она доступна только для локального предварительного просмотра. По умолчанию — false.</p>
+<h4>pin</h4>
+<p>Закрепить статью вверху. Чем выше число, тем выше приоритет закрепленной статьи. По умолчанию — 0, что означает отсутствие закрепления.</p>
+<h4>toc</h4>
+<p>Генерировать оглавление. Показывает заголовки от h2 до h4. По умолчанию определяется глобальным параметром <code>global.toc</code>, но может быть изменен индивидуально в каждой статье.</p>
+<h4>lang</h4>
+<p>Указывает язык статьи. Можно указать только один язык. Если не указано, статья будет отображаться по умолчанию во всех языковых путях.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+
+# lang: ''
+src/content/posts/apple.md  -&gt;  example.com/posts/apple/
+                            -&gt;  example.com/es/posts/apple/
+                            -&gt;  example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md  -&gt;  example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md  -&gt;  example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md  -&gt;  example.com/ru/posts/apple/
+</code></pre>
+<h4>abbrlink</h4>
+<p>Настраивает URL статьи. Может содержать только строчные буквы, цифры и дефисы <code>-</code>.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+# lang: 'es'
+
+# abbrlink: ''
+src/content/posts/apple.md           -&gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: 'banana'
+src/content/posts/apple.md           -&gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/banana/
+</code></pre>
+<h3>Форматирование смешанного текста</h3>
+<p>Запустите <code>pnpm format-posts</code> для оптимизации форматирования в Markdown-файлах в директории <code>src/content/</code>. Эта команда автоматически исправляет пробелы между символами CJK (китайский, японский, корейский) и латиницей, корректирует знаки пунктуации и улучшает общую читаемость текста.</p>
+<pre><code>pnpm format-posts
+🔍 Scanning Markdown files...
+📦 Found 56 Markdown files
+✅ src/content/posts/guides/Theme Guide-ja.md
+✅ src/content/posts/guides/Theme Guide-zh-tw.md
+✅ src/content/posts/guides/Theme Guide-zh.md
+✨ Formatted 3 files successfully
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Терпимость и Свобода]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/tolerance-freedom/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/tolerance-freedom/</guid>
+            <pubDate>Mon, 16 Mar 1959 00:00:00 GMT</pubDate>
+            <description><![CDATA[Семнадцать или восемнадцать лет назад я в последний раз встречался с мистером Джорджем Линкольном Берром, великим историком из моей альма-ма...]]></description>
+            <content:encoded><![CDATA[<p>Семнадцать или восемнадцать лет назад я в последний раз встречался с мистером Джорджем Линкольном Берром, великим историком из моей альма-матер, Корнелльского университета. Мы говорили о британском историке лорде Актоне, который всю жизнь планировал написать «Историю свободы», но умер, не успев ее закончить. В тот день мистер Булл много говорил, и одну его фразу я запомнил навсегда. Он сказал: «Чем старше я становлюсь, тем больше я чувствую, что толерантность важнее свободы».</p>
+<p>Мистер Булл умер более десяти лет назад, но чем больше я об этом думаю, тем больше чувствую, что это неизгладимый девиз. У меня самого такое же чувство: «Чем старше я становлюсь, тем больше я чувствую, что толерантность важнее свободы». Иногда мне даже кажется, что толерантность — это корень всякой свободы: без толерантности нет свободы.</p>
+<p>Когда мне было семнадцать лет (1908), я опубликовал несколько статей в «Цзинье Сюньбао» под названием «Никаких призраков». Одна из них была критикой романов «Путешествие на Запад» и «Инвеститура богов». Я сказал:</p>
+<p>В «Книге обрядов» сказано: «Если кто-либо использует гадание, основанное на времени духов и богов, чтобы ввести людей в заблуждение, он должен быть убит». Мне только интересно, почему те, кто выступал против правящей власти, и те, кто на протяжении тысяч лет надеялся спасти мир и просветить людей, были настолько невежественны в этом, что теории, которые сбивают мир с толку и обманывают людей, смогли восторжествовать, и в результате наша китайская нация была ввергнута в мир кромешной тьмы!</p>
+<p>Это «оборонительная» позиция, которую ребенок не может терпеть. В то время я уже был атеистом и не верил в духов, поэтому я сделал такое безумное заявление, чтобы разрушить суеверия и реализовать классическое правило из «Ван Чжи» (глава в «Книге обрядов»): «Если кто-то использует гадание, основанное на времени духов и богов, чтобы сбить людей с толку, его следует убить!»</p>
+<p>Конечно, в то время я и представить себе не мог, что парень, который это сказал, с таким энтузиазмом напишет исследование на 20 000 слов по «Путешествию на Запад» пятнадцать лет спустя (1923)! Конечно, в то время я и представить себе не мог, что этот парень спустя два или три десятилетия все еще будет тщательно искать материалы, которые могли бы подтвердить автора «Инвеституры богов»! В то время я никогда не задумывался об историческом значении этой фразы в «Государстве». Полный текст этого раздела «Королевской системы» выглядит следующим образом:</p>
+<p>Те, кто анализирует слова и нарушает законы, путает названия и вносит изменения, а также использует нетрадиционные способы нарушить политику, будут убиты. Издавайте непристойные звуки, носите странную одежду, используйте странные навыки и инструменты, чтобы запутать толпу, а затем убивайте ее. Если человек действует лживо и тверд, говорит лживо и красноречив, изучает ложь и обширен, следует лжи и вводит в заблуждение массы, он будет убит. Использование гаданий для определения времени и даты с помощью призраков и богов с целью запутать людей приведет к убийству. Эти четыре наказания не следует слушать.</p>
+<p>Пятьдесят лет назад я понятия не имел, что слово «наказывать» в этом отрывке было классическим основанием для запрета новых идей, новых академических дисциплин, новых верований и новых искусств в условиях автократического режима Китая. В то время я с энтузиазмом относился к идее «разрушения суеверий», поэтому поддержал четвертое из «Четырех наказаний»: «Тот, кто использует духов и богов для предсказания даты и времени, чтобы сбить людей с толку, будет убит». Я понятия не имел, что четвертое наказание — «использование духов и богов... для того, чтобы сбить людей с толку» и первое наказание — «приверженность левым доктринам для подрыва политики» — оба могут быть использованы для уничтожения свободы религиозных убеждений. В то время я также не заметил, что в аннотации Чжэн Сюаня Гуншу Бань использовался в качестве примера «странных навыков и необычных инструментов»; также я не заметил, что в «Справедливости» Кун Инды приводится пример того, как «Конфуций был вождем Лу в течение семи дней и убил Шао Чжэнмао», чтобы объяснить «поступки лживые и твердые, речи лживые и красноречивые, обучение лжи и широта взглядов, следование лжи и введение людей в заблуждение и убийство». Таким образом, второе наказание может быть использовано для запрета свободы художественного творчества, а также для «убийства» многих ученых, которые изобрели «уникальные навыки и оборудование». Таким образом, третье наказание может быть использовано для уничтожения свободы мысли, свободы слова и свободы публикаций.</p>
+<p>Пятьдесят лет назад я процитировал четвертое наказание из «Книги обрядов» и захотел «убить» авторов «Путешествия на Запад» и «Инвеституры богов». В то время я, конечно, не мог и мечтать о том, что десять лет спустя, когда я буду преподавать в Пекинском университете, некоторые столь же «нравственные» господа захотят процитировать третье наказание из «Книги обрядов», чтобы «убить» меня и моих друзей. Тогда я хотел «убить» кого-то, а позже кто-то хотел «убить» меня. Мотивы были одинаковыми: мы оба потеряли терпимость просто потому, что немного злились на справедливость.</p>
+<p>Я рассказываю историю о том, как пятьдесят лет назад я выступал за «использование гаданий для запутывания масс и их убийства», чтобы проиллюстрировать: чем старше я становлюсь, тем больше я чувствую, что «толерантность» важнее «свободы».</p>
+<p>Я и сегодня остаюсь атеистом. Я не верю в Бога с волей, и не верю в бессмертие души. Но есть одно самое фундаментальное различие между моим атеизмом и атеизмом Коммунистической партии. Я могу терпеть все религии, которые верят в Бога, и я могу терпеть всех людей, которые искренне верят в религию. Коммунистическая партия сама пропагандирует атеизм, и она хочет уничтожить все верования в Бога и запретить все религии, которые верят в Бога. Это было мое наивное, высокомерное и нетерпимое отношение пятьдесят лет назад.</p>
+<p>Я всегда чувствовал, что подавляющее большинство людей в этой стране, этом обществе и этом мире верят в Бога. Они настолько великодушны, что могут терпеть мой атеизм, терпеть такого человека, как я, который не верит в Бога или бессмертие души, и терпеть мою свободу выражать свои атеистические мысли дома и за рубежом. Никто никогда не бросал в меня камни, не запирал в тюрьме, не привязывал к куче дров и не сжигал заживо из-за этого. На самом деле я наслаждаюсь терпимостью и свободой в этом мире уже более сорока лет. Я думаю, что терпимость, которую проявляют ко мне эта страна, это общество и этот мир, прекрасна, и я должен быть за это благодарен.</p>
+<p>Поэтому я всегда считаю, что должен отплатить обществу за его терпимость ко мне терпимым отношением. Поэтому я сам не верю в Бога, но я могу искренне понять всех тех, кто верит в Бога, и я могу искренне терпеть и уважать все религии, которые верят в Бога.</p>
+<p>Я хочу отплатить обществу за терпимость ко мне терпимостью, потому что чем старше я становлюсь, тем больше я ощущаю важность терпимости. Если бы общество не обладало такой толерантностью, я бы никогда не смог наслаждаться свободой смело сомневаться и свободой открыто отстаивать атеизм на протяжении более 40 лет.</p>
+<p>В истории религиозной свободы, истории свободы мысли и истории политической свободы мы видим, что толерантность является наиболее ценной и редкой позицией. Людям всегда нравятся сходства и не нравятся различия. Им всегда не нравятся убеждения, мысли и поведение, которые отличаются от их собственных. Это корень нетерпимости. Нетерпимость — это просто неспособность терпеть новые идеи и убеждения, которые отличаются от моих собственных. Религиозная группа всегда считает, что ее религиозные убеждения верны и не могут быть ошибочными, поэтому она всегда считает, что религиозные убеждения, отличающиеся от ее собственных, должны быть ошибочными и должны быть ересью или культом. Политическая группа всегда считает, что ее политические положения верны и не могут быть ошибочными, поэтому она всегда считает, что те политические взгляды, которые отличаются от ее собственных, должны быть ошибочными и должны быть врагами.</p>
+<p>Все преследования еретиков, все уничтожения «инакомыслящих», все запреты на свободу вероисповедания и все притеснения мысли и слова вызваны твердой верой в то, что человек никогда не может ошибаться. Поскольку они твердо убеждены, что никогда не могут ошибаться, они не терпят никаких идей или убеждений, которые отличаются от их собственных.</p>
+<p>Рассмотрим историю Реформации в Европе. Мартин Лютер, Жан Кальвин и другие поднялись на реформу религии, поскольку были недовольны нетерпимостью и отсутствием свободы Римско-католической церкви. Однако после победы протестантизма в Центральной и Северной Европе протестантские лидеры постепенно стали нетерпимы и больше не позволяли другим критиковать свои новые доктрины. Кальвин обладал религиозной властью в Женеве, но на самом деле он обвинил Сервета, ученого, который осмелился мыслить независимо и критиковать догматы Кальвина, в «ереси», приковал его к столбу, обложил дровами и медленно сжег заживо. Это произошло 23 октября 1553 года.</p>
+<p>Трагическая история этого мученика Сервета в высшей степени достойна памяти и размышлений людей. Первоначальной целью движения Реформации была борьба за «христианскую свободу» и «свободу совести». Зачем Кальвину и его последователям сжигать на медленном огне независимо мыслящего протестанта? Почему ученик Кальвина (а затем его преемник на посту религиозного диктатора Женевы) де Безе заявил, что «свобода совести — это догмат дьявола»?</p>
+<p>Основная причина в том, что я твердо верю, что я никогда не ошибаюсь. Преданный религиозный реформатор, такой как Кальвин, твердо верил, что его совесть действительно представляет заповеди Бога, а его уста и перо действительно представляют волю Бога. Так могли ли его мнения быть ошибочными? Возможно ли, что он ошибается? После того, как Сервет был сожжен на костре, Кальвин подвергся критике со стороны многих людей. В 1554 году Кальвин опубликовал текст в свою защиту, в котором он без колебаний заявил: «Полномочия сурово наказывать еретиков неоспоримы, потому что это говорит сам Бог. ... Эта работа — борьба во славу Божию».</p>
+<p>Если Бог говорит сам за себя, может ли он ошибаться? Разве неправильно бороться во славу Божию? Этот менталитет «я не могу ошибаться» является корнем всей нетерпимости. Я твердо верю, что мои собственные убеждения непогрешимы, что мои мнения «справедливы», и что те, кто выступает против меня, конечно же, «еретики». Мои мнения представляют волю Божью, а мнения тех, кто мне противостоит, конечно же, являются «дьявольской догмой».</p>
+<p>Это урок, которому нас учит история религиозной свободы: толерантность является основой всех свобод; без толерантности к «другим» не будет признания того, что «другие» религиозные убеждения могут пользоваться свободой. Однако поскольку нетерпимое отношение основано на психологической привычке «мои убеждения не могут быть ошибочными», терпимость к «другим» является наиболее редким и трудно поддающимся развитию видом терпимости.</p>
+<p>В политической мысли и в обсуждениях социальных проблем мы все чувствуем, что нетерпимость распространена, а толерантность всегда редка. Позвольте мне привести пример истории старого друга, который умер. Более 40 лет назад мы начали кампанию по продвижению народной литературы в журнале New Youth. Я написал Чэнь Дусю из Соединенных Штатов, сказав:</p>
+<p>Правильность и неправильность этого вопроса не могут определиться за день или ночь, и это не могут сделать один или два человека. Я искренне надеюсь, что люди в нашей стране сохранят спокойствие и будут работать вместе с нами над изучением этой проблемы. После тщательного обсуждения станет ясно, что правильно, а что нет. Мы уже подняли знамя революции, и хотя мы не можем отступить, мы никогда не посмеем считать то, что мы отстаиваем, непременно правильным и не позволим другим исправлять это.</p>
+<p>Дусю ответил мне в «Новой молодежи»:</p>
+<p>По моему мнению, принятие несогласных мнений и свободная дискуссия являются принципами развития академических исследований. Однако идея о том, что разговорный китайский язык должен быть ортодоксальным способом улучшения китайской литературы, настолько ясно изложена в своей правоте и неправоте, что оппонентам нельзя давать никакого места для обсуждения. Мы должны считать то, что отстаиваем, абсолютно правильным и не позволим другим поправлять нас.</p>
+<p>Когда я это увидел, я подумал, что это очень произвольное отношение. Сейчас, более 40 лет спустя, я все еще не могу забыть слова Дусю. Я все еще считаю, что эта позиция «то, что мы отстаиваем, должно быть абсолютно правильным» является очень нетерпимой позицией, которая, скорее всего, вызовет негодование и противодействие других.</p>
+<p>Однажды я сказал, что должен отплатить обществу за терпимость ко мне терпимостью. Я часто думаю, что нам все еще нужно дисциплинировать себя: если мы хотим, чтобы другие терпели и понимали наши взгляды, мы должны сначала развить в себе способность терпимо относиться к взглядам других людей и понимать их. По крайней мере, нам следует воздержаться от восприятия того, что мы отстаиваем, как абсолютное право. Мы, воспитанные на экспериментаторстве, не признаем существование «абсолютной истины» и, конечно же, не можем «принимать то, что мы отстаиваем, за абсолютную истину».</p>
+<p>48, 3, 12 утра</p>
+<p>(Первоначально опубликовано в журнале «Free China» в Тайбэе, том 20, № 6, 16 марта 1959 г.)</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Моя старая родина]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/my-native-heath/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/my-native-heath/</guid>
+            <pubDate>Mon, 10 Jan 1921 00:00:00 GMT</pubDate>
+            <description><![CDATA[Было очень холодно, когда после более чем двадцатилетнего отсутствия я отправился навестить свою родную пустошь, расположенную более чем в...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="_Here's the description of the picture" /></p>
+<p>Было очень холодно, когда после более чем двадцатилетнего отсутствия я отправился навестить свою родную пустошь, расположенную более чем в двух тысячах ли отсюда.</p>
+<p>Это было в разгар зимы, и когда я приближался к месту назначения, небо стало пасмурным, и холодный ветер начал стонать в лодке. Глядя сквозь трещины в покрытии из циновки, я увидел несколько унылых и заброшенных деревень, разбросанных по ландшафту под бледно-желтым небом, без каких-либо признаков жизни, и я не мог не испытать чувство грусти.</p>
+<p>Ах, это не могла быть та деревня, о которой я постоянно думал последние двадцать лет!</p>
+<p>Страна, которую я помнил, была совершенно иной и намного лучше этой. Но когда я пытался вспомнить ее особую красоту и описать ее особые достоинства, я не мог вспомнить ни одной, и я понял, что она, в конце концов, была примерно такой, какой я ее сейчас вижу. Моя родная пустошь, объяснил я себе, должно быть, была такой всегда. Она могла не сделать никакого прогресса, но в ней не было ничего особенно печального; она казалась мне такой только из-за состояния моих собственных чувств, которое было не совсем веселым по случаю этого визита.</p>
+<p>Это был, по сути, прощальный визит. Мы заранее продали, с согласия всех заинтересованных лиц, старый дом, в котором наша семья жила несколько поколений, и согласились передать его новым владельцам до начала года. Нам было необходимо попрощаться со старым домом и привычной сельской местностью и обосноваться в другой части страны, где я зарабатывал на жизнь.</p>
+<p>Я приехал в наш дом на следующий день, рано утром. Сломанные стебли сухой травы, которые росли между черепицами крыши, шуршали на ветру и лучше слов объясняли, почему старый дом должен был сменить владельцев. Было очень тихо, так как наша ветвь семьи была последней, кто переехал. Моя мать встретила меня у ворот нашего собственного поместья, вскоре к ней присоединился мой восьмилетний племянник Хун-эр, который выбежал.</p>
+<p>Моя мать была рада меня видеть, но я мог заметить, что в ней также был след печали. Она сказала мне сесть и отдохнуть, выпить чаю и не говорить о переезде до позднего вечера. Поскольку Хун-эр никогда меня раньше не видел, он стоял и пристально наблюдал за мной издалека.</p>
+<p>В конце концов мы дошли до вопроса о переезде. Я сказал, что снял дом и купил несколько предметов мебели, и что нам нужно продать всю старую мебель и купить новую на вырученные деньги. Моя мать одобрила мои действия. Это должно было быть довольно простым делом, поскольку большая часть упаковки уже была сделана, а некоторые крупные предметы мебели проданы. Единственная сложность заключалась в том, чтобы заставить покупателей заплатить.</p>
+<p>«После того, как ты отдохнешь несколько дней и навестишь наших родственников, мы сможем отправиться в путь», — сказала мать.</p>
+<p>«Да», — ответил я.</p>
+<p>«Кстати, каждый раз, когда Юн-ту приходит к нам домой, он всегда спрашивает о тебе. Он очень хочет тебя увидеть. Я послал ему сообщение, сообщив вероятную дату твоего прибытия. Он скоро будет здесь».</p>
+<p>В моем сознании внезапно промелькнула сцена, полная новизны и тайны: полная луна, золотисто-желтая, висела в небе, а внизу, на фоне изумрудной зелени бесконечных просторов арбузных растений на песчаном пляже у моря, стоял мальчик лет одиннадцати или двенадцати, с серебряным кольцом на шее и стальными вилами в руке. Он целился в «ча» своей вилкой, но когда он ударил со всей своей силой, «ча» нырнул и юркнул между его ног.</p>
+<p>Мальчика звали Юн-ту. Мне было примерно столько же лет, когда я впервые встретил его, почти тридцать лет назад. Мой отец тогда был еще жив, и наша семья жила хорошо. Другими словами, я был шао-йе , молодым мастером. Настала наша очередь взять на себя ответственность за особенно важное родовое жертвоприношение, которое происходило только один раз за более чем тридцать лет и поэтому было для нас даже более важным событием, чем для остального клана. Подношения, сделанные перед родовыми портретами в первый месяц, были богатыми и разнообразными, жертвенные сосуды были сложными, а участников было много. Необходимо было внимательно следить за жертвенными сосудами, чтобы защитить их от кражи. Поскольку работа была слишком тяжелой для нашего ман-юэ , он попросил у отца разрешения послать за его сыном Юн-ту, чтобы тот взял на себя ответственность за жертвенные сосуды. (В нашей части страны существовало три вида помощи: те, кто нанимался на год, назывались чан-нянь или круглогодичные; те, кто нанимался на день, назывались туан-кунг или краткосрочные рабочие; в то время как те, кто обрабатывал свою собственную землю и нанимался только во время Нового года и других праздников или в период аренды, назывались ман-юэ или занятый месяц.)</p>
+<p>Я был очень рад, что отец дал свое согласие, так как я слышал о Юн-ту и знал, что он был моего возраста. Его назвали Юн-ту, потому что он родился в интеркаллярный ( юнь ) месяц и не имел, согласно системе соответствий астрологов, элемента земли ( ту ) в своем гороскопе. Он умел ставить ловушки для ловли птиц.</p>
+<p>Я начал с нетерпением ждать наступления Нового года, так как это означало, что придет и Юнь-ту. Наконец, приблизился конец года, и однажды мать сказала мне, что пришел Юнь-ту. Я побежал к нему и нашел его на кухне. У него было румяное лицо, он носил войлочную шапку и серебряное кольцо на шее. Было видно, что отец очень любил его, боялся, что он не проживет долго, и, дав обет перед богами, надел ему на шею это кольцо, чтобы он его держал. Юнь-ту был очень застенчив со взрослыми, но не со мной, и свободно разговаривал со мной, когда рядом никого не было. Через несколько часов мы стали близкими друзьями.</p>
+<p>Я не знаю, о чем мы тогда говорили; помню только, что Юнь-ту был очень счастлив и рассказал мне, что с тех пор, как он приехал в город, он увидел много такого, чего никогда раньше не видел.</p>
+<p>На следующий день я хотел, чтобы он показал мне, как ловить птиц, но он сказал: «Мы не можем сделать это сейчас. Мы должны подождать, пока сойдет снег. Вернувшись домой, я подметаю место на снегу и ставлю большую корзину с палкой и рассыпаю немного зерна под корзину. Когда птицы прилетают, чтобы полакомиться зерном, я дергаю за веревку, привязанную к палке, и корзина падает и ловит птиц под собой. Я ловлю всевозможных птиц: диких кур, лесных голубей, сизых голубей и так далее».</p>
+<p>И поэтому я надеялся, что пойдет снег.</p>
+<p>Юнь-ту также сказал мне: «Сейчас слишком холодно, но ты приезжай к нам летом. Днем мы будем ходить на берег моря собирать ракушки. У нас есть все виды ракушек: красные и зеленые, ужасы дьявола и руки Куаньинь. Вечером ты можешь пойти с моим отцом и мной смотреть на арбузную грядку».</p>
+<p>«Чтобы защититься от воров?»</p>
+<p>"Нет. Мы не считаем воровством, если прохожий хочет пить и берет себе дыню. Мы следим за барсуками, ежами и особенно за 'ча'. Вы можете услышать, как они грызут дыни в лунном свете, хруст, хруст. Затем вы берете вилку и осторожно подходите..."</p>
+<p>Я не знал, что такое «ча», и не знаю этого и по сей день, но по какой-то причине я представлял себе, что это что-то вроде маленького щенка, только более свирепого.</p>
+<p>«Они не кусаются?»</p>
+<p>«Но у тебя есть вилка. Когда ты подходишь и видишь его, ты ударяешь его вилкой. Зверь очень быстрый. Он бросится к тебе и пробежит между твоих ног. Его мех скользкий, как масло».</p>
+<p>Я никогда не думала, что в мире существуют такие новые и удивительные вещи: что на берегу моря можно увидеть ракушки самых разных цветов и что арбузы могут доставлять больше удовольствия, чем выставленные на продажу во фруктовых лавках.</p>
+<p>«Когда прилив, прыгает очень много рыб. У всех по две ноги, как у молодых лягушек».</p>
+<p>Ах, Юн-ту знал о бесконечном количестве странных вещей, о которых никто из моих обычных товарищей по играм ничего не знал. Они не знали абсолютно ничего, потому что, когда Юн-ту играл на берегу моря, они, как и я, могли видеть только четырехугольное небо над стенами двора.</p>
+<p>К сожалению, первый месяц подошел к концу, и Юнь-ту пришлось уйти домой. Я плакала, и Юнь-ту тоже спрятался на кухне, плакал и отказывался идти, но в конце концов его забрал отец. Позже он прислал мне через своего отца посылку с ракушками и несколько красивых перьев. Я тоже посылала ему вещи один или два раза, но с тех пор я его не видела.</p>
+<p>Поэтому, когда моя мать заговорила о нем, мои детские воспоминания молниеносно ожили, и моя родная пустошь вновь обрела ту красоту, которой всегда ее наделяли мои воспоминания.</p>
+<p>«Это отлично!» — сказал я. «Как... как он?»</p>
+<p>«Ну, его обстоятельства не очень-то счастливы», — ответила моя мать. Глядя в сторону двора, она воскликнула: «Опять эти люди. Они приходят сюда под предлогом покупки мебели, но склонны брать вещи, когда никто не видит. Я должна пойти и присмотреть за ними».</p>
+<p>Она встала и вышла. Снаружи послышались женские голоса. Я позвал Хун-эра к себе и поговорил с ним: спросил, может ли он писать, хочет ли он уехать.</p>
+<p>«Поедем на поезде?»</p>
+<p>«Да, мы поедем на поезде».</p>
+<p>«А как насчет лодок?»</p>
+<p>«Сначала мы сядем на лодку».</p>
+<p>«Ха! Так вот он! И какая у него борода выросла!» — раздался вдруг резкий, хриплый голос.</p>
+<p>Я поднял глаза, пораженный, и увидел перед собой женщину лет пятидесяти с высокими скулами и тонкими губами, руки подбоченились. Она была без юбки, а ее ноги торчали, как циркуль, которым пользуются чертежники.</p>
+<p>Я выглядел озадаченным.</p>
+<p>«Разве ты не знаешь, кто я? Я держал тебя на руках!»</p>
+<p>Я был озадачен больше, чем когда-либо. К счастью, в этот момент вошла моя мать и сказала: «Он отсутствовал так много лет, что все забыл». Затем, повернувшись ко мне, она добавила: «Ты должен ее помнить. Это сестра Ян из дома напротив ... у них есть магазинчик соевого творога».</p>
+<p>Да, теперь я вспомнил. Из своих детских воспоминаний я вспомнил образ сестры Ян, сидящей весь день в магазине бобового творога через дорогу. Ее прозвали «Бобовый творог Си Ши». Но тогда она пудрила лицо, и ее скулы были не такими высокими, губы не такими тонкими, и, поскольку она сидела весь день, я не помнил ее ступни, похожие на компас. Тогда она была молода и привлекательна, и говорили, что ее магазин процветал именно по этой причине. Однако мой детский ум не был восприимчив к чарам молодой женщины, и она не произвела на меня никакого впечатления. Компас был очень возмущен, и ее лицо приняло насмешливое выражение из-за моей оплошности, которая, должно быть, казалась ей столь же непростительной, как незнание французом Наполеона или незнание американцем Вашингтона.</p>
+<p>«Значит, ты забыл, кто я! Ну, это и есть то, что ты называешь забывчивостью великих».</p>
+<p>«Это не так... я... я», — я встал, запинаясь от смущения.</p>
+<p>«Тогда позволь мне сказать тебе кое-что, брат Сюнь. Теперь ты богат, и тебе не нужна эта ветхая мебель. Эти вещи слишком тяжелые и неуклюжие, чтобы брать их с собой. Отдай их мне. Мы бедны и можем использовать эти вещи».</p>
+<p>«Я не богат. Мне приходится продавать эти вещи, чтобы ... »</p>
+<p>«Что ты говоришь? Тебя назначили даотаем, а ты говоришь, что ты не богат. У тебя три наложницы, ты разъезжаешь в огромном седане с восемью носильщиками, а мне говоришь, что ты не богат. Хэн , ты меня не обманешь!»</p>
+<p>Я понял, что спорить с ней бесполезно, и промолчал.</p>
+<p>« Айя, айя! Воистину, чем больше у тебя денег, тем больше ты не отпустишь ни единого волоска, и чем больше ты не отпустишь ни единого волоска, тем больше у тебя денег!» — проворчала Циркуль, развернулась и возмущенно ушла, схватив перчатки моей матери и засунув их под пальто.</p>
+<p>После этого мои родственники и близкие по соседству пришли ко мне. В свободные минуты я собирал вещи. Так прошло три или четыре дня.</p>
+<p>Однажды днем, когда я пил чай после обеда, я услышал шаги снаружи. Я оглянулся и, к своему удивлению, обнаружил, кто это был, встал и поспешил ему навстречу.</p>
+<p>Это был Юн-ту. Хотя я понял, что это он, как только увидел его, но это был не тот Юн-ту из моих воспоминаний. Теперь он был почти вдвое выше, чем когда я видел его в последний раз; его румяное круглое лицо стало пепельно-желтым, изборожденным морщинами; его глаза были как у отца, с толстыми красными веками, обычными для людей, которые живут у моря и постоянно подвергаются воздействию морского бриза. Он носил старую шапку и легкое ватное пальто и дрожал от холода. Он держал в руках бумажный сверток и длинную трубку, руки больше не были пухлыми и румяными, какими я их помнил, а были грубыми, неуклюжими и потрескавшимися, как кора сосны.</p>
+<p>Я был глубоко тронут, но не знал, что сказать.</p>
+<p>«А, брат Юнь-ту, так ты наконец пришел», — неловко сказал я. Было много вещей, которые я хотел ему сказать, вещей, которые набухали во мне — дикие птицы, прыгающие рыбы, морские раковины, «ча», — но они, казалось, были чем-то заблокированы, так что они кружились в моем мозгу и не могли найти выражения.</p>
+<p>Он стоял передо мной с выражением смешанной радости и печали. Его губы шевелились, но не раздавалось ни звука. Когда ему удавалось заговорить, это было официально и уважительно: «Ваша честь ...»</p>
+<p>Должно быть, я содрогнулся, поняв, какая тяжелая, скорбная стена встала между нами. Я не нашелся, что сказать.</p>
+<p>«Подойди, Шуй-шэн, и поклонись Его Чести», — сказал он мальчику, которого вытащил из-за спины. Ребенок был копией Юнь-ту двадцатилетней давности, за исключением того, что он был тоньше и более болезненным, и на его шее не было серебряного кольца. «Он мой пятый, никогда не уезжал из дома, поэтому он очень застенчив».</p>
+<p>Моя мать и Хун-эр спустились вниз, вероятно, услышав визитеров.</p>
+<p>«Лао-тай-тай», — сказал Юнь-ту, — «я получил ваше сообщение и был очень рад услышать, что Его Честь вернулся».</p>
+<p>«Но почему так официально?» — запротестовала моя мать. «Разве вы не называли друг друга братьями? Делайте, как и прежде, называйте его Брат Сюнь».</p>
+<p>« Айя, как ты добр! Но так не пойдет. Тогда все могло бы быть в порядке. Я был всего лишь мальчиком и ничего не знал». Юнь-ту снова попытался заставить сына выйти вперед и поприветствовать мою мать, но мальчик плотно спрятался за его спиной.</p>
+<p>«Это Шуй-шэн? Разве он не пятый? Когда вокруг так много незнакомцев, неудивительно, что он такой застенчивый. Пусть идет с Хун-эром», — сказала мать.</p>
+<p>На этом Хун-эр подошел к Шуй-шену, и последний с готовностью пошел с ним. Мать предложила Юнь-ту сесть, что он и сделал после некоторого колебания. Он прислонил свою длинную трубку к столу и передал мне бумажный пакет, сказав: «У нас нет ничего свежего зимой. Эти сушеные зеленые бобы с нашей собственной земли. Надеюсь, Ваша Честь ...»</p>
+<p>Я спросил его об обстоятельствах его жизни, на что он мне ответил, многократно качая головой.</p>
+<p>«Это очень плохо. Мой шестой сын уже достаточно взрослый, чтобы помогать, но еды никогда не хватает, чтобы прокормить их всех. Более того, времена сейчас неспокойные — везде деньги, деньги и всегда новые и нерегулярные налоги — урожай плохой. Когда мы собираем что-то и пытаемся это продать, нам едва хватает денег, чтобы заплатить различные налоги, которые взимаются по пути. Если мы не пытаемся продать, то он просто гниет у нас на руках ...»</p>
+<p>Он продолжал качать головой. Его лицо, хотя и изборожденное глубокими морщинами, было бесстрастным, как каменное изваяние. Он горько переживал свои невзгоды, но не мог их выразить. После нескольких минут молчания он взял трубку и закурил.</p>
+<p>Моя мать расспросила его и обнаружила, что у него много дел дома, и он должен вернуться на следующий день. Поскольку он еще не обедал, мать велела ему пойти на кухню и пожарить себе риса. После того, как он ушел, мать и я вздохнули о судьбе этого человека: слишком много сыновей, голод, гнетущие налоги, солдаты, бандиты, чиновники, дворянство — все это делало бремя тяжелым для бедного крестьянина, давило его и высасывало из него жизнь, пока он не стал едва ли больше, чем деревянная идола. Мать сказала, что мы должны отдать ему все, что мы не могли ни использовать, ни найти покупателя.</p>
+<p>Днем он выбрал несколько вещей, которые мог бы использовать: два длинных стола, четыре стула, набор, состоящий из курильницы и подсвечников, весы. Он попросил нас отдать ему всю золу от рисовой соломы. (Мы используем рисовую солому в качестве топлива, а золу — в качестве удобрения.) Он должен был приехать за ними на лодке, прежде чем мы отправимся в путь.</p>
+<p>Вечером мы снова поговорили, ни о чем конкретном. На следующее утро он ушел с Шуй-шэном.</p>
+<p>Девять дней спустя мы покинули наш старый дом. Юнь-ту пришел рано утром. Он не взял с собой Шуй-шэна, но привел пятилетнюю девочку, чтобы она присматривала за лодкой. Мы были заняты весь день и у нас было мало времени поговорить. Было много гостей, некоторые пришли проводить нас, другие за вещами, третьи и проводить нас, и принести вещи. Когда мы наконец сели на корабль ближе к вечеру, старый дом был очищен от всего, что могло пригодиться.</p>
+<p>Наша лодка медленно плыла, оставляя позади темнеющие зеленые холмы по обоим берегам. Хун-эр, который наблюдал за неясным пейзажем вместе со мной из окна, вдруг сказал мне: «Дядя, когда мы вернемся?»</p>
+<p>«Возвращаешься? Но почему ты думаешь о возвращении, когда мы только начали?»</p>
+<p>«Но Шуй-шэн попросил меня навестить его дома», — задумчиво сказал мальчик, широко раскрыв черные глаза.</p>
+<p>И мать, и я были тронуты замечанием мальчика, и наш разговор снова перешел на Юнь-ту. Она сказала, что сестра Ян приходила к нам домой каждый день с тех пор, как мы начали собираться. За два дня до того, как мы отправились, она обнаружила в куче пепла какие-то тарелки и миски, которые, как она настаивала, были спрятаны там Юнь-ту, чтобы он мог забрать их с собой, когда придет за пеплом. Сестра Ян была очень довольна своим открытием и, основываясь на нем, сама угостила себя нашим «собачьим раздражением». (Приспособление, используемое для кормления кур в наших родных местах. Оно представляет собой деревянную клетку над корытом с кормом. Куры могут просовывать шеи через прутья, чтобы добраться до корма, в то время как собаки могут только сердито смотреть сквозь них. Отсюда и название.) Когда она убегала, мать сказала, что никогда не подозревала, что сестра Ян способна так быстро бегать, с ее маленькими связанными ногами и высокими каблуками.</p>
+<p>Я не чувствовала сожаления, когда наш старый дом, родные холмы и ручьи остались позади. У меня было только гнетущее чувство окружения и изоляции от мира невидимыми стенами и чувство грусти, потому что образ моего маленького героя с серебряным кольцом на шее на арбузной грядке внезапно стал размытым и нечетким, тогда как раньше он был таким резким и ясным.</p>
+<p>И мать, и Хун-эр уснули.</p>
+<p>Когда я лежал в углу и слушал, как вода плещется о борта лодки, я знал, что мы на верном пути. Какая преграда возникла между мной и Юнь-ту! К счастью, пока что не было такой преграды между молодым поколением (разве Хун-эр не думал о Шуй-шене и не спрашивал о нем?), и я надеялся, что такая преграда никогда не встанет между ними. Однако я не хотел, чтобы они жили, в качестве платы за их постоянное общение, горькой и безродной жизнью, которой жил я; я не хотел, чтобы они жили горькой и жалкой жизнью, которой жил Юнь-ту; я не хотел, чтобы они жили горькой и бесстыдной жизнью, которой жили другие. У них должна быть новая жизнь, жизнь, которую мы, старшее поколение, не знали.</p>
+<p>Когда я понял, что делаю, я внезапно испугался. Я смеялся про себя, когда Юнь-ту попросил курильницу и подсвечники, и жалел его, потому что он ни на мгновение не мог забыть свои суеверия. Но чем была эта моя так называемая надежда, как не идолом, вылепленным нашими собственными руками? Единственная разница между нами была в том, что его желания и надежды были связаны с более насущными вещами, а мои — с более отдаленными.</p>
+<p>В темноте перед моими глазами снова возникло зеленое арбузное поле, а над ним в глубоком синем небе висела золотая луна. Возможно, подумал я, надежда не абсолютна, не то, о чем можно сказать, существует она или нет, а что-то очень похожее на дороги, которые путешественники прокладывают по лицу земли там, где их раньше не было.</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Расёмон]]></title>
+            <link>https://cloudlin.zjulife.cc/ru/posts/rashomon/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/ru/posts/rashomon/</guid>
+            <pubDate>Fri, 05 Nov 1915 00:00:00 GMT</pubDate>
+            <description><![CDATA[Это произошло вечером одного дня. Под Расёмоном находился слуга, ожидавший дождя. Под широкой дверью не было никого, кроме этого человека...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/06.webp" alt="_Here's the description of the picture" /></p>
+<p>Это произошло вечером одного дня. Под Расёмоном находился слуга, ожидавший дождя.</p>
+<p>Под широкой дверью не было никого, кроме этого человека. Только сверчок сидел на большой колонне с облупившимся красным лаком. Поскольку этот Расёмон находится на проспекте Судзаку, там должно быть еще две или три женщины, укрывающиеся от дождя в шляпах и протирающие свои эбоси. Однако, кроме этого человека, больше никого не было.</p>
+<p>Причина этого в том, что за последние два-три года Киото пережил ряд бедствий, таких как землетрясения, торнадо, пожары, голод и т. д., из-за чего столица стала особенно безлюдной. Согласно старым записям, статуи Будды и буддийские инструменты были разбиты на куски, а куски дерева, покрытые лаком, золотой и серебряной фольгой, были сложены на обочине дороги и проданы как дрова. Учитывая ситуацию в столице, естественно, никто не будет заботиться о ремонте ворот Расёмон или чем-то подобном. Запустением здесь воспользовались лисы и грабители, которые со временем даже взяли себе за привычку подбрасывать к двери бесхозные трупы. Как только солнце зашло, люди почувствовали мрачный воздух, и больше никто не ходил возле этой двери.</p>
+<p>Вместо этого к этому месту словно из ниоткуда слетелось множество ворон. Днем можно было увидеть бесчисленное множество ворон, кружащих над самым высоким хребтом, кричащих и танцующих. Когда небо над воротами освещалось заходящим солнцем и становилось красным, создавалось впечатление, будто там рассыпаны семена кунжута, и оно становилось особенно ясным. Само собой разумеется, вороны прилетели, чтобы полакомиться плотью мертвого тела на двери. — Но сегодня, возможно, потому, что было слишком поздно, не было видно ни одного. Я видел каменные ступени, которые вот-вот должны были рухнуть, в трещинах которых росли сорняки, а на них виднелись белые пятна вороньего помета. Слуга сидел на верхней из семи ступенек, одетый в свою поношенную красно-зеленую куртку, и тупо смотрел на дождь, раздраженный большим прыщом на правой щеке.</p>
+<p>Автор уже написал, что «семья подождет, пока закончится дождь». Однако после того, как дождь прекратился, генерал не имел ни малейшего представления, что делать. При нормальных обстоятельствах он естественным образом вернулся бы в дом своего хозяина. Но его отослали от этого хозяина четыре или пять дней назад. Как уже упоминалось выше, в то время Киото находился в очень плачевном состоянии; теперь, когда эта семья уволила своего хозяина, служившего ей много лет, это было лишь небольшим последствием этого упадка. Поэтому вместо того, чтобы говорить «семейный генерал ждал, пока закончится дождь», было бы уместнее сказать «семейный генерал, попавший под дождь, не имел возможности куда-либо идти и не знал, что делать». Более того, сегодняшняя погода оказывает большое влияние на сентиментальность этого генерала семьи периода Хэйан. Дождь начался в 5 часов вечера и, похоже, не прекратился до 5 часов вечера. В это время семейный генерал первым делом подумал о том, что делать с завтрашней работой. На самом деле, он держался за мысль о том, что не уверен, что делать с чем-то, что он не может сделать. В то же время он слушал звук дождя, бьющего по дороге Сузаку.</p>
+<p>Дождь окружал Расёмон, лил издалека. Сумерки сделали небо низким; взглянув вверх, я увидел, что дверь покоится на наклонном карнизе, поддерживая темные облака.</p>
+<p>Потому что, когда вам придется решать, что делать с чем-то, что сделать невозможно, у вас уже не будет времени выбирать средства. Если его подберут, он просто умрет от голода на открытом пространстве или у дороги; его просто занесут в эту дверь и бросят, как собаку. Но если я этого не выберу, то мысли семейного генерала много раз блуждали по одному и тому же маршруту, прежде чем наконец пришли к этому месту. Однако, несмотря на то, что прошло много времени, окончание этого «правила» все еще остается «правилом». Хотя семейный генерал подтвердил ту часть, что не следует привередничать в средствах, у него не хватает смелости активно подтвердить ту часть, которая естественным образом вытекает из «быть бандитом», чтобы это «правило» соблюдалось.</p>
+<p>Слуга громко чихнул и лениво встал. Прохладная ночь в Киото уже холодная, как в печи. Ветер и сумерки беспрепятственно проносились между дверными косяками. Сверчок, сидевший на ярко-красном столбе, уже убежал неизвестно куда.</p>
+<p>Слуга напряг шею, приподнял плечи красно-зеленого пиджака, прикрывавшего светло-желтую рубашку, и выглянул за дверь. Потому что если вы сможете найти участок земли, где вам не страшны ни ветер, ни дождь, где вы не подвержены воздействию стихии и где вы сможете спокойно спать всю ночь, вам захочется провести там ночь. К счастью, в это время я увидел широкую, выкрашенную в ярко-красный цвет лестницу, ведущую к надвратной башне. Даже если здесь есть люди, они все мертвы. Затем слуга следил за тем, чтобы меч с простой рукоятью не выпал из ножен, и поднял ноги в соломенных сандалиях, чтобы ступить на нижнюю ступеньку лестницы.</p>
+<p>Так и произошло через несколько минут. Посреди широкой лестницы, ведущей на верхний этаж Расёмона, мужчина сжался, как кошка, затаил дыхание и наблюдал за ситуацией наверху. Свет от камина, проникавший с верхнего этажа, освещал правую щеку мужчины, на которой между короткой бородой появился красный, опухший и гнойный прыщ. Командир семьи сначала подумал, что люди на верхних этажах просто погибли, но когда он поднялся на второй и третий этажи, то увидел, как кто-то разжигает огонь, который перемещается то там, то здесь. Это можно понять, взглянув на тусклый желтый свет, покачивающийся на кессонном потолке, который во всех углах покрыт паутиной. В эту дождливую ночь на верхнем этаже Расёмона человек, который мог разжечь огонь, должен был быть не обычным человеком.</p>
+<p>Слуга замедлил шаг, словно ящерица, и медленно поднялся на верхнюю ступеньку крутой лестницы. Он согнул тело так сильно, как только мог, вытянул шею так сильно, как только мог, и заглянул внутрь здания.</p>
+<p>Когда они посмотрели, то увидели несколько трупов, разбросанных внутри здания, как они и слышали. Однако радиус действия огня был гораздо уже, чем ожидалось, и они не смогли разобрать, сколько их было. Я лишь смутно представлял себе, что существуют обнаженные и одетые трупы; и, конечно же, существуют как мужские, так и женские трупы. Более того, трупы, некоторые с открытыми ртами или вытянутыми вперед руками, лежащие на полу, почти заставляли усомниться в том, что он когда-то был человеком. Кроме того, слабым светом были освещены только приподнятые части тела, такие как плечи и грудь, в то время как тени нижних частей тела были темнее, как будто они всегда молчали.</p>
+<p>Слуга не мог не зажать нос, когда почувствовал запах гниющих трупов. Однако в следующее мгновение рука забыла прикрыть нос. Потому что возникло сильное волнение, которое едва не лишило мужчину обоняния.</p>
+<p>Только тогда охранник заметил мужчину, сидящего на корточках среди мертвых тел. Это была невысокая, худая, седая, похожая на обезьяну старушка, одетая в платье цвета кипариса. Старуха, держа в правой руке зажженный факел, пристально смотрела на лицо одного из мертвецов. Судя по длине волос, труп, вероятно, принадлежал женщине.</p>
+<p>Охранник был так тронут шестью частями ужаса и четырьмя частями любопытства, что почти забыл дышать. Если воспользоваться словами старого репортера, такое ощущение, что возник «Мао Дай». Затем старуха вставила сосновую лучину в трещину в полу, протянула руку к мертвому телу, на которое она смотрела раньше, и начала выдергивать длинные волосы один за другим, словно мать-обезьяна, ловящая вшей для своего детеныша. Волосы, похоже, тоже были небрежно выдернуты.</p>
+<p>По мере того, как волосы вырывались один за другим, страх в сердце генерала постепенно исчезал. В то же время постепенно росла ненависть к старухе. ——Нет, сказать «к этой старухе» было бы, пожалуй, грамматической ошибкой; лучше сказать, что отвращение мое ко всему дурному мало-помалу крепло. Если бы в это время кто-то задал генералу вопрос, о котором тот думал раньше: «Умереть от голода или стать грабителем?», генерал, скорее всего, выбрал бы того, кто умер от голода без всяких сожалений. Злое сердце этого человека, подобно факелу, который старуха вставила в щели в полу, горело неистово, пока не дошло до этого.</p>
+<p>Генерал, оставшийся дома, естественно, понятия не имел, зачем старуха выдернула волосы у покойника. Итак, если говорить «разумно», мы все еще не знаем, добро это или зло. Но с точки зрения слуги, вырывание волос у мертвеца на вершине Расёмон в такую дождливую ночь было непростительным злом. Само собой разумеется, что его прежнее намерение стать грабителем было дома, естественно, забыто.</p>
+<p>Слуга забрызгал ногами, внезапно вскочил на лестницу и, держа в руке нож с простой рукояткой, подошел к старухе. Нет нужды описывать удивление старушки.</p>
+<p>Увидев слугу, старушка подпрыгнула, словно в нее выстрелили из арбалета.</p>
+<p>«Эй, куда ты идешь!»</p>
+<p>Слуга преградил старухе путь к отступлению, когда она споткнулась о мертвое тело и начала ее проклинать. Старушка оттолкнула охранников и попыталась убежать. Но слуга отказался его отпустить и снова оттолкнул. На мгновение он замолчал. Однако исход битвы был уже известен. В конце концов слуга схватил старуху за руку и заставил ее упасть. Это была рука, от которой остались только кожа и кости, похожая на куриную лапку.</p>
+<p>«Что ты делаешь? Скажи мне! Если не скажешь, то будет вот так!»</p>
+<p>Слуга опустил старуху на землю, внезапно выхватил меч из ножен и поднес белоснежную сталь к глазам И. Но старушка ничего не сказала. Его руки дрожали, дыхание было затруднено, глаза были широко раскрыты, словно они собирались выскочить из глазниц, а он оставался немым и упрямым, не говоря ни слова. Видя эту ситуацию, семейный генерал ясно осознал, что жизнь и смерть старухи полностью находятся под контролем его собственной воли. Более того, эта воля в какой-то момент охладила прежнюю пылающую ненависть в его сердце. Остается лишь спокойная гордость и удовлетворение от достигнутого. Поэтому семейный генерал посмотрел на старуху и сказал чуть тише:</p>
+<p>«Я не являюсь официальным лицом ямена, которое проверяет незаконную деятельность. Я просто путешественник, который только что прошел через эти ворота. Поэтому у меня нет никаких оснований запирать вас здесь. Если вы что-то делаете в данный момент, у этих ворот, просто скажите мне».</p>
+<p>Старуха еще шире раскрыла глаза и уставилась в лицо слуги. Глаза ее были с красными веками и были острыми, как у хищной птицы. Затем сморщенные губы, почти соединенные с носом, начали двигаться, как будто что-то жуя. Шея очень тонкая, и можно увидеть движение кадыка на кончике шеи. В этот момент из горла раздался звук, похожий на карканье ворона, и достиг ушей слуги:</p>
+<p>«Вырви этот волос, вырви этот волос и сделай парик».</p>
+<p>Когда слуга услышал неожиданно обыденный ответ старухи, он был разочарован. А когда он был разочарован, прежняя ненависть и холодное презрение снова вошли в его сердце. Думаю, она также поняла цвет его лица. Старуха, все еще держа в руке длинные волосы, выдернутые из трупа, издала звук, похожий на кваканье лягушки, и сказала следующие слова:</p>
+<p>«Конечно, вырывать волосы у мертвеца — это такое зло. Однако все мертвецы здесь заслуживают этого. Так вот, женщина, которая только что вырвала волосы, разрезала змею на четырехдюймовые куски и высушила их, сказав, что это сушеная рыба . ] продать его в лагере. Если бы не было чумы, я бы, вероятно, до сих пор продавал его. Этот человек такой же. Женщина продавала сушеную рыбу, говоря, что она вкусная, а люди с ножами покупали ее как незаменимый овощ. Что касается меня, я не думаю, что то, что сделала эта женщина, было злом. Если бы я этого не сделал, я бы умер от голода, поэтому я сделал это, потому что у меня не было выбора. Поэтому я не думаю, что то, что я сделал, было злом. Это тоже правда. Если бы я этого не сделал, я бы умер от голода, поэтому я сделал это, потому что у меня не было выбора. Эта женщина, которая знала, что выбора нет, должна была простить меня.</p>
+<p>Вероятно, старушка что-то в этом роде и сказала.</p>
+<p>Слуга вложил меч в ножны, взялся за рукоять левой рукой и равнодушно выслушал эти слова; правая же рука его, естественно, прижимала большой красный прыщ на щеке, нарывавший гноем. Однако, пока он слушал, в сердце слуги зародилось чувство мужества.</p>
+<p>Именно такой смелости не хватало человеку, стоявшему у двери. Более того, подобно мужеству, которое он проявил, прыгнув на дверь и схватив старуху, у него было и мужество, чтобы начать контратаку против противника. У семейного генерала не было проблем ни с голодной смертью, ни с тем, чтобы стать грабителем. Судя по его настроению в то время, такие вещи, как голодная смерть, были вытеснены из его сознания и были почти немыслимы.</p>
+<p>«Неужели это так?»</p>
+<p>После того как старушка закончила говорить, слуга повторил ее слова насмешливым голосом. Потом он шагнул вперед, и вдруг его правая рука оставила прыщ, схватила грудь старухи и проговорила сквозь зубы:</p>
+<p>«Тогда, даже если я заставлю тебя это сделать, ты не обязательно будешь чувствовать обиду. Если я этого не сделаю, я умру с голоду».</p>
+<p>Слуга быстро снял со старухи одежду и, держа ее за ноги, с силой ударил ее ногой по мертвому телу. До лестницы всего пять ступенек. Слуга, держа в руках разодранную одежду цвета кипариса, быстро спустился по крутой лестнице и скрылся в темноте.</p>
+<p>Не так давно старая женщина, которая, казалось, временно умерла, с трудом подняла свое обнаженное тело из-под трупов. Она издала пронзительный стон и, используя свет все еще горящего огня, поползла к лестнице. И отсюда свисали короткие белые волосы, выглядывая из-под двери. Снаружи была только кромешная тьма.</p>
+<p>Никто не знал местонахождения генерала семьи.</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+    </channel>
+</rss>

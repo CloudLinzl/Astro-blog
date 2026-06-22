@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /~partytown/
+
+Sitemap: https://cloudlin.zjulife.cc/sitemap-index.xml

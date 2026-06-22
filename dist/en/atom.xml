@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/atom-style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://CloudLin.ZJUlife.cc/en/</id>
+    <title>Retypeset</title>
+    <updated>2026-06-22T12:10:03.567Z</updated>
+    <generator>Astro-Theme-Retypeset with Feed for Node.js</generator>
+    <author>
+        <name>CloudLin</name>
+        <uri>https://CloudLin.ZJUlife.cc/</uri>
+    </author>
+    <link rel="alternate" href="https://CloudLin.ZJUlife.cc/en/"/>
+    <link rel="self" href="https://cloudlin.zjulife.cc/en/atom.xml"/>
+    <subtitle>Retypeset is a static blog theme based on the Astro framework. Inspired by Typography, Retypeset establishes a new visual standard and reimagines the layout of all pages, creating a reading experience reminiscent of paper books, reviving the beauty of typography. Details in every sight, elegance in every space.</subtitle>
+    <rights>Copyright © 2026 CloudLin</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown Extended Features]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/markdown-extended-features/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/markdown-extended-features/"/>
+        <updated>2025-04-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Here are some extended Markdown features supported by Retypeset, including syntax examples and their stylistic effects. To create automatic...]]></summary>
+        <content type="html"><![CDATA[<p>Here are some extended Markdown features supported by Retypeset, including syntax examples and their stylistic effects.</p>
+<h2>Figure Captions</h2>
+<p>To create automatic figure captions, use the standard Markdown image syntax <code>![alt](src)</code>. To hide the caption, add an underscore <code>_</code> before the <code>alt</code> text or leave the <code>alt</code> text empty.</p>
+<h3>Syntax</h3>
+<pre><code>![Image description](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_Image description](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre>
+<h3>Output</h3>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="Image description" /></p>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="_Image description" /></p>
+<h2>Admonition Blocks</h2>
+<p>To create admonition blocks, use the GitHub syntax <code>&gt; [!TYPE]</code> or the container directive <code>:::type</code>. The following types are supported: <code>note</code>, <code>tip</code>, <code>important</code>, <code>warning</code>, and <code>caution</code>.</p>
+<h3>Syntax</h3>
+<pre><code>&gt; [!NOTE]
+&gt; Useful information that users should know, even when skimming content.
+
+&gt; [!TIP]
+&gt; Helpful advice for doing things better or more easily.
+
+&gt; [!IMPORTANT]
+&gt; Key information users need to know to achieve their goal.
+
+:::warning
+Urgent info that needs immediate user attention to avoid problems.
+:::
+
+:::caution
+Advises about risks or negative outcomes of certain actions.
+:::
+
+:::note[YOUR CUSTOM TITLE]
+This is a note with a custom title.
+:::
+</code></pre>
+<h3>Output</h3>
+<blockquote>
+<p>[!NOTE]
+Useful information that users should know, even when skimming content.</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+Helpful advice for doing things better or more easily.</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+Key information users need to know to achieve their goal.</p>
+</blockquote>
+<p>:::warning
+Urgent info that needs immediate user attention to avoid problems.
+:::</p>
+<p>:::caution
+Advises about risks or negative outcomes of certain actions.
+:::</p>
+<p>:::note[YOUR CUSTOM TITLE]
+This is a note with a custom title.
+:::</p>
+<h2>Collapsible Sections</h2>
+<p>To create collapsible sections, use the container directive syntax <code>:::fold[title]</code>. Click the title to expand or collapse.</p>
+<h3>Syntax</h3>
+<pre><code>:::fold[Usage Tips]
+Content that may not interest all readers can be placed in a collapsible section.
+:::
+</code></pre>
+<h3>Output</h3>
+<p>:::fold[Usage Tips]
+Content that may not interest all readers can be placed in a collapsible section.
+:::</p>
+<h2>Mermaid Diagrams</h2>
+<p>To create Mermaid diagrams, wrap Mermaid syntax in code blocks and specify the language type as <code>mermaid</code>.</p>
+<h3>Syntax</h3>
+<pre><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre>
+<h3>Output</h3>
+<pre><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</code></pre>
+<h2>Galleries</h2>
+<p>To create image galleries, use the container directive <code>:::gallery</code>. Scroll horizontally to view more images.</p>
+<h3>Syntax</h3>
+<pre><code>:::gallery
+![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![Turning head](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![Eye contact](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![Baby alpaca](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![Aww, so cute!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre>
+<h3>Output</h3>
+<p>:::gallery
+<img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="Alpaca" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="Turning head" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="Eye contact" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="Baby alpaca" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="Aww, so cute!" />
+:::</p>
+<h2>GitHub Repositories</h2>
+<p>To embed GitHub repositories, use the leaf directive <code>::github{repo="owner/repo"}</code>.</p>
+<h3>Syntax</h3>
+<pre><code>::github{repo="radishzzz/astro-theme-retypeset"}
+</code></pre>
+<h3>Output</h3>
+<p>::github{repo="radishzzz/astro-theme-retypeset"}</p>
+<h2>Videos</h2>
+<p>To embed videos, use the leaf directive <code>::youtube{id="video-id"}</code>.</p>
+<h3>Syntax</h3>
+<pre><code>::youtube{id="9pP0pIgP2kE"}
+
+::bilibili{id="BV1sK4y1Z7KG"}
+</code></pre>
+<h3>Output</h3>
+<p>::youtube{id="9pP0pIgP2kE"}</p>
+<p>::bilibili{id="BV1sK4y1Z7KG"}</p>
+<h2>Spotify</h2>
+<p>To embed Spotify content, use the leaf directive <code>::spotify{url="spotify-url"}</code>.</p>
+<h3>Syntax</h3>
+<pre><code>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+
+::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
+</code></pre>
+<h3>Output</h3>
+<p>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}</p>
+<p>::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}</p>
+<h2>Tweets</h2>
+<p>To embed tweets, use the leaf directive <code>::tweet{url="tweet-url"}</code>.</p>
+<h3>Syntax</h3>
+<pre><code>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}
+</code></pre>
+<h3>Output</h3>
+<p>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}</p>
+<h2>CodePen</h2>
+<p>To embed CodePen demos, use the leaf directive <code>::codepen{url="codepen-url"}</code>.</p>
+<h3>Syntax</h3>
+<pre><code>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
+</code></pre>
+<h3>Output</h3>
+<p>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}</p>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>2025-04-25T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Theme Color Schemes]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/theme-color-schemes/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/theme-color-schemes/"/>
+        <updated>2025-04-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Retypeset defines theme color schemes based on the OKLCH color space, with a default black, white, and gray color scheme that simulates a pr...]]></summary>
+        <content type="html"><![CDATA[<p>Retypeset defines theme color schemes based on the <a href="https://oklch.com/">OKLCH</a> color space, with a default black, white, and gray color scheme that simulates a print style.</p>
+<p>To meet personalization needs, I've created several color schemes for the theme. You can replace the default color scheme in <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> and restart the development server to preview the new color scheme.</p>
+<h2>Scallion White</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/1-light.ClVuZxd5_21HiG1.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/1-dark.BivCfSmu_Z1FcXLT.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0.03 211.86)',
+  secondary: 'oklch(0.40 0.03 211.86)',
+  background: 'oklch(0.99 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0015 106.47)',
+  secondary: 'oklch(0.79 0.0015 106.47)',
+  background: 'oklch(0.24 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Raven Teal</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/2-light.DLXS38ks_2j3zhb.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/2-dark.prgZMrfY_Z1i4yAx.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.0172 280.05)',
+  secondary: 'oklch(0.40 0.0172 280.05)',
+  background: 'oklch(0.98 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0172 280.05)',
+  secondary: 'oklch(0.79 0.0172 280.05)',
+  background: 'oklch(0.24 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Ink Blue</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/4-light.DIUeDw9p_Z2fbxhe.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/4-dark.CKqTknpt_2n6Qrb.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.053 261.24)',
+  secondary: 'oklch(0.39 0.053 261.24)',
+  background: 'oklch(1 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0 0)',
+  secondary: 'oklch(0.79 0 0)',
+  background: 'oklch(0.24 0.016 265.21)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Ecru</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/3-light.8aAAK8Ad_BewEA.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/3-dark.CGQcMuXC_Z2c4VKc.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0 0)',
+  secondary: 'oklch(0.41 0 0)',
+  background: 'oklch(0.95 0.0237 59.39)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.93 0.019 59.39)',
+  secondary: 'oklch(0.80 0.017 59.39)',
+  background: 'oklch(0.23 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>2025-04-11T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[KaTeX Mathematical Demo]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/katex-mathematical-demo/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/katex-mathematical-demo/"/>
+        <updated>2025-04-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers. It puts special emphasis on being fast and...]]></summary>
+        <content type="html"><![CDATA[<p>KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers. It puts special emphasis on being fast and easy to use. It was initially developed by Khan Academy, and became one of the top five trending projects on GitHub.</p>
+<h2>Group Theory</h2>
+<p>Burnside's lemma, sometimes also called Burnside's counting theorem, the Cauchy-Frobenius lemma or the orbit-counting theorem.</p>
+<p>Let $\wedge$ be a group action of a finite group $G$ on a finite set $X$. Then the number $t$ of orbits of the action is given by the formula.</p>
+<p>$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</p>
+<p>For each integer $n\ge2$, the quotient group $\mathbb{Z}/n\mathbb{Z}$ is a cyclic group generated by $1+n\mathbb{Z}$ and so $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$.</p>
+<p>The quotient group $\mathbb{R}/\mathbb{Z}$ is isomorphic to $([0,1),+_1)$, the group of real numbers in the interval $[0,1)$, under addition modulo 1.</p>
+<p>Isomorphism Theorem. Let $\phi\colon(G,\circ)\to(H,*)$ be a homomorphism. Then the function</p>
+<p>$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</p>
+<p>is an isomorphism, so</p>
+<p>$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</p>
+<h2>Taylor's Theorem</h2>
+<p>Let the function $f$ be an $(n+1)$-times differentiable on an open interval containing the points $a$ and $x$. Then</p>
+<p>$$
+f(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</p>
+<p>where</p>
+<p>$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</p>
+<p>for some $c$ between $a$ and $x$.</p>
+<p>$\KaTeX$ doesn't have a right-align option so an extra aligned column is used for equation numbers. They are pushed to the right by mkern spacing, default \mkern100mu. Both align &amp; align* environments can be used, as can \tag and \notag.</p>
+<h2>Align environment</h2>
+<p>$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</p>
+<h2>Align* environment</h2>
+<p>$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \
+&amp;= \frac{\pi^3}{16(N+1)} \
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \
+\text{so} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</p>
+<h2>Sum of a Series</h2>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</p>
+<h2>Product notation</h2>
+<p>$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ for }\lvert q\rvert &lt; 1.
+$$</p>
+<h2>Cross Product</h2>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</p>
+<h2>Maxwell's Equations</h2>
+<p>$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</p>
+<h2>Greek Letters</h2>
+<p>$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</p>
+<h2>Arrows</h2>
+<p>$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</p>
+<h2>Symbols</h2>
+<p>$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</p>
+<p><em>Samples taken from <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a></em></p>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>2025-04-01T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown Style Guide]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/markdown-style-guide/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/markdown-style-guide/"/>
+        <updated>2025-03-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Here are some basic Markdown syntax examples and their stylistic effects in Retypeset. To create headings, add number signs # in front of a...]]></summary>
+        <content type="html"><![CDATA[<p>Here are some basic Markdown syntax examples and their stylistic effects in Retypeset.</p>
+<h2>Headings</h2>
+<p>To create headings, add number signs <code>#</code> in front of a word or phrase. The number of number signs you use should correspond to the heading level.</p>
+<h3>Syntax</h3>
+<pre><code># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+</code></pre>
+<h3>Output</h3>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<h2>Paragraphs</h2>
+<p>To create paragraphs, use a blank line to separate one or more lines of text.</p>
+<h3>Syntax</h3>
+<pre><code>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+
+Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+</code></pre>
+<h3>Output</h3>
+<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
+<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
+<h2>Images</h2>
+<p>To add images, add an exclamation mark <code>!</code>, followed by alt text in brackets <code>[]</code>, and the path or URL to the image asset in parentheses <code>()</code>.</p>
+<h3>Syntax</h3>
+<pre><code>![Image Description](../_images/image-01.jpeg)
+
+![Image Description](https://image.example.com/image-01.webp)
+</code></pre>
+<h3>Output</h3>
+<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="Image Description" /></p>
+<h2>Blockquotes</h2>
+<p>To create blockquotes, add a <code>&gt;</code> symbol and a space before text. Blockquotes can contain multiple paragraphs. To cite sources, use <code>&lt;cite&gt;</code> or <code>&lt;footer&gt;</code> tags, while footnotes may be inserted using the <code>[^1]</code> or <code>[^note]</code> syntax.</p>
+<h3>Blockquote with multiple paragraphs</h3>
+<h4>Syntax</h4>
+<pre><code>&gt; Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&gt;
+&gt; **Note** that you can use _Markdown syntax_ within a blockquote.
+</code></pre>
+<h4>Output</h4>
+<blockquote>
+<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.</p>
+<p><strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
+</blockquote>
+<h3>Blockquote with citing sources</h3>
+<h4>Syntax</h4>
+<pre><code>&gt; Don't communicate by sharing memory, share memory by communicating.
+&gt;
+&gt; — &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;
+
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+</code></pre>
+<h4>Output</h4>
+<blockquote>
+<p>Don't communicate by sharing memory, share memory by communicating.</p>
+<p>— &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;</p>
+</blockquote>
+<p>[^1]: The above quote is excerpted from Rob Pike's <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk</a> during Gopherfest, November 18, 2015.</p>
+<h2>Tables</h2>
+<p>To add tables, use three or more hyphens <code>---</code> to create each column's header, and use pipes <code>|</code> to separate each column.</p>
+<h3>Syntax</h3>
+<pre><code>| Italics   | Bold     | Code   |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
+</code></pre>
+<h3>Output</h3>
+<table>
+<thead>
+<tr>
+<th>Italics</th>
+<th>Bold</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>italics</em></td>
+<td><strong>bold</strong></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><em>italics</em></td>
+<td><strong>bold</strong></td>
+<td><code>code</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Code Blocks</h2>
+<p>To create code blocks, wrap your code with three backticks <code>```</code>. You can indicate the programming language being used after the opening backticks to indicate how to color and style your code, e.g., html, javascript, css, markdown, etc.</p>
+<h3>Syntax</h3>
+<pre><code>```html
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Test&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+<h3>Output</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Example HTML5 Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Test&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>List Types</h2>
+<h3>Ordered List</h3>
+<h4>Syntax</h4>
+<pre><code>1. First item
+2. Second item
+3. Third item
+</code></pre>
+<h4>Output</h4>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h3>Unordered List</h3>
+<h4>Syntax</h4>
+<pre><code>- List item
+- Chart item
+- And another item
+</code></pre>
+<h4>Output</h4>
+<ul>
+<li>List item</li>
+<li>Chart item</li>
+<li>And another item</li>
+</ul>
+<h3>Nested list</h3>
+<h4>Syntax</h4>
+<pre><code>- Fruit
+  - Apple
+  - Orange
+  - Banana
+- Dairy
+  - Milk
+  - Cheese
+</code></pre>
+<h4>Output</h4>
+<ul>
+<li>Fruit
+<ul>
+<li>Apple</li>
+<li>Orange</li>
+<li>Banana</li>
+</ul>
+</li>
+<li>Dairy
+<ul>
+<li>Milk</li>
+<li>Cheese</li>
+</ul>
+</li>
+</ul>
+<h2>Other Elements</h2>
+<p>Including <code>&lt;sup&gt;</code> superscript, <code>&lt;sub&gt;</code> subscript, <code>&lt;abbr&gt;</code> abbreviation, <code>&lt;del&gt;</code> strikethrough, <code>&lt;u&gt;</code> wavy underline, <code>&lt;kbd&gt;</code> keyboard input, <code>&lt;mark&gt;</code> highlight, and <code>&lt;hr&gt;</code> horizontal rule.</p>
+<h3>Syntax</h3>
+<pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+
+X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+
+&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; is a bitmap image format.
+
+Good writers always check for &lt;u title="spelling"&gt;speling&lt;/u&gt; mistakes.
+
+Press &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; to end the session.
+
+There is &lt;del&gt;nothing&lt;/del&gt; no code either good or bad, but running it makes it so.
+
+Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.
+
+Use three hyphens `---` or the `&lt;hr&gt;` tag to create a horizontal rule as shown below.
+
+---
+</code></pre>
+<h3>Output</h3>
+<p>H&lt;sub&gt;2&lt;/sub&gt;O</p>
+<p>X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;</p>
+<p>&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; is a bitmap image format.</p>
+<p>Good writers always check for &lt;u title="spelling"&gt;speling&lt;/u&gt; mistakes.</p>
+<p>Press &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; to end the session.</p>
+<p>There is &lt;del&gt;nothing&lt;/del&gt; no code either good or bad, but running it makes it so.</p>
+<p>Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.</p>
+<p>Use three hyphens <code>---</code> or the <code>&lt;hr&gt;</code> tag to create a horizontal rule as shown below.</p>
+<hr />
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>2025-03-08T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Theme Guide]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/theme-guide/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/theme-guide/"/>
+        <updated>2025-04-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Retypeset is a static blog theme based on the Astro framework. This guide introduces how to modify theme configuration and create new posts...]]></summary>
+        <content type="html"><![CDATA[<p>Retypeset is a static blog theme based on the <a href="https://astro.build/">Astro</a> framework. This guide introduces how to modify theme configuration and create new posts, helping you quickly set up your personal blog.</p>
+<h2>Theme Configuration</h2>
+<p>Customize your blog by modifying the configuration file <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a>.</p>
+<h3>Site Information</h3>
+<pre><code>site: {
+  // site title
+  title: 'Retypeset'
+  // site subtitle
+  subtitle: 'Revive the beauty of typography'
+  // site description
+  description: 'Retypeset is a static blog theme...'
+  // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
+  i18nTitle: true // true | false
+  // author name
+  author: 'radishzz'
+  // site url
+  url: 'https://retypeset.radishzz.cc'
+  // base path
+  // root directory for all pages and assets
+  base: '/' // e.g., '/blog', '/docs'
+  // favicon url
+  // recommended formats: svg, png or ico
+  favicon: '/icons/favicon.svg' // or https://example.com/favicon.svg
+}
+</code></pre>
+<h3>Theme Color</h3>
+<pre><code>color: {
+  // default theme mode
+  mode: 'light' // light | dark | auto
+  // light mode
+  light: {
+    // primary color
+    // used for title, hover, etc
+    primary: 'oklch(25% 0.005 298)'
+    // secondary color
+    // used for post text
+    secondary: 'oklch(40% 0.005 298)'
+    // background color
+    background: 'oklch(96% 0.005 298)'
+    // highlight color
+    // used for navbar, selected text, etc
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+  // dark mode
+  dark: {
+    // primary color
+    primary: 'oklch(92% 0.005 298)'
+    // secondary color
+    secondary: 'oklch(77% 0.005 298)'
+    // background color
+    background: 'oklch(22% 0.005 298)'
+    // highlight color
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)'
+  }
+}
+</code></pre>
+<h3>Global Settings</h3>
+<pre><code>global: {
+  // default language
+  // language of the site root path '/'
+  locale: 'zh' // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
+  // more languages
+  // generate multi-language paths such as '/en/' '/es/'
+  // not fill in the locale code above again, can be an empty array []
+  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // post font style
+  fontStyle: 'sans' // sans | serif
+  // post date format
+  // YYYY-MM-DD | MM-DD-YYYY | DD-MM-YYYY | MMM D YYYY | D MMM YYYY
+  // 2025-04-13, 04-13-2025, 13-04-2025, Apr 13 2025，13 Apr 2025
+  dateFormat: 'YYYY-MM-DD'
+  // enable table of contents
+  toc: true // true | false
+  // enable katex math rendering
+  katex: true // true | false
+  // reduce motion
+  reduceMotion: false // true | false
+}
+</code></pre>
+<h3>Comment System</h3>
+<pre><code>comment: {
+  // enable comment system
+  enabled: true // true | false
+  // giscus comment system
+  giscus: {
+    repo: ''
+    repoId: ''
+    category: ''
+    categoryId: ''
+    mapping: 'pathname'
+    strict: '0'
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    inputPosition: 'bottom'
+  }
+  // twikoo comment system
+  twikoo: {
+    envId: ''
+    // version: frontend version can be changed in package.json
+  }
+  // waline comment system
+  waline: {
+    // server url
+    serverURL: 'https://retypeset-comment.radishzz.cc'
+    // emoji url
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'
+      // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji'
+      // more emojis: https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // gif search
+    search: false // true | false
+    // image uploader
+    imageUploader: false // true | false
+  }
+}
+</code></pre>
+<h3>SEO</h3>
+<pre><code>seo: {
+  // @twitter ID
+  twitterID: '@radishzz_'
+  // site verification
+  verification: {
+    // google search console
+    google: 'AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM'
+    // bing webmaster tools
+    bing: '64708CD514011A7965C84DDE1D169F87'
+    // yandex webmaster
+    yandex: ''
+    // baidu search
+    baidu: ''
+  }
+  // google analytics
+  googleAnalyticsID: ''
+  // umami analytics
+  umamiAnalyticsID: 'dab0e4b9-9cbf-43c3-af60-b09d3b545c38'
+  // folo verification
+  folo: {
+    // feed ID
+    feedID: ''
+    // user ID
+    userID: ''
+  }
+  // apiflash access key
+  // generate website screenshots for open graph images
+  // get your access key at: https://apiflash.com/
+  apiflashKey: ''
+}
+</code></pre>
+<h3>Footer Settings</h3>
+<pre><code>footer: {
+  // social links
+  links: [
+    {
+      name: 'RSS',
+      url: '/atom.xml', // or /rss.xml
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/radishzzz/astro-theme-retypeset',
+    },
+    {
+      name: 'Email',
+      url: 'email@radishzz.cc',
+    }
+    // {
+    //   name: 'X',
+    //   url: 'https://x.com/radishzz_',
+    // },
+  ]
+  // year of website start
+  startYear: 2025
+}
+</code></pre>
+<h3>Preload Resources</h3>
+<pre><code>preload: {
+  // image hosting url
+  // optimize remote images and generate low-quality placeholders
+  imageHostURL: 'image.radishzz.cc'
+  // custom google analytics js
+  // for users who proxy tracking scripts to a custom domain
+  customGoogleAnalyticsJS: ''
+  // custom umami analytics js
+  // for users who self-deploy umami or proxy tracking scripts to a custom domain
+  customUmamiAnalyticsJS: 'https://views.radishzz.cc/script.js'
+}
+</code></pre>
+<h2>Additional Configuration</h2>
+<p>Besides the configuration file <code>src/config.ts</code>, some configuration options are located in other files.</p>
+<h3>Syntax Highlighting</h3>
+<p>Code block syntax highlighting themes.</p>
+<pre><code>// astro.config.ts
+
+shikiConfig: {
+  // Available themes: https://shiki.style/themes
+  // Background color follows the blog theme by default, not the syntax highlighting theme
+  themes: {
+    light: 'github-light' // Light theme
+    dark: 'github-dark' // Dark theme
+  }
+}
+</code></pre>
+<h3>Post Excerpt</h3>
+<p>Character count for automatic post excerpts.</p>
+<pre><code>// src/utils/description.ts
+
+const excerptLengths: Record&lt;ExcerptScene, {
+  cjk: number // Chinese, Japanese, Korean
+  other: number // Other languages
+}&gt; = {
+  list: { // Homepage post list
+    cjk: 120, // Auto-excerpts first 120 characters
+    other: 240, // Auto-excerpts first 240 characters
+  },
+}
+</code></pre>
+<h3>Open Graph</h3>
+<p><a href="https://orcascan.com/tools/open-graph-validator?url=https%3A%2F%2Fretypeset.radishzz.cc%2Fen%2Fposts%2Ftheme-guide%2F">Open Graph social card</a> styles.</p>
+<pre><code>// src/pages/og/[...image].ts
+
+getImageOptions: (_path, page) =&gt; ({
+  logo: {
+    path: './public/icons/og-logo.png', // Required local path and PNG format
+    size: [250], // Logo width
+  },
+  font: {
+    title: { // Title
+      families: ['Noto Sans SC'], // Font
+      weight: 'Bold', // Weight
+      color: [34, 33, 36], // Color
+      lineHeight: 1.5, // Line height
+    },
+  },
+  fonts: [ // Font paths (local or remote)
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+  ],
+  bgGradient: [[242, 241, 245]], // Background color
+  // More configurations: https://github.com/delucis/astro-og-canvas/tree/latest/packages/astro-og-canvas
+})
+</code></pre>
+<h3>RSS Feed</h3>
+<p><a href="https://retypeset.radishzz.cc/en/atom.xml">RSS feed page</a> styles.</p>
+<pre><code>
+
+&lt;style type="text/css"&gt;
+body{color:oklch(25% 0.005 298)} /* Font color */
+.bg-white{background-color:oklch(0.96 0.005 298)!important} /* Background color */
+.text-gray{color:oklch(0.25 0.005 298 / 75%)!important} /* Secondary font color */
+&lt;/style&gt;
+</code></pre>
+<h2>Creating a New Post</h2>
+<p>Run <code>pnpm new-post &lt;filename&gt;</code> to create a new post, which can then be edited in the <code>src/content/posts/</code> directory.</p>
+<pre><code>pnpm new-post                      -&gt;  src/content/posts/new-post.md
+pnpm new-post first-post           -&gt;  src/content/posts/first-post.md
+pnpm new-post 2025/03/first-post   -&gt;  src/content/posts/2025/03/first-post.md
+pnpm new-post first-post.mdx       -&gt;  src/content/posts/first-post.mdx
+</code></pre>
+<h3>Front Matter</h3>
+<p>Only <code>title</code> and <code>published</code> are required fields, all other configurations can be omitted.</p>
+<pre><code>---
+# Required
+title: Theme Guide
+published: 2025-01-26
+
+# Optional
+description: The first 240 characters of the post will be automatically selected as the excerpt.
+updated: 2025-03-26
+tags:
+  - Blog Theme
+  - Guide
+
+# Advanced, Optional
+draft: true/false
+pin: 0-99
+toc: true/false
+lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+abbrlink: theme-guide
+---
+</code></pre>
+<h3>Advanced Configuration</h3>
+<h4>draft</h4>
+<p>Marks the post as a draft. When set to true, the post cannot be published and is only available for local development preview. Default is false.</p>
+<h4>pin</h4>
+<p>Pins the post to the top. The higher the number, the higher the priority of the pinned post. Default is 0, which means not pinned.</p>
+<h4>toc</h4>
+<p>Generate table of contents. Shows h2 to h4 headings. Determined by the global configuration <code>global.toc</code> by default, but can be overridden individually in each post.</p>
+<h4>lang</h4>
+<p>Specifies the post language. Only one language can be specified. If not specified, the post will be displayed in all language paths by default.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+
+# lang: ''
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+                             -&gt;  example.com/es/posts/apple/
+                             -&gt;  example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md   -&gt;  example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md   -&gt;  example.com/ru/posts/apple/
+</code></pre>
+<h4>abbrlink</h4>
+<p>Customizes the post URL. Can only contain lowercase letters, numbers, and hyphens <code>-</code>.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+# lang: 'es'
+
+# abbrlink: ''
+src/content/posts/apple.md           -&gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: 'banana'
+src/content/posts/apple.md           -&gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/banana/
+</code></pre>
+<h3>Mixed Text Formatting</h3>
+<p>Run <code>pnpm format-posts</code> to optimize the formatting in Markdown files within the <code>src/content/</code> directory. This command automatically fixes spacing between CJK (Chinese, Japanese, Korean) and Latin characters, corrects punctuation marks, and improves overall text readability.</p>
+<pre><code>pnpm format-posts
+🔍 Scanning Markdown files...
+📦 Found 56 Markdown files
+✅ src/content/posts/guides/Theme Guide-ja.md
+✅ src/content/posts/guides/Theme Guide-zh-tw.md
+✅ src/content/posts/guides/Theme Guide-zh.md
+✨ Formatted 3 files successfully
+</code></pre>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>2025-01-26T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tolerance and Freedom]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/tolerance-freedom/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/tolerance-freedom/"/>
+        <updated>1959-03-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Seventeen or eighteen years ago, I met for the last time the historian George Lincoln Burr from my alma mater, Cornell University. We talked...]]></summary>
+        <content type="html"><![CDATA[<p>Seventeen or eighteen years ago, I met for the last time the historian George Lincoln Burr from my alma mater, Cornell University. We talked about how the British historian Lord Acton planned to write a history of liberty, but died before he finished it. Mr. Burr talked a lot that day, and there was one sentence I still remember. He said, "The older I get, the more I feel that tolerance is more important than freedom."</p>
+<p>Mr. Bull has been dead for more than ten years. The more I think about his words, the more I feel that they are an indelible motto. I myself also have the feeling that "the older I get, the more I feel that tolerance is more important than freedom." Sometimes I even feel that tolerance is the root of all freedom: without tolerance, there is no freedom.</p>
+<p>When I was seventeen years old (1908), I published a few articles in the "Jingye Xunbao" called "No Ghosts". One of them was a criticism of the novels "Journey to the West" and "Investiture of the Gods". I said:</p>
+<p>It is stated in "The Book of Rites": "If anyone uses divination based on the time of ghosts and gods to mislead the people, he shall be killed." I only wonder why those who have opposed ruling power and those who expected to save the world and enlighten the people for thousands of years have been so ignorant of this that theories that confuse the world and deceive the people have been able to prevail, and as a result, our Chinese nation has been thrown into a world of extreme darkness!</p>
+<p>This was a "defending the way of morality" that a child could not tolerate. At that time, I was already a non-ghost and atheist, so I made a crazy argument to destroy superstition and implement the classic rule in "Wangzhi" (a chapter in "Book of Rites") that "if anyone uses divination to confuse the public, he shall be killed"!</p>
+<p>At that time, I certainly did not dream that the child who said this would be so enthusiastic about doing a 20,000-word textual research on "Journey to the West" fifteen years later (1923)! At that time, I certainly did not think that the child would still be looking for materials that could verify the author of "Investiture of the Gods" twenty or thirty years later! At that time, I did not think about the historical significance of that sentence in "The King's System". The full text of that paragraph of "The King's System" is as follows:</p>
+<p>Those who break the law by breaking words, confuse names and change things, and follow the left path to disrupt the government shall be killed. Those who make obscene sounds, wear strange clothes, use strange skills and strange tools to confuse the people shall be killed. Those who act falsely and firmly, speak falsely and argue, learn wrong things and are broad-minded, follow wrong things and are generous to confuse the people shall be killed. Those who use ghosts and gods to predict the time and date to confuse the people shall be killed. These four punishments shall not be listened to.</p>
+<p>Fifty years ago, I had no idea that the “punishment” in this passage was the classic basis for prohibiting new ideas, new academic disciplines, new beliefs, and new arts under the Chinese autocratic regime. At that time, I was enthusiastic about “breaking superstition”, so I supported the fourth of the “four punishments”: “If anyone uses ghosts and gods to predict the time and date and mislead the public, he shall be killed.” I had no idea that the fourth punishment, “using ghosts and gods to mislead the public” and the first punishment, “adhering to the left path to disrupt the government”, could be used to destroy the freedom of religious belief. I also did not notice that Zheng Xuan’s commentary used Gongshu Ban as an example of “strange skills and unusual instruments”; I did not notice that Kong Yingda’s “Justice” cited the example of “Confucius was the Minister of Justice of Lu for seven days and Shao Zhengmao was executed” to explain “If one acts falsely and firmly, speaks falsely and argues, studies falsehood and is broad-minded, follows the falsehood and misleads the public, he shall be killed”. Therefore, the second punishment can be used to prohibit the freedom of artistic creation, and can also be used to “kill” many scientists who invented “strange skills and unusual instruments”. Therefore, the third punishment can be used to destroy freedom of thought, freedom of speech, and freedom of publication.</p>
+<p>Fifty years ago, I quoted the fourth punishment of "The King's Regulations" and wanted to "kill" the authors of "Journey to the West" and "Investiture of the Gods". At that time, I certainly did not dream that ten years later, when I was teaching at Peking University, some upright gentlemen who were also "defending morality" would also want to quote the third punishment of "The King's Regulations" and want to "kill" me and my friends. I wanted to "kill" people back then, and later people wanted to "kill" me. The motives were the same: they all lost their tolerance just because they were aroused by a little anger for justice.</p>
+<p>I tell the story of my advocacy of "using divination to confuse the masses and kill them" fifty years ago in order to illustrate that the older I get, the more I feel that "tolerance" is more important than "freedom".</p>
+<p>I am still an atheist today. I do not believe in a God with a will, nor do I believe in the immortality of the soul. But there is one fundamental difference between my atheism and the Communist Party's atheism. I can tolerate all religions that believe in God, and I can tolerate all people who sincerely believe in religion. The Communist Party itself advocates atheism, and wants to eliminate all beliefs in God and ban all religions that believe in God. This was my naive and arrogant intolerant attitude fifty years ago.</p>
+<p>I always feel that this country, this society, this world, the vast majority of people believe in God, and they are so generous that they tolerate my atheism, tolerate me as a person who does not believe in God or the immortality of the soul, and tolerate my free expression of my atheistic thoughts at home and abroad. No one has ever stoned me, locked me up in prison, or tied me to a pile of wood and burned me to death. I have actually enjoyed tolerance and freedom in this world for more than 40 years. I think the tolerance of this country, this society, and this world towards me is lovely and I am grateful for it.</p>
+<p>So I always feel that I should repay society's tolerance of me with a tolerant attitude. So I don't believe in God, but I can sincerely understand all those who believe in God, and I can also sincerely tolerate and respect all religions that believe in God.</p>
+<p>I want to repay society's tolerance of me with a tolerant attitude, because the older I get, the more I feel the importance of tolerance. If society did not have this tolerance, I would never have been able to enjoy the freedom of bold doubt and the freedom to openly advocate atheism for more than 40 years.</p>
+<p>In the history of religious freedom, the history of freedom of thought, and the history of political freedom, we can see that tolerance is the most precious and rare attitude. Humans are used to liking the same and disliking the different. They always dislike beliefs, thoughts, and behaviors that are different from their own. This is the root of intolerance. Intolerance is simply the inability to tolerate new ideas and beliefs that are different from mine. A religious group always believes that its religious beliefs are right and cannot be wrong, so it always believes that those religious beliefs that are different from its own must be wrong, must be heresy, and must be evil cults. A political group always believes that its political propositions are right and cannot be wrong, so it always believes that those political views that are different from its own must be wrong and must be enemies.</p>
+<p>All persecutions of heretics, all destruction of "dissidents", all prohibitions on religious freedom, and all oppression of thought and speech are due to the deep belief that one is not wrong. Because one is deeply convinced that one is not wrong, one cannot tolerate any thoughts or beliefs that are different from one's own.</p>
+<p>Take a look at the history of religious reforms in Europe. Martin Luther, John Calvin and others rose up to reform religion because they were dissatisfied with the intolerance and lack of freedom of the Roman Catholic Church. However, after the victory of Protestantism in Central and Northern Europe, the leaders of Protestantism gradually became intolerant and would not allow others to criticize their new doctrines. Calvin, who had taken control of religious power in Geneva, actually convicted Servetus, a scholar who dared to think independently and criticize Calvin's doctrine, of "heresy", chained him to a stake, piled up firewood, and slowly burned him alive. This happened on October 23, 1553.</p>
+<p>The tragic story of this martyr Servetus is most worthy of remembrance and reflection. The original goal of the religious reform movement was to fight for "Christian freedom" and "freedom of conscience." Why did Calvin and his followers burn an independent-minded Protestant to death with a slow fire? Why did Calvin's disciple (who later succeeded Calvin as the religious dictator of Geneva) de Beze declare that "freedom of conscience is the devil's dogma"?</p>
+<p>The basic reason is still the psychological belief that I "cannot be wrong". A devout religious reformer like Calvin, who firmly believed that his conscience really represented God's command, his mouth and his pen really represented God's will, could his opinions be wrong? Is it possible for him to be wrong? After Servetus was burned to death, Calvin was criticized by many people. In 1554, Calvin published an article to defend himself. He said without hesitation, "The authority to severely punish heretics is unquestionable, because this is God himself speaking. ... This work is to fight for the glory of God."</p>
+<p>Can God speak for himself, can he be wrong? Can fighting for the glory of God be wrong? This mentality of "I can't be wrong" is the root of all intolerance. I firmly believe that my own beliefs are infallible, my opinions are "righteous", and those who oppose me are of course "heresies". My opinions represent the will of God, and those who oppose me are of course "the devil's dogma".</p>
+<p>This is the lesson that the history of religious freedom teaches us: tolerance is the foundation of all freedom; without tolerance for "others", we will not recognize that "other" religious beliefs can enjoy freedom. However, because the attitude of intolerance is based on the psychological habit of "my beliefs cannot be wrong", tolerance for "others" is the most precious and difficult tolerance to cultivate.</p>
+<p>In political thought and in the discussion of social issues, we all feel that intolerance is common, while tolerance is always rare. I will try to cite the story of an old friend who has passed away as an example. More than 40 years ago, we started the movement to promote vernacular literature in the magazine New Youth. I wrote to Chen Duxiu from the United States, saying:</p>
+<p>The right and wrong of this matter cannot be determined overnight, nor can it be determined by one or two people. I sincerely hope that people in the country can calmly study this issue with us. After a thorough discussion, the right and wrong will be clear. We have already raised the banner of revolution, and although we cannot retreat, we will never dare to regard what we advocate as the right and not allow others to correct it.</p>
+<p>Duxiu answered me in New Youth:</p>
+<p>In my opinion, accommodating dissenting opinions and free discussion are the principles for the development of academic studies. However, the idea that vernacular Chinese should be the orthodox way to improve Chinese literature is so clearly stated in its right and wrong that opponents must not be allowed any room for discussion. We must regard what we advocate as absolutely right and will not allow others to correct us.</p>
+<p>I thought this was a very arbitrary attitude. Now, more than 40 years later, I still can't forget Duxiu's words. I still think that this attitude of "must regard what we advocate as absolutely right" is a very intolerant attitude, which is most likely to cause others' disgust and opposition.</p>
+<p>I once said that I should repay society's tolerance of me with a tolerant attitude. Now I often think that we still need to discipline ourselves: if we want others to tolerate and understand our views, we must first develop the tolerance to tolerate and understand other people's views. At the very least, we should discipline ourselves not to "take what we advocate as absolute right". We who have been trained in experimentalism do not recognize the existence of "absolute right", let alone "take what we advocate as absolute right".</p>
+<p>48, 3, 12 morning</p>
+<p>(Originally published in Taipei's Free China, Vol. 20, No. 6, March 16, 1959)</p>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>1959-03-16T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My Native Heath]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/my-native-heath/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/my-native-heath/"/>
+        <updated>1921-01-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[It was bitter cold as I set forth, after an absence of more than twenty years, on a visit to my native heath over two thousand li away. It...]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="_Here's the description of the picture" /></p>
+<p>It was bitter cold as I set forth, after an absence of more than twenty years, on a visit to my native heath over two thousand li away.</p>
+<p>It was in the deep of winter, and as I neared my destination, the sky became overcast and a cold wind began to moan through the boat. Looking through the cracks in the mat covering, I saw a few dismal and forlorn villages scattered over the landscape under a pale yellow sky, without any signs of life, and I could not help but experience a feeling of sadness.</p>
+<p>Ah, this could not be the countryside that had been constantly in my thoughts for the past twenty years!</p>
+<p>The country that I remembered was entirely different and so much better than this. But when I tried to recall its particular beauty and describe its special merits, I could think of none, and I realized that it was, after all, about as I now beheld it. My native heath, I explained to myself, must have been like this always. It might not have made any progress, but there was nothing particularly sad about it; it appeared so to me only because of the state of my own feelings, which was not exactly cheerful on the occasion of this visit.</p>
+<p>It was, in fact, a farewell visit. We had previously sold, by consent of all those concerned, the old house in which our family had lived for several generations and had agreed to turn the house over to the new owners before the first of the year. It was necessary for us to bid farewell to the old house and the familiar countryside and to settle down in another part of the country, where I made my living.</p>
+<p>I arrived at our house the following day, early in the morning. The broken blades of dry grass that grew between the roof tiles rustled in the wind and explained better than words could why the old house had to change owners. It was very quiet, as ours was the last branch of the family to move away. My mother met me at the gate of our own compound, soon joined by my eight-year-old nephew Hung-erh, who came out running.</p>
+<p>My mother was happy to see me, but I could detect that there was a trace of sadness in her, too. She told me to sit down and rest and have some tea and not to talk about the matter of moving till later. As Hung-erh had never seen me before, he stood and watched me intently from a distance.</p>
+<p>In the end we came to the matter of moving. I said that I had rented a house and bought a few pieces of furniture and that we must sell all our old furniture and buy more with the proceeds. My mother approved of my arrangements. It was going to be a fairly simple matter as most of the packing had been done already and some of the larger pieces of furniture had been sold. The only difficulty was in getting the buyers to pay.</p>
+<p>"After you have rested a few days and visited our relatives, we shall be able to start," mother said.</p>
+<p>"Yes", I answered.</p>
+<p>"By the way, every time Yun-t'u comes to our house, he always asks about you. He wants very much to see you. I sent a message telling him the probable date of your arrival. He will be here soon."</p>
+<p>A scene full of novelty and mystery suddenly flashed across my mind: a full moon, golden and yellow, hung in the sky, and below, against the emerald green of an endless expanse of watermelon plants on a sandy beach by the sea, stood a boy eleven or twelve years old, a silver ring around his neck and a steel pitchfork in his hand. He was aiming at a "ch'a" with his fork, but as he struck with all his might, the "ch'a" ducked and scuttled off between his legs.</p>
+<p>The boy was Yun-t'u. I was about the same age when I first met him, almost thirty years ago. My father was still living then, and our family was in good circumstances. I was, in other words, a shao-yeh, a young master. It was our turn to take charge of a particularly important ancestral sacrifice which came around only once in more than thirty years and was, therefore, an even more important occasion for us than for the rest of the clan. The offerings made before the ancestral portraits in the first month were rich and varied, the sacrificial vessels elaborate, and the participants many. It was necessary to keep a careful watch over the sacrificial vessels to guard against theft. As the work was too much for our mang-yueh, he asked father's permission to send for his son Yun-t'u to take charge of the sacrificial vessels. (In our part of the country there were three kinds of help: those who hired themselves out by the year were known as chang-nien or all-year; those who hired themselves out by the day were known as tuan-kung or short-labor; while those who worked their own land and only hired themselves out during the New Year and other festivals or during rent time were known as mang-yueh or busy-month.)</p>
+<p>I was very glad that father gave his consent, for I had heard of Yun-t'u and knew that he was of my own age. He was named Yun-t'u because he was born in an intercallary (yun) month and lacked, according to the system of correspondences of the astrologers, the element of earth (t'u) in his horoscope. He knew how to set up a trap to catch birds.</p>
+<p>I began to look forward to the coming of the New Year as it meant that Yun-t'u would come, too. Finally the end of the year approached and one day mother told me that Yun-t'u had come. I ran to see him and found him in the kitchen. He had a ruddy face and wore a felt scalp cap, and a silver ring around his neck. It was evident that his father loved him very much, was afraid that he might not live long, and had, after making a vow before the gods, put this ring around his neck to hold him. Yun-t'u was very shy with grown-ups but not with me, and would talk freely with me when there was no one else around. In a few hours we had become fast friends.</p>
+<p>I don't know what we talked about then; I only remember that Yun-t'u was very happy and told me that he had seen, since he came to the city, many things which he had never seen before.</p>
+<p>The following day I wanted him to show me how to catch birds, but he said: "We cannot do it now. We have to wait until after the snow. Back home I sweep off a spot in the snow and set up a big basket with a stick and scatter some grain under the basket. When the birds come to eat the grain I pull the string tied to the stick and the basket falls and catches the birds underneath. I catch all kinds of birds: wild fowls, wood pigeons, blue-backs, and so on."</p>
+<p>And so I hoped it would snow.</p>
+<p>Yun-t'u also said to me: "It is now too cold, but you come to our place in the summer. In the daytime we'll go to the seashore to pick shells. We have all kinds of shells, red ones and green ones, devil's-terrors and Kuanyin's-hands. In the evening you can go with my father and me to watch the watermelon patch."</p>
+<p>"To guard against thieves?"</p>
+<p>"No. We do not consider it stealing if a passer-by is thirsty and helps himself to a melon. We watch for badgers, hedgehogs, and especially the 'ch'a.' You can hear them gnawing on the melons in the moonlight, crunch, crunch. Then you get hold of your fork and walk up lightly—"</p>
+<p>I did not know what a "ch'a" was—I don't know to this day—but for some reason or other I imagined it to be something like a small puppy, only more fierce.</p>
+<p>"Don't they bite?"</p>
+<p>"But you have your fork. When you get close and see it, you strike it with your fork. The beast is very quick. It will rush toward you and run off between your legs. Its fur is as slippery as oil."</p>
+<p>I never knew that there were such new and marvelous things in the world: that there were shells of so many colors on the seashore and that watermelons could have a more exciting experience than being displayed in fruit shops.</p>
+<p>"When the tide is in, there are lots and lots of jumping fish. They all have two legs like young frogs."</p>
+<p>Ah, Yun-t'u knew about an infinite number of strange things which none of my usual playmates knew anything about. They knew absolutely nothing, for when Yun-t'u was playing on the seashore, they, like myself, could only see a four-cornered sky above the walls of the courtyard.</p>
+<p>Unfortunately the first month came to an end and Yun-t'u had to go home. I cried, and Yun-t'u also hid in the kitchen and cried and refused to go, but in the end he was taken away by his father. Later he sent me by his father a package of sea shells and a few pretty feathers. I, too, sent things to him once or twice, but I had not seen him since.</p>
+<p>So when my mother spoke of him, my childhood memories were revived in a lightning flash and my native heath again assumed the beauty that my memories had always clothed it with.</p>
+<p>"That's excellent!" I said. "How—how is he?"</p>
+<p>"Well, his circumstances are not very happy," my mother answered. As she looked toward the yard, she cried, "There are those people again. They come here under the pretext of buying furniture but they are apt to help themselves to things when no one is looking. I must go and keep an eye on them."</p>
+<p>She got up and went out. There were women's voices outside. I called Hung-erh to me and talked with him: I asked him whether he could write, whether he would like to go away.</p>
+<p>"Shall we ride in a train?"</p>
+<p>"Yes, we'll ride in a train."</p>
+<p>"How about boats?"</p>
+<p>"We'll take a boat first."</p>
+<p>"Ha! So this is he! and what a beard he has grown!" A sharp, raucous voice suddenly broke in.</p>
+<p>I looked up, startled, and saw before me a woman of around fifty years with high cheekbones and thin lips, her arms akimbo. She wore no skirt and her feet stuck out like a pair of compasses such as draftsmen use.</p>
+<p>I looked puzzled.</p>
+<p>"Don't you know who I am? I used to hold you in my arms!"</p>
+<p>I was more puzzled than ever. Fortunately my mother came in then and said, "He has been away so many years he has forgotten everything." Then turning to me she added, "You ought to remember her. This is Sister Yang from across the way . . . they have a bean-curd shop."</p>
+<p>Yes, I remembered now. Out of my childhood memories I recalled the image of a Sister Yang seated all day long in the bean-curd shop across the street. She was nicknamed "Bean Curd Hsi Shih." But she powdered her face then and her cheekbones were not so high, her lips not so thin, and, because she was seated all day long, I had no recollection of her compasslike feet. She was young and attractive then, and it was said that her shop flourished for that reason. However, my child mind was not susceptible to a young woman's charms and she had made no impression on me. Compasses was very indignant and her face assumed a jeering expression at my lapse, which to her must have seemed as unforgivable as a Frenchman's not knowing Napoleon or an American's not knowing Washington.</p>
+<p>"So you have forgotten who I am! Well, this is what you call the forgetfulness of the great."</p>
+<p>"It is no such thing—I—I," I stood up, stammering with embarrassment.</p>
+<p>"Then let me tell you something, Brother Hsun. You are now rich and have no use for this dilapidated furniture. The pieces are too heavy and clumsy to take with you. Give them to me. We are poor and can use those things."</p>
+<p>"I am not rich. I have to sell these things in order to . . ."</p>
+<p>"What's that you say? You have been appointed a Daotai and yet you say you are not rich. You have three concubines and go about in a huge sedan with eight carriers, and you tell me that you are not rich. Heng, you can't fool me!"</p>
+<p>I realized that there was no use arguing with her and so kept still.</p>
+<p>"Aiya, Aiya! Truly the more money you have the more you would not let even a hair go, and the more you would not even let a hair go the more money you would have!" Compasses grumbled as she turned around and indignantly walked away, helping herself to my mother's gloves, tucking them under her coat.</p>
+<p>After this my relatives and kinsmen in the neighborhood came to call on me. In my spare moments I packed. Thus three or four days went by.</p>
+<p>One afternoon as I was drinking tea after lunch I heard footsteps coming from outside. I glanced around and, discovering to my surprise who it was, I got up and hastened to meet him.</p>
+<p>It was Yun-t'u. Although I knew it was he the minute I saw him, yet it was not the Yun-t'u of my memories. He was now almost twice as tall as when I last saw him; his ruddy, round face had become an ashen yellow, furrowed with wrinkles; his eyes were like those of his father, with the thick, red lids common to people who live near the sea and are constantly exposed to the sea breeze. He wore an old scalp cap and a light cotton padded coat and shivered with cold. He held a paper package and a long pipe in his hands, hands no longer plump and ruddy as I remembered them but coarse, clumsy, and cracked like the bark of a pine tree.</p>
+<p>I was deeply moved but I did not know what to say.</p>
+<p>"Ah, Brother Yun-t'u—so you have at last come," I said clumsily. There were many things that I wanted to say to him, things that swelled up within me—wild fowl, jumping fish, sea shells, "ch'a"—but they seemed to be blocked by something, so that they whirled around in my brain and could not find expression.</p>
+<p>He stood before me with an expression of mixed joy and sadness. His lips moved but no sound came. When he did manage to speak it was formal and respectful: "Your Honor . . . "</p>
+<p>I must have shuddered as I realized what a heavy, sorrowful wall had come between us. I found nothing to say.</p>
+<p>"Come, Shui-sheng, and kowtow to His Honor," he said to a boy that he dragged out from behind him. The child was the image of Yun-t'u twenty years ago, except that he was thinner and more sallow and had no silver ring about his neck. "He is my fifth, has never been away from home and so he is very shy."</p>
+<p>My mother and Hung-erh now came down, probably having heard the visitors.</p>
+<p>"Lao-tai-tai," Yun-t'u said, "I received your message and I was very happy to hear that His Honor had come back."</p>
+<p>"But why so formal?" my mother protested. "Didn't you use to call one another brother? Do as before, call him Brother Hsun."</p>
+<p>"Aiya, how kind you are! But that won't do. It might have been all right then. I was only a boy and did not know any better." Yun-t'u again tried to induce his son to come forward and greet my mother, but the boy hid closely behind his back.</p>
+<p>"Is that Shui-sheng? Isn't he the fifth one? With so many strangers around no wonder he is shy. Let him go with Hung-erh," mother said.</p>
+<p>At this Hung-erh went up to Shui-sheng and the latter readily went with him. Mother bade Yun-t'u sit down, which he did after some hesitation. He leaned his long pipe against the table and handed the paper package to me, saying, "We have nothing fresh in the winter. These dried green beans are from our own land. I hope Your Honor . . . "</p>
+<p>I asked him about his circumstances, which he told me with many a headshaking.</p>
+<p>"It is very bad. My sixth is now old enough to help, but there is never enough food to feed them all. Moreover, times are not peaceful—everywhere money, money, and always new and irregular taxes—harvests bad. When we do harvest something and try to sell it, we hardly get enough to pay the various taxes imposed all along the way. If we don't try to sell, then it only rots away on our hands ..."</p>
+<p>He kept on shaking his head. His face, though deeply furrowed, was expressionless as a stone image. He felt his hardships bitterly, but was unable to express them. After a few moments of silence he took up his pipe and smoked.</p>
+<p>My mother questioned him and found that he had a great deal to do at home and had to go back the following day. As he had not yet had lunch, mother told him to go into the kitchen and fry some rice for himself. After he went out, mother and I sighed at the man's lot: too many sons, famine, oppressive taxes, soldiers, bandits, officials, the gentry—all these contributed to make the burden heavy for the poor peasant, crushing him and draining the life out of him until he was scarcely more than a wooden image. Mother said we should give him everything that we could neither use nor find a buyer for.</p>
+<p>In the afternoon he picked out some things that he could use: two long tables, four chairs, a set consisting of an incense burner and candlesticks, a scale. He asked us to give him all the rice-straw ash. (We use rice straws for fuel and the ash for fertilizer.) He was to come for them with a boat before we started off on our journey.</p>
+<p>In the evening we had another chat, about nothing in particular. He went away with Shui-sheng the following morning.</p>
+<p>Nine days later we left our old home. Yun-t'u came early in the morning. He did not bring Shui-sheng with him but brought a five-year-old girl to watch the boat. We were busy all day and had little chance to talk. There were many guests, some had come to see us off, others to fetch things, still others both to see us off and to fetch things. When we finally embarked toward evening, the old house was cleared of everything that was of any possible use.</p>
+<p>Our boat went slowly on, leaving behind the darkening green hills on either bank. Hung-erh, who had been watching the obscure landscape with me from a window, suddenly said to me, "Uncle, when are we coming back?"</p>
+<p>"Coming back? But why should you be thinking of coming back when we have just started?"</p>
+<p>"But Shui-sheng has asked me to visit him at his home," the boy said reflectively with his black eyes wide open.</p>
+<p>Both mother and I were touched by the boy's remark and our conversation again turned to Yun-t'u. She said that Sister Yang had been coming to our house every day since we began to pack. Two days before we started she discovered some dishes and bowls in the ash pile, which she insisted had been hidden there by Yun-t'u so that he could take them away with him when he came to get the ash. Sister Yang was very pleased with herself for her discovery, and on the strength of it she helped herself to our "dog's-exasperation." (A contrivance used for feeding chickens in our native place. It consists of a wooden cage over a trough containing feed. The chickens can stick their necks through the bars to get at the feed while the dogs can only stare through them in exasperation. Hence the name.) As she made off with it, Mother said she never suspected that Sister Yang was capable of running so fast, with her small bound feet and high heels.</p>
+<p>I felt no regret as our old house and native hills and streams dropped behind us. I only had an oppressive sense of being surrounded and isolated from the world by invisible walls and a feeling of sadness because the image of my little hero with a silver ring around his neck in the watermelon patch had suddenly become blurred and indistinct, whereas, before, it had been so sharp and clear.</p>
+<p>Both mother and Hung-erh had fallen asleep.</p>
+<p>As I lay in my corner and listened to the sound of water lapping against the boat, I knew that we were on our way. What a barrier had come between Yun-t'u and myself! There was, fortunately, no such barrier between the younger generation as yet (was not Hung-erh thinking about Shui-sheng and asking about him?) and I hoped that no such barrier would ever come between them. However, I did not want them to live, as a price for their continued companionship, the bitter and rootless life that I lived; I did not want them to live the bitter and wretched life that Yun-t'u lived; I did not want them to live the bitter and shameless life that others lived. They must have a new kind of life, a life that we of the older generation had not known.</p>
+<p>As I realized what I was doing, I suddenly became afraid. I had laughed to myself when Yun-t'u asked for the incense burner and candlesticks and had pitied him because he could not for a moment forget his superstitions. But what was this so-called hope of mine if not also an idol fashioned with our own hands? The only difference between us was that his wishes and hopes were concerned with more immediate things while mine were concerned with the more remote.</p>
+<p>In the darkness the green watermelon patch again appeared before my eyes and above it a golden moon hung in a deep blue sky. Perhaps, I thought to myself, hope is not absolute, not something of which we can say that it does or does not exist, but something very much like the roads that travelers make across the face of the earth where there were none before.</p>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>1921-01-10T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rashomon]]></title>
+        <id>https://cloudlin.zjulife.cc/en/posts/rashomon/</id>
+        <link href="https://cloudlin.zjulife.cc/en/posts/rashomon/"/>
+        <updated>1915-11-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[It happened in the evening of one day. There was a retainer who was waiting for the rain under Rashomon. There was no one else under the wi...]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/06.webp" alt="_Here's the description of the picture" /></p>
+<p>It happened in the evening of one day. There was a retainer who was waiting for the rain under Rashomon.</p>
+<p>There was no one else under the wide door except this man. Only a cricket was perched on a large column with peeling red lacquer. Since this Rashomon is located on Suzaku Avenue, there should be two or three other women taking shelter from the rain wearing hats and rubbing their eboshi. However, apart from this man, there was no one else.</p>
+<p>The reason for this is that in the past two or three years, Kyoto has experienced a series of disasters such as earthquakes, tornadoes, fires, famines, etc., so the capital has become particularly desolate. According to old records, the Buddha statues and Buddhist instruments were broken into pieces, and the pieces of wood covered with lacquer, gold and silver foil were piled on the roadside and sold as firewood. Given the situation in the capital, naturally no one would care about repairing Rashomon Gate or anything like that. Foxes and robbers took advantage of the desolation to live there, and eventually they even developed the habit of dumping ownerless corpses on the door. As soon as the sun went down, people felt the gloomy air and no one walked near this door anymore.</p>
+<p>Instead, many crows gathered towards this place from nowhere. Looking during the day, there were countless crows circling around the highest ridge, crying and dancing. When the sky above the gate was illuminated by the setting sun and turned red, it looked as if sesame seeds were scattered there, and was particularly clear. Needless to say, the crows came to eat the flesh of the dead body on the door. But today, perhaps because it was too late, not a single one was seen. I saw stone steps that were about to collapse, with weeds growing in the cracks, and white spots of crow droppings sticking to them. The servant sat on the top of the seven steps, wearing his well-worn red-green jacket, and stared blankly at the rain, irritated by a large pimple on his right cheek.</p>
+<p>The author has already written that "the family will wait until the rain stops." However, after the rain stopped, the general had no idea what to do. Under normal circumstances, it would naturally return to its owner's home. But he had been sent away from this master four or five days ago. As mentioned above, Kyoto was in a very declining state at that time; now that this family was dismissing its master, who had served it for many years, was actually just a small aftermath of this decline. So instead of saying "the family general waited for the rain to stop", it would be more appropriate to say "the family general who was caught in the rain had nowhere to go and was at a loss as to what to do". Moreover, today's weather has a great impact on the sentimentality of this Heian period family general. The rain started at 5 p.m. and didn't seem to have stopped by 5 p.m. At this time, the family general first thought about what to do for tomorrow's work. In fact, he was holding on to the thought of being unsure about what to do for something that he couldn't do. At the same time, he listened to the sound of rain hitting the Suzaku Road.</p>
+<p>The rain surrounded Rashomon, pouring down from afar. Dusk made the sky low; looking up, I saw that the door was resting on the slanting eaves, supporting the dark clouds.</p>
+<p>Because when you have to figure out what to do with something that cannot be done, you will no longer have time to choose means. If it is picked up, it will just starve to death in an open space or by the road; and it will just be moved into this door and abandoned like a dog. But if I don’t choose it, then - the family general’s thoughts wandered on the same route for many times before finally arriving at this place. However, even though a lot of time has passed, the ending of this "rule" is still a "rule". Although the family general has affirmed the part about not being picky about the means, he does not have the courage to actively affirm the part that naturally follows from "being a bandit" in order to have this "rule" taken care of.</p>
+<p>The servant sneezed loudly and stood up lazily. The cool night in Kyoto is already as cold as a furnace. The wind and dusk blew between the doorposts without any scruples. The cricket that had been perched on the vermilion pillar had already run away to who knows where.</p>
+<p>The servant shrank his neck, raised the shoulders of his red and green jacket against his light yellow shirt, and looked around the door. Because if you can find a piece of land where you are not afraid of wind and rain, and are not exposed to the elements, and where you can sleep peacefully all night, you will want to spend the night there. Fortunately, during this time, I saw a wide, vermilion-painted ladder leading to the gate tower. Even if there are people here, they are all dead. The retainer then watched out for the plain-handled sword at his waist, lest he unsheathe it, and raised his feet in straw sandals to step onto the lowest step of the ladder.</p>
+<p>So it happened a few minutes later. In the middle of the wide staircase leading to the upper floor of Rashomon, a man shrank his body like a cat, held his breath, and spied on the situation upstairs. The firelight leaking in from the upper floor illuminated the man's right cheek, the cheek where a red, swollen, and festering pimple appeared between his short beard. The family commander initially thought that the people on the upper floors were just dead; but when he went up to the second and third floors, he saw someone starting a fire, which was moving here and there. This can be understood by looking at the dim yellow light swaying on the caisson ceiling that is covered with cobwebs in every corner. On this rainy night, on the upper floor of Rashomon, the person who could light a fire must not be an ordinary person.</p>
+<p>The retainer held back his footsteps like a lizard and slowly climbed to the top step of the steep ladder. He bent his body as far as he could, stretched his neck as far as he could, and looked inside the building.</p>
+<p>When they looked, they saw several dead bodies scattered around inside the building, just as they had heard. However, the range of the fire was much narrower than expected, and they could not make out how many there were. Only vaguely did I know that there were naked corpses and clothed corpses; and of course there were both male and female corpses. Moreover, the dead bodies, some with their mouths open or their hands stretched out, lying on the floor almost made one doubt the fact that he had once been a human being. In addition, only the raised parts such as shoulders and chest were illuminated by the faint light, while the shadows of the lower parts were darker, as if they were always silent.</p>
+<p>The servant could not help but cover his nose when he smelled the stench of the rotting corpses. However, in the next instant, the hand forgot about covering the nose. Because there was a strong emotion that almost took away the man's sense of smell.</p>
+<p>Only then did the guard notice a man squatting among the dead bodies. She was a short, thin, white-haired, monkey-like old woman wearing a cypress-colored dress. The old woman, holding a lighted torch in her right hand, was gazing upon the face of one of the dead. Judging from the length of the hair, the dead body was probably a female.</p>
+<p>The guard was so moved by six parts of terror and four parts of curiosity that he almost forgot to breathe. To borrow the words of an old reporter, it feels like "Mao Dai" has been raised. Then the old woman inserted the pine torch into the crack of the floor, reached out to the dead body she had been eyeing earlier, and began to pull out the long hair one by one, just like a mother monkey catching lice for her child. The hair also seemed to be pulled out casually.</p>
+<p>As the hair was pulled out one by one, the fear in the general's heart gradually disappeared. At the same time, hatred for the old woman gradually arose. — No, to say "towards this old woman" might be a grammatical error; it would be better to say that my aversion to all evil grew stronger little by little. At this time, if someone asked the general the question that the man had thought about before, "Starve to death or become a robber?", the general would probably choose the one who starved to death without any regrets. This man's evil heart, like the torch that the old woman inserted into the cracks in the floor, was burning vigorously until it had come to this.</p>
+<p>The general at home naturally had no idea why the old woman pulled out the dead man's hair. So, speaking "reasonably", we still don't know whether it is good or evil. But from the perspective of the retainer, pulling out the hair of a dead person on top of Rashomon on such a rainy night was an unforgivable evil. Needless to say, his previous intention to become a robber was naturally forgotten at home.</p>
+<p>So the servant kicked his feet and suddenly jumped up the ladder, and with the plain-handled knife in his hand, he strode to the old woman. There is no need to describe the old woman's surprise.</p>
+<p>When the old woman caught sight of the retainer, she jumped up as if she had been hit by a crossbow.</p>
+<p>"Hey, where are you going!"</p>
+<p>The retainer blocked the old woman's escape route as she stumbled over the dead body and started to curse her. The old woman pushed away the guards and tried to escape. But the retainer refused to let him go and pushed him back again. For a moment, he remained silent. However, the outcome of the battle was already known. The retainer finally caught the old woman's arm and forced her to fall. It was an arm with only skin and bones left, looking like a chicken foot.</p>
+<p>"What are you doing? Tell me! If you don't, it's like this!"</p>
+<p>The servant put the old woman down, suddenly drew his sword from its sheath, and thrust the snow-white steel in front of Yi's eyes. But the old woman said nothing. His hands were shaking, his breathing was labored, his eyes were wide open as if their eyeballs were about to pop out of their sockets, and he remained mute and stubborn, not saying a word. Seeing this situation, the family general clearly realized that the life and death of the old woman was completely under the control of his own will. Moreover, this will had cooled down the previous burning hatred in his heart at some point. What remains is just the peaceful pride and satisfaction of having accomplished something. So the family general looked down at the old woman and said in a slightly softer voice:</p>
+<p>"I am not an official from the yamen that inspects illegal activities. I am just a traveler who just passed through this gate. So I have no business locking you up here. If you are doing anything at this moment, at this gate, just tell me."</p>
+<p>The old woman opened her eyes even wider and stared at the face of the retainer. Her eyes had red rims and were as sharp as a bird of prey. Then the wrinkled lips, which were almost connected to the nose, began to move as if chewing something. The neck is very thin and you can see the movement of the Adam's apple at the tip of the neck. At this moment, a crow-like sound came from the throat, panting and reaching the ears of the retainer:</p>
+<p>"Pull out this hair, pull out this hair, and make a wig."</p>
+<p>When the servant heard the old woman's unexpectedly ordinary answer, he was disappointed. And when he was disappointed, the previous hatred and cold contempt entered his heart again. I guess she also understood his complexion. The old woman, still holding the long hair that she had pulled out of the corpse in one hand, made a sound like the croaking of a frog, and said these words:</p>
+<p>"Of course, pulling out the hair of a dead person is such an evil thing. However, all the dead people here deserve this. Now, the woman who pulled out the hair just now cut the snake into four-inch long pieces and dried it, saying it was dried fish . ] to sell it in the camp. If there had been no plague, I would probably still be selling it now. This man is the same. The woman sold dried fish, saying that it tasted good, and the knife-carrying people bought it as an indispensable vegetable. As for me, I don’t think what this woman did was evil. If I didn’t do it, I would starve to death, so I did it because I had no choice. So, I don’t think what I did was evil. This is also true. If I didn’t do it, I would starve to death, so I did it because I had no choice. This woman, who knew that there was no choice, should have forgiven me. "</p>
+<p>The old woman probably said something to this effect.</p>
+<p>The servant sheathed his sword, held the hilt with his left hand, and listened to these words indifferently; as for his right hand, it was naturally pressing the large red pimple on his cheek that was festering with festering pus. However, as he listened, a sense of courage arose in the servant's heart.</p>
+<p>This was exactly the courage that the man lacked before at the door. Moreover, just like the courage he had used to jump onto the door and catch the old woman, it was also the courage he had to launch a counterattack against the opposition. The family general had no problem with either starving to death or becoming a robber. Judging from his mood at that time, things like starving to death had been driven out of his consciousness and were almost unthinkable.</p>
+<p>"Indeed, is that so?"</p>
+<p>After the old woman finished speaking, the servant repeated it in a mocking voice. Then he took a step forward, and suddenly his right hand left the pimple, grasped the old woman's chest, and said through gritted teeth:</p>
+<p>"Then, even if I force you to do it, you won't necessarily feel resentful. If I don't do this, I will starve to death."</p>
+<p>The servant quickly stripped off the old woman's clothes, and kicked the old woman who was holding his feet violently onto the dead body. It’s only five steps to the stairs. The servant, holding the stripped cypress-colored clothes, quickly descended the steep ladder and went into the darkness.</p>
+<p>It was not long ago that the old woman, who seemed to be temporarily dead, struggled to raise her naked body from among the corpses. She uttered a nagging, groaning sound and, using the light of the still burning fire, crawled to the stairs. And from here hung short white hair, peeking under the door. Outside, there was only pitch-black night.</p>
+<p>No one knew the whereabouts of the family general.</p>
+]]></content>
+        <author>
+            <name>CloudLin</name>
+            <uri>https://CloudLin.ZJUlife.cc/</uri>
+        </author>
+        <published>1915-11-05T00:00:00.000Z</published>
+    </entry>
+</feed>

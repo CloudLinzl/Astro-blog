@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/rss-style.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Retipografía</title>
+        <link>https://CloudLin.ZJUlife.cc/es/</link>
+        <description>Retypeset es un tema de blog estático basado en el framework Astro. Inspirado por Typography, Retypeset establece un nuevo estándar visual y reimagina el diseño de todas las páginas, creando una experiencia de lectura similar a la de los libros impresos, reviviendo la belleza de la tipografía. Detalles en cada mirada, elegancia en cada espacio.</description>
+        <lastBuildDate>Mon, 22 Jun 2026 12:10:50 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Astro-Theme-Retypeset with Feed for Node.js</generator>
+        <language>es</language>
+        <copyright>Copyright © 2026 CloudLin</copyright>
+        <atom:link href="https://cloudlin.zjulife.cc/es/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Características Extendidas de Markdown]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/markdown-extended-features/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/markdown-extended-features/</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Aquí presentamos algunas características extendidas de Markdown compatibles con Retypeset, incluyendo ejemplos de sintaxis y sus efectos est...]]></description>
+            <content:encoded><![CDATA[<p>Aquí presentamos algunas características extendidas de Markdown compatibles con Retypeset, incluyendo ejemplos de sintaxis y sus efectos estilísticos.</p>
+<h2>Leyendas de Figuras</h2>
+<p>Para crear leyendas automáticas para figuras, utilice la sintaxis estándar de imágenes de Markdown <code>![alt](src)</code>. Para ocultar la leyenda, añada un guion bajo <code>_</code> antes del texto <code>alt</code> o deje el texto <code>alt</code> vacío.</p>
+<h3>Sintaxis</h3>
+<pre><code>![Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre>
+<h3>Resultado</h3>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="Descripción de la imagen" /></p>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="_Descripción de la imagen" /></p>
+<h2>Bloques de Admonición</h2>
+<p>Para crear bloques de admonición, utilice la sintaxis de GitHub <code>&gt; [!TYPE]</code> o la directiva contenedor <code>:::type</code>. Se admiten los siguientes tipos: <code>note</code>, <code>tip</code>, <code>important</code>, <code>warning</code> y <code>caution</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>&gt; [!NOTE]
+&gt; Información útil que los usuarios deben conocer, incluso al leer por encima.
+
+&gt; [!TIP]
+&gt; Consejos útiles para hacer las cosas mejor o más fácilmente.
+
+&gt; [!IMPORTANT]
+&gt; Información clave que los usuarios necesitan saber para lograr su objetivo.
+
+:::warning
+Información urgente que requiere atención inmediata del usuario para evitar problemas.
+:::
+
+:::caution
+Advierte sobre riesgos o resultados negativos de ciertas acciones.
+:::
+
+:::note[TÍTULO PERSONALIZADO]
+Esta es una nota con un título personalizado.
+:::
+</code></pre>
+<h3>Resultado</h3>
+<blockquote>
+<p>[!NOTE]
+Información útil que los usuarios deben conocer, incluso al leer por encima.</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+Consejos útiles para hacer las cosas mejor o más fácilmente.</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+Información clave que los usuarios necesitan saber para lograr su objetivo.</p>
+</blockquote>
+<p>:::warning
+Información urgente que requiere atención inmediata del usuario para evitar problemas.
+:::</p>
+<p>:::caution
+Advierte sobre riesgos o resultados negativos de ciertas acciones.
+:::</p>
+<p>:::note[TÍTULO PERSONALIZADO]
+Esta es una nota con un título personalizado.
+:::</p>
+<h2>Secciones Plegables</h2>
+<p>Para crear secciones plegables, utilice la sintaxis de directiva contenedor <code>:::fold[title]</code>. Haga clic en el título para expandir o contraer.</p>
+<h3>Sintaxis</h3>
+<pre><code>:::fold[Consejos de Uso]
+El contenido que pueda no interesar a todos los lectores puede colocarse en una sección plegable.
+:::
+</code></pre>
+<h3>Resultado</h3>
+<p>:::fold[Consejos de Uso]
+El contenido que pueda no interesar a todos los lectores puede colocarse en una sección plegable.
+:::</p>
+<h2>Diagramas Mermaid</h2>
+<p>Para crear diagramas Mermaid, envuelva la sintaxis de Mermaid en bloques de código y especifique el tipo de lenguaje como <code>mermaid</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre>
+<h3>Resultado</h3>
+<pre><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</code></pre>
+<h2>Galerías</h2>
+<p>Para crear galerías de imágenes, utilice la directiva contenedor <code>:::gallery</code>. Desplácese horizontalmente para ver más imágenes.</p>
+<h3>Sintaxis</h3>
+<pre><code>:::gallery
+![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![Girando la cabeza](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![Contacto visual](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![Alpaca bebé](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![¡Ay, qué lindo!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre>
+<h3>Resultado</h3>
+<p>:::gallery
+<img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="Alpaca" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="Girando la cabeza" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="Contacto visual" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="Alpaca bebé" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="¡Ay, qué lindo!" />
+:::</p>
+<h2>Repositorios de GitHub</h2>
+<p>Para incrustar repositorios de GitHub, utilice la directiva hoja <code>::github{repo="owner/repo"}</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>::github{repo="radishzzz/astro-theme-retypeset"}
+</code></pre>
+<h3>Resultado</h3>
+<p>::github{repo="radishzzz/astro-theme-retypeset"}</p>
+<h2>Videos</h2>
+<p>Para incrustar videos, utilice la directiva hoja <code>::youtube{id="video-id"}</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>::youtube{id="9pP0pIgP2kE"}
+
+::bilibili{id="BV1sK4y1Z7KG"}
+</code></pre>
+<h3>Resultado</h3>
+<p>::youtube{id="9pP0pIgP2kE"}</p>
+<p>::bilibili{id="BV1sK4y1Z7KG"}</p>
+<h2>Spotify</h2>
+<p>Para incrustar contenido de Spotify, utilice la directiva hoja <code>::spotify{url="spotify-url"}</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+
+::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
+</code></pre>
+<h3>Resultado</h3>
+<p>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}</p>
+<p>::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}</p>
+<h2>Tweets</h2>
+<p>Para incrustar tweets, utilice la directiva hoja <code>::tweet{url="tweet-url"}</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}
+</code></pre>
+<h3>Resultado</h3>
+<p>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}</p>
+<h2>CodePen</h2>
+<p>Para incrustar demostraciones de CodePen, utilice la directiva hoja <code>::codepen{url="codepen-url"}</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
+</code></pre>
+<h3>Resultado</h3>
+<p>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Esquemas de Color del Tema]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/theme-color-schemes/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/theme-color-schemes/</guid>
+            <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset define los esquemas de color del tema basados en el espacio de color OKLCH, con un esquema predeterminado de colores negro, blanco...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset define los esquemas de color del tema basados en el espacio de color <a href="https://oklch.com/">OKLCH</a>, con un esquema predeterminado de colores negro, blanco y gris que simula un estilo de impresión.</p>
+<p>Para satisfacer las necesidades de personalización, he creado varios esquemas de colores para el tema. Puedes reemplazar el esquema de colores predeterminado en <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> y reiniciar el servidor de desarrollo para previsualizar el nuevo esquema de colores.</p>
+<h2>Blanco Cebollino</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/1-light.ClVuZxd5_21HiG1.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/1-dark.BivCfSmu_Z1FcXLT.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0.03 211.86)',
+  secondary: 'oklch(0.40 0.03 211.86)',
+  background: 'oklch(0.99 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0015 106.47)',
+  secondary: 'oklch(0.79 0.0015 106.47)',
+  background: 'oklch(0.24 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Azul Cuervo</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/2-light.DLXS38ks_2j3zhb.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/2-dark.prgZMrfY_Z1i4yAx.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.0172 280.05)',
+  secondary: 'oklch(0.40 0.0172 280.05)',
+  background: 'oklch(0.98 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0172 280.05)',
+  secondary: 'oklch(0.79 0.0172 280.05)',
+  background: 'oklch(0.24 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Azul Tinta</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/4-light.DIUeDw9p_Z2fbxhe.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/4-dark.CKqTknpt_2n6Qrb.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.053 261.24)',
+  secondary: 'oklch(0.39 0.053 261.24)',
+  background: 'oklch(1 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0 0)',
+  secondary: 'oklch(0.79 0 0)',
+  background: 'oklch(0.24 0.016 265.21)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>Beige</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/3-light.8aAAK8Ad_BewEA.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/3-dark.CGQcMuXC_Z2c4VKc.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0 0)',
+  secondary: 'oklch(0.41 0 0)',
+  background: 'oklch(0.95 0.0237 59.39)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.93 0.019 59.39)',
+  secondary: 'oklch(0.80 0.017 59.39)',
+  background: 'oklch(0.23 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[KaTeX Demostración Matemática]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/katex-mathematical-demo/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/katex-mathematical-demo/</guid>
+            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[KaTeX es una biblioteca JavaScript multiplataforma que permite visualizar notación matemática en navegadores web. Destaca por su velocidad y...]]></description>
+            <content:encoded><![CDATA[<p>KaTeX es una biblioteca JavaScript multiplataforma que permite visualizar notación matemática en navegadores web. Destaca por su velocidad y facilidad de uso, fue desarrollada inicialmente por Khan Academy y se convirtió en uno de los cinco proyectos más populares de GitHub.</p>
+<h2>Teoría de Grupos</h2>
+<p>El lema de Burnside, a veces también llamado teorema de conteo de Burnside, lema de Cauchy-Frobenius o teorema de conteo de órbitas.</p>
+<p>Sea $\wedge$ una acción de grupo de un grupo finito $G$ sobre un conjunto finito $X$. Entonces el número $t$ de órbitas de la acción viene dado por la fórmula.</p>
+<p>$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</p>
+<p>Para cada entero $n\ge2$, el grupo cociente $\mathbb{Z}/n\mathbb{Z}$ es un grupo cíclico generado por $1+n\mathbb{Z}$ y por tanto $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$.</p>
+<p>El grupo cociente $\mathbb{R}/\mathbb{Z}$ es isomorfo a $([0,1),+_1)$, el grupo de números reales en el intervalo $[0,1)$, bajo la adición módulo 1.</p>
+<p>Teorema de Isomorfismo. Sea $\phi\colon(G,\circ)\to(H,*)$ un homomorfismo. Entonces la función</p>
+<p>$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</p>
+<p>es un isomorfismo, así que</p>
+<p>$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</p>
+<h2>Teorema de Taylor</h2>
+<p>Sea la función $f$ diferenciable $(n+1)$ veces en un intervalo abierto que contiene los puntos $a$ y $x$. Entonces</p>
+<p>$$
+f(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</p>
+<p>donde</p>
+<p>$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</p>
+<p>para algún $c$ entre $a$ y $x$.</p>
+<p>$\KaTeX$ no tiene una opción de alineación a la derecha, por lo que se utiliza una columna alineada adicional para los números de ecuación. Estos son empujados a la derecha mediante el espaciado mkern, por defecto \mkern100mu. Se pueden utilizar tanto entornos align como align*, así como \tag y \notag.</p>
+<h2>Entorno Align</h2>
+<p>$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</p>
+<h2>Entorno Align*</h2>
+<p>$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \
+&amp;= \frac{\pi^3}{16(N+1)} \
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \
+\text{por lo tanto} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</p>
+<h2>Suma de una Serie</h2>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</p>
+<h2>Notación de Producto</h2>
+<p>$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ para }\lvert q\rvert &lt; 1.
+$$</p>
+<h2>Producto Vectorial</h2>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</p>
+<h2>Ecuaciones de Maxwell</h2>
+<p>$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</p>
+<h2>Letras Griegas</h2>
+<p>$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</p>
+<h2>Flechas</h2>
+<p>$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</p>
+<h2>Símbolos</h2>
+<p>$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</p>
+<p><em>Ejemplos tomados de <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a></em></p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Guía de Estilo Markdown]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/markdown-style-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/markdown-style-guide/</guid>
+            <pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Aquí hay algunos ejemplos básicos de sintaxis Markdown y sus efectos estilísticos en el tema Retypeset. Para crear encabezados, agregue sign...]]></description>
+            <content:encoded><![CDATA[<p>Aquí hay algunos ejemplos básicos de sintaxis Markdown y sus efectos estilísticos en el tema Retypeset.</p>
+<h2>Encabezados</h2>
+<p>Para crear encabezados, agregue signos de numeral <code>#</code> delante de una palabra o frase. El número de signos de numeral debe corresponder al nivel del encabezado.</p>
+<h3>Sintaxis</h3>
+<pre><code># Encabezado 1
+## Encabezado 2
+### Encabezado 3
+#### Encabezado 4
+##### Encabezado 5
+###### Encabezado 6
+</code></pre>
+<h3>Resultado</h3>
+<h1>Encabezado 1</h1>
+<h2>Encabezado 2</h2>
+<h3>Encabezado 3</h3>
+<h4>Encabezado 4</h4>
+<h5>Encabezado 5</h5>
+<h6>Encabezado 6</h6>
+<h2>Párrafos</h2>
+<p>Para crear párrafos, use una línea en blanco para separar una o más líneas de texto.</p>
+<h3>Sintaxis</h3>
+<pre><code>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+
+Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+</code></pre>
+<h3>Resultado</h3>
+<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
+<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
+<h2>Imágenes</h2>
+<p>Para agregar imágenes, añada un signo de exclamación <code>!</code>, seguido de texto alternativo entre corchetes <code>[]</code>, y la ruta o URL de la imagen entre paréntesis <code>()</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>![Descripción de la Imagen](../_images/image-01.jpeg)
+
+![Descripción de la Imagen](https://image.example.com/image-01.webp)
+</code></pre>
+<h3>Resultado</h3>
+<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="Descripción de la Imagen" /></p>
+<h2>Citas en Bloque</h2>
+<p>Para crear citas en bloque, agregue un símbolo <code>&gt;</code> y un espacio antes del texto. Las citas en bloque pueden contener múltiples párrafos. Para citar fuentes, utilice las etiquetas <code>&lt;cite&gt;</code> o <code>&lt;footer&gt;</code>, mientras que las notas al pie pueden insertarse usando la sintaxis <code>[^1]</code> o <code>[^note]</code>.</p>
+<h3>Cita en bloque con múltiples párrafos</h3>
+<h4>Sintaxis</h4>
+<pre><code>&gt; Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&gt;
+&gt; **Nota** que puede usar _sintaxis Markdown_ dentro de una cita en bloque.
+</code></pre>
+<h4>Resultado</h4>
+<blockquote>
+<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.</p>
+<p><strong>Nota</strong> que puede usar <em>sintaxis Markdown</em> dentro de una cita en bloque.</p>
+</blockquote>
+<h3>Cita en bloque con fuentes citadas</h3>
+<h4>Sintaxis</h4>
+<pre><code>&gt; No te comuniques compartiendo memoria, comparte memoria comunicándote.
+&gt;
+&gt; — &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;
+
+[^1]: La cita anterior está extraída de la [charla](https://www.youtube.com/watch?v=PAAkCSZUG1c) de Rob Pike durante Gopherfest, 18 de noviembre de 2015.
+</code></pre>
+<h4>Resultado</h4>
+<blockquote>
+<p>No te comuniques compartiendo memoria, comparte memoria comunicándote.</p>
+<p>— &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;</p>
+</blockquote>
+<p>[^1]: La cita anterior está extraída de la <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">charla</a> de Rob Pike durante Gopherfest, 18 de noviembre de 2015.</p>
+<h2>Tablas</h2>
+<p>Para agregar tablas, use tres o más guiones <code>---</code> para crear el encabezado de cada columna, y use barras verticales <code>|</code> para separar cada columna.</p>
+<h3>Sintaxis</h3>
+<pre><code>| Cursiva   | Negrita     | Código   |
+| --------- | ----------- | -------- |
+| _cursiva_ | **negrita** | `código` |
+| _cursiva_ | **negrita** | `código` |
+</code></pre>
+<h3>Resultado</h3>
+<table>
+<thead>
+<tr>
+<th>Cursiva</th>
+<th>Negrita</th>
+<th>Código</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>cursiva</em></td>
+<td><strong>negrita</strong></td>
+<td><code>código</code></td>
+</tr>
+<tr>
+<td><em>cursiva</em></td>
+<td><strong>negrita</strong></td>
+<td><code>código</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Bloques de Código</h2>
+<p>Para crear bloques de código, envuelva su código con tres acentos graves <code>```</code>. Puede indicar el lenguaje de programación después de los acentos graves de apertura para indicar cómo colorear y estilizar su código, por ejemplo: html, javascript, css, markdown, etc.</p>
+<h3>Sintaxis</h3>
+<pre><code>```html
+&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Ejemplo de Documento HTML5&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Prueba&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+<h3>Resultado</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Ejemplo de Documento HTML5&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Prueba&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Tipos de Listas</h2>
+<h3>Lista Ordenada</h3>
+<h4>Sintaxis</h4>
+<pre><code>1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+</code></pre>
+<h4>Resultado</h4>
+<ol>
+<li>Primer elemento</li>
+<li>Segundo elemento</li>
+<li>Tercer elemento</li>
+</ol>
+<h3>Lista No Ordenada</h3>
+<h4>Sintaxis</h4>
+<pre><code>- Elemento de lista
+- Elemento gráfico
+- Y otro elemento
+</code></pre>
+<h4>Resultado</h4>
+<ul>
+<li>Elemento de lista</li>
+<li>Elemento gráfico</li>
+<li>Y otro elemento</li>
+</ul>
+<h3>Lista Anidada</h3>
+<h4>Sintaxis</h4>
+<pre><code>- Frutas
+  - Manzana
+  - Naranja
+  - Plátano
+- Lácteos
+  - Leche
+  - Queso
+</code></pre>
+<h4>Resultado</h4>
+<ul>
+<li>Frutas
+<ul>
+<li>Manzana</li>
+<li>Naranja</li>
+<li>Plátano</li>
+</ul>
+</li>
+<li>Lácteos
+<ul>
+<li>Leche</li>
+<li>Queso</li>
+</ul>
+</li>
+</ul>
+<h2>Otros Elementos</h2>
+<p>Incluyendo superíndice <code>&lt;sup&gt;</code>, subíndice <code>&lt;sub&gt;</code>, abreviatura <code>&lt;abbr&gt;</code>, tachado <code>&lt;del&gt;</code>, subrayado ondulado <code>&lt;u&gt;</code>, entrada de teclado <code>&lt;kbd&gt;</code>, resaltado <code>&lt;mark&gt;</code> y línea horizontal <code>&lt;hr&gt;</code>.</p>
+<h3>Sintaxis</h3>
+<pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+
+X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+
+&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; es un formato de imagen de mapa de bits.
+
+Los buenos escritores siempre revisan la &lt;u title="ortografía"&gt;ortografia&lt;/u&gt;.
+
+Presione &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Suprimir&lt;/kbd&gt; para finalizar la sesión.
+
+No hay &lt;del&gt;nada&lt;/del&gt; ningún código que sea bueno o malo, pero ejecutarlo lo hace así.
+
+La mayoría de las &lt;mark&gt;salamandras&lt;/mark&gt; son nocturnas y cazan insectos, gusanos y otras criaturas pequeñas.
+
+Use tres guiones `---` o la etiqueta `&lt;hr&gt;` para crear una línea horizontal como se muestra a continuación.
+
+---
+</code></pre>
+<h3>Resultado</h3>
+<p>H&lt;sub&gt;2&lt;/sub&gt;O</p>
+<p>X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;</p>
+<p>&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; es un formato de imagen de mapa de bits.</p>
+<p>Los buenos escritores siempre revisan la &lt;u title="ortografía"&gt;ortografía&lt;/u&gt;.</p>
+<p>Presione &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Suprimir&lt;/kbd&gt; para finalizar la sesión.</p>
+<p>No hay &lt;del&gt;nada&lt;/del&gt; ningún código que sea bueno o malo, pero ejecutarlo lo hace así.</p>
+<p>La mayoría de las &lt;mark&gt;salamandras&lt;/mark&gt; son nocturnas y cazan insectos, gusanos y otras criaturas pequeñas.</p>
+<p>Use tres guiones <code>---</code> o la etiqueta <code>&lt;hr&gt;</code> para crear una línea horizontal como se muestra a continuación.</p>
+<hr />
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Guía del Tema]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/theme-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/theme-guide/</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset es un tema de blog estático basado en el framework Astro. Esta guía presenta cómo modificar la configuración del tema y crear nuev...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset es un tema de blog estático basado en el framework <a href="https://astro.build/">Astro</a>. Esta guía presenta cómo modificar la configuración del tema y crear nuevos artículos, ayudándote a configurar rápidamente tu blog personal.</p>
+<h2>Configuración del Tema</h2>
+<p>Personaliza tu blog mediante la modificación del archivo de configuración <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a>.</p>
+<h3>Información del Sitio</h3>
+<pre><code>site: {
+  // título del sitio
+  title: 'Retypeset'
+  // subtítulo del sitio
+  subtitle: 'Revive the beauty of typography'
+  // descripción del sitio
+  description: 'Retypeset is a static blog theme...'
+  // usar título/subtítulo/descripción en varios idiomas desde src/i18n/ui.ts en lugar de los estáticos de arriba
+  i18nTitle: true // true | false
+  // nombre del autor
+  author: 'radishzz'
+  // url del sitio
+  url: 'https://retypeset.radishzz.cc'
+  // ruta base
+  // directorio raíz para todas las páginas y recursos
+  base: '/' // ej., '/blog', '/docs'
+  // url del favicon
+  // formatos recomendados: svg, png o ico
+  favicon: '/icons/favicon.svg' // o https://example.com/favicon.svg
+}
+</code></pre>
+<h3>Color del Tema</h3>
+<pre><code>color: {
+  // modo de tema predeterminado
+  mode: 'light' // light | dark | auto
+  // modo claro
+  light: {
+    // color primario
+    // usado para títulos, hover, etc
+    primary: 'oklch(25% 0.005 298)'
+    // color secundario
+    // usado para texto de publicaciones
+    secondary: 'oklch(40% 0.005 298)'
+    // color de fondo
+    background: 'oklch(96% 0.005 298)'
+    // color de resaltado
+    // usado para barra de navegación, texto seleccionado, etc
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+  // modo oscuro
+  dark: {
+    // color primario
+    primary: 'oklch(92% 0.005 298)'
+    // color secundario
+    secondary: 'oklch(77% 0.005 298)'
+    // color de fondo
+    background: 'oklch(22% 0.005 298)'
+    // color de resaltado
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)'
+  }
+}
+</code></pre>
+<h3>Configuración Global</h3>
+<pre><code>global: {
+  // idioma predeterminado
+  // idioma de la ruta raíz del sitio '/'
+  locale: 'zh' // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
+  // más idiomas
+  // genera rutas multilingües como '/en/' '/es/'
+  // no incluir el código de idioma anterior nuevamente, puede ser un array vacío []
+  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // estilo de fuente de la publicación
+  fontStyle: 'sans' // sans | serif
+  // formato de fecha de la publicación
+  // YYYY-MM-DD | MM-DD-YYYY | DD-MM-YYYY | MMM D YYYY | D MMM YYYY
+  // 2025-04-13, 04-13-2025, 13-04-2025, Apr 13 2025，13 Apr 2025
+  dateFormat: 'YYYY-MM-DD'
+  // activar tabla de contenidos
+  toc: true // true | false
+  // activar renderizado matemático katex
+  katex: true // true | false
+  // reducir movimiento
+  reduceMotion: false // true | false
+}
+</code></pre>
+<h3>Sistema de Comentarios</h3>
+<pre><code>comment: {
+  // habilitar sistema de comentarios
+  enabled: true // true | false
+  // sistema de comentarios giscus
+  giscus: {
+    repo: ''
+    repoId: ''
+    category: ''
+    categoryId: ''
+    mapping: 'pathname'
+    strict: '0'
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    inputPosition: 'bottom'
+  }
+  // sistema de comentarios twikoo
+  twikoo: {
+    envId: ''
+    // version: la versión frontend puede cambiarse en package.json
+  }
+  // sistema de comentarios waline
+  waline: {
+    // URL del servidor
+    serverURL: 'https://retypeset-comment.radishzz.cc'
+    // URL de emojis
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'
+      // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji'
+      // más emojis: https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // búsqueda de gif
+    search: false // true | false
+    // cargador de imágenes
+    imageUploader: false // true | false
+  }
+}
+</code></pre>
+<h3>SEO</h3>
+<pre><code>seo: {
+  // ID de Twitter
+  twitterID: '@radishzz_'
+  // verificación del sitio
+  verification: {
+    // google search console
+    google: 'AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM'
+    // herramientas para webmasters de bing
+    bing: '64708CD514011A7965C84DDE1D169F87'
+    // webmaster de yandex
+    yandex: ''
+    // búsqueda baidu
+    baidu: ''
+  }
+  // google analytics
+  googleAnalyticsID: ''
+  // umami analytics
+  umamiAnalyticsID: 'dab0e4b9-9cbf-43c3-af60-b09d3b545c38'
+  // verificación de folo
+  folo: {
+    // ID de feed
+    feedID: ''
+    // ID de usuario
+    userID: ''
+  }
+  // clave de acceso apiflash
+  // generar capturas de pantalla del sitio web para imágenes de open graph
+  // obtén tu clave de acceso en: https://apiflash.com/
+  apiflashKey: ''
+}
+</code></pre>
+<h3>Configuración del Pie de Página</h3>
+<pre><code>footer: {
+  // enlaces sociales
+  links: [
+    {
+      name: 'RSS',
+      url: '/atom.xml', // o /rss.xml
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/radishzzz/astro-theme-retypeset',
+    },
+    {
+      name: 'Email',
+      url: 'email@radishzz.cc',
+    }
+    // {
+    //   name: 'X',
+    //   url: 'https://x.com/radishzz_',
+    // },
+  ]
+  // año de inicio del sitio web
+  startYear: 2025
+}
+</code></pre>
+<h3>Precargar Recursos</h3>
+<pre><code>preload: {
+  // URL de alojamiento de imágenes
+  // optimizar imágenes remotas y generar marcadores de posición de baja calidad
+  imageHostURL: 'image.radishzz.cc'
+  // js personalizado de google analytics
+  // para usuarios que proxean scripts de seguimiento a un dominio personalizado
+  customGoogleAnalyticsJS: ''
+  // js personalizado de umami analytics
+  // para usuarios que auto-alojan umami o proxean scripts de seguimiento a un dominio personalizado
+  customUmamiAnalyticsJS: 'https://views.radishzz.cc/script.js'
+}
+</code></pre>
+<h2>Configuración Adicional</h2>
+<p>Además del archivo de configuración <code>src/config.ts</code>, algunas opciones de configuración se encuentran en otros archivos.</p>
+<h3>Resaltado de Sintaxis</h3>
+<p>Temas de resaltado de sintaxis para bloques de código.</p>
+<pre><code>// astro.config.ts
+
+shikiConfig: {
+  // Temas disponibles: https://shiki.style/themes
+  // El color de fondo sigue el tema del blog por defecto, no el tema de resaltado de sintaxis
+  themes: {
+    light: 'github-light' // Tema claro
+    dark: 'github-dark' // Tema oscuro
+  }
+}
+</code></pre>
+<h3>Extracto de Artículo</h3>
+<p>Cantidad de caracteres para extractos automáticos de artículos.</p>
+<pre><code>// src/utils/description.ts
+
+const excerptLengths: Record&lt;ExcerptScene, {
+  cjk: number // Chino, Japonés, Coreano
+  other: number // Otros idiomas
+}&gt; = {
+  list: { // Lista de publicaciones en página principal
+    cjk: 120, // Extrae automáticamente los primeros 120 caracteres
+    other: 240, // Extrae automáticamente los primeros 240 caracteres
+  },
+}
+</code></pre>
+<h3>Open Graph</h3>
+<p>Estilos de <a href="https://orcascan.com/tools/open-graph-validator?url=https%3A%2F%2Fretypeset.radishzz.cc%2Fes%2Fposts%2Ftheme-guide%2F">tarjetas sociales Open Graph</a>.</p>
+<pre><code>// src/pages/og/[...image].ts
+
+getImageOptions: (_path, page) =&gt; ({
+  logo: {
+    path: './public/icons/og-logo.png', // Ruta local requerida y formato PNG
+    size: [250], // Ancho del logo
+  },
+  font: {
+    title: { // Título
+      families: ['Noto Sans SC'], // Fuente
+      weight: 'Bold', // Peso
+      color: [34, 33, 36], // Color
+      lineHeight: 1.5, // Altura de línea
+    },
+  },
+  fonts: [ // Rutas de fuentes (locales o remotas)
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+  ],
+  bgGradient: [[242, 241, 245]], // Color de fondo
+  // Más configuraciones: https://github.com/delucis/astro-og-canvas/tree/latest/packages/astro-og-canvas
+})
+</code></pre>
+<h3>Canal RSS</h3>
+<p>Estilos de <a href="https://retypeset.radishzz.cc/es/atom.xml">página del feed RSS</a>.</p>
+<pre><code>
+
+&lt;style type="text/css"&gt;
+body{color:oklch(25% 0.005 298)} /* Color de fuente */
+.bg-white{background-color:oklch(0.96 0.005 298)!important} /* Color de fondo */
+.text-gray{color:oklch(0.25 0.005 298 / 75%)!important} /* Color de fuente secundario */
+&lt;/style&gt;
+</code></pre>
+<h2>Creación de un Nuevo Artículo</h2>
+<p>Ejecuta <code>pnpm new-post &lt;filename&gt;</code> para crear un nuevo artículo, que luego puede editarse en el directorio <code>src/content/posts/</code>.</p>
+<pre><code>pnpm new-post                      -&gt;  src/content/posts/new-post.md
+pnpm new-post first-post           -&gt;  src/content/posts/first-post.md
+pnpm new-post 2025/03/first-post   -&gt;  src/content/posts/2025/03/first-post.md
+pnpm new-post first-post.mdx       -&gt;  src/content/posts/first-post.mdx
+</code></pre>
+<h3>Front Matter</h3>
+<p>Solo los campos <code>title</code> y <code>published</code> son obligatorios, todas las demás configuraciones pueden omitirse.</p>
+<pre><code>---
+# Obligatorio
+title: Guía del Tema
+published: 2025-01-26
+
+# Opcional
+description: Los primeros 240 caracteres del artículo se seleccionarán automáticamente como extracto.
+updated: 2025-03-26
+tags:
+  - Tema de Blog
+  - Guía
+
+# Avanzado, Opcional
+draft: true/false
+pin: 0-99
+toc: true/false
+lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+abbrlink: theme-guide
+---
+</code></pre>
+<h3>Configuración Avanzada</h3>
+<h4>draft</h4>
+<p>Marca el artículo como borrador. Cuando se establece como true, el artículo no se puede publicar y solo está disponible para vista previa en desarrollo local. El valor predeterminado es false.</p>
+<h4>pin</h4>
+<p>Fija el artículo en la parte superior. Cuanto mayor sea el número, mayor será la prioridad del artículo fijado. El valor predeterminado es 0, lo que significa que no está fijado.</p>
+<h4>toc</h4>
+<p>Genera tabla de contenidos. Muestra encabezados de h2 a h4. Determinado por la configuración global <code>global.toc</code> por defecto, pero puede ser modificada individualmente en cada artículo.</p>
+<h4>lang</h4>
+<p>Especifica el idioma del artículo. Solo se puede especificar un idioma. Si no se especifica, el artículo se mostrará en todas las rutas de idioma por defecto.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+
+# lang: ''
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+                             -&gt;  example.com/es/posts/apple/
+                             -&gt;  example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md   -&gt;  example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md   -&gt;  example.com/ru/posts/apple/
+</code></pre>
+<h4>abbrlink</h4>
+<p>Personaliza la URL del artículo. Solo puede contener letras minúsculas, números y guiones <code>-</code>.</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+# lang: 'es'
+
+# abbrlink: ''
+src/content/posts/apple.md           -&gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: 'banana'
+src/content/posts/apple.md           -&gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/banana/
+</code></pre>
+<h3>Formato de Texto Mixto</h3>
+<p>Ejecuta <code>pnpm format-posts</code> para optimizar el formato en los archivos Markdown dentro del directorio <code>src/content/</code>. Este comando corrige automáticamente los espacios entre caracteres CJK (Chino, Japonés, Coreano) y latinos, ajusta los signos de puntuación y mejora la legibilidad general del texto.</p>
+<pre><code>pnpm format-posts
+🔍 Scanning Markdown files...
+📦 Found 56 Markdown files
+✅ src/content/posts/guides/Theme Guide-ja.md
+✅ src/content/posts/guides/Theme Guide-zh-tw.md
+✅ src/content/posts/guides/Theme Guide-zh.md
+✨ Formatted 3 files successfully
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Tolerancia y Libertad]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/tolerance-freedom/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/tolerance-freedom/</guid>
+            <pubDate>Mon, 16 Mar 1959 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hace diecisiete o dieciocho años conocí por última vez al señor George Lincoln Burr, un gran historiador de mi alma mater, la Universidad de...]]></description>
+            <content:encoded><![CDATA[<p>Hace diecisiete o dieciocho años conocí por última vez al señor George Lincoln Burr, un gran historiador de mi alma mater, la Universidad de Cornell. Hablamos del historiador británico Lord Acton, quien planeó escribir una Historia de la Libertad a lo largo de su vida, pero murió antes de poder terminarla. El señor Bull habló mucho ese día y hay una frase que nunca he olvidado. Dijo: «Cuanto mayor me hago, más siento que la tolerancia es más importante que la libertad».</p>
+<p>El señor Bull murió hace más de diez años, pero cuanto más pienso en ello, más siento que es un lema indeleble. Yo mismo tengo la misma sensación de que "cuanto mayor me hago, más siento que la tolerancia es más importante que la libertad". A veces incluso siento que la tolerancia es la raíz de toda libertad: sin tolerancia, no hay libertad.</p>
+<p>Cuando tenía diecisiete años (1908), publiqué algunos artículos en el "Jingye Xunbao" titulados "Sin fantasmas". Uno de ellos era una crítica a las novelas "Viaje al Oeste" y "La investidura de los dioses". Dije:</p>
+<p>En el "Libro de los Ritos" se afirma: "Si alguien usa la adivinación basada en el tiempo de los fantasmas y los dioses para engañar al pueblo, será asesinado". Me pregunto por qué quienes se han opuesto al poder gobernante y quienes esperaban salvar al mundo e iluminar al pueblo durante miles de años han sido tan ignorantes de esto que han prevalecido teorías que confunden al mundo y engañan al pueblo, y como resultado, nuestra nación china ha sido arrojada a un mundo de extrema oscuridad.</p>
+<p>Esta es una actitud "defensiva" que un niño no puede tolerar. En ese momento, ya era ateo y no creía en los fantasmas, así que hice una declaración tan loca para destruir la superstición e implementar una regla clásica de "Wang Zhi" (un capítulo del "Libro de los Ritos"): "¡Si alguien usa la adivinación basada en el tiempo de los fantasmas y los dioses para confundir a la gente, debe ser asesinado!"</p>
+<p>Por supuesto, no soñé en ese momento que el muchacho que dijo esto estaría tan entusiasmado como para escribir una investigación de 20.000 palabras sobre Viaje al Oeste quince años después (1923). ¡Por supuesto, nunca imaginé en ese momento que el niño todavía estaría buscando cuidadosamente materiales que pudieran verificar la autoría de "La investidura de los dioses" dos o tres décadas después! En aquel momento nunca había pensado en el significado histórico de aquella frase de "La República". El texto completo de dicha sección del "Sistema Real" es el siguiente:</p>
+<p>Aquellos que analizan palabras y violan leyes, confunden nombres y hacen cambios, y usan métodos poco ortodoxos para perturbar la política serán asesinados. Haz ruidos obscenos, usa ropa extraña, usa habilidades y herramientas extrañas para confundir a la multitud y luego mátalos. Si uno actúa falsamente y es firme, habla falsamente y es elocuente, estudia la falsedad y es extensivo, sigue la falsedad y engaña a las masas, será asesinado. Usar la adivinación para inferir el tiempo y la fecha a partir de fantasmas y dioses para confundir a la gente conducirá al asesinato. Estos cuatro castigos no deben ser escuchados.</p>
+<p>Hace cincuenta años, no tenía idea de que la palabra "castigar" en este pasaje era la base clásica para prohibir nuevas ideas, nuevas disciplinas académicas, nuevas creencias y nuevas artes bajo el régimen autocrático de China. En aquel entonces, me entusiasmaba la idea de "romper la superstición", así que apoyé el cuarto de los "Cuatro Castigos": "Quien use fantasmas y dioses para predecir la fecha y la hora y confundir al pueblo será ejecutado". No tenía ni idea de que el cuarto castigo, "usar fantasmas y dioses... para confundir al pueblo", y el primero, "adherirse a doctrinas de izquierda para perturbar la política", pudieran utilizarse para destruir la libertad de religión. En ese momento, tampoco me di cuenta de que la anotación de Zheng Xuan usó a Gongshu Ban como ejemplo de "habilidades extrañas e instrumentos inusuales"; ni me di cuenta de que "Justicia" de Kong Yingda citó el ejemplo de "Confucio sirvió como jefe de Lu durante siete días y mató a Shao Zhengmao" para explicar "actuar falsamente y ser firme, hablar falsamente y ser elocuente, aprender la falsedad y tener una mente abierta, seguir la falsedad y engañar a la gente, y matar". Por lo tanto, el segundo castigo puede utilizarse para prohibir la libertad de creación artística, y también puede utilizarse para "matar" a muchos científicos que inventaron "habilidades y equipos únicos". Por lo tanto, el tercer castigo puede utilizarse para destruir la libertad de pensamiento, la libertad de expresión y la libertad de publicación.</p>
+<p>Hace cincuenta años, cité el cuarto castigo de "El libro de los ritos" y quise "matar" a los autores de "Viaje al Oeste" y "La investidura de los dioses". En aquel momento, ciertamente no soñé que diez años más tarde, cuando enseñaba en la Universidad de Pekín, algunos caballeros igualmente "morales" querrían citar el tercer castigo del "Libro de los Ritos" para "matarme" a mí y a mis amigos. En aquel entonces quise "matar" a alguien, y después alguien quiso "matarme". Los motivos eran los mismos: ambos perdimos la tolerancia solo porque estábamos un poco enojados por la justicia.</p>
+<p>Cuento la historia de mi defensa de "utilizar la adivinación para confundir a las masas y matarlas" hace cincuenta años para ilustrar que, cuanto más viejo me hago, más siento que la "tolerancia" es más importante que la "libertad".</p>
+<p>Sigo siendo ateo hoy. No creo en un Dios con voluntad ni en la inmortalidad del alma. Pero hay una diferencia fundamental entre mi ateísmo y el ateísmo del Partido Comunista. Puedo tolerar todas las religiones que creen en Dios, y puedo tolerar a todas las personas que creen sinceramente en la religión. El propio Partido Comunista defiende el ateísmo y pretende eliminar toda creencia en Dios y prohibir todas las religiones que creen en Él. Esta era mi actitud ingenua, arrogante e intolerante hace cincuenta años.</p>
+<p>Siempre he creído que la gran mayoría de la gente en este país, esta sociedad y este mundo cree en Dios. Son tan magnánimos que toleran mi ateísmo, toleran a una persona como yo que no cree en Dios ni en la inmortalidad del alma, y toleran mi libertad de expresar mis ideas ateas tanto en casa como en el extranjero. Nadie me ha apedreado, encerrado en prisión ni atado a una pila de leña para quemarme vivo por ello. He disfrutado de tolerancia y libertad en este mundo durante más de cuarenta años. Creo que la tolerancia que este país, esta sociedad y este mundo tienen hacia mí es hermosa y debería estar agradecido por ello.</p>
+<p>Así que siempre siento que debo corresponder a la tolerancia de la sociedad hacia mí con una actitud tolerante. Así que yo mismo no creo en Dios, pero puedo comprender sinceramente a todos aquellos que creen en Dios, y puedo tolerar y respetar sinceramente todas las religiones que creen en Dios.</p>
+<p>Quiero devolver la tolerancia de la sociedad hacia mí con tolerancia, porque cuanto mayor me hago, más siento la importancia de la tolerancia. Si la sociedad no tuviera esta tolerancia, nunca habría podido disfrutar de la libertad de dudar con valentía y de la libertad de defender abiertamente el ateísmo durante más de 40 años.</p>
+<p>En la historia de la libertad religiosa, la historia de la libertad de pensamiento y la historia de la libertad política, podemos ver que la actitud de tolerancia es la actitud más preciosa y rara. A los seres humanos siempre les gustan las similitudes y les disgustan las diferencias. Siempre les desagradan las creencias, los pensamientos y los comportamientos que difieren de los suyos. Ésta es la raíz de la intolerancia. La intolerancia es simplemente la incapacidad de tolerar nuevas ideas y creencias que sean diferentes a las mías. Un grupo religioso siempre cree que sus creencias religiosas son correctas y no pueden estar equivocadas, por lo que siempre cree que las creencias religiosas que son diferentes a las suyas deben estar equivocadas y deben ser herejía o una secta. Un grupo político siempre cree que sus propuestas políticas son correctas y no pueden estar equivocadas, por lo que siempre cree que aquellas opiniones políticas que difieren de las suyas deben estar equivocadas y deben ser enemigas.</p>
+<p>Todas las persecuciones de herejes, toda destrucción de "disidentes", todas las prohibiciones a la libertad religiosa y toda opresión del pensamiento y de la palabra se deben a la firme creencia de que uno nunca puede estar equivocado. Porque creen firmemente que nunca pueden equivocarse, no pueden tolerar ninguna idea o creencia que sea diferente a las suyas.</p>
+<p>Consideremos la historia de la Reforma en Europa. Martín Lutero, Juan Calvino y otros se levantaron para reformar la religión porque estaban insatisfechos con la intolerancia y la falta de libertad de la Iglesia Católica Romana. Sin embargo, después de la victoria del protestantismo en Europa central y septentrional, los líderes protestantes se volvieron gradualmente intolerables y ya no permitieron que otros criticaran sus nuevas doctrinas. Calvino tenía el poder religioso en Ginebra, pero en realidad condenó a Servet, un erudito que se atrevió a pensar independientemente y criticar el dogma de Calvino, por "herejía", lo encadenó a una estaca, apiló leña sobre él y lo quemó vivo lentamente. Esto ocurrió el 23 de octubre de 1553.</p>
+<p>La trágica historia de este mártir Servet es muy digna de ser recordada y reflexionada. El objetivo original del movimiento de Reforma era luchar por la "libertad cristiana" y la "libertad de conciencia". ¿Por qué Calvino y sus seguidores quemarían a fuego lento a un protestante de mentalidad independiente? ¿Por qué el discípulo de Calvino (y más tarde su sucesor como dictador religioso de Ginebra) de Bèze declaró que «la libertad de conciencia es el dogma del diablo»?</p>
+<p>La razón básica es que creo firmemente que nunca puedo equivocarme. Un reformador religioso devoto como Calvino creía firmemente que su conciencia representaba verdaderamente los mandamientos de Dios, y que su boca y su pluma representaban verdaderamente la voluntad de Dios. Entonces, ¿podrían sus opiniones estar equivocadas? ¿Es posible que esté equivocado? Después de que Servet fue quemado en la hoguera, Calvino fue criticado por mucha gente. En 1554, Calvino publicó un texto de defensa, en el que decía sin dudar: «La autoridad para castigar severamente a los herejes es incuestionable, porque es Dios mismo quien habla. ... Esta obra es una lucha por la gloria de Dios».</p>
+<p>Si Dios habla por sí mismo ¿puede estar equivocado? ¿Está mal luchar por la gloria de Dios? Esta mentalidad de "no puedo estar equivocado" es la raíz de toda intolerancia. Creo firmemente que mis propias creencias son infalibles, que mis opiniones son "justas" y que quienes se oponen a mí son, por supuesto, "herejes". Mis opiniones representan la voluntad de Dios, y las opiniones de quienes se oponen a mí son por supuesto "el dogma del diablo".</p>
+<p>Ésta es la lección que nos enseña la historia de la libertad religiosa: la tolerancia es el fundamento de todas las libertades; sin la tolerancia para tolerar a los "otros", no habrá reconocimiento de que "otras" creencias religiosas puedan gozar de libertad. Sin embargo, debido a que una actitud intolerante se basa en el hábito psicológico de "mis creencias no pueden estar equivocadas", la tolerancia hacia los "otros" es la tolerancia más rara y difícil de desarrollar.</p>
+<p>En el pensamiento político y en los debates sobre temas sociales, todos creemos que la intolerancia es común y la tolerancia, siempre escasa. Les daré un ejemplo: la historia de un viejo amigo fallecido. Hace más de 40 años, iniciamos la campaña para promover la literatura vernácula en la revista Nueva Juventud. Le escribí a Chen Duxiu desde Estados Unidos:</p>
+<p>Lo correcto o lo incorrecto de este asunto no se puede determinar en un día o una noche, ni tampoco por una o dos personas. Espero sinceramente que la gente de nuestro país pueda mantener la calma y trabajar con nosotros para estudiar esta cuestión. Después de un debate exhaustivo, quedará claro lo que está bien y lo que está mal. Hemos alzado ya la bandera de la revolución y, aunque no podemos retroceder, nunca nos atreveremos a considerar como necesariamente correcto lo que defendemos ni a negarnos a permitir que otros lo corrijan.</p>
+<p>Duxiu me respondió en Nueva Juventud:</p>
+<p>En mi opinión, la aceptación de las opiniones discrepantes y la libre discusión son los principios para el desarrollo de los estudios académicos. Sin embargo, la idea de que el chino vernáculo debe ser la vía ortodoxa para mejorar la literatura china está tan claramente establecida en sus aciertos y errores que no se debe dar a los oponentes ningún espacio para la discusión. Debemos considerar lo que defendemos como absolutamente correcto y no permitiremos que otros nos corrijan.</p>
+<p>Cuando lo vi pensé que era una actitud muy arbitraria. Ahora, más de 40 años después, aún no puedo olvidar las palabras de Duxiu. Sigo pensando que esta actitud de "lo que defendemos debe ser absolutamente correcto" es muy intolerante, y es muy probable que genere resentimiento y oposición en los demás.</p>
+<p>Una vez dije que debía pagar la tolerancia de la sociedad hacia mí con tolerancia. A menudo pienso que aún necesitamos disciplinarnos: si queremos que los demás toleren y comprendan nuestras opiniones, primero debemos desarrollar la capacidad de tolerar y comprender las opiniones de otras personas. Como mínimo, deberíamos abstenernos de tomar lo que defendemos como un derecho absoluto. Nosotros que hemos sido formados en el experimentalismo no reconocemos la existencia de la "verdad absoluta" y ciertamente no podemos "tomar lo que defendemos como verdad absoluta".</p>
+<p>48, 3, 12 mañana</p>
+<p>(Publicado originalmente en Taipei's Free China, vol. 20, núm. 6, 16 de marzo de 1959)</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Mi Pueblo Natal]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/my-native-heath/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/my-native-heath/</guid>
+            <pubDate>Mon, 10 Jan 1921 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hacía un frío glacial cuando, tras una ausencia de más de veinte años, partí para visitar mi páramo natal, a más de dos mil li de distancia...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="_Here's the description of the picture" /></p>
+<p>Hacía un frío glacial cuando, tras una ausencia de más de veinte años, partí para visitar mi páramo natal, a más de dos mil li de distancia.</p>
+<p>Era pleno invierno, y al acercarme a mi destino, el cielo se encapotó y un viento frío empezó a gemir en el bote. Mirando a través de las grietas de la estera que lo cubría, vi algunos pueblos lúgubres y desolados dispersos por el paisaje bajo un cielo amarillo pálido, sin señales de vida, y no pude evitar sentir una profunda tristeza.</p>
+<p>¡Ah, éste no podía ser el paisaje que había estado constantemente en mis pensamientos durante los últimos veinte años!</p>
+<p>El país que recordaba era completamente diferente y mucho mejor que este. Pero cuando intentaba recordar su belleza particular y describir sus méritos especiales, no se me ocurría ninguno, y me di cuenta de que, después de todo, era tal como lo veía ahora. Mi páramo natal, me dije, debía de haber sido así siempre. Puede que no hubiera progresado, pero no tenía nada de triste; me lo parecía solo por mi estado de ánimo, que no era precisamente alegre con motivo de esta visita.</p>
+<p>Fue, de hecho, una visita de despedida. Habíamos vendido previamente, con el consentimiento de todos los interesados, la vieja casa en la que nuestra familia había vivido durante varias generaciones y habíamos acordado entregarla a los nuevos propietarios antes de principios de año. Era necesario despedirnos de la vieja casa y del campo familiar para establecernos en otra parte del país, donde me ganaba la vida.</p>
+<p>Llegué a casa al día siguiente, temprano por la mañana. Las briznas de hierba seca que crecían entre las tejas crujían con el viento y explicaban mejor que las palabras por qué la vieja casa tuvo que cambiar de dueño. Todo estaba muy tranquilo, ya que la nuestra fue la última rama de la familia en mudarse. Mi madre me recibió en la puerta de nuestra finca, y pronto se le unió mi sobrino Hung-erh, de ocho años, quien salió corriendo.</p>
+<p>Mi madre se alegró de verme, pero noté que también había un rastro de tristeza en ella. Me dijo que me sentara, descansara y tomara un té, y que no hablara de la mudanza hasta más tarde. Como Hung-erh nunca me había visto, se quedó mirándome fijamente desde la distancia.</p>
+<p>Al final llegamos al tema de la mudanza. Dije que había alquilado una casa y comprado algunos muebles, y que debíamos vender todos nuestros muebles viejos y comprar más con las ganancias. Mi madre aprobó mis planes. Iba a ser bastante sencillo, ya que casi todo el embalaje ya estaba hecho y algunos de los muebles más grandes se habían vendido. La única dificultad era conseguir que los compradores pagaran.</p>
+<p>"Después de que hayas descansado unos días y hayas visitado a nuestros familiares, podremos partir", dijo la madre.</p>
+<p>"Sí", respondí.</p>
+<p>Por cierto, cada vez que Yun-t'u viene a casa, siempre pregunta por ti. Tiene muchas ganas de verte. Le envié un mensaje con la fecha probable de tu llegada. Llegará pronto.</p>
+<p>Una escena llena de novedad y misterio cruzó repentinamente mi mente: una luna llena, dorada y amarilla, colgaba en el cielo, y abajo, contra el verde esmeralda de una interminable extensión de sandías en una playa de arena junto al mar, se encontraba un niño de once o doce años, con un anillo de plata alrededor del cuello y una horca de acero en la mano. Apuntaba a un "ch'a" con el tenedor, pero al golpear con todas sus fuerzas, el "ch'a" se agachó y se escabulló entre sus piernas.</p>
+<p>El niño se llamaba Yun-t'u. Yo tenía más o menos la misma edad cuando lo conocí, hace casi treinta años. Mi padre aún vivía por aquel entonces, y nuestra familia gozaba de buena posición económica. En otras palabras, yo era un shao-yeh , un joven maestro. Nos tocaba encargarnos de un sacrificio ancestral particularmente importante, que solo se realizaba una vez en más de treinta años y, por lo tanto, era una ocasión aún más importante para nosotros que para el resto del clan. Las ofrendas realizadas ante los retratos ancestrales durante el primer mes eran ricas y variadas, los vasos de sacrificio elaborados y los participantes numerosos. Era necesario vigilar cuidadosamente los vasos de sacrificio para evitar robos. Como el trabajo era demasiado para nuestro mang-yueh , pidió permiso a su padre para llamar a su hijo Yun-t'u para que se encargara de los vasos de sacrificio. (En nuestra parte del país había tres tipos de ayuda: los que se contrataban por año eran conocidos como chang-nien o todo el año; los que se contrataban por día eran conocidos como tuan-kung o trabajo corto; mientras que los que trabajaban su propia tierra y sólo se contrataban durante el Año Nuevo y otros festivales o durante la época de alquiler eran conocidos como mang-yueh o mes ocupado.)</p>
+<p>Me alegré mucho de que mi padre diera su consentimiento, pues había oído hablar de Yun-t'u y sabía que era de mi misma edad. Se llamaba Yun-t'u porque nació en un mes intercalar ( yun ) y, según el sistema de correspondencias de los astrólogos, carecía del elemento tierra ( t'u ) en su horóscopo. Sabía cómo preparar una trampa para atrapar pájaros.</p>
+<p>Empecé a esperar con ilusión la llegada del Año Nuevo, pues significaba que Yun-t'u también llegaría. Finalmente, se acercaba el fin de año y un día mi madre me anunció que Yun-t'u había llegado. Corrí a verlo y lo encontré en la cocina. Tenía la cara rubicunda, llevaba un gorro de fieltro y un anillo de plata alrededor del cuello. Era evidente que su padre lo quería mucho, temía que no viviera mucho y, tras hacer un voto ante los dioses, le había puesto este anillo alrededor del cuello para que lo abrazara. Yun-t'u era muy tímido con los adultos, pero no conmigo, y hablaba conmigo con libertad cuando no había nadie más. En pocas horas nos hicimos muy amigos.</p>
+<p>No sé de qué hablamos entonces; sólo recuerdo que Yun-t'u estaba muy feliz y me dijo que había visto, desde que llegó a la ciudad, muchas cosas que nunca había visto antes.</p>
+<p>Al día siguiente quise que me enseñara a cazar pájaros, pero me dijo: «No podemos hacerlo ahora. Tenemos que esperar a que pase la nieve. En casa, limpio un poco la nieve, armo una cesta grande con un palo y esparzo grano debajo. Cuando los pájaros vienen a comer el grano, tiro de la cuerda atada al palo y la cesta cae y atrapa a los pájaros que están debajo. Atrapo todo tipo de aves: gallos silvestres, palomas torcaces, palomas de lomo azul, etc.».</p>
+<p>Y entonces esperé que nevara.</p>
+<p>Yun-t'u también me dijo: «Hace mucho frío, pero ven a nuestra casa en verano. Durante el día iremos a la orilla del mar a recoger conchas. Tenemos de todo tipo: rojas y verdes, diablillos y manos de Kuanyin. Por la noche puedes ir con mi padre y conmigo a ver el campo de sandías».</p>
+<p>"¿Para protegerse de los ladrones?"</p>
+<p>No. No consideramos robo si un transeúnte tiene sed y se come un melón. Vigilamos a los tejones, erizos y, sobre todo, a los 'ch'a'. Se les oye roer los melones a la luz de la luna: crujir, crujir. Entonces coges el tenedor y te acercas con agilidad...</p>
+<p>No sabía qué era un "ch'a" (aún no lo sé), pero por alguna razón me lo imaginé como algo así como un pequeño cachorro, solo que más feroz.</p>
+<p>"¿No muerden?"</p>
+<p>Pero tienes tu tenedor. Cuando te acerques y lo veas, golpéalo con él. La bestia es muy rápida. Se abalanzará sobre ti y se escapará entre tus piernas. Su pelaje es tan resbaladizo como el aceite.</p>
+<p>Nunca supe que hubiera cosas tan nuevas y maravillosas en el mundo: que hubiera conchas de tantos colores en la orilla del mar y que las sandías pudieran tener una experiencia más emocionante que estar expuestas en las fruterías.</p>
+<p>Cuando sube la marea, hay muchísimos peces saltando. Todos tienen dos patas, como ranas jóvenes.</p>
+<p>Ah, Yun-t'u sabía de un sinfín de cosas extrañas que ninguno de mis compañeros de juego habituales conocía. No sabían absolutamente nada, pues cuando Yun-t'u jugaba en la orilla del mar, ellos, como yo, solo podían ver un cielo de cuatro puntas sobre los muros del patio.</p>
+<p>Desafortunadamente, el primer mes terminó y Yun-t'u tuvo que irse a casa. Lloré, y Yun-t'u también se escondió en la cocina, llorando y negándose a irse, pero al final su padre se lo llevó. Más tarde, su padre me envió un paquete de conchas y unas plumas bonitas. Yo también le envié cosas un par de veces, pero no lo había vuelto a ver desde entonces.</p>
+<p>Así, cuando mi madre hablaba de él, mis recuerdos de infancia reaparecieron en un instante y mi tierra natal volvía a tomar la belleza que mis recuerdos siempre la habían revestido.</p>
+<p>"¡Qué bien!", dije. "¿Cómo... cómo está?"</p>
+<p>"Bueno, su situación no es muy buena", respondió mi madre. Mientras miraba hacia el patio, exclamó: "¡Ahí están esas personas otra vez! Vienen aquí con el pretexto de comprar muebles, pero suelen robar cosas cuando nadie los ve. Debo ir a vigilarlos".</p>
+<p>Se levantó y salió. Se oían voces de mujer afuera. Llamé a Hung-erh y hablé con él: le pregunté si podía escribir, si quería irse.</p>
+<p>"¿Vamos en tren?"</p>
+<p>"Sí, viajaremos en tren."</p>
+<p>"¿Qué pasa con los barcos?"</p>
+<p>"Primero tomaremos un barco."</p>
+<p>¡Ja! ¡Así que es este! ¡Y qué barba le ha crecido! —interrumpió de repente una voz aguda y estridente.</p>
+<p>Levanté la vista, sobresaltado, y vi ante mí a una mujer de unos cincuenta años, de pómulos altos y labios finos, con los brazos en jarras. No llevaba falda y sus pies sobresalían como un compás, como los que usan los dibujantes.</p>
+<p>Me quedé perplejo.</p>
+<p>¿No sabes quién soy? ¡Te abrazaba!</p>
+<p>Estaba más desconcertado que nunca. Por suerte, mi madre entró y dijo: «Ha estado fuera tantos años que lo ha olvidado todo». Luego, volviéndose hacia mí, añadió: «Deberías acordarte de ella. Esta es la hermana Yang, de enfrente ... Tienen una tienda de tofu».</p>
+<p>Sí, ahora lo recordaba. De mis recuerdos de infancia, recordaba la imagen de la Hermana Yang sentada todo el día en la pastelería de tofu de enfrente. La apodaban "Tofu Hsi Shih". Pero entonces se empolvaba la cara y sus pómulos no eran tan altos, sus labios no tan finos, y, como pasaba el día sentada, no recordaba sus pies como brújulas. Era joven y atractiva entonces, y se decía que su pastelería prosperó por esa razón. Sin embargo, mi mente infantil no era susceptible a los encantos de una joven y no me había impresionado. Compasses estaba muy indignada y su rostro adoptó una expresión burlona ante mi desliz, que le debió parecer tan imperdonable como que un francés no conociera a Napoleón o un estadounidense no conociera a Washington.</p>
+<p>—¡Así que has olvidado quién soy! Bueno, a esto le llaman el olvido de los grandes.</p>
+<p>—No es tal cosa... yo... yo —me puse de pie, tartamudeando, avergonzado.</p>
+<p>—Entonces déjame decirte algo, hermano Hsun. Ahora eres rico y no necesitas estos muebles destartalados. Son demasiado pesados y toscos para llevártelos. Dámelos. Somos pobres y nos vienen bien.</p>
+<p>"No soy rico. Tengo que vender estas cosas para ... "</p>
+<p>¿Qué dices? Te han nombrado Daotai y, sin embargo, dices que no eres rico. Tienes tres concubinas y viajas en un carruaje enorme con ocho porteadores, ¡y me dices que no eres rico! ¡Heng, no puedes engañarme!</p>
+<p>Me di cuenta de que no tenía sentido discutir con ella y me quedé callado.</p>
+<p>¡Ay, ay! ¡ En serio, cuanto más dinero tengas, más te costará, y cuanto más te costará, más dinero tendrás! —gruñó Compasses mientras se daba la vuelta y se alejaba indignada, cogiendo los guantes de mi madre y metiéndolos bajo el abrigo.</p>
+<p>Después de esto, mis parientes y parientes del vecindario vinieron a visitarme. En mis ratos libres, hice la maleta. Así pasaron tres o cuatro días.</p>
+<p>Una tarde, mientras tomaba el té después de comer, oí pasos que venían de afuera. Miré a mi alrededor y, para mi sorpresa, descubrí quién era. Me levanté y corrí a su encuentro.</p>
+<p>Era Yun-t'u. Aunque supe que era él en cuanto lo vi, no era el Yun-t'u de mis recuerdos. Ahora era casi el doble de alto que la última vez que lo vi; su rostro rubicundo y redondo se había vuelto de un amarillo ceniciento, surcado de arrugas; sus ojos eran como los de su padre, con los párpados gruesos y rojos comunes en quienes viven cerca del mar y están constantemente expuestos a la brisa marina. Llevaba una vieja gorra de cuero cabelludo y un abrigo ligero de algodón acolchado, y temblaba de frío. Sostenía un paquete de papel y una pipa larga en las manos; sus manos ya no eran regordetas y rubicundos como las recordaba, sino toscas, torpes y agrietadas como la corteza de un pino.</p>
+<p>Me conmovió profundamente pero no sabía qué decir.</p>
+<p>"Ah, hermano Yun-t'u, así que por fin has venido", dije con torpeza. Había muchas cosas que quería decirle, cosas que me invadían —aves silvestres, peces saltarines, conchas marinas, "ch'a"—, pero parecían estar bloqueadas por algo, de modo que daban vueltas en mi cabeza sin encontrar expresión.</p>
+<p>Se paró frente a mí con una expresión que mezclaba alegría y tristeza. Movía los labios, pero no emitía ningún sonido. Cuando logró hablar, lo hizo con formalidad y respeto: «Su Señoría ...».</p>
+<p>Debí estremecerme al darme cuenta del pesado y doloroso muro que se había interpuesto entre nosotros. No encontré nada que decir.</p>
+<p>"Ven, Shui-sheng, y haz una reverencia a Su Señoría", le dijo a un niño que sacó a rastras. El niño era la viva imagen de Yun-t'u veinte años atrás, solo que era más delgado y cetrino, y no llevaba un anillo de plata en el cuello. "Es mi quinto hijo, nunca ha salido de casa, así que es muy tímido".</p>
+<p>Mi madre y Hung-erh bajaron, probablemente habiendo escuchado a los visitantes.</p>
+<p>—Lao-tai-tai —dijo Yun-t'u—. Recibí su mensaje y me alegró mucho saber que Su Señoría había regresado.</p>
+<p>"¿Pero por qué tan formal?", protestó mi madre. "¿No solían llamarse hermano? Hagan lo mismo de antes: llámenlo hermano Hsun".</p>
+<p>—¡Aiya , qué amable eres! Pero eso no servirá. Podría haber estado bien entonces. Era solo un niño y no sabía nada mejor. Yun-t'u intentó de nuevo convencer a su hijo para que se acercara a saludar a mi madre, pero el niño se escondió tras su espalda.</p>
+<p>"¿Es Shui-sheng? ¿No es el quinto? Con tantos desconocidos alrededor, no me extraña que sea tímido. Que se vaya con Hung-erh", dijo su madre.</p>
+<p>Ante esto, Hung-erh se acercó a Shui-sheng y este lo acompañó de inmediato. Mi madre le pidió a Yun-t'u que se sentara, lo cual hizo tras una breve vacilación. Apoyó su larga pipa en la mesa y me entregó el paquete de papel, diciendo: «No tenemos nada fresco en invierno. Estas judías verdes secas son de nuestra tierra. Espero, señoría ...».</p>
+<p>Le pregunté sobre sus circunstancias, las cuales me contó moviendo la cabeza muchas veces.</p>
+<p>La situación es muy mala. Mi sexto ya tiene edad suficiente para ayudar, pero nunca hay suficiente comida para alimentarlos a todos. Además, no hay paz en estos tiempos: por todas partes hay dinero, dinero, e impuestos siempre nuevos e irregulares; las cosechas son malas. Cuando cosechamos algo e intentamos venderlo, apenas conseguimos lo suficiente para pagar los diversos impuestos que se imponen a lo largo del camino. Si no intentamos venderlo, se nos pudre en las manos ...</p>
+<p>Siguió negando con la cabeza. Su rostro, aunque profundamente surcado, permanecía inexpresivo como una estatua de piedra. Sentía amargamente sus penurias, pero era incapaz de expresarlas. Tras unos momentos de silencio, tomó su pipa y fumó.</p>
+<p>Mi madre lo interrogó y descubrió que tenía mucho que hacer en casa y que debía regresar al día siguiente. Como aún no había almorzado, le dijo que fuera a la cocina a freír arroz. Después de que salió, mi madre y yo suspiramos al pensar en la suerte del hombre: demasiados hijos, hambre, impuestos opresivos, soldados, bandidos, funcionarios, la nobleza; todo esto contribuía a hacer la carga pesada para el pobre campesino, aplastándolo y drenándole la vida hasta que fue apenas más que una estatua de madera. Mi madre dijo que debíamos darle todo lo que no pudiéramos usar ni encontrar comprador.</p>
+<p>Por la tarde, escogió algunas cosas que podría usar: dos mesas largas, cuatro sillas, un juego de incensario y candelabros, y una balanza. Nos pidió que le diéramos toda la ceniza de paja de arroz. (Usamos la paja de arroz como combustible y la ceniza como fertilizante). Iba a venir a buscarlas en un bote antes de que partiéramos.</p>
+<p>Por la noche volvimos a charlar, sin ningún tema en particular. A la mañana siguiente se fue con Shui-sheng.</p>
+<p>Nueve días después, dejamos nuestro antiguo hogar. Yun-t'u llegó temprano por la mañana. No trajo a Shui-sheng, sino a una niña de cinco años para vigilar el barco. Estuvimos ocupados todo el día y tuvimos pocas oportunidades de charlar. Había muchos invitados: algunos habían venido a despedirnos, otros a buscar cosas, y otros tantos a despedirnos como a buscar cosas. Cuando finalmente zarpamos, al anochecer, la vieja casa estaba vacía de todo lo que pudiera ser útil.</p>
+<p>Nuestro barco avanzaba lentamente, dejando atrás las colinas verdes que se oscurecían a ambas orillas. Hung-erh, que había estado observando el paisaje oscuro conmigo desde una ventana, me dijo de repente: «Tío, ¿cuándo volvemos?».</p>
+<p>"¿Volver? ¿Pero por qué deberías pensar en volver si apenas empezamos?"</p>
+<p>"Pero Shui-sheng me ha pedido que lo visite en su casa", dijo el niño reflexivamente con sus ojos negros bien abiertos.</p>
+<p>Tanto a mi madre como a mí nos conmovió el comentario del niño y nuestra conversación volvió a girar en torno a Yun-t'u. Dijo que la hermana Yang había estado viniendo a casa todos los días desde que empezamos a empacar. Dos días antes de empezar, descubrió unos platos y cuencos en el montón de cenizas, que, según ella, Yun-t'u había escondido allí para llevárselos cuando viniera a buscar la ceniza. La hermana Yang se sintió muy satisfecha con su descubrimiento, y con ello se aprovechó de nuestra "exasperación canina". (Un artilugio usado para alimentar a las gallinas en nuestra tierra. Consiste en una jaula de madera sobre un comedero con alimento. Las gallinas pueden asomar el cuello por los barrotes para alcanzar el alimento, mientras que los perros solo pueden mirar a través de ellos con exasperación. De ahí el nombre). Mientras se marchaba, mi madre dijo que nunca sospechó que la hermana Yang fuera capaz de correr tan rápido, con sus pequeños pies vendados y sus tacones altos.</p>
+<p>No sentí arrepentimiento al ver nuestra vieja casa, las colinas y los arroyos que nos rodeaban. Solo tenía una sensación opresiva de estar rodeado y aislado del mundo por muros invisibles y una sensación de tristeza porque la imagen de mi pequeño héroe con un anillo de plata alrededor del cuello en el campo de sandías se había vuelto repentinamente borrosa e indistinta, mientras que antes había sido tan nítida y clara.</p>
+<p>Tanto la madre como Hung-erh se habían quedado dormidas.</p>
+<p>Mientras yacía en mi rincón, escuchando el sonido del agua golpeando el bote, supe que estábamos en camino. ¡Qué barrera se había interpuesto entre Yun-t'u y yo! Afortunadamente, aún no existía tal barrera entre la generación más joven (¿no estaría Hung-erh pensando en Shui-sheng y preguntando por él?) y esperaba que nunca se interpusiera entre ellos. Sin embargo, no quería que vivieran, como precio por su continua compañía, la vida amarga y desarraigada que yo viví; no quería que vivieran la vida amarga y miserable que vivió Yun-t'u; no quería que vivieran la vida amarga y desvergonzada que vivieron otros. Debían tener una nueva vida, una vida que nosotros, los de la generación anterior, no habíamos conocido.</p>
+<p>Al darme cuenta de lo que hacía, de repente me asusté. Me reí para mis adentros cuando Yun-t'u me pidió el incensario y los candelabros, y lo compadecí porque no podía olvidar ni un instante sus supersticiones. Pero ¿qué era esta supuesta esperanza mía sino también un ídolo hecho con nuestras propias manos? La única diferencia entre nosotros era que sus deseos y esperanzas se centraban en cosas más inmediatas, mientras que los míos se centraban en lo más remoto.</p>
+<p>En la oscuridad, el verde campo de sandías reapareció ante mis ojos, y sobre él, una luna dorada colgaba en un cielo azul intenso. Quizás, pensé, la esperanza no es absoluta, no es algo de lo que podamos decir si existe o no, sino algo muy parecido a los caminos que los viajeros recorren la faz de la tierra donde antes no los había.</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Rashōmon]]></title>
+            <link>https://cloudlin.zjulife.cc/es/posts/rashomon/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/es/posts/rashomon/</guid>
+            <pubDate>Fri, 05 Nov 1915 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ocurrió al anochecer de un día. Había un sirviente que estaba esperando la lluvia bajo Rashomon. No había nadie más debajo de la puerta anc...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/06.webp" alt="_Here's the description of the picture" /></p>
+<p>Ocurrió al anochecer de un día. Había un sirviente que estaba esperando la lluvia bajo Rashomon.</p>
+<p>No había nadie más debajo de la puerta ancha excepto este hombre. Sólo un grillo estaba posado sobre una gran columna con laca roja descascarada. Dado que este Rashomon está ubicado en la Avenida Suzaku, debería haber otras dos o tres mujeres protegiéndose de la lluvia con sombreros y frotándose el eboshi. Pero aparte de este hombre, no había nadie más.</p>
+<p>La razón es que en los últimos dos o tres años Kioto ha sufrido una serie de desastres como terremotos, tornados, incendios, hambrunas, etc., por lo que la capital se ha vuelto particularmente desolada. Según registros antiguos, las estatuas de Buda y los instrumentos budistas fueron rotos en pedazos, y los trozos de madera cubiertos con laca, láminas de oro y plata fueron apilados al costado del camino y vendidos como leña. Dada la situación en la capital, naturalmente a nadie le importaría reparar la Puerta Rashomon ni nada por el estilo. Los zorros y los ladrones aprovecharon la desolación para vivir allí y con el tiempo incluso desarrollaron la costumbre de arrojar cadáveres sin dueño en la puerta. Tan pronto como se puso el sol, la gente sintió el aire sombrío y nadie pasó más cerca de esa puerta.</p>
+<p>En cambio, muchos cuervos se reunieron hacia este lugar de la nada. Durante el día, al observar cómo volaban innumerables cuervos alrededor de la cresta más alta, cantando y bailando. Cuando el cielo sobre la puerta se iluminó con el sol poniente y se volvió rojo, parecía como si hubiera semillas de sésamo esparcidas allí, y era particularmente claro. No hace falta decir que los cuervos vinieron a comer la carne del cadáver que estaba en la puerta. —Pero hoy, quizás porque ya era demasiado tarde, no se vio ni uno solo. Vi escalones de piedra que estaban a punto de derrumbarse, con maleza creciendo en las grietas y manchas blancas de excrementos de cuervo pegadas a ellos. El sirviente estaba sentado en lo alto de los siete escalones, vestido con su gastada chaqueta roja y verde, y miraba fijamente la lluvia, irritado por un gran grano en su mejilla derecha.</p>
+<p>El autor ya ha escrito que "la familia esperará hasta que deje de llover". Sin embargo, después de que dejó de llover, el general no tenía idea de qué hacer. En circunstancias normales, naturalmente regresaría a la casa de su dueño. Pero hacía cuatro o cinco días que lo habían despedido de su amo. Como se mencionó anteriormente, Kioto estaba en un estado de decadencia en ese momento; ahora que esta familia estaba despidiendo a su amo, que la había servido durante muchos años, era en realidad solo una pequeña consecuencia de esta decadencia. Entonces, en lugar de decir "el general de la familia esperó a que parara de llover", sería más apropiado decir "el general de la familia que quedó atrapado bajo la lluvia no tenía a dónde ir y no sabía qué hacer". Además, el clima de hoy tiene un gran impacto en el sentimentalismo de este general de la familia del período Heian. La lluvia empezó a las 5 p.m. y no parecía haber parado a las 5 p.m. En ese momento, el general de la familia pensó primero en qué hacer para el trabajo del día siguiente. De hecho, se aferraba a la duda sobre qué hacer ante algo que no podía hacer. Al mismo tiempo, escuchaba el sonido de la lluvia golpeando la calle Suzaku.</p>
+<p>La lluvia rodeó a Rashomon y cayó desde lejos. El crepúsculo hizo que el cielo se agachara; al mirar hacia arriba, vi que la puerta descansaba sobre el alero inclinado, sosteniendo las nubes oscuras.</p>
+<p>Porque cuando tengas que decidir qué hacer con algo que no se puede hacer, ya no tendrás tiempo para elegir los medios. Si lo recogen, simplemente morirá de hambre en un espacio abierto o al lado de la carretera; y simplemente lo trasladarán a esta puerta y lo abandonarán como a un perro. Pero si no lo elijo, entonces, los pensamientos del general de la familia vagaron por la misma ruta muchas veces antes de llegar finalmente a este lugar. Sin embargo, aunque ha pasado mucho tiempo, el fin de esta "regla" sigue siendo una "regla". Aunque el general de la familia ha afirmado la parte de no ser selectivo con los medios, no tiene el coraje de afirmar activamente la parte que naturalmente se desprende de "ser un bandido" para tener esta "regla" resuelta.</p>
+<p>El sirviente estornudó ruidosamente y se levantó perezosamente. La fría noche en Kioto ya es tan fría como un horno. El viento y el crepúsculo soplaban entre los postes de la puerta sin ningún escrúpulo. El grillo que estaba posado en el pilar bermellón ya había huido quién sabe dónde.</p>
+<p>El sirviente encogió el cuello, levantó los hombros de su chaqueta roja y verde contra su camisa amarilla clara y miró alrededor de la puerta. Porque si puedes encontrar un trozo de tierra donde no tengas miedo al viento ni a la lluvia, y no estés expuesto a los elementos, y donde puedas dormir tranquilo toda la noche, querrás pasar la noche allí. Afortunadamente, durante ese tiempo, vi una escalera ancha pintada de color bermellón que conducía a la torre de la puerta. Incluso si hay gente aquí, todos están muertos. El sirviente entonces tuvo cuidado con la espada de empuñadura sencilla que llevaba en la cintura, para no desenvainarla, y levantó los pies con sandalias de paja para subir al escalón más bajo de la escalera.</p>
+<p>Así ocurrió unos minutos después. En medio de la amplia escalera que conduce al piso superior de Rashomon, un hombre encogió su cuerpo como un gato, contuvo la respiración y espió la situación en el piso de arriba. La luz del fuego que se filtraba desde el piso superior iluminaba la mejilla derecha del hombre, la mejilla en la que había aparecido un grano rojo, hinchado y supurante entre su corta barba. El comandante de la familia inicialmente pensó que las personas en los pisos superiores simplemente estaban muertas; pero cuando subió al segundo y tercer piso, vio a alguien iniciando un incendio, que se movía de un lado a otro. Esto se puede entender observando la tenue luz amarilla que se balancea en el techo artesonado cubierto de telarañas en cada rincón. En esta noche lluviosa, en el piso superior de Rashomon, la persona que pudiera encender un fuego no debía ser una persona común y corriente.</p>
+<p>El criado retuvo sus pasos como un lagarto y subió lentamente hasta el escalón más alto de la empinada escalera. Inclinó su cuerpo lo más que pudo, estiró su cuello lo más que pudo y miró dentro del edificio.</p>
+<p>Al mirar, vieron varios cadáveres esparcidos dentro del edificio, tal como habían oído. Sin embargo, el alcance del fuego era mucho menor de lo esperado, y no pudieron determinar cuántos eran. Sólo vagamente sabía que había cadáveres desnudos y cadáveres vestidos; y por supuesto, había cadáveres tanto masculinos como femeninos. Además, los cadáveres, algunos con la boca abierta o con las manos extendidas, yacían en el suelo casi hacían dudar de que alguna vez hubiera sido un ser humano. Además, solo las partes elevadas como los hombros y el pecho estaban iluminadas por la tenue luz, mientras que las sombras de las partes inferiores eran más oscuras, como si siempre estuvieran en silencio.</p>
+<p>El sirviente no pudo evitar taparse la nariz al percibir el hedor de los cadáveres en descomposición. Sin embargo, al instante siguiente, la mano se olvidó de cubrir la nariz. Porque hubo una emoción fuerte que casi le quitó el sentido del olfato al hombre.</p>
+<p>Sólo entonces el guardia notó que había un hombre en cuclillas entre los cadáveres. Era una anciana bajita, delgada, de pelo blanco, con aspecto de mono y vestida con un vestido de color ciprés. La anciana, sosteniendo una antorcha encendida en su mano derecha, contemplaba el rostro de uno de los muertos. A juzgar por la longitud del cabello, el cadáver probablemente era el de una mujer.</p>
+<p>El guardia estaba tan conmovido por seis partes de terror y cuatro partes de curiosidad que casi se olvidó de respirar. Parafraseando a un viejo periodista, parece como si hubieran resucitado a "Mao Dai". Entonces la anciana insertó la antorcha de pino en la grieta del suelo, extendió la mano hacia el cadáver que había estado mirando antes y comenzó a arrancar los cabellos largos uno por uno, como una madre mona que atrapa piojos para su hijo. El cabello también parecía haber sido arrancado casualmente.</p>
+<p>A medida que los cabellos fueron arrancados uno a uno, el miedo en el corazón del general desapareció gradualmente. Al mismo tiempo, poco a poco fue surgiendo el odio hacia la anciana. —No, decir “hacia esta anciana” podría ser un error gramatical; sería mejor decir que mi aversión a todo mal se fue fortaleciendo poco a poco. En ese momento, si alguien le preguntara al general la pregunta que el hombre había pensado antes, "¿Morir de hambre o convertirse en un ladrón?", el general probablemente elegiría al que murió de hambre sin ningún remordimiento. El corazón malvado de este hombre, como la antorcha que la anciana insertó en las grietas del suelo, ardía vigorosamente hasta llegar a esto.</p>
+<p>Naturalmente, el general en casa no tenía idea de por qué la anciana le arrancó el cabello al hombre muerto. Así que, hablando “razonablemente”, todavía no sabemos si es bueno o malo. Pero desde la perspectiva del sirviente, arrancarle el cabello a un muerto que estaba encima de Rashomon en una noche tan lluviosa era un mal imperdonable. No hace falta decir que, naturalmente, en casa se olvidó de su intención anterior de convertirse en ladrón.</p>
+<p>Entonces el sirviente pateó y de repente saltó la escalera, y con el cuchillo de mango sencillo en su mano, se dirigió hacia la anciana. No hace falta describir la sorpresa de la anciana.</p>
+<p>Cuando la anciana vio al sirviente, saltó como si le hubiera dado una ballesta.</p>
+<p>-¡Oye! ¿A dónde vas?</p>
+<p>El sirviente bloqueó la ruta de escape de la anciana cuando tropezó con el cadáver y comenzó a maldecirla. La anciana empujó a los guardias y trató de escapar. Pero el sirviente no quiso dejarlo ir y lo empujó hacia atrás nuevamente. Por un momento permaneció en silencio. Sin embargo, el resultado de la batalla ya se conocía. El retenedor finalmente atrapó el brazo de la anciana y la obligó a caer. Era un brazo al que sólo le quedaba piel y huesos, que parecía una pata de pollo.</p>
+<p>¿Qué haces? ¡Dime! ¡Si no, es así!</p>
+<p>El sirviente bajó a la anciana, de repente sacó su espada de su vaina y empujó el acero blanco como la nieve frente a los ojos de Yi. Pero la anciana no dijo nada. Sus manos temblaban, su respiración era trabajosa, sus ojos estaban muy abiertos como si sus globos oculares estuvieran a punto de salirse de sus órbitas, y él permaneció mudo y testarudo, sin decir una palabra. Al ver esta situación, el general de la familia se dio cuenta claramente de que la vida y la muerte de la anciana estaban completamente bajo el control de su propia voluntad. Además, esta voluntad había enfriado el odio ardiente anterior en su corazón en algún momento. Lo único que queda es el orgullo pacífico y la satisfacción de haber logrado algo. Entonces el general de la familia miró a la anciana y dijo con una voz un poco más suave:</p>
+<p>No soy un funcionario del yamen que inspecciona actividades ilegales. Solo soy un viajero que acaba de pasar por esta puerta. Así que no tengo derecho a encerrarlos aquí. Si están haciendo algo en este momento, en esta puerta, solo díganmelo.</p>
+<p>La anciana abrió aún más los ojos y miró fijamente el rostro del sirviente. Sus ojos, con bordes rojos, eran tan agudos como los de un ave de rapiña. Entonces los labios arrugados, que estaban casi unidos a la nariz, comenzaron a moverse como si estuvieran masticando algo. El cuello es muy fino y se puede ver el movimiento de la nuez de Adán en la punta del cuello. En ese momento, un sonido parecido al de un cuervo salió de la garganta, jadeante y llegó a los oídos del sirviente:</p>
+<p>"Saquen este pelo, saquen este pelo y hagan una peluca."</p>
+<p>Al oír la inesperada y ordinaria respuesta de la anciana, el sirviente se decepcionó. Y al sentirse decepcionado, el odio y el frío desprecio de antes volvieron a invadir su corazón. Supongo que ella también entendió su complexión. La anciana, sosteniendo todavía en una mano el pelo largo que había arrancado del cadáver, emitió un sonido como el croar de una rana y dijo estas palabras:</p>
+<p>Claro que arrancarle el pelo a un muerto es algo muy malo. Sin embargo, todos los muertos aquí lo merecen. Ahora bien, la mujer que acaba de arrancarle el pelo cortó la serpiente en trozos de diez centímetros y la secó, diciendo que era pescado seco . ] para venderlo en el campamento. Si no hubiera habido peste, probablemente todavía lo estaría vendiendo. Este hombre es igual. La mujer vendía pescado seco, diciendo que sabía bien, y quienes portaban cuchillos lo compraban como una verdura indispensable. En cuanto a mí, no creo que lo que hizo esta mujer fuera malo. Si no lo hiciera, me moriría de hambre, así que lo hice porque no tenía otra opción. Así que no creo que lo que hice fuera malo. Esto también es cierto. Si no lo hiciera, me moriría de hambre, así que lo hice porque no tenía otra opción. Esta mujer, que sabía que no había otra opción, debería haberme perdonado.</p>
+<p>La anciana probablemente dijo algo así.</p>
+<p>El sirviente envainó su espada, sujetó la empuñadura con su mano izquierda y escuchó estas palabras con indiferencia; mientras que su mano derecha, naturalmente, estaba presionando el gran grano rojo en su mejilla que estaba supurando con pus supurante. Sin embargo, mientras escuchaba, un sentimiento de coraje surgió en el corazón del sirviente.</p>
+<p>Éste era precisamente el coraje que le faltaba al hombre que estaba en la puerta. Además, así como el coraje que había usado para saltar a la puerta y atrapar a la anciana, también fue el coraje que tuvo para lanzar un contraataque contra la oposición. El general de la familia no tenía ningún problema ni con morir de hambre ni con convertirse en ladrón. A juzgar por su estado de ánimo en ese momento, cosas como morir de hambre habían desaparecido de su mente y eran casi impensables.</p>
+<p>"En efecto, ¿es así?"</p>
+<p>Después de que la anciana terminó de hablar, el sirviente lo repitió con voz burlona. Entonces dio un paso hacia adelante y, de repente, su mano derecha dejó el grano, agarró el pecho de la anciana y dijo con los dientes apretados:</p>
+<p>—Entonces, aunque te obligue a hacerlo, no necesariamente te sentirás resentido. Si no lo hago, me moriré de hambre.</p>
+<p>El sirviente rápidamente le quitó la ropa a la anciana y le dio una patada violenta a la anciana que le sujetaba los pies sobre el cadáver. Son sólo cinco escalones hasta las escaleras. El sirviente, sosteniendo en la mano la ropa despojada de color ciprés, bajó rápidamente la empinada escalera y se adentró en la oscuridad.</p>
+<p>No hace mucho tiempo, la anciana, que parecía muerta temporalmente, luchaba por levantar su cuerpo desnudo de entre los cadáveres. Ella emitió un sonido molesto y quejumbroso y, aprovechando la luz del fuego que aún ardía, se arrastró hasta las escaleras. Y desde allí colgaba un pelo corto y blanco que se asomaba por debajo de la puerta. Afuera solo había una noche completamente oscura.</p>
+<p>Nadie sabía el paradero del general de la familia.</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/rss-style.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>重新编排</title>
+        <link>https://CloudLin.ZJUlife.cc/</link>
+        <description>Retypeset是一款基于Astro框架的静态博客主题，中文名为重新编排。本主题以活版印字为设计灵感，通过建立全新的视觉规范，对所有页面进行重新编排，打造纸质书页般的阅读体验，再现版式之美。所见皆为细节，方寸尽显优雅。</description>
+        <lastBuildDate>Mon, 22 Jun 2026 12:10:50 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Astro-Theme-Retypeset with Feed for Node.js</generator>
+        <language>zh</language>
+        <copyright>Copyright © 2026 CloudLin</copyright>
+        <atom:link href="https://cloudlin.zjulife.cc/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Markdown 扩展功能]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/markdown-extended-features/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/markdown-extended-features/</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[本文介绍 Retypeset 主题支持的 Markdown 扩展功能，包括语法示例与效果展示。使用标准的 Markdown 图像语法 ![a...]]></description>
+            <content:encoded><![CDATA[<p>本文介绍 Retypeset 主题支持的 Markdown 扩展功能，包括语法示例与效果展示。</p>
+<h2>图注</h2>
+<p>使用标准的 Markdown 图像语法 <code>![alt](src)</code>，即可自动生成图注。在 <code>alt</code> 前添加下划线 <code>_</code> 或留空 <code>alt</code>，即可隐藏图注。</p>
+<h3>语法</h3>
+<pre><code>![图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre>
+<h3>效果</h3>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="图片描述" /></p>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="_图片描述" /></p>
+<h2>提示块</h2>
+<p>使用 GitHub 语法 <code>&gt; [!TYPE]</code> 或三冒号语法 <code>:::type</code>，即可创建提示块。支持 <code>note</code>、<code>tip</code>、<code>important</code>、<code>warning</code>、<code>caution</code> 五种类型。</p>
+<h3>语法</h3>
+<pre><code>&gt; [!NOTE]
+&gt; 即使快速浏览，也值得用户留意的信息。
+
+&gt; [!TIP]
+&gt; 可选信息，可帮助用户更轻松地完成操作。
+
+&gt; [!IMPORTANT]
+&gt; 用户成功所需的关键信息。
+
+:::warning
+由于存在潜在风险，需要用户立即关注的关键内容。
+:::
+
+:::caution
+某些操作可能带来的负面后果。
+:::
+
+:::note[自定义标题]
+这是一个自定义标题的提示块。
+:::
+</code></pre>
+<h3>效果</h3>
+<blockquote>
+<p>[!NOTE]
+即使快速浏览，也值得用户留意的信息。</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+可选信息，可帮助用户更轻松地完成操作。</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+用户成功所需的关键信息。</p>
+</blockquote>
+<p>:::warning
+由于存在潜在风险，需要用户立即关注的关键内容。
+:::</p>
+<p>:::caution
+某些操作可能带来的负面后果。
+:::</p>
+<p>:::note[自定义标题]
+这是一个自定义标题的提示块。
+:::</p>
+<h2>折叠块</h2>
+<p>使用三冒号语法 <code>:::fold[title]</code>，即可创建折叠块。点击标题可以展开或收起。</p>
+<h3>语法</h3>
+<pre><code>:::fold[使用提示]
+如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。
+:::
+</code></pre>
+<h3>效果</h3>
+<p>:::fold[使用提示]
+如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。
+:::</p>
+<h2>Mermaid 图表</h2>
+<p>使用代码块包裹 Mermaid 语法，并标注语言类型 <code>mermaid</code>，即可创建 Mermaid 图表。</p>
+<h3>语法</h3>
+<pre><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre>
+<h3>效果</h3>
+<pre><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</code></pre>
+<h2>画廊</h2>
+<p>使用三冒号语法 <code>:::gallery</code>，即可创建图片画廊。水平滚动以查看更多图片。</p>
+<h3>语法</h3>
+<pre><code>:::gallery
+![羊驼](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![转头](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![对视](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![小羊驼](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![可爱捏](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre>
+<h3>效果</h3>
+<p>:::gallery
+<img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="羊驼" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="转头" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="对视" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="小羊驼" />
+<img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="可爱捏" />
+:::</p>
+<h2>GitHub 仓库</h2>
+<p>使用双冒号语法 <code>::github{repo="owner/repo"}</code>，即可嵌入 GitHub 仓库。</p>
+<h3>语法</h3>
+<pre><code>::github{repo="radishzzz/astro-theme-retypeset"}
+</code></pre>
+<h3>效果</h3>
+<p>::github{repo="radishzzz/astro-theme-retypeset"}</p>
+<h2>视频</h2>
+<p>使用双冒号语法 <code>::youtube{id="video-id"}</code>，即可嵌入视频。</p>
+<h3>语法</h3>
+<pre><code>::youtube{id="9pP0pIgP2kE"}
+
+::bilibili{id="BV1sK4y1Z7KG"}
+</code></pre>
+<h3>效果</h3>
+<p>::youtube{id="9pP0pIgP2kE"}</p>
+<p>::bilibili{id="BV1sK4y1Z7KG"}</p>
+<h2>Spotify</h2>
+<p>使用双冒号语法 <code>::spotify{url="spotify-url"}</code>，即可嵌入 Spotify 内容。</p>
+<h3>语法</h3>
+<pre><code>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+
+::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
+</code></pre>
+<h3>效果</h3>
+<p>::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}</p>
+<p>::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}</p>
+<h2>X 推文</h2>
+<p>使用双冒号语法 <code>::tweet{url="tweet-url"}</code>，即可嵌入 X 推文。</p>
+<h3>语法</h3>
+<pre><code>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}
+</code></pre>
+<h3>效果</h3>
+<p>::tweet{url="https://x.com/hachi_08/status/1906456524337123549"}</p>
+<h2>CodePen</h2>
+<p>使用双冒号语法 <code>::codepen{url="codepen-url"}</code>，即可嵌入 CodePen 演示。</p>
+<h3>语法</h3>
+<pre><code>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
+</code></pre>
+<h3>效果</h3>
+<p>::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[主题配色指南]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/theme-color-schemes/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/theme-color-schemes/</guid>
+            <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset 基于 OKLCH 颜色空间来定义主题配色，默认为模拟印刷风格的黑白灰配色。为满足个性化需求，我为主题制作了一些配色方案...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset 基于 <a href="https://oklch.com/">OKLCH</a> 颜色空间来定义主题配色，默认为模拟印刷风格的黑白灰配色。</p>
+<p>为满足个性化需求，我为主题制作了一些配色方案。你可以在 <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> 中替换默认配色，并重启开发服务器以预览新配色。</p>
+<h2>葱白</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/1-light.ClVuZxd5_21HiG1.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/1-dark.BivCfSmu_Z1FcXLT.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0.03 211.86)',
+  secondary: 'oklch(0.40 0.03 211.86)',
+  background: 'oklch(0.99 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0015 106.47)',
+  secondary: 'oklch(0.79 0.0015 106.47)',
+  background: 'oklch(0.24 0.0039 106.47)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>鸦青</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/2-light.DLXS38ks_2j3zhb.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/2-dark.prgZMrfY_Z1i4yAx.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.0172 280.05)',
+  secondary: 'oklch(0.40 0.0172 280.05)',
+  background: 'oklch(0.98 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0.0172 280.05)',
+  secondary: 'oklch(0.79 0.0172 280.05)',
+  background: 'oklch(0.24 0.0172 280.05)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>墨蓝</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/4-light.DIUeDw9p_Z2fbxhe.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/4-dark.CKqTknpt_2n6Qrb.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.24 0.053 261.24)',
+  secondary: 'oklch(0.39 0.053 261.24)',
+  background: 'oklch(1 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.92 0 0)',
+  secondary: 'oklch(0.79 0 0)',
+  background: 'oklch(0.24 0.016 265.21)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+<h2>米黄</h2>
+<p><img src="https://cloudlin.zjulife.cc/_astro/3-light.8aAAK8Ad_BewEA.webp" alt="Light mode" />
+<img src="https://cloudlin.zjulife.cc/_astro/3-dark.CGQcMuXC_Z2c4VKc.webp" alt="Dark mode" /></p>
+<pre><code>light: {
+  primary: 'oklch(0.25 0 0)',
+  secondary: 'oklch(0.41 0 0)',
+  background: 'oklch(0.95 0.0237 59.39)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
+},
+dark: {
+  primary: 'oklch(0.93 0.019 59.39)',
+  secondary: 'oklch(0.80 0.017 59.39)',
+  background: 'oklch(0.23 0 0)',
+  highlight: 'oklch(0.93 0.195089 103.2532 / 0.2)',
+},
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[KaTeX 数学演示]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/katex-mathematical-demo/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/katex-mathematical-demo/</guid>
+            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[KaTeX 是一个跨浏览器的 JavaScript 库，可在网页浏览器中渲染数学公式。其设计以快速和易用为核心，最初由可汗学院开发，后成为...]]></description>
+            <content:encoded><![CDATA[<p>KaTeX 是一个跨浏览器的 JavaScript 库，可在网页浏览器中渲染数学公式。其设计以快速和易用为核心，最初由可汗学院开发，后成为 GitHub 上最热门的五大项目之一。</p>
+<h2>群论</h2>
+<p>Burnside 引理，有时也称为 Burnside 计数定理、Cauchy-Frobenius 引理或轨道计数定理。</p>
+<p>设 $\wedge$ 是有限群 $G$ 在有限集合 $X$ 上的群作用。那么作用的轨道数 $t$ 由下面的公式给出。</p>
+<p>$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</p>
+<p>对于每个整数 $n\ge2$，商群 $\mathbb{Z}/n\mathbb{Z}$ 是由 $1+n\mathbb{Z}$ 生成的循环群，因此 $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$。</p>
+<p>商群 $\mathbb{R}/\mathbb{Z}$ 同构于 $([0,1),+_1)$，即区间 $[0,1)$ 上以 1 为模的实数加法群。</p>
+<p>同构定理。设 $\phi\colon(G,\circ)\to(H,*)$ 是一个同态。那么函数</p>
+<p>$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</p>
+<p>是一个同构，因此</p>
+<p>$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</p>
+<h2>泰勒定理</h2>
+<p>设函数 $f$ 在包含点 $a$ 和 $x$ 的开区间上 $(n+1)$ 次可微。那么</p>
+<p>$$
+f(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</p>
+<p>其中</p>
+<p>$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</p>
+<p>对于 $a$ 和 $x$ 之间的某个 $c$。</p>
+<p>$\KaTeX$ 没有右对齐选项，因此使用额外的对齐列来显示方程编号。它们通过 mkern 间距（默认为 \mkern100mu）被推到右侧。align 和 align* 环境都可以使用，\tag 和 \notag 也可以使用。</p>
+<h2>Align 环境</h2>
+<p>$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</p>
+<h2>Align* 环境</h2>
+<p>$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \
+&amp;= \frac{\pi^3}{16(N+1)} \
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \
+\text{所以} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</p>
+<h2>级数求和</h2>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</p>
+<h2>乘积符号</h2>
+<p>$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ 对于 }\lvert q\rvert &lt; 1.
+$$</p>
+<h2>叉积</h2>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</p>
+<h2>麦克斯韦方程组</h2>
+<p>$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -, \frac1c, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}, +, \frac1c, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</p>
+<h2>希腊字母</h2>
+<p>$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</p>
+<h2>箭头符号</h2>
+<p>$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</p>
+<h2>符号</h2>
+<p>$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</p>
+<p><em>示例取自 <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a></em></p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[Markdown 样式指南]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/markdown-style-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/markdown-style-guide/</guid>
+            <pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[以下是一些基本的 Markdown 语法示例，及其在 Retypeset 主题中的样式效果。在文本前添加井号 # 与空格，即可创建标题。井号...]]></description>
+            <content:encoded><![CDATA[<p>以下是一些基本的 Markdown 语法示例，及其在 Retypeset 主题中的样式效果。</p>
+<h2>标题</h2>
+<p>在文本前添加井号 <code>#</code> 与空格，即可创建标题。井号数量对应标题等级。</p>
+<h3>语法</h3>
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<h3>效果</h3>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+<h2>段落</h2>
+<p>使用空行分隔文本，即可创建段落。</p>
+<h3>语法</h3>
+<pre><code>孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道：“孔乙己，你脸上又添上新伤疤了！”他不回答，对柜里说：“温两碗酒，要一碟茴香豆。”便排出九文大钱。他们又故意的高声嚷道：“你一定又偷了人家的东西了！”孔乙己睁大眼睛说：“你怎么这样凭空污人清白……”“什么清白？我前天亲眼见你偷了何家的书，吊着打。”孔乙己便涨红了脸，额上的青筋条条绽出，争辩道：“窃书不能算偷……窃书！……读书人的事，能算偷么？”接连便是难懂的话，什么“君子固穷”，什么“者乎”之类，引得众人都哄笑起来：店内外充满了快活的空气。
+
+听人家背地里谈论，孔乙己原来也读过书，但终于没有进学，又不会营生；于是愈过愈穷，弄到将要讨饭了。
+</code></pre>
+<h3>效果</h3>
+<p>孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道：“孔乙己，你脸上又添上新伤疤了！”他不回答，对柜里说：“温两碗酒，要一碟茴香豆。”便排出九文大钱。他们又故意的高声嚷道：“你一定又偷了人家的东西了！”孔乙己睁大眼睛说：“你怎么这样凭空污人清白……”“什么清白？我前天亲眼见你偷了何家的书，吊着打。”孔乙己便涨红了脸，额上的青筋条条绽出，争辩道：“窃书不能算偷……窃书！……读书人的事，能算偷么？”接连便是难懂的话，什么“君子固穷”，什么“者乎”之类，引得众人都哄笑起来：店内外充满了快活的空气。</p>
+<p>听人家背地里谈论，孔乙己原来也读过书，但终于没有进学，又不会营生；于是愈过愈穷，弄到将要讨饭了。</p>
+<h2>图片</h2>
+<p>使用感叹号 <code>!</code> 方括号 <code>[]</code> 与圆括号 <code>()</code>，即可添加图片。这些都是半角符号，而非全角符号。</p>
+<h3>语法</h3>
+<pre><code>![图片描述](../_images/image-01.jpeg)
+
+![图片描述](https://image.example.com/image-01.webp)
+</code></pre>
+<h3>效果</h3>
+<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="图片描述" /></p>
+<h2>块引用</h2>
+<p>使用 <code>&gt;</code> 符号和空格，即可创建块引用，其中可包含多个段落。使用 <code>&lt;cite&gt;</code> 或 <code>&lt;footer&gt;</code> 标签，即可标注引用来源，同时可通过 <code>[^1]</code> 或 <code>[^note]</code> 格式插入脚注。</p>
+<h3>多个段落</h3>
+<h4>语法</h4>
+<pre><code>&gt; 天地不仁，以万物为刍狗。
+&gt;
+&gt; **提示**：引用块内可使用 _Markdown 语法_。
+</code></pre>
+<h4>效果</h4>
+<blockquote>
+<p>天地不仁，以万物为刍狗。</p>
+<p><strong>提示</strong>：引用块内可使用 <em>Markdown 语法</em>。</p>
+</blockquote>
+<h3>标注引用来源</h3>
+<h4>语法</h4>
+<pre><code>&gt; 在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。
+&gt;
+&gt; —— &lt;cite&gt;《秋夜》[^1]&lt;/cite&gt;
+
+[^1]: 《[秋夜](https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85))》是鲁迅散文诗集《野草》中的第一首散文诗，创作于 1924 年。
+</code></pre>
+<h4>效果</h4>
+<blockquote>
+<p>在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。</p>
+<p>—— &lt;cite&gt;《秋夜》[^1]&lt;/cite&gt;</p>
+</blockquote>
+<p>[^1]: 《<a href="https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85)">秋夜</a>》是鲁迅散文诗集《野草》中的第一首散文诗，创作于 1924 年。</p>
+<h2>表格</h2>
+<p>使用三个或多个连字符 <code>---</code> 分隔标题，并使用管道符 <code>|</code> 分隔每列，即可创建表格。</p>
+<h3>语法</h3>
+<pre><code>| 斜体   | 粗体     | 代码   |
+| ----- | ------- | ------ |
+| _斜体_ | **粗体** | `代码` |
+| _斜体_ | **粗体** | `代码` |
+</code></pre>
+<h3>效果</h3>
+<table>
+<thead>
+<tr>
+<th>斜体</th>
+<th>粗体</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>斜体</em></td>
+<td><strong>粗体</strong></td>
+<td><code>代码</code></td>
+</tr>
+<tr>
+<td><em>斜体</em></td>
+<td><strong>粗体</strong></td>
+<td><code>代码</code></td>
+</tr>
+</tbody>
+</table>
+<h2>代码块</h2>
+<p>使用三个反引号 <code>```</code> 包裹代码，即可创建代码块。在顶部的反引号后标注语言类型，例如 html、javascript、css、markdown 等，即可实现语法高亮。</p>
+<h3>语法</h3>
+<pre><code>```html
+&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;HTML5 示例文档&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;测试&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+<h3>效果</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;HTML5 示例文档&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;测试&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>列表</h2>
+<h3>有序列表</h3>
+<h4>语法</h4>
+<pre><code>1. 第一项
+2. 第二项
+3. 第三项
+</code></pre>
+<h4>效果</h4>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h3>无序列表</h3>
+<h4>语法</h4>
+<pre><code>- 列表项
+- 图表项
+- 更多项
+</code></pre>
+<h4>效果</h4>
+<ul>
+<li>列表项</li>
+<li>图表项</li>
+<li>更多项</li>
+</ul>
+<h3>嵌套列表</h3>
+<h4>语法</h4>
+<pre><code>- 水果
+  - 苹果
+  - 橙子
+  - 香蕉
+- 蔬菜
+  - 青菜
+  - 萝卜
+</code></pre>
+<h4>效果</h4>
+<ul>
+<li>水果
+<ul>
+<li>苹果</li>
+<li>橙子</li>
+<li>香蕉</li>
+</ul>
+</li>
+<li>蔬菜
+<ul>
+<li>青菜</li>
+<li>萝卜</li>
+</ul>
+</li>
+</ul>
+<h2>其他元素</h2>
+<p>包括 <code>&lt;sup&gt;</code> 上标，<code>&lt;sub&gt;</code> 下标，<code>&lt;abbr&gt;</code> 缩写，<code>&lt;del&gt;</code> 删除线，<code>&lt;u&gt;</code> 波浪线，<code>&lt;kbd&gt;</code> 键盘输入，<code>&lt;mark&gt;</code> 高亮，<code>&lt;hr&gt;</code> 分隔线。</p>
+<h3>语法</h3>
+<pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+
+X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;
+
+&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; 是一种位图图像格式。
+
+书籍是人类进步的&lt;del&gt;楼梯&lt;/del&gt;阶梯。
+
+优秀的作家总是会仔细检查&lt;u title="拼写"&gt;拚写&lt;/u&gt;问题。
+
+按下 &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; 以结束会话。
+
+大多数&lt;mark&gt;蝾螈&lt;/mark&gt;昼伏夜出，以昆虫、蠕虫等小生物为食。
+
+使用三个连字符 `---` 或 `&lt;hr&gt;` 标签，即可创建如下分隔线。
+
+---
+</code></pre>
+<h3>效果</h3>
+<p>H&lt;sub&gt;2&lt;/sub&gt;O</p>
+<p>X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;</p>
+<p>&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; 是一种位图图像格式。</p>
+<p>书籍是人类进步的&lt;del&gt;楼梯&lt;/del&gt;阶梯。</p>
+<p>优秀的作家总是会仔细检查&lt;u title="拼写"&gt;拚写&lt;/u&gt;问题。</p>
+<p>按下 &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; 以结束会话。</p>
+<p>大多数&lt;mark&gt;蝾螈&lt;/mark&gt;昼伏夜出，以昆虫、蠕虫等小生物为食。</p>
+<p>使用三个连字符 <code>---</code> 或 <code>&lt;hr&gt;</code> 标签，即可创建如下分隔线。</p>
+<hr />
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[主题上手指南]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/theme-guide/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/theme-guide/</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Retypeset 是一款基于 Astro 框架的静态博客主题，中文名为重新编排。本文为 Retypeset 主题上手指南，主要介绍如何修改...]]></description>
+            <content:encoded><![CDATA[<p>Retypeset 是一款基于 <a href="https://astro.build/">Astro</a> 框架的静态博客主题，中文名为重新编排。本文为 Retypeset 主题上手指南，主要介绍如何修改主题配置与创建新文章，来帮助你快速搭建个人博客。</p>
+<h2>主题配置</h2>
+<p>通过修改配置文件 <a href="https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts">src/config.ts</a> 来自定义你的博客。</p>
+<h3>站点信息</h3>
+<pre><code>site: {
+  // 站点标题
+  title: 'Retypeset'
+  // 站点副标题
+  subtitle: 'Revive the beauty of typography'
+  // 站点描述
+  description: 'Retypeset is a static blog theme...'
+  // 使用 src/i18n/ui.ts 中的多语言标题/副标题/站点描述，代替上方静态配置
+  i18nTitle: true // true | false
+  // 作者名称
+  author: 'radishzz'
+  // 站点地址
+  url: 'https://retypeset.radishzz.cc'
+  // 基础路径
+  // 所有页面和资产的根目录
+  base: '/' // 例如 '/blog', '/docs'
+  // 站点图标
+  // 推荐格式：svg, png, ico
+  favicon: '/icons/favicon.svg' // 或 https://example.com/favicon.svg
+}
+</code></pre>
+<h3>主题配色</h3>
+<pre><code>color: {
+  // 默认主题
+  mode: 'light' // light | dark | auto
+  // 亮色模式
+  light: {
+    // 主要颜色
+    // 用于站点标题、鼠标悬停效果等
+    primary: 'oklch(25% 0.005 298)'
+    // 次要颜色
+    // 用于普通文本
+    secondary: 'oklch(40% 0.005 298)'
+    // 背景色
+    background: 'oklch(96% 0.005 298)'
+    // 高亮颜色
+    // 用于导航栏、选中文本等
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+  // 暗色模式
+  dark: {
+    // 主要颜色
+    primary: 'oklch(92% 0.005 298)'
+    // 次要颜色
+    secondary: 'oklch(77% 0.005 298)'
+    // 背景色
+    background: 'oklch(22% 0.005 298)'
+    // 高亮颜色
+    highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)'
+  }
+}
+</code></pre>
+<h3>全局设置</h3>
+<pre><code>global: {
+  // 默认语言
+  // 站点根路径 '/' 的语言
+  locale: 'zh' // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
+  // 更多语言
+  // 生成 '/en/' '/es/' 等多语言路径
+  // 不要重复填写默认语言，可以为空 []
+  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // 字体样式
+  fontStyle: 'sans' // sans | serif
+  // 文章日期格式
+  // YYYY-MM-DD | MM-DD-YYYY | DD-MM-YYYY | MMM D YYYY | D MMM YYYY
+  // 2025-04-13, 04-13-2025, 13-04-2025, Apr 13 2025，13 Apr 2025
+  dateFormat: 'YYYY-MM-DD'
+  // 开启文章目录
+  toc: true // true | false
+  // 开启 KaTeX 数学渲染
+  katex: true // true | false
+  // 减少动画效果
+  reduceMotion: false // true | false
+}
+</code></pre>
+<h3>评论系统</h3>
+<pre><code>comment: {
+  // 开启评论系统
+  enabled: true // true | false
+  // giscus 评论系统
+  giscus: {
+    repo: ''
+    repoId: ''
+    category: ''
+    categoryId: ''
+    mapping: 'pathname'
+    strict: '0'
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    inputPosition: 'bottom'
+  }
+  // twikoo 评论系统
+  twikoo: {
+    envId: ''
+    // version: 前端版本可在 package.json 中修改
+  }
+  // waline 评论系统
+  waline: {
+    // 服务器地址
+    serverURL: 'https://retypeset-comment.radishzz.cc'
+    // emoji 表情地址
+    emoji: [
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'
+      // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji'
+      // 更多表情：https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // gif 搜索
+    search: false // true | false
+    // 图片上传
+    imageUploader: false // true | false
+  }
+}
+</code></pre>
+<h3>搜索引擎优化</h3>
+<pre><code>seo: {
+  // @twitter ID
+  twitterID: '@radishzz_'
+  // 站点验证
+  verification: {
+    // google 搜索控制台
+    google: 'AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM'
+    // bing 网站管理员工具
+    bing: '64708CD514011A7965C84DDE1D169F87'
+    // yandex 网站管理员
+    yandex: ''
+    // baidu 站长工具
+    baidu: ''
+  }
+  // google 网站分析
+  googleAnalyticsID: ''
+  // umami 网站分析
+  umamiAnalyticsID: 'dab0e4b9-9cbf-43c3-af60-b09d3b545c38'
+  // folo 验证
+  folo: {
+    // 订阅 ID
+    feedID: ''
+    // 用户 ID
+    userID: ''
+  }
+  // apiflash 访问密钥
+  // 生成网站截图用于 open graph
+  // 获取访问密钥：https://apiflash.com/
+  apiflashKey: ''
+}
+</code></pre>
+<h3>自定义页脚</h3>
+<pre><code>footer: {
+  // 社交链接
+  links: [
+    {
+      name: 'RSS',
+      url: '/atom.xml', // 或 /rss.xml
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/radishzzz/astro-theme-retypeset',
+    },
+    {
+      name: 'Email',
+      url: 'email@radishzz.cc',
+    }
+    // {
+    //   name: 'X',
+    //   url: 'https://x.com/radishzz_',
+    // },
+  ]
+  // 建站年份
+  startYear: 2025
+}
+</code></pre>
+<h3>资源预加载</h3>
+<pre><code>preload: {
+  // 图床地址
+  // 优化远程图片并生成低质量占位符
+  imageHostURL: 'image.radishzz.cc'
+  // 定制 google analytics 跟踪脚本
+  // 适用于代理跟踪脚本到自定义域名的用户
+  customGoogleAnalyticsJS: ''
+  // 定制 umami 跟踪脚本
+  // 适用于自部署 umami 或代理跟踪脚本到自定义域名的用户
+  customUmamiAnalyticsJS: 'https://views.radishzz.cc/script.js'
+}
+</code></pre>
+<h2>更多配置</h2>
+<p>除了配置文件 <code>src/config.ts</code> 外，还有部分配置项位于其它文件中。</p>
+<h3>语法高亮</h3>
+<p>代码块的语法高亮主题。</p>
+<pre><code>// astro.config.ts
+
+shikiConfig: {
+  // 可选主题：https://shiki.style/themes
+  // 背景色固定跟随博客主题，而非语法高亮主题
+  themes: {
+    light: 'github-light' // 亮色主题
+    dark: 'github-dark' // 暗色主题
+  }
+}
+</code></pre>
+<h3>文章摘要</h3>
+<p>文章自动摘要的字符数量。</p>
+<pre><code>// src/utils/description.ts
+
+const excerptLengths: Record&lt;ExcerptScene, {
+  cjk: number // 中文、日文、韩文
+  other: number // 其他语言
+}&gt; = {
+  list: { // 首页文章列表
+    cjk: 120, // 自动摘要前 120 字
+    other: 240, // 自动摘要前 240 字
+  },
+}
+</code></pre>
+<h3>Open Graph</h3>
+<p><a href="https://orcascan.com/tools/open-graph-validator?url=https%3A%2F%2Fretypeset.radishzz.cc%2Fposts%2Ftheme-guide%2F">Open Graph 社交卡片</a> 样式。</p>
+<pre><code>// src/pages/og/[...image].ts
+
+getImageOptions: (_path, page) =&gt; ({
+  logo: {
+    path: './public/icons/og-logo.png', // 本地路径的 PNG 图片
+    size: [250], // logo 宽度
+  },
+  font: {
+    title: { // 标题
+      families: ['Noto Sans SC'], // 字体
+      weight: 'Bold', // 字重
+      color: [34, 33, 36], // 颜色
+      lineHeight: 1.5, // 行高
+    },
+  },
+  fonts: [ // 字体路径（本地或远程）
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
+    'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+  ],
+  bgGradient: [[242, 241, 245]], // 背景色
+  // 更多配置：https://github.com/delucis/astro-og-canvas/tree/latest/packages/astro-og-canvas
+})
+</code></pre>
+<h3>RSS 订阅</h3>
+<p><a href="https://retypeset.radishzz.cc/atom.xml">RSS 订阅页</a> 配色。</p>
+<pre><code>
+
+&lt;style type="text/css"&gt;
+body{color:oklch(25% 0.005 298)} /* 字体颜色 */
+.bg-white{background-color:oklch(0.96 0.005 298)!important} /* 背景颜色 */
+.text-gray{color:oklch(0.25 0.005 298 / 75%)!important} /* 次要字体颜色 */
+&lt;/style&gt;
+</code></pre>
+<h2>创建新文章</h2>
+<p>执行 <code>pnpm new-post &lt;filename&gt;</code> 创建新文章，可在 <code>src/content/posts/</code> 目录中编辑。</p>
+<pre><code>pnpm new-post                      -&gt;  src/content/posts/new-post.md
+pnpm new-post first-post           -&gt;  src/content/posts/first-post.md
+pnpm new-post 2025/03/first-post   -&gt;  src/content/posts/2025/03/first-post.md
+pnpm new-post first-post.mdx       -&gt;  src/content/posts/first-post.mdx
+</code></pre>
+<h3>Front Matter</h3>
+<p><code>title</code> 和 <code>published</code> 为必填项，其余配置均可删除。</p>
+<pre><code>---
+# 必填
+title: 主题上手指南
+published: 2025-01-26
+
+# 可选
+description: 自动选取文章前 120 字作为摘要。
+updated: 2025-03-26
+tags:
+  - 博客主题
+  - 指南
+
+# 进阶，可选
+draft: true/false
+pin: 0-99
+toc: true/false
+lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+abbrlink: theme-guide
+---
+</code></pre>
+<h3>进阶配置</h3>
+<h4>draft</h4>
+<p>是否标记文章为草稿。设为 true 时无法发布文章，仅供本地开发预览。默认为 false。</p>
+<h4>pin</h4>
+<p>是否置顶文章。数字越大，文章的置顶优先级越高。默认为 0，即不置顶。</p>
+<h4>toc</h4>
+<p>是否生成目录。显示 h2 至 h4 标题。默认由全局配置项 <code>global.toc</code> 决定，可在文章中单独设置以覆盖全局配置。</p>
+<h4>lang</h4>
+<p>指定文章语言。只能指定一种语言，不指定则默认显示在所有语言路径下。</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+
+# lang: ''
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+                             -&gt;  example.com/es/posts/apple/
+                             -&gt;  example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md   -&gt;  example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md   -&gt;  example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md   -&gt;  example.com/ru/posts/apple/
+</code></pre>
+<h4>abbrlink</h4>
+<p>自定义文章 URL。只能包含小写字母、数字和连字符 <code>-</code>。</p>
+<pre><code># src/config.ts
+# locale: 'en'
+# moreLocales: ['es', 'ru']
+# lang: 'es'
+
+# abbrlink: ''
+src/content/posts/apple.md           -&gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: 'banana'
+src/content/posts/apple.md           -&gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&gt;  example.com/es/posts/banana/
+</code></pre>
+<h3>混排优化</h3>
+<p>执行 <code>pnpm format-posts</code>，可优化 <code>src/content/</code> 目录中 Markdown 文件的排版格式。在 CJK（中文、日文、韩文）与英文混写的场景下，补充正确的空格，纠正标点符号等。</p>
+<pre><code>pnpm format-posts
+🔍 Scanning Markdown files...
+📦 Found 56 Markdown files
+✅ src/content/posts/guides/Theme Guide-ja.md
+✅ src/content/posts/guides/Theme Guide-zh-tw.md
+✅ src/content/posts/guides/Theme Guide-zh.md
+✨ Formatted 3 files successfully
+</code></pre>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[容忍与自由]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/tolerance-freedom/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/tolerance-freedom/</guid>
+            <pubDate>Mon, 16 Mar 1959 00:00:00 GMT</pubDate>
+            <description><![CDATA[十七八年前，我最后一次会见我的母校康耐儿大学的史学大师布尔先生（George Lincoln Burr）。我们谈到英国史学大师阿克顿（Lor...]]></description>
+            <content:encoded><![CDATA[<p>十七八年前，我最后一次会见我的母校康耐儿大学的史学大师布尔先生（George Lincoln Burr）。我们谈到英国史学大师阿克顿（Lord Acton）一生准备要著作一部《自由之史》，没有写成他就死了。布尔先生那天谈话很多，有一句话我至今没有忘记。他说，“我年纪越大，越感觉到容忍（tolerance）比自由更重要”。</p>
+<p>布尔先生死了十多年了，他这句话我越想越觉得是一句不可磨灭的格言。我自己也有“年纪越大，越觉得容忍比自由还更重要”的感想。有时我竟觉得容忍是一切自由的根本：没有容忍，就没有自由。</p>
+<p>我十七岁的时候（1908）曾在《竞业旬报》上发表几条《无鬼丛话》，其中有一条是痛骂小说《西游记》和《封神榜》的，我说：</p>
+<p>《王制》有之：“假于鬼神时日卜筮以疑众，杀。”吾独怪夫数千年来之排治权者，之以济世明道自期者，乃懵然不之注意，惑世诬民之学说得以大行，遂举我神州民族投诸极黑暗之世界！</p>
+<p>这是一个小孩子很不容忍的“卫道”态度。我在那时候已是一个无鬼论者、无神论者，所以发出那种摧除迷信的狂论，要实行《王制》（《礼记》的一篇）的“假于鬼神时日卜筮以疑众，杀”的一条经典！</p>
+<p>我在那时候当然没有梦想到说这话的小孩子在十五年后（1923）会很热心的给《西游记》作两万字的考证！我在那时候当然更没有想到那个小孩子在二、三十年后还时时留心搜求可以考证《封神榜》的作者的材料！我在那时候也完全没有想想《王制》那句话的历史意义。那一段《王制》的全文是这样的：</p>
+<p>析言破律，乱名改作，执左道以乱政，杀。作淫声异服奇技奇器以疑众，杀。行伪而坚，言伪而辩，学非而博，顺非而泽以疑众，杀。假于鬼神时日卜筮以疑众，杀。此四诛者，不以听。</p>
+<p>我在五十年前，完全没有懂得这一段话的“诛”正是中国专制政体之下禁止新思想、新学术、新信仰、新艺术的经典的根据。我在那时候抱着“破除迷信”的热心，所以拥护那“四诛”之中的第四诛：“假于鬼神时日卜筮以疑众，杀。”我当时完全没有想到第四诛的“假于鬼神……以疑众”和第一诛的“执左道以乱政”的两条罪名都可以用来摧残宗教信仰的自由。我当时也完全没有注意到郑玄注里用了公输般作“奇技异器”的例子；更没有注意到孔颖达《正义》里举了“孔子为鲁司寇七日而诛少正卯”的例子来解释“行伪而坚，言伪而辩，学非而博，顺非而泽以疑众，杀”。故第二诛可以用来禁绝艺术创作的自由，也可以用来“杀”许多发明“奇技异器”的科学家。故第三诛可以用来摧残思想的自由，言论的自由，著作出版的自由。</p>
+<p>我在五十年前引用《王制》第四诛，要“杀”《西游记》《封神榜》的作者。那时候我当然没有梦想到十年之后我在北京大学教书时就有一些同样“卫道”的正人君子也想引用《王制》的第三诛，要“杀”我和我的朋友们。当年我要“杀”人，后来人要“杀”我，动机是一样的：都只因为动了一点正义的火气，就都失掉容忍的度量了。</p>
+<p>我自己叙述五十年前主张“假于鬼神时日卜筮以疑众，杀”的故事，为的是要说明我年纪越大，越觉得“容忍”比“自由”还更重要。</p>
+<p>我到今天还是一个无神论者，我不信有一个有意志的神，我也不信灵魂不朽的说法。但我的无神论和共产党的无神论有一点最根本的不同。我能够容忍一切信仰有神的宗教，也能够容忍一切诚心信仰宗教的人。共产党自己主张无神论，就要消灭一切有神的信仰，要禁绝一切信仰有神的宗教，——这就是我五十年前幼稚而又狂妄的不容忍的态度了。</p>
+<p>我自己总觉得，这个国家、这个社会、这个世界，绝大多数人是信神的，居然能有这雅量，能容忍我的无神论，能容忍我这个不信神也不信灵魂不灭的人，能容忍我在国内和国外自由发表我的无神论的思想，从没有人因此用石头掷我，把我关在监狱里，或把我捆在柴堆上用火烧死。我在这个世界里居然享受了四十多年的容忍与自由。我觉得这个国家、这个社会、这个世界对我的容忍度量是可爱的，是可以感激的。</p>
+<p>所以我自己总觉得我应该用容忍的态度来报答社会对我的容忍。所以我自己不信神，但我能诚心的谅解一切信神的人，也能诚心的容忍并且敬重一切信仰有神的宗教。</p>
+<p>我要用容忍的态度来报答社会对我的容忍，因为我年纪越大，我越觉得容忍的重要意义。若社会没有这点容忍的气度，我决不能享受四十多年大胆怀疑的自由，公开主张无神论的自由了。</p>
+<p>在宗教自由史上，在思想自由史上，在政治自由史上，我们都可以看见容忍的态度是最难得，最稀有的态度。人类的习惯总是喜同而恶异的，总不喜欢和自己不同的信仰、思想、行为。这就是不容忍的根源。不容忍只是不能容忍和我自己不同的新思想和新信仰。一个宗教团体总相信自己的宗教信仰是对的，是不会错的，所以它总相信那些和自己不同的宗教信仰必定是错的，必定是异端，邪教。一个政治团体总相信自己的政治主张是对的，是不会错的，所以它总相信那些和自己不同的政治见解必定是错的，必定是敌人。</p>
+<p>一切对异端的迫害，一切对“异已”的摧残，一切宗教自由的禁止，一切思想言论的被压迫，都由于这一点深信自己是不会错的心理。因为深信自己是不会错的，所以不能容忍任何和自己不同的思想信仰了。</p>
+<p>试看欧洲的宗教革新运动的历史。马丁路德（Martin Luther）和约翰高尔文（John Calvin）等人起来革新宗教，本来是因为他们不满意于罗马旧教的种种不容忍，种种不自由。但是新教在中欧北欧胜利之后，新教的领袖们又都渐渐走上了不容忍的路上去，也不容许别人起来批评他们的新教条了。高尔文在日内瓦掌握了宗教大权，居然会把一个敢独立思想，敢批评高尔文的教条的学者塞维图斯（Servetus）定了“异端邪说”的罪名，把他用铁链锁在木桩上，堆起柴来，慢慢的活烧死。这是 1553 年 10 月 23 日的事。</p>
+<p>这个殉道者塞维图斯的惨史，最值得人们的追念和反省。宗教革新运动原来的目标是要争取“基督教的人的自由”和“良心的自由”。何以高尔文和他的信徒们居然会把一位独立思想的新教徒用慢慢的火烧死呢？何以高尔文的门徒（后来继任高尔文为日内瓦的宗教独裁者）柏时（de Beze）竟会宣言“良心的自由是魔鬼的教条”呢？</p>
+<p>基本的原因还是那一点深信我自己是“不会错的”的心理。像高尔文那样虔诚的宗教改革家，他自己深信他的良心确是代表上帝的命令，他的口和他的笔确是代表上帝的意志，那末他的意见还会错吗？他还有错误的可能吗？在塞维图斯被烧死之后，高尔文曾受到不少人的批评。1554 年，高尔文发表一篇文字为他自己辩护，他毫不迟疑的说，“严厉惩治邪说者的权威是无可疑的，因为这就是上帝自己说话。……这工作是为上帝的光荣战斗”。</p>
+<p>上帝自己说话，还会错吗？为上帝的光荣作战，还会错吗？这一点“我不会错”的心理，就是一切不容忍的根苗。深信我自己的信念没有错误的可能（infallible），我的意见就是“正义”，反对我的人当然都是“邪说”了。我的意见代表上帝的意旨，反对我的人的意见当然都是“魔鬼的教条”了。</p>
+<p>这是宗教自由史给我们的教训：容忍是一切自由的根本；没有容忍“异己”的雅量，就不会承认“异己”的宗教信仰可以享自由。但因为不容忍的态度是基于“我的信念不会错”的心理习惯，所以容忍“异己”是最难得，最不容易养成的雅量。</p>
+<p>在政治思想上，在社会问题的讨论上，我们同样的感觉到不容忍是常见的，而容忍总是很稀有的，我试举一个死了的老朋友的故事作例子。四十多年前，我们在《新青年》杂志上开始提倡白话文学的运动，我曾从美国寄信给陈独秀，我说：</p>
+<p>此事之是非，非一朝一夕所能定，亦非一二人所能定。甚愿国中人士能平心静气与吾辈同力研究此问题。讨论既熟，是非自明。吾辈已张革命之旗，虽不容退缩，然亦决不敢以吾辈所主张为必是而不容他人之匡正也。</p>
+<p>独秀在《新青年》上答我道：</p>
+<p>鄙意容纳异议，自由讨论，固为学术发达之原则，独于改良中国文学当以白话为正宗之说，其是非甚明，必不容反对者有讨论之余地；必以吾辈所主张者为绝对之是，而不容他人之匡正也。</p>
+<p>我当时看了就觉得这是很武断的态度。现在在四十多年之后，我还忘不了独秀这一句话，我还觉得这种“必以吾辈所主张者为绝对之是”的态度是很不容忍的态度，是最容易引起别人的恶感，是最容易引起反对的。</p>
+<p>我曾说过，我应该用容忍的态度来报答社会对我的容忍。我现在常常想我们还得戒律自己：我们若想别人容忍谅解我们的见解，我们必须先养成能够容忍谅解别人的见解的度量。至少至少我们应该戒约自己决不可“以吾辈所主张者为绝对之是”。我们受过实验主义的训练的人，本来就不承认有“绝对之是”，更不可以“以吾辈所主张者为绝对之是”。</p>
+<p>四八、三、十二晨</p>
+<p>（原载 1959 年 3 月 16 日台北《自由中国》第 20 卷第 6 期）</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[故乡]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/my-native-heath/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/my-native-heath/</guid>
+            <pubDate>Mon, 10 Jan 1921 00:00:00 GMT</pubDate>
+            <description><![CDATA[我冒了严寒，回到相隔二千馀里，别了二十馀年的故乡去。时候既然是深冬；渐近故乡时，天气又阴晦了，冷风吹进船舱中，呜呜的响，从篷隙向外一望，苍...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/03.webp" alt="_Here's the description of the picture" /></p>
+<p>我冒了严寒，回到相隔二千馀里，别了二十馀年的故乡去。</p>
+<p>时候既然是深冬；渐近故乡时，天气又阴晦了，冷风吹进船舱中，呜呜的响，从篷隙向外一望，苍黄的天底下，远近横着几个萧索的荒村，没有一些活气。我的心禁不住悲凉起来了。</p>
+<p>阿！这不是我二十年来时时记得的故乡？</p>
+<p>我所记得的故乡全不如此。我的故乡好得多了。但要我记起他的美丽，说出他的佳处来，却又没有影像，没有言辞了。仿佛也就如此。于是我自己解释说：故乡本也如此，——虽然没有进步，也未必有如我所感的悲凉，这只是我自己心情的改变罢了，因为我这次回乡，本没有什么好心绪。</p>
+<p>我这次是专为了别他而来的。我们多年聚族而居的老屋，已经公同卖给别姓了，交屋的期限，只在本年，所以必须赶在正月初一以前，永别了熟识的老屋，而且远离了熟识的故乡，搬家到我在谋食的异地去。</p>
+<p>第二日清早晨我到了我家的门口了。瓦楞上许多枯草的断茎当风抖着，正在说明这老屋难免易主的原因。几房的本家大约已经搬走了，所以很寂静。我到了自家的房外，我的母亲早已迎着出来了，接着便飞出了八岁的侄儿宏儿。</p>
+<p>我的母亲很高兴，但也藏着许多凄凉的神情，教我坐下，歇息，喝茶，且不谈搬家的事。宏儿没有见过我，远远的对面站着只是看。</p>
+<p>但我们终于谈到搬家的事。我说外间的寓所已经租定了，又买了几件家具，此外须将家里所有的木器卖去，再去增添。母亲也说好，而且行李也略已齐集，木器不便搬运的，也小半卖去了，只是收不起钱来。</p>
+<p>“你休息一两天，去拜望亲戚本家一回，我们便可以走了。”母亲说。</p>
+<p>“是的。”</p>
+<p>“还有闰土，他每到我家来时，总问起你，很想见你一回面。我已经将你到家的大约日期通知他，他也许就要来了。”</p>
+<p>这时候，我的脑里忽然闪出一幅神异的图画来：深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜，其间有一个十一二岁的少年，项带银圈，手捏一柄钢叉，向一匹猹尽力的刺去，那猹却将身一扭，反从他的胯下逃走了。</p>
+<p>这少年便是闰土。我认识他时，也不过十多岁，离现在将有三十年了；那时我的父亲还在世，家景也好，我正是一个少爷。那一年，我家是一件大祭祀的值年⑶。这祭祀，说是三十多年才能轮到一回，所以很郑重；正月里供祖像，供品很多，祭器很讲究，拜的人也很多，祭器也很要防偷去。我家只有一个忙月（我们这里给人做工的分三种：整年给一定人家做工的叫长工；按日给人做工的叫短工；自己也种地，只在过年过节以及收租时候来给一定的人家做工的称忙月），忙不过来，他便对父亲说，可以叫他的儿子闰土来管祭器的。</p>
+<p>我的父亲允许了；我也很高兴，因为我早听到闰土这名字，而且知道他和我仿佛年纪，闰月生的，五行缺土，所以他的父亲叫他闰土。他是能装弶捉小鸟雀的。</p>
+<p>我于是日日盼望新年，新年到，闰土也就到了。好容易到了年末，有一日，母亲告诉我，闰土来了，我便飞跑的去看。他正在厨房里，紫色的圆脸，头戴一顶小毡帽，颈上套一个明晃晃的银项圈，这可见他的父亲十分爱他，怕他死去，所以在神佛面前许下愿心，用圈子将他套住了。他见人很怕羞，只是不怕我，没有旁人的时候，便和我说话，于是不到半日，我们便熟识了。</p>
+<p>我们那时候不知道谈些什么，只记得闰土很高兴，说是上城之后，见了许多没有见过的东西。</p>
+<p>第二日，我便要他捕鸟。他说：</p>
+<p>“这不能。须大雪下了才好。我们沙地上，下了雪，我扫出一块空地来，用短棒支起一个大竹匾，撒下秕谷，看鸟雀来吃时，我远远地将缚在棒上的绳子只一拉，那鸟雀就罩在竹匾下了。什么都有：稻鸡，角鸡，鹁鸪，蓝背……”</p>
+<p>我于是又很盼望下雪。</p>
+<p>闰土又对我说：</p>
+<p>“现在太冷，你夏天到我们这里来。我们日里到海边捡贝壳去，红的绿的都有，鬼见怕也有，观音手也有。晚上我和爹管西瓜去，你也去。”</p>
+<p>“管贼么？”</p>
+<p>“不是。走路的人口渴了摘一个瓜吃，我们这里是不算偷的。要管的是獾猪，刺猬，猹。月亮底下，你听，啦啦的响了，猹在咬瓜了。你便捏了胡叉，轻轻地走去……”</p>
+<p>我那时并不知道这所谓猹的是怎么一件东西——便是现在也没有知道——只是无端的觉得状如小狗而很凶猛。</p>
+<p>“他不咬人么？”</p>
+<p>“有胡叉呢。走到了，看见猹了，你便刺。这畜生很伶俐，倒向你奔来，反从胯下窜了。他的皮毛是油一般的滑……”</p>
+<p>我素不知道天下有这许多新鲜事：海边有如许五色的贝壳；西瓜有这样危险的经历，我先前单知道他在水果电里出卖罢了。</p>
+<p>“我们沙地里，潮汛要来的时候，就有许多跳鱼儿只是跳，都有青蛙似的两个脚……”</p>
+<p>阿！闰土的心里有无穷无尽的希奇的事，都是我往常的朋友所不知道的。他们不知道一些事，闰土在海边时，他们都和我一样只看见院子里高墙上的四角的天空。</p>
+<p>可惜正月过去了，闰土须回家里去，我急得大哭，他也躲到厨房里，哭着不肯出门，但终于被他父亲带走了。他后来还托他的父亲带给我一包贝壳和几支很好看的鸟毛，我也曾送他一两次东西，但从此没有再见面。</p>
+<p>现在我的母亲提起了他，我这儿时的记忆，忽而全都闪电似的苏生过来，似乎看到了我的美丽的故乡了。我应声说：</p>
+<p>“这好极！他，——怎样？……”</p>
+<p>“他？……他景况也很不如意……”母亲说着，便向房外看，“这些人又来了。说是买木器，顺手也就随便拿走的，我得去看看。”</p>
+<p>母亲站起身，出去了。门外有几个女人的声音。我便招宏儿走近面前，和他闲话：问他可会写字，可愿意出门。</p>
+<p>“我们坐火车去么？”</p>
+<p>“我们坐火车去。”</p>
+<p>“船呢？”</p>
+<p>“先坐船，……”</p>
+<p>“哈！这模样了！胡子这么长了！”一种尖利的怪声突然大叫起来。</p>
+<p>我吃了一吓，赶忙抬起头，却见一个凸颧骨，薄嘴唇，五十岁上下的女人站在我面前，两手搭在髀间，没有系裙，张着两脚，正像一个画图仪器里细脚伶仃的圆规。</p>
+<p>我愕然了。</p>
+<p>“不认识了么？我还抱过你咧！”</p>
+<p>我愈加愕然了。幸而我的母亲也就进来，从旁说：</p>
+<p>“他多年出门，统忘却了。你该记得罢，”便向着我说，“这是斜对门的杨二嫂，……开豆腐店的。”</p>
+<p>哦，我记得了。我孩子时候，在斜对门的豆腐店里确乎终日坐着一个杨二嫂，人都叫伊“豆腐西施”。但是擦着白粉，颧骨没有这么高，嘴唇也没有这么薄，而且终日坐着，我也从没有见过这圆规式的姿势。那时人说：因为伊，这豆腐店的买卖非常好。但这大约因为年龄的关系，我却并未蒙着一毫感化，所以竟完全忘却了。然而圆规很不平，显出鄙夷的神色，仿佛嗤笑法国人不知道拿破仑，美国人不知道华盛顿似的，冷笑说：</p>
+<p>“忘了？这真是贵人眼高……”</p>
+<p>“那有这事……我……”我惶恐着，站起来说。</p>
+<p>“那么，我对你说。迅哥儿，你阔了，搬动又笨重，你还要什么这些破烂木器，让我拿去罢。我们小户人家，用得着。”</p>
+<p>“我并没有阔哩。我须卖了这些，再去……”</p>
+<p>“阿呀呀，你放了道台了，还说不阔？你现在有三房姨太太；出门便是八抬的大轿，还说不阔？吓，什么都瞒不过我。”</p>
+<p>我知道无话可说了，便闭了口，默默的站着。</p>
+<p>“阿呀阿呀，真是愈有钱，便愈是一毫不肯放松，愈是一毫不肯放松，便愈有钱……”圆规一面愤愤的回转身，一面絮絮的说，慢慢向外走，顺便将我母亲的一副手套塞在裤腰里，出去了。</p>
+<p>此后又有近处的本家和亲戚来访问我。我一面应酬，偷空便收拾些行李，这样的过了三四天。</p>
+<p>一日是天气很冷的午后，我吃过午饭，坐着喝茶，觉得外面有人进来了，便回头去看。我看时，不由的非常出惊，慌忙站起身，迎着走去。</p>
+<p>这来的便是闰土。虽然我一见便知道是闰土，但又不是我这记忆上的闰土了。他身材增加了一倍；先前的紫色的圆脸，已经变作灰黄，而且加上了很深的皱纹；眼睛也像他父亲一样，周围都肿得通红，这我知道，在海边种地的人，终日吹着海风，大抵是这样的。他头上是一顶破毡帽，身上只一件极薄的棉衣，浑身瑟索着；手里提着一个纸包和一支长烟管，那手也不是我所记得的红活圆实的手，却又粗又笨而且开裂，像是松树皮了。</p>
+<p>我这时很兴奋，但不知道怎么说才好，只是说：</p>
+<p>“阿！闰土哥，——你来了？……”</p>
+<p>我接着便有许多话，想要连珠一般涌出：角鸡，跳鱼儿，贝壳，猹，……但又总觉得被什么挡着似的，单在脑里面回旋，吐不出口外去。</p>
+<p>他站住了，脸上现出欢喜和凄凉的神情；动着嘴唇，却没有作声。他的态度终于恭敬起来了，分明的叫道：</p>
+<p>“老爷！……”</p>
+<p>我似乎打了一个寒噤；我就知道，我们之间已经隔了一层可悲的厚障壁了。我也说不出话。</p>
+<p>他回过头去说，“水生，给老爷磕头。”便拖出躲在背后的孩子来，这正是一个廿年前的闰土，只是黄瘦些，颈子上没有银圈罢了。“这是第五个孩子，没有见过世面，躲躲闪闪……”</p>
+<p>母亲和宏儿下楼来了，他们大约也听到了声音。</p>
+<p>“老太太。信是早收到了。我实在喜欢的不得了，知道老爷回来……”闰土说。</p>
+<p>“阿，你怎的这样客气起来。你们先前不是哥弟称呼么？还是照旧：迅哥儿。”母亲高兴的说。</p>
+<p>“阿呀，老太太真是……这成什么规矩。那时是孩子，不懂事……”闰土说着，又叫水生上来打拱，那孩子却害羞，紧紧的只贴在他背后。</p>
+<p>“他就是水生？第五个？都是生人，怕生也难怪的；还是宏儿和他去走走。”母亲说。</p>
+<p>宏儿听得这话，便来招水生，水生却松松爽爽同他一路出去了。母亲叫闰土坐，他迟疑了一回，终于就了坐，将长烟管靠在桌旁，递过纸包来，说：</p>
+<p>“冬天没有什么东西了。这一点干青豆倒是自家晒在那里的，请老爷……”</p>
+<p>我问问他的景况。他只是摇头。</p>
+<p>“非常难。第六个孩子也会帮忙了，却总是吃不够……又不太平……什么地方都要钱，没有规定……收成又坏。种出东西来，挑去卖，总要捐几回钱，折了本；不去卖，又只能烂掉……”</p>
+<p>他只是摇头；脸上虽然刻着许多皱纹，却全然不动，仿佛石像一般。他大约只是觉得苦，却又形容不出，沉默了片时，便拿起烟管来默默的吸烟了。</p>
+<p>母亲问他，知道他的家里事务忙，明天便得回去；又没有吃过午饭，便叫他自己到厨下炒饭吃去。</p>
+<p>他出去了；母亲和我都叹息他的景况：多子、饥荒、苛税、兵、匪、官、绅，都苦得他像一个木偶人了。母亲对我说，凡是不必搬走的东西，尽可以送他，可以听他自己去拣择。</p>
+<p>下午，他拣好了几件东西：两条长桌，四个椅子，一副香炉和烛台，一杆抬秤。他又要所有的草灰（我们这里煮饭是烧稻草的，那灰，可以做沙地的肥料），待我们启程的时候，他用船来载去。</p>
+<p>夜间，我们又谈些闲天，都是无关紧要的话；第二天早晨，他就领了水生回去了。</p>
+<p>又过了九日，是我们启程的日期。闰土早晨便到了，水生没有同来，却只带着一个五岁的女儿管船只。我们终日很忙碌，再没有谈天的工夫。来客也不少，有送行的，有拿东西的，有送行兼拿东西的。待到傍晚我们上船的时候，这老屋里的所有破旧大小粗细东西，已经一扫而空了。</p>
+<p>我们的船向前走，两岸的青山在黄昏中，都装成了深黛颜色，连着退向船后梢去。</p>
+<p>宏儿和我靠着船窗，同看外面模糊的风景，他忽然问道：</p>
+<p>“大伯！我们什么时候回来？”</p>
+<p>“回来？你怎么还没有走就想回来了。”</p>
+<p>“可是，水生约我到他家玩去咧……”他睁着大的黑眼睛，痴痴的想。</p>
+<p>我和母亲也都有些惘然，于是又提起闰土来。母亲说，那豆腐西施的杨二嫂，自从我家收拾行李以来，本是每日必到的，前天伊在灰堆里，掏出十多个碗碟来，议论之后，便定说是闰土埋着的，他可以在运灰的时候，一齐搬回家里去；杨二嫂发见了这件事，自己很以为功，便拿了那狗气杀（这是我们这里养鸡的器具，木盘上面有着栅栏，内盛食料，鸡可以伸进颈子去啄，狗却不能，只能看着气死），飞也似的跑了，亏伊装着这么高低的小脚，竟跑得这样快。</p>
+<p>老屋离我愈远了；故乡的山水也都渐渐远离了我，但我却并不感到怎样的留恋。我只觉得我四面有看不见的高墙，将我隔成孤身，使我非常气闷；那西瓜地上的银项圈的小英雄的影像，我本来十分清楚，现在却忽地模糊了，又使我非常的悲哀。</p>
+<p>母亲和宏儿都睡着了。</p>
+<p>我躺着，听船底潺潺的水声，知道我在走我的路。我想：我竟与闰土隔绝到这地步了，但我们的后辈还是一气，宏儿不是正在想念水生么。我希望他们不再像我，又大家隔膜起来……然而我又不愿意他们因为要一气，都如我的辛苦展转而生活，也不愿意他们都如闰土的辛苦麻木而生活，也不愿意都如别人的辛苦恣睢而生活。他们应该有新的生活，为我们所未经生活过的。</p>
+<p>我想到希望，忽然害怕起来了。闰土要香炉和烛台的时候，我还暗地里笑他，以为他总是崇拜偶像，什么时候都不忘却。现在我所谓希望，不也是我自己手制的偶像么？只是他的愿望切近，我的愿望茫远罢了。</p>
+<p>我在朦胧中，眼前展开一片海边碧绿的沙地来，上面深蓝的天空中挂着一轮金黄的圆月。我想：希望本是无所谓有，无所谓无的。这正如地上的路；其实地上本没有路，走的人多了，也便成了路。</p>
+<p>一九二一年一月。</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+        <item>
+            <title><![CDATA[罗生门]]></title>
+            <link>https://cloudlin.zjulife.cc/posts/rashomon/</link>
+            <guid isPermaLink="false">https://cloudlin.zjulife.cc/posts/rashomon/</guid>
+            <pubDate>Fri, 05 Nov 1915 00:00:00 GMT</pubDate>
+            <description><![CDATA[是一日的傍晚的事。有一个家将，在罗生门下待著雨住。宽广的门底下，除了这男子以外，再没有别的谁。只在朱漆剥落的大的圆柱上，停著一匹的蟋蟀。这...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://image.radishzz.cc/picsmaller/06.webp" alt="_Here's the description of the picture" /></p>
+<p>是一日的傍晚的事。有一个家将，在罗生门下待著雨住。</p>
+<p>宽广的门底下，除了这男子以外，再没有别的谁。只在朱漆剥落的大的圆柱上，停著一匹的蟋蟀。这罗生门，既然在朱雀大路上，则这男子之外，总还该有两三个避雨的市女笠和揉乌帽子的。然而除了这男子，却再没有别的谁。</p>
+<p>要说这缘故，就因为这二三年来，京都是接连的起了地动，旋风，大火，饥馑等等的灾变，所以都中便格外的荒凉了。据旧记说，还将佛象和佛具打碎了，那些带著丹漆，带著金银箔的木块，都堆在路旁当柴卖。都中既是这情形，修理罗生门之类的事，自然再没有人过问了。于是趁了这荒凉的好机会，狐狸来住，强盗来住；到后来，且至于生出将无主的死尸弃在这门上的习惯来。于是太阳一落，人们便都觉得阴气，谁也不再在这门的附近走。</p>
+<p>反而许多乌鸦，不知从那里都聚向这地方。白昼一望，这鸦是不知多少匹的转著圆圈，绕了最高的鸱吻，啼著飞舞。一到这门上的天空被夕照映得通红的时候，这便仿佛撒著胡麻似的，尤其看得分明。不消说，这些乌鸦是因为要啄食那门上的死人的肉而来的了。——但在今日，或者因为时刻太晚了罢，却一匹也没有见。只见处处将要崩裂的，那裂缝中生出长的野草的石阶上面，老鸦粪粘得点点的发白。家将将那洗旧的红青袄子的臀部，坐在七级阶的最上级，恼著那右颊上发出来的一颗大的面疱，惘惘然的看著雨下。</p>
+<p>著者在先，已写道“家将待著雨住”了。然而这家将便在雨住之后，却也并没有怎么办的方法。若在平时，自然是回到主人的家里去。但从这主人，已经在四五日之前将他遣散了。上文也说过，那时的京都是非常之衰微了；现在这家将从那伺候多年的主人给他遣散，其实也只是这衰微的一个小小的馀波。所以与其说“家将待著雨住”，还不如说“遇雨的家将，没有可去的地方，正在无法可想”，倒是惬当的。况且今日的天色，很影响到这平安朝家将的 Sentimentalisme 上去。从申未下开首的雨，到酉时还没有停止模样。这时候，家将就首先想著那明天的活计怎么办——说起来，便是抱著对于没法办的事，要想怎么办的一种毫无把握的思想，一面又并不听而自听著那从先前便打著朱雀大路的雨声。</p>
+<p>雨是围住了罗生门，从远处洒洒的打将过来。黄昏使天空低下了；仰面一望，门顶在斜出的飞甍上，支住了昏沉的云物。</p>
+<p>因为要将没法办的事来怎么办，便再没有工夫来拣手段了。一拣，便只是饿死在空地里或道旁；而且便只是搬到这门里来，弃掉了像一只狗。但不拣，则——家将的思想，在同一的路线上徘徊了许多回，才终于到了这处所。然而这一个“则”，虽然经过了许多时，结局总还是一个“则”。家将一面固然肯定了不拣手段这一节了，但对于因为要这“则”有著落，自然而然的接上来的“只能做强盗”这一节，却还没有足以积极的肯定的勇气。</p>
+<p>家将打一个大喷嚏，于是懒懒的站了起来。晚凉的京都，已经是令人想要火炉一般寒冷。风和黄昏，毫无顾忌的吹进了门柱间。停在朱漆柱上的蟋蟀，早已跑到不知那里去了。</p>
+<p>家将缩著颈子，高耸了衬著淡黄小衫的红青袄的肩头，向门的周围看。因为倘寻得一片地，可以没有风雨之患，没有露见之虑，能够安安稳稳的睡觉一夜的，便想在此度夜的了。这其间，幸而看见了一道通到门楼上的，宽阔的，也是朱漆的梯子。倘在这上面，即使有人，也不过全是死人罢了。家将便留心著横在腰间的素柄刀，免得他出了鞘，抬起登著草鞋的脚来，踏上这梯子的最下的第一级去。</p>
+<p>于是是几分时以后的事了。在通到罗生门的楼上的，宽阔的梯子的中段，一个男子，猫似的缩了身体，屏了息，窥探著楼上的情形。从楼上漏下来的火光，微微的照著这男人的右颊，就是那短须十间生了一颗红肿化脓的面疱的颊。家将当初想，在上面的只不过是死人；但走上二三级，却看见有谁明著火，而那火又是这边那边的动弹。这只要看那昏浊的黄色的光，映在角角落落都结满了蛛网的藻井上摇动，也就可以明白了。在这阴雨的夜间，在这罗生门的楼上，能明著火的，总不是一个寻常的人。</p>
+<p>家将是蜥蜴似的忍了足音，爬一般的才到了这峻急的梯子的最上的第一级。竭力的帖伏了身子，竭力的伸长了颈子，望到楼里面去。</p>
+<p>待看时，楼里面便正如所闻，胡乱的抛著几个死尸，但是火光所到的范围，却此预想的尤其狭，辨不出那些的数目来。只在朦胧中，知道是有赤体的死尸和穿衣服的死尸；又自然是男的女的也都有。而且那些死尸，或者张著嘴或者伸著手，纵横在楼板上的情形，几乎令人要疑心到他也曾为人的事实。加之只是肩膀胸脯之类的高起的部分，受著淡淡的光，而低下的部分的影子却更加暗黑，哑似的永久的默著。</p>
+<p>家将逢到这些死尸的腐烂的臭气，不由的掩了鼻子。然而那手，在其次的一刹那间，便忘却了掩住鼻子的事了。因为有一种强烈的感情，几乎全夺去了这人的嗅觉了。</p>
+<p>那家将的眼睛，在这时候，才看见蹲在死尸中间的一个人。是穿一件桧皮色衣服的，又短又瘦的，白头发的，猴子似的老妪。这老妪，右手拿著点火的松明，注视著死尸之一的脸。从头发的长短看来，那死尸大概是女的。</p>
+<p>家将被六分的恐怖和四分的好奇心所动了，几于暂时忘却了呼吸。倘借了旧记的记者的话来说，便是觉得“毛戴”起来了。随后那老妪，将松明插在楼板的缝中，向先前看定的死尸伸下手去，正如母猴给猴儿捉虱一般，一根一根的便拔那长头发。头发也似乎随手的拔了下来。</p>
+<p>那头发一根一根的拔了下来时，家将的心里，恐怖也一点一点的消去了。而且同时，对于这老妪的憎恶，也渐渐的发动了。——不，说是“对于这老妪”，或者有些语病；倒不如说，对于一切恶的反感，一点一点的强盛起来了。这时候，倘有人向了这家将，提出这人先前在门下面所想的“饿死呢还是做强盗呢”这一个问题来，大约这家将是，便毫无留恋，拣了饿死的了。这人的恶恶之心，宛如那老妪插在楼板缝中的松明一般，蓬蓬勃勃的燃烧上来，已经到如此。</p>
+<p>那老妪为什么拔死人的头发，在家将自然是不知道的。所以照“合理的”的说，是善是恶，也还没有知道应该属于那—面。但由家将看来，在这阴雨的夜间，在这罗生门的上面，拔取死人的头发，即此便已经是无可宽恕的恶。不消说，自己先前想做强盗的事，在家将自然也早经忘却了。</p>
+<p>于是乎家将两脚一蹬，突然从梯子直蹿上去，而且手按素柄刀，大踏步走到老妪的面前。老妪的吃惊，是无须说得的。</p>
+<p>老妪一瞥见家将，简直像被弩机弹著似的，直跳起来。</p>
+<p>“呔，那里走！”</p>
+<p>家将拦住了那老妪绊著死尸踉跄想走的逃路，这样骂。老妪冲开了家将，还想奔逃。家将却又不放伊走，重复推了回来了。暂时之间，默然的叉著。然而胜负之数，是早就知道了的。家将终于抓住了老妪的臂膊，硬将伊捻倒了。是只剩著皮骨，宛然鸡脚一般的臂膊。</p>
+<p>“在做什么？说来！不说，便这样！”</p>
+<p>家将放下老妪，忽然拔刀出了鞘，将雪白的钢色，塞在伊的眼前。但老妪不开口。两手发了抖，呼吸也艰难了，睁圆了两眼，眼珠几乎要飞出窠外来，哑似的执拗的不开口。一看这情状，家将才分明的意识到这老妪的生死，已经全属于自己的意志的支配。而且这意志，将先前那炽烈的憎恶之心，又早在什么时候冷却了。剩了下来的，只是成就了一件事业时候的，安稳的得意和满足。于是家将俯视著老妪，略略放软了声音说：</p>
+<p>“我并不是检非违使的衙门里的公吏，只是刚才走过这门下面的一个旅人。所以并不要锁你去有什么事。只要在这时候，在这门上，做著什么的事，说给我就是。”</p>
+<p>老妪更张大了圆睁的眼睛，看住了家将的脸，这看的是红眼眶，鸷鸟一般锐利的眼睛。于是那打皱的，几乎和鼻子连成一气的嘴唇，嚼著什么似的动起来了。颈子很细，能看兄尖的喉节的动弹。这时从这喉咙里，发出鸦叫似的声音，喘吁吁的传到家将的耳朵里：</p>
+<p>“拔了这头发呵，拔了这头发呵，去做假发的。”</p>
+<p>家将一听得这老妪的答话是意外的平常，不觉失瞭望；而且一失望，那先前的憎恶和冷冷的侮蔑，便同时又进了心中了。他的气色，大约伊也悟得。老妪一手仍捏著从死尸拔下来的长头发，发出虾蟆叫一样声音，格格的，说了这些话：</p>
+<p>“自然的，拔死人的头发，真不知道是怎样的恶事呵。只是，在这里的这些死人，都是，便给这么办，也是活该的人们。现在，我刚才，拔著那头发的女人，是将蛇切成四寸长，晒干了，说是干鱼，到带刀的营里去出卖的。倘使没有遭瘟，现在怕还卖去罢。这人也是的，这女人去卖的干鱼，说是口味好，带刀们当作缺不得的菜料买。我呢，并不觉得这女人做的事是恶的。不做，便要饿死，没法子者做的罢。那就，我做的事，也不觉得是恶事。这也是，不做便要饿死，没法子才做的呵。很明白这没法子的事的这女人，料来也应该宽恕我的。”</p>
+<p>老妪大概说了些这样意思的事。</p>
+<p>家将收刀进了鞘，左手按著刀柄，冷然的听著这些话；至于右手，自然是按著那通红的在颊上化了脓的大颗的面疱。然而正听著，家将的心里却生出一种勇气来了。</p>
+<p>这正是这人先前在门下面所缺的勇气。而且和先前跳到这门上，来捉老妪的勇气，又完全是向反对方面发动的勇气了。家将对于或饿死或做强盗的事，不但早无问题；从这时候的这人的心情说，所谓饿死之类的事，已经逐出在意识之外，几乎是不能想到的了。</p>
+<p>“的确，这样么？”</p>
+<p>老妪说完话，家将用了嘲弄似的声音，复核的说。于是前进一步，右手突然离开那面疱，捉住老妪的前胸，咬牙的说道：</p>
+<p>“那么，我便是强剥，也未必怨恨罢。我也是不这么做，便要饿死的了。”</p>
+<p>家将迅速的剥下这老妪的衣服来；而将挽住了他的脚的这老妪，猛烈的踢倒在死尸上。到楼梯口，不过是五步。家将挟著剥下来的桧皮色的衣服，一瞬间便下了峻急的梯子向昏夜里去了。</p>
+<p>暂时气绝似的老妪，从死尸间挣起伊裸露的身子来，是相去不久的事。伊吐出唠叨似的呻吟似的声音，借了还在燃烧的火光，爬到楼梯口边去。而且从这里倒挂了短的白发，窥向门下面。那外边，只有黑洞洞的昏夜。</p>
+<p>家将的踪迹，并没有知道的人。</p>
+]]></content:encoded>
+            <author>CloudLin</author>
+        </item>
+    </channel>
+</rss>
