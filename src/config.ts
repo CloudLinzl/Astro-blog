@@ -4,7 +4,7 @@ export const themeConfig: ThemeConfig = {
   // SITE INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   site: {
     // site title
-    title: "CloudLin's Homie",
+    title: "CloudLin's Home",
     // site subtitle
     subtitle: 'Life is supposed to be a surprise',
     // site description
