@@ -28,7 +28,7 @@ mkdirSync(dirname(fullPath), { recursive: true })
 // Prepare file content
 const content = `---
 title: ${baseName}
-published: ${new Date().toISOString()}
+published: ${new Date().toISOString().slice(0,10)}
 description: '课程评价、课程简介、老师风格和复习建议'
 updated: ''
 tags:
@@ -119,8 +119,7 @@ abbrlink: ''
 
 ### 推荐指数
 
-- 推荐程度：8/10
-- 适合人群：
+- 课程推荐程度：8/10
 - 是否建议选这位老师：
 
 ### 结论

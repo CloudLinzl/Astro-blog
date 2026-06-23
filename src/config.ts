@@ -185,10 +185,10 @@ export const themeConfig: ThemeConfig = {
         name: 'Email',
         url: 'cloudlin20@gmail.com',
       },
-      // {
-      //   name: 'X',
-      //   url: 'https://x.com/radishzz_',
-      // },
+      {
+         name: 'RedNotes',
+         url: 'https://www.xiaohongshu.com/user/profile/6442c33f00000000120358b5',
+      },
     ],
     // year of website start
     startYear: 2026,
