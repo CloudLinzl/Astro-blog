@@ -5,7 +5,7 @@ description: '方明虎'
 updated: ''
 tags:
   - 大二上
-  - 通识/专业
+  - 专业基础
 draft: false
 pin: 0
 toc: true
