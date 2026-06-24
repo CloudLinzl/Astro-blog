@@ -17,17 +17,6 @@ const postsByYear = await getPostsByYear(currentLang)
 ---
 
 <Layout>
-  <section class="mb-10">
-    <div class="uno-decorative-line" />
-    <div class="mt-6">
-      <img
-        src="/icons/home-hero-placeholder.jpg"
-        alt="Homepage visual placeholder"
-        class="homepage-hero-image"
-      />
-    </div>
-  </section>
-
   <!-- Regular Posts -->
   {Array.from(postsByYear.entries(), ([_year, posts]) => (
     <section class="mb-7.5">

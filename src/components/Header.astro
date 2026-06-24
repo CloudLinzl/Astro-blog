@@ -9,6 +9,7 @@ const { title, subtitle, i18nTitle } = themeConfig.site
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const headerTitle = i18nTitle ? currentUI.title : title
 const headerSubtitle = i18nTitle ? currentUI.subtitle : subtitle
+const headerImage = '/icons/home-hero-placeholder.JPG'
 
 const TitleTag = isPost ? 'h2' : 'h1'
 const SubtitleTag = isPost ? 'div' : 'h2'
@@ -58,4 +59,40 @@ const SubtitleTag = isPost ? 'div' : 'h2'
       {headerSubtitle}
     </SubtitleTag>
   )}
+
+  <figure class:list={[
+    'site-header-image-wrapper',
+    isPost ? 'w-75% lg:w-full' : 'w-75% lg:w-full',
+  ]}>
+    <img
+      src={headerImage}
+      alt="CloudLin's header visual"
+      class="site-header-image"
+      loading="eager"
+      decoding="async"
+    />
+  </figure>
 </header>
+
+<style>
+  .site-header-image-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .site-header-image {
+    display: block;
+    width: 100%;
+    border-radius: 1.15rem;
+    border: 1px solid oklch(var(--un-preset-theme-colors-secondary) / 0.16);
+    padding: 0.35rem;
+    background: oklch(var(--un-preset-theme-colors-background) / 0.72);
+    box-shadow: 0 14px 36px oklch(var(--un-preset-theme-colors-primary) / 0.08);
+    object-fit: cover;
+  }
+
+  html.dark .site-header-image {
+    border-color: oklch(var(--un-preset-theme-colors-secondary) / 0.22);
+    background: oklch(var(--un-preset-theme-colors-background) / 0.84);
+    box-shadow: 0 14px 36px oklch(0% 0 0 / 0.24);
+  }
+</style>
