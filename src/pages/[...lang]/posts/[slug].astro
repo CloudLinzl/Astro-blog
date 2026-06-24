@@ -3,11 +3,11 @@ import type { CollectionEntry } from 'astro:content'
 import type { Language } from '@/i18n/config'
 import { getCollection, render } from 'astro:content'
 import ArchiveBreadcrumb from '@/components/ArchiveBreadcrumb.astro'
+import ArchiveRail from '@/components/ArchiveRail.astro'
 import Comment from '@/components/Comment/Index.astro'
 import PostDate from '@/components/PostDate.astro'
 import TagList from '@/components/TagList.astro'
 import BackButton from '@/components/Widgets/BackButton.astro'
-import TOC from '@/components/Widgets/TOC.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
@@ -80,7 +80,7 @@ const slug = post.data.abbrlink || post.id
 const archivePath = getPostArchivePath(post)
 const archiveBreadcrumbs = getArchiveBreadcrumbs(archivePath)
 const description = getPostDescription(post, 'meta')
-const { Content, headings, remarkPluginFrontmatter } = await render(post)
+const { Content, remarkPluginFrontmatter } = await render(post)
 ---
 
 <Layout
@@ -89,7 +89,12 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
   postSlug={post.id}
   supportedLangs={supportedLangs}
 >
-  <article class="heti">
+  <article class="heti max-w-[44rem] 2xl:mr-auto">
+    <ArchiveRail
+      post={post}
+      lang={currentLang}
+    />
+
     <div class="relative">
       <!-- Go Back Button On Desktop -->
       <BackButton />
@@ -117,8 +122,6 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
         minutes={remarkPluginFrontmatter.minutes}
       />
     </div>
-    <!-- TOC -->
-    {post.data.toc && <TOC headings={headings} />}
     <!-- Content -->
     <div id="post-content">
       <Content />

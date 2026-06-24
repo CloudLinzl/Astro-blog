@@ -1,0 +1,89 @@
+---
+import type { Language } from '@/i18n/config'
+import { getCollection } from 'astro:content'
+import ArchiveList from '@/components/ArchiveList.astro'
+import { getLocalizedPath } from '@/i18n/path'
+import { ui } from '@/i18n/ui'
+import { getTopLevelArchives } from '@/utils/content'
+
+interface Props {
+  lang: Language
+}
+
+const { lang } = Astro.props
+const currentUI = ui[lang as keyof typeof ui] ?? {}
+const archives = await getTopLevelArchives(lang)
+
+const allAboutEntries = await getCollection('about')
+const aboutEntry = allAboutEntries.find(entry => entry.data.lang === lang)
+  ?? allAboutEntries.find(entry => entry.data.lang === '')
+const aboutBody = aboutEntry?.body ?? ''
+
+const aboutLines = aboutBody
+  .split('\n')
+  .map(line => line.trim())
+  .filter(Boolean)
+
+const aboutTitle = aboutLines.find(line => line.startsWith('# '))?.replace(/^#\s+/, '')
+const aboutSummary = aboutLines
+  .filter(line => line.startsWith('- '))
+  .map(line => line.replace(/^-\s+/, ''))
+  .slice(0, 2)
+---
+
+<section class="mb-12">
+  <div class="mb-4.5 text-3.15 c-secondary/48 tracking-[0.22em] uppercase">
+    {currentUI.archives}
+  </div>
+  {aboutTitle && (
+    <h1 class="mb-4 max-w-4xl text-6.1 c-primary font-bold leading-tight lg:text-7.6 cjk:tracking-wide">
+      {aboutTitle}
+    </h1>
+  )}
+  <div class="heti max-w-3xl space-y-3.2">
+    {aboutSummary.map(line => (
+      <p class="text-4 c-secondary/84 lg:text-4.35">{line}</p>
+    ))}
+  </div>
+  <div class="mt-4.8">
+    <a
+      href={getLocalizedPath('/about/', lang)}
+      class="no-heti inline-flex items-center gap-2 text-3.4 c-secondary/76 transition-colors hover:c-primary"
+    >
+      <span>{currentUI.about}</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="mb-7.5">
+  <div class="mb-3.5 flex items-end justify-between gap-4">
+    <h2 class="archive-page-title">
+      {currentUI.archives}
+    </h2>
+    <span class="text-3.2 c-secondary/58 font-time">
+      {archives.length}
+    </span>
+  </div>
+  <div class="uno-decorative-line" />
+</section>
+
+<ArchiveList
+  archives={archives}
+  lang={lang}
+/>
+
+<style>
+  .archive-page-title {
+    font-size: 1.68rem;
+    font-weight: 700;
+    line-height: 1.12;
+    color: oklch(var(--un-preset-theme-colors-primary));
+  }
+
+  @media (min-width: 1024px) {
+    .archive-page-title {
+      font-size: 1.92rem;
+    }
+  }
+</style>

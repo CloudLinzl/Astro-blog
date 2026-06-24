@@ -9,7 +9,6 @@ const { title, subtitle, i18nTitle } = themeConfig.site
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const headerTitle = i18nTitle ? currentUI.title : title
 const headerSubtitle = i18nTitle ? currentUI.subtitle : subtitle
-const headerImage = '/icons/home-hero-placeholder.jpg'
 
 const TitleTag = isPost ? 'h2' : 'h1'
 const SubtitleTag = isPost ? 'div' : 'h2'
@@ -17,18 +16,19 @@ const SubtitleTag = isPost ? 'div' : 'h2'
 
 <header
   class:list={[
-    'lg:(uno-desktop-column top-20) cjk:tracking-wide',
+    'cjk:tracking-wide',
+    'lg:(ml-auto max-w-[38rem] text-right)',
     isPost
-    ? 'mb-10.8'
-    : 'mb-10.5',
+    ? 'mb-7.5'
+    : 'mb-10.5 lg:mb-0',
   ]}
 >
   <TitleTag
     class:list={[
       'font-bold font-title',
       isPost
-        ? `mb-2.8 mt-3 text-5.375 c-secondary lg:(mb-1.8 mt-0 text-9 c-primary)`
-        : `mb-1.8 w-75% text-8 c-primary lg:(w-full text-9)`,
+        ? 'mb-1.6 mt-1 text-5.6 c-primary lg:text-6.6'
+        : 'mb-1.8 w-75% text-8 c-primary lg:(ml-auto w-full text-9)',
     ]}
   >
     <!-- Fix text cropping issues during view transition on iOS by adding a div tag -->
@@ -51,8 +51,8 @@ const SubtitleTag = isPost ? 'div' : 'h2'
       class:list={[
         'text-3.5 c-secondary font-navbar lg:text-4',
         isPost
-        ? `op-0 lg:op-100`
-        : 'w-60% lg:w-80',
+        ? 'op-85'
+        : 'w-60% lg:(ml-auto w-full max-w-[30rem])',
       ]}
       aria-hidden={isPost}
     >
@@ -60,39 +60,4 @@ const SubtitleTag = isPost ? 'div' : 'h2'
     </SubtitleTag>
   )}
 
-  <figure class:list={[
-    'site-header-image-wrapper',
-    isPost ? 'w-75% lg:w-full' : 'w-75% lg:w-full',
-  ]}>
-    <img
-      src={headerImage}
-      alt="CloudLin's header visual"
-      class="site-header-image"
-      loading="eager"
-      decoding="async"
-    />
-  </figure>
 </header>
-
-<style>
-  .site-header-image-wrapper {
-    margin-top: 1.5rem;
-  }
-
-  .site-header-image {
-    display: block;
-    width: 100%;
-    border-radius: 1.15rem;
-    border: 1px solid oklch(var(--un-preset-theme-colors-secondary) / 0.16);
-    padding: 0.35rem;
-    background: oklch(var(--un-preset-theme-colors-background) / 0.72);
-    box-shadow: 0 14px 36px oklch(var(--un-preset-theme-colors-primary) / 0.08);
-    object-fit: cover;
-  }
-
-  html.dark .site-header-image {
-    border-color: oklch(var(--un-preset-theme-colors-secondary) / 0.22);
-    background: oklch(var(--un-preset-theme-colors-background) / 0.84);
-    box-shadow: 0 14px 36px oklch(0% 0 0 / 0.24);
-  }
-</style>

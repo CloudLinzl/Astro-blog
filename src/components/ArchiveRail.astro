@@ -1,0 +1,170 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import type { Language } from '@/i18n/config'
+import ArchiveTreeNode from '@/components/ArchiveTreeNode.astro'
+import { ui } from '@/i18n/ui'
+import { getArchiveTreeForPath, getPostArchivePath } from '@/utils/content'
+
+interface Props {
+  lang: Language
+  post: CollectionEntry<'posts'>
+}
+
+const { lang, post } = Astro.props
+const currentUI = ui[lang as keyof typeof ui] ?? {}
+const archivePath = getPostArchivePath(post)
+const currentPostSlug = post.data.abbrlink || post.id
+const archiveTree = await getArchiveTreeForPath(archivePath, lang)
+---
+
+<aside class="archive-rail-shell">
+  <div class="archive-rail-card">
+    <div class="archive-rail-title">
+      {currentUI.archives}
+    </div>
+
+    <ul class="archive-tree-root">
+      {archiveTree.map(node => (
+        <ArchiveTreeNode
+          node={node}
+          lang={lang}
+          currentPostSlug={currentPostSlug}
+        />
+      ))}
+    </ul>
+  </div>
+</aside>
+
+<style is:global>
+  .archive-rail-shell {
+    width: 100%;
+    margin-bottom: 1.75rem;
+  }
+
+  .archive-rail-card {
+    width: 100%;
+    border: 1px solid oklch(var(--un-preset-theme-colors-secondary) / 0.12);
+    border-radius: 1rem;
+    background: oklch(var(--un-preset-theme-colors-secondary) / 0.04);
+    padding: 1rem 1rem 1.05rem;
+  }
+
+  .archive-rail-title {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.62);
+  }
+
+  .archive-tree-root,
+  .archive-tree-branch,
+  .archive-tree-posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .archive-tree-branch,
+  .archive-tree-posts {
+    margin-left: 1.1rem;
+    padding-top: 0.45rem;
+  }
+
+  .archive-tree-node + .archive-tree-node {
+    margin-top: 0.25rem;
+  }
+
+  .archive-tree-row {
+    display: grid;
+    grid-template-columns: 0.9rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2rem;
+  }
+
+  .archive-tree-row-current {
+    color: oklch(var(--un-preset-theme-colors-primary));
+  }
+
+  .archive-tree-chevron {
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.42);
+    font-size: 0.95rem;
+    transform-origin: center;
+  }
+
+  .archive-tree-chevron-open {
+    transform: rotate(90deg);
+  }
+
+  .archive-tree-link {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.9);
+    text-decoration: none;
+    transition: color 0.15s ease-out;
+  }
+
+  .archive-tree-link:hover,
+  .archive-tree-link-active {
+    color: oklch(var(--un-preset-theme-colors-primary));
+  }
+
+  .archive-tree-count {
+    font-family: 'Snell-Bold', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.52);
+  }
+
+  .archive-tree-post-item {
+    display: grid;
+    grid-template-columns: 1.2rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.45rem;
+    margin-top: 0.2rem;
+  }
+
+  .archive-tree-post-index {
+    font-family: 'Snell-Bold', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.56);
+  }
+
+  .archive-tree-post-link {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: oklch(var(--un-preset-theme-colors-secondary) / 0.82);
+    text-decoration: none;
+    transition: color 0.15s ease-out;
+  }
+
+  .archive-tree-post-link:hover,
+  .archive-tree-post-link-active {
+    color: oklch(var(--un-preset-theme-colors-primary));
+  }
+
+  @media (min-width: 1280px) {
+    .archive-rail-shell {
+      position: fixed;
+      right: max(2rem, calc(50vw - 39.5rem));
+      top: 13rem;
+      width: clamp(18rem, calc(50vw - 28rem), 21rem);
+      margin-bottom: 0;
+    }
+
+    .archive-rail-card {
+      max-height: calc(100vh - 16rem);
+      overflow-y: auto;
+      padding: 1.2rem 1.25rem 1.3rem;
+    }
+  }
+</style>

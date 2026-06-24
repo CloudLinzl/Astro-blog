@@ -26,9 +26,11 @@ export function getTagPath(tagName: string, lang: Language): string {
  */
 export function getArchivePath(archivePath: string, lang: Language): string {
   const normalizedArchivePath = archivePath.replace(/^\/|\/$/g, '')
-  const localizedPath = lang === defaultLocale
-    ? `/archives/${normalizedArchivePath}/`
-    : `/${lang}/archives/${normalizedArchivePath}/`
+  const localizedPath = normalizedArchivePath === ''
+    ? (lang === defaultLocale ? '/archives/' : `/${lang}/archives/`)
+    : (lang === defaultLocale
+        ? `/archives/${normalizedArchivePath}/`
+        : `/${lang}/archives/${normalizedArchivePath}/`)
 
   return base ? `${base}${localizedPath}` : localizedPath
 }

@@ -5,9 +5,7 @@ import { getPageInfo } from '@/utils/page'
 const { currentLang, isHome, isPost, isTag, isArchive, isAbout, getLocalizedPath } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 
-const isPostActive = isHome || isPost
-const isArchiveActive = isArchive
-const isTagActive = isTag
+const isArchiveActive = isHome || isArchive || isPost || isTag
 const isAboutActive = isAbout
 
 function getNavItemClass(isActive: boolean) {
@@ -18,19 +16,9 @@ function getNavItemClass(isActive: boolean) {
 
 const navItems = [
   {
-    href: '/',
-    label: currentUI.posts,
-    className: getNavItemClass(isPostActive),
-  },
-  {
     href: '/archives/',
     label: currentUI.archives,
     className: getNavItemClass(isArchiveActive),
-  },
-  {
-    href: '/tags/',
-    label: currentUI.tags,
-    className: getNavItemClass(isTagActive),
   },
   {
     href: '/about/',
@@ -43,12 +31,11 @@ const navItems = [
 <nav
   aria-label="Site Navigation"
   class:list={[
-    'mb-10.5 text-3.6 font-semibold leading-2.45em font-navbar',
-    'lg:(uno-desktop-column text-4 bottom-[min(9.04rem+3.85vw,12.5rem)]) cjk:tracking-wide',
-    isPost ? 'hidden lg:block' : '',
+    'mb-9.5 border-b border-secondary/12 pb-3.8 text-3.6 font-semibold leading-2.1em font-navbar',
+    'cjk:tracking-wide lg:(mb-10.5 pb-4 text-4)',
   ]}
 >
-  <ul>
+  <ul class="flex flex-wrap items-center gap-x-8 gap-y-2">
     {navItems.map(item => (
       <li>
         <a

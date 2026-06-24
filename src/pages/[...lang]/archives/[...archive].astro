@@ -4,6 +4,8 @@ import ArchiveList from '@/components/ArchiveList.astro'
 import PostList from '@/components/PostList.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import { getArchivePath } from '@/i18n/path'
+import { ui } from '@/i18n/ui'
 import Layout from '@/layouts/Layout.astro'
 import {
   getAllArchiveNodePaths,
@@ -25,20 +27,30 @@ export async function getStaticPaths() {
   return paths.flat()
 }
 
-interface Props {
-  archive: string
-}
-
 const { archive } = Astro.props
 const currentLang = getLangFromLocale(Astro.currentLocale)
+const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const breadcrumbs = getArchiveBreadcrumbs(archive)
 const childArchives = await getDirectChildArchives(archive, currentLang)
 const posts = await getPostsByArchive(archive, currentLang)
 const supportedLangs = await getArchiveSupportedLangs(archive)
 const currentArchiveName = breadcrumbs[breadcrumbs.length - 1]?.name ?? archive
+const parentArchive = breadcrumbs[breadcrumbs.length - 2]
+const parentArchivePath = parentArchive?.path ?? ''
+const parentArchiveName = parentArchive?.name ?? currentUI.archives
 ---
 
 <Layout supportedLangs={supportedLangs}>
+  <div class="mb-5.5">
+    <a
+      href={getArchivePath(parentArchivePath, currentLang)}
+      class="no-heti inline-flex items-center gap-2 text-3.35 c-secondary/72 transition-colors hover:c-primary"
+    >
+      <span aria-hidden="true">←</span>
+      <span>{parentArchiveName}</span>
+    </a>
+  </div>
+
   <ArchiveBreadcrumb
     items={breadcrumbs}
     lang={currentLang}
@@ -46,7 +58,7 @@ const currentArchiveName = breadcrumbs[breadcrumbs.length - 1]?.name ?? archive
 
   <section class="mb-7.5">
     <div class="mb-3.5 flex items-end justify-between gap-4">
-      <h1 class="text-4.9 c-primary cjk:tracking-wide">
+      <h1 class="archive-page-title">
         {currentArchiveName}
       </h1>
       <span class="text-3.1 c-secondary/55 tracking-[0.18em] uppercase">
@@ -70,3 +82,18 @@ const currentArchiveName = breadcrumbs[breadcrumbs.length - 1]?.name ?? archive
     />
   )}
 </Layout>
+
+<style>
+  .archive-page-title {
+    font-size: 1.68rem;
+    font-weight: 700;
+    line-height: 1.12;
+    color: oklch(var(--un-preset-theme-colors-primary));
+  }
+
+  @media (min-width: 1024px) {
+    .archive-page-title {
+      font-size: 1.92rem;
+    }
+  }
+</style>

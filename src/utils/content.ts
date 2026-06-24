@@ -14,6 +14,16 @@ export interface ArchiveLink {
   count?: number
 }
 
+export interface ArchiveTreeNode {
+  name: string
+  path: string
+  count: number
+  isCurrentArchive: boolean
+  isCurrentBranch: boolean
+  children: ArchiveTreeNode[]
+  posts: Post[]
+}
+
 export function parseArchiveSegments(archive?: string): string[] {
   const normalized = archive?.trim()
   if (!normalized) {
@@ -60,6 +70,76 @@ function isArchiveSubtreeMatch(postSegments: string[], targetSegments: string[])
 function isExactArchiveMatch(postSegments: string[], targetSegments: string[]): boolean {
   return postSegments.length === targetSegments.length
     && isArchiveSubtreeMatch(postSegments, targetSegments)
+}
+
+function getArchiveSubtreePostCount(posts: Post[], targetSegments: string[]): number {
+  return posts.filter(post =>
+    isArchiveSubtreeMatch(getPostArchiveSegments(post), targetSegments),
+  ).length
+}
+
+function getSortedDirectChildArchivePaths(posts: Post[], parentSegments: string[]): string[] {
+  const childMap = new Map<string, { latest: number, count: number, name: string }>()
+
+  posts.forEach((post) => {
+    const postSegments = getPostArchiveSegments(post)
+    if (!isArchiveSubtreeMatch(postSegments, parentSegments) || postSegments.length <= parentSegments.length) {
+      return
+    }
+
+    const childSegments = postSegments.slice(0, parentSegments.length + 1)
+    const childPath = getArchivePathFromSegments(childSegments)
+    const childName = childSegments[childSegments.length - 1]
+    const latest = post.data.published.valueOf()
+    const existing = childMap.get(childPath)
+
+    if (existing) {
+      existing.latest = Math.max(existing.latest, latest)
+      existing.count += 1
+      return
+    }
+
+    childMap.set(childPath, {
+      latest,
+      count: 1,
+      name: childName,
+    })
+  })
+
+  return [...childMap.entries()]
+    .sort((a, b) =>
+      b[1].latest - a[1].latest
+      || b[1].count - a[1].count
+      || a[1].name.localeCompare(b[1].name, 'zh-Hans-CN'),
+    )
+    .map(([path]) => path)
+}
+
+function buildArchiveTreeNode(
+  posts: Post[],
+  archivePath: string,
+  currentArchiveSegments: string[],
+): ArchiveTreeNode {
+  const nodeSegments = parseArchiveSegments(archivePath)
+  const isCurrentArchive = isExactArchiveMatch(currentArchiveSegments, nodeSegments)
+  const isCurrentBranch = isArchiveSubtreeMatch(currentArchiveSegments, nodeSegments)
+  const childPaths = getSortedDirectChildArchivePaths(posts, nodeSegments)
+
+  return {
+    name: nodeSegments[nodeSegments.length - 1],
+    path: archivePath,
+    count: getArchiveSubtreePostCount(posts, nodeSegments),
+    isCurrentArchive,
+    isCurrentBranch,
+    children: isCurrentBranch
+      ? childPaths.map(childPath => buildArchiveTreeNode(posts, childPath, currentArchiveSegments))
+      : [],
+    posts: isCurrentArchive
+      ? posts.filter(post =>
+          isExactArchiveMatch(getPostArchiveSegments(post), nodeSegments),
+        )
+      : [],
+  }
 }
 
 /**
@@ -389,6 +469,29 @@ async function _getArchiveSupportedLangs(archivePath: string): Promise<Language[
 }
 
 export const getArchiveSupportedLangs = memoize(_getArchiveSupportedLangs)
+
+/**
+ * Build a visible archive tree for the current article path
+ *
+ * @param archivePath Current article archive path
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Top-level archive nodes with only the current branch expanded
+ */
+async function _getArchiveTreeForPath(archivePath: string, lang?: Language): Promise<ArchiveTreeNode[]> {
+  const posts = await getPosts(lang)
+  const currentArchiveSegments = parseArchiveSegments(archivePath)
+  const topLevelPaths = [...new Set(posts.map(post => getPostArchiveSegments(post)[0]))]
+
+  return topLevelPaths
+    .map(topLevelPath => buildArchiveTreeNode(posts, topLevelPath, currentArchiveSegments))
+    .sort((a, b) =>
+      Number(b.isCurrentBranch) - Number(a.isCurrentBranch)
+      || b.count - a.count
+      || a.name.localeCompare(b.name, 'zh-Hans-CN'),
+    )
+}
+
+export const getArchiveTreeForPath = memoize(_getArchiveTreeForPath)
 
 /**
  * Group posts by their tags

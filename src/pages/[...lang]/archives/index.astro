@@ -1,9 +1,8 @@
 ---
-import ArchiveList from '@/components/ArchiveList.astro'
+import ArchiveHubContent from '@/components/ArchiveHubContent.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
-import { getTopLevelArchives } from '@/utils/content'
 
 export async function getStaticPaths() {
   return allLocales.map(lang => ({
@@ -12,13 +11,8 @@ export async function getStaticPaths() {
 }
 
 const currentLang = getLangFromLocale(Astro.currentLocale)
-const archives = await getTopLevelArchives(currentLang)
 ---
 
 <Layout>
-  <div class="uno-decorative-line" />
-  <ArchiveList
-    archives={archives}
-    lang={currentLang}
-  />
+  <ArchiveHubContent lang={currentLang} />
 </Layout>

@@ -1,0 +1,82 @@
+---
+import type { Language } from '@/i18n/config'
+import type { ArchiveTreeNode } from '@/utils/content'
+import { getArchivePath, getPostPath } from '@/i18n/path'
+
+interface Props {
+  currentPostSlug: string
+  lang: Language
+  node: ArchiveTreeNode
+}
+
+const { node, lang, currentPostSlug } = Astro.props
+---
+
+<li class="archive-tree-node">
+  <div
+    class:list={[
+      'archive-tree-row',
+      node.isCurrentBranch ? 'archive-tree-row-current' : '',
+    ]}
+  >
+    <span
+      aria-hidden="true"
+      class:list={[
+        'archive-tree-chevron',
+        node.isCurrentBranch && node.children.length > 0 ? 'archive-tree-chevron-open' : '',
+      ]}
+    >
+      {node.children.length > 0 ? '›' : '/'}
+    </span>
+
+    <a
+      href={getArchivePath(node.path, lang)}
+      class:list={[
+        'archive-tree-link',
+        node.isCurrentArchive ? 'archive-tree-link-active' : '',
+      ]}
+    >
+      {node.name}
+    </a>
+
+    <span class="archive-tree-count">
+      {node.count}
+    </span>
+  </div>
+
+  {node.isCurrentBranch && node.children.length > 0 && (
+    <ul class="archive-tree-branch">
+      {node.children.map(child => (
+        <Astro.self
+          node={child}
+          lang={lang}
+          currentPostSlug={currentPostSlug}
+        />
+      ))}
+    </ul>
+  )}
+
+  {node.isCurrentArchive && node.posts.length > 0 && (
+    <ol class="archive-tree-posts">
+      {node.posts.map((post, index) => {
+        const slug = post.data.abbrlink || post.id
+        const isCurrentPost = slug === currentPostSlug
+
+        return (
+          <li class="archive-tree-post-item">
+            <span class="archive-tree-post-index">{index}</span>
+            <a
+              href={getPostPath(slug, lang)}
+              class:list={[
+                'archive-tree-post-link',
+                isCurrentPost ? 'archive-tree-post-link-active' : '',
+              ]}
+            >
+              {post.data.title}
+            </a>
+          </li>
+        )
+      })}
+    </ol>
+  )}
+</li>
