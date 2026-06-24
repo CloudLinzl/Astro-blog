@@ -1,0 +1,31 @@
+---
+import type { Language } from '@/i18n/config'
+import type { ArchiveLink } from '@/utils/content'
+import { getArchivePath } from '@/i18n/path'
+
+interface Props {
+  items: ArchiveLink[]
+  lang: Language
+}
+
+const { items, lang } = Astro.props
+---
+
+<nav
+  aria-label="Archive Breadcrumb"
+  class="no-heti mb-8 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-3.45 c-secondary/82"
+>
+  {items.map((item, index) => (
+    <>
+      {index > 0 && (
+        <span aria-hidden="true" class="c-secondary/45">/</span>
+      )}
+      <a
+        href={getArchivePath(item.path, lang)}
+        class="transition-colors hover:c-primary"
+      >
+        {item.name}
+      </a>
+    </>
+  ))}
+</nav>

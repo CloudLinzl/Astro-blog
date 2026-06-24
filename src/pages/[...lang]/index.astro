@@ -2,8 +2,9 @@
 import PostList from '@/components/PostList.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import { getArchivePath } from '@/i18n/path'
 import Layout from '@/layouts/Layout.astro'
-import { getPinnedPosts, getPostsByYear } from '@/utils/content'
+import { getTopLevelArchiveGroups } from '@/utils/content'
 
 export async function getStaticPaths() {
   return allLocales.map(lang => ({
@@ -12,14 +13,25 @@ export async function getStaticPaths() {
 }
 
 const currentLang = getLangFromLocale(Astro.currentLocale)
-const pinnedPosts = await getPinnedPosts(currentLang)
-const postsByYear = await getPostsByYear(currentLang)
+const postsByArchive = await getTopLevelArchiveGroups(currentLang)
 ---
 
 <Layout>
-  <!-- Regular Posts -->
-  {Array.from(postsByYear.entries(), ([_year, posts]) => (
+  {Array.from(postsByArchive.entries(), ([archive, posts]) => (
     <section class="mb-7.5">
+      <div class="mb-3.5 flex items-end justify-between gap-4">
+        <h2 class="text-4.75 c-primary cjk:tracking-wide">
+          <a
+            href={getArchivePath(archive, currentLang)}
+            class="transition-colors hover:c-primary"
+          >
+            {archive}
+          </a>
+        </h2>
+        <span class="text-3.1 c-secondary/55 tracking-[0.18em] uppercase">
+          {posts.length}
+        </span>
+      </div>
       <div class="uno-decorative-line" />
       <PostList posts={posts} lang={currentLang} />
     </section>

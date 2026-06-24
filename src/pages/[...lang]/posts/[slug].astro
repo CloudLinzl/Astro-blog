@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import type { Language } from '@/i18n/config'
 import { getCollection, render } from 'astro:content'
+import ArchiveBreadcrumb from '@/components/ArchiveBreadcrumb.astro'
 import Comment from '@/components/Comment/Index.astro'
 import PostDate from '@/components/PostDate.astro'
 import TagList from '@/components/TagList.astro'
@@ -10,7 +11,7 @@ import TOC from '@/components/Widgets/TOC.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
-import { checkPostSlugDuplication } from '@/utils/content'
+import { checkPostSlugDuplication, getArchiveBreadcrumbs, getPostArchivePath } from '@/utils/content'
 import { getPostDescription } from '@/utils/description'
 
 export async function getStaticPaths() {
@@ -76,6 +77,8 @@ interface Props {
 const { post, supportedLangs } = Astro.props
 const currentLang = getLangFromLocale(Astro.currentLocale)
 const slug = post.data.abbrlink || post.id
+const archivePath = getPostArchivePath(post)
+const archiveBreadcrumbs = getArchiveBreadcrumbs(archivePath)
 const description = getPostDescription(post, 'meta')
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
 ---
@@ -121,9 +124,13 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
       <Content />
       <!-- Copyright -->
       <div id="post-copyright" />
+      <div class="mt-12.6 uno-decorative-line" />
+      <ArchiveBreadcrumb
+        items={archiveBreadcrumbs}
+        lang={currentLang}
+      />
       <!-- Tag List -->
       {post.data.tags?.length > 0 && (
-        <div class="mt-12.6 uno-decorative-line" />
         <TagList
           tags={post.data.tags}
           lang={currentLang}

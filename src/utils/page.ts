@@ -38,6 +38,10 @@ export function isTagPage(path: string) {
   return matchPageType(path, 'tags')
 }
 
+export function isArchivePage(path: string) {
+  return matchPageType(path, 'archives')
+}
+
 export function isAboutPage(path: string) {
   return matchPageType(path, 'about')
 }
@@ -48,6 +52,7 @@ export function getPageInfo(path: string) {
   const isHome = isHomePage(path)
   const isPost = isPostPage(path)
   const isTag = isTagPage(path)
+  const isArchive = isArchivePage(path)
   const isAbout = isAboutPage(path)
 
   return {
@@ -55,6 +60,7 @@ export function getPageInfo(path: string) {
     isHome,
     isPost,
     isTag,
+    isArchive,
     isAbout,
     getLocalizedPath: (targetPath: string) =>
       getLocalizedPath(targetPath, currentLang),

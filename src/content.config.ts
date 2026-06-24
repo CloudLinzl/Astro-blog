@@ -11,6 +11,29 @@ const posts = defineCollection({
     published: z.date(),
     // optional
     description: z.string().optional().default(''),
+    archive: z.preprocess(
+      (val) => {
+        if (typeof val !== 'string') {
+          return val
+        }
+
+        const normalized = val.trim()
+        return normalized === '' ? undefined : normalized
+      },
+      z.string().optional().refine((archive) => {
+        if (!archive) {
+          return true
+        }
+
+        if (archive.startsWith('/') || archive.endsWith('/')) {
+          return false
+        }
+
+        return archive.split('/').every(segment => segment.trim().length > 0)
+      }, {
+        message: 'Archive must be a slash-delimited path without empty segments or leading/trailing slashes',
+      }),
+    ),
     updated: z.preprocess(
       val => val === '' ? undefined : val,
       z.date().optional(),

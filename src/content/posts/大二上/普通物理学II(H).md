@@ -2,9 +2,9 @@
 title: 普通物理学II(H)
 published: 2026-06-23
 description: '方明虎'
+archive: 大二上
 updated: ''
 tags:
-  - 大二上
   - 专业基础
 draft: false
 pin: 0

@@ -1,0 +1,72 @@
+---
+import ArchiveBreadcrumb from '@/components/ArchiveBreadcrumb.astro'
+import ArchiveList from '@/components/ArchiveList.astro'
+import PostList from '@/components/PostList.astro'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+import {
+  getAllArchiveNodePaths,
+  getArchiveBreadcrumbs,
+  getArchiveSupportedLangs,
+  getDirectChildArchives,
+  getPostsByArchive,
+} from '@/utils/content'
+
+export async function getStaticPaths() {
+  const paths = await Promise.all(allLocales.map(async (lang) => {
+    const archivePaths = await getAllArchiveNodePaths(lang)
+    return archivePaths.map(archive => ({
+      params: { lang: getLangRouteParam(lang), archive },
+      props: { archive },
+    }))
+  }))
+
+  return paths.flat()
+}
+
+interface Props {
+  archive: string
+}
+
+const { archive } = Astro.props
+const currentLang = getLangFromLocale(Astro.currentLocale)
+const breadcrumbs = getArchiveBreadcrumbs(archive)
+const childArchives = await getDirectChildArchives(archive, currentLang)
+const posts = await getPostsByArchive(archive, currentLang)
+const supportedLangs = await getArchiveSupportedLangs(archive)
+const currentArchiveName = breadcrumbs[breadcrumbs.length - 1]?.name ?? archive
+---
+
+<Layout supportedLangs={supportedLangs}>
+  <ArchiveBreadcrumb
+    items={breadcrumbs}
+    lang={currentLang}
+  />
+
+  <section class="mb-7.5">
+    <div class="mb-3.5 flex items-end justify-between gap-4">
+      <h1 class="text-4.9 c-primary cjk:tracking-wide">
+        {currentArchiveName}
+      </h1>
+      <span class="text-3.1 c-secondary/55 tracking-[0.18em] uppercase">
+        {posts.length}
+      </span>
+    </div>
+    <div class="uno-decorative-line" />
+  </section>
+
+  {childArchives.length > 0 && (
+    <ArchiveList
+      archives={childArchives}
+      lang={currentLang}
+    />
+  )}
+
+  {posts.length > 0 && (
+    <PostList
+      posts={posts}
+      lang={currentLang}
+    />
+  )}
+</Layout>

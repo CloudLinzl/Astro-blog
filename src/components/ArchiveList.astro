@@ -1,0 +1,35 @@
+---
+import type { Language } from '@/i18n/config'
+import type { ArchiveLink } from '@/utils/content'
+import { getArchivePath } from '@/i18n/path'
+
+interface Props {
+  archives: ArchiveLink[]
+  currentArchive?: string
+  lang: Language
+}
+
+const { archives, currentArchive = '', lang } = Astro.props
+---
+
+<div class="no-heti mb-10.5 flex flex-wrap gap-x-3 gap-y-3.2">
+  {archives.map(archive => (
+    <a
+      href={getArchivePath(archive.path, lang)}
+      class:list={[
+        'inline-flex items-center gap-2 border border-secondary/25 rounded-full px-3.2 py-0.9 ring-secondary/80',
+        'transition-[colors,box-shadow] ease-out hover:(border-secondary/80 c-primary font-medium ring-0.2)',
+        currentArchive === archive.path
+          ? 'border-secondary/80 c-primary font-medium ring-0.2'
+          : 'ring-0',
+      ]}
+    >
+      <span>{archive.name}</span>
+      {typeof archive.count === 'number' && (
+        <span class="text-3.1 c-secondary/60">
+          {archive.count}
+        </span>
+      )}
+    </a>
+  ))}
+</div>

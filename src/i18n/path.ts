@@ -18,6 +18,22 @@ export function getTagPath(tagName: string, lang: Language): string {
 }
 
 /**
+ * Get path to a specific archive page with language support
+ *
+ * @param archivePath Archive path
+ * @param lang Current language code
+ * @returns Path to archive page
+ */
+export function getArchivePath(archivePath: string, lang: Language): string {
+  const normalizedArchivePath = archivePath.replace(/^\/|\/$/g, '')
+  const localizedPath = lang === defaultLocale
+    ? `/archives/${normalizedArchivePath}/`
+    : `/${lang}/archives/${normalizedArchivePath}/`
+
+  return base ? `${base}${localizedPath}` : localizedPath
+}
+
+/**
  * Get path to a specific post page with language support
  *
  * @param slug Post slug

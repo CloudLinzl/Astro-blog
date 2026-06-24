@@ -6,6 +6,61 @@ import { defaultLocale } from '@/config'
 import { memoize } from '@/utils/cache'
 
 const metaCache = new Map<string, { minutes: number }>()
+const uncategorizedArchive = '未归档'
+
+export interface ArchiveLink {
+  name: string
+  path: string
+  count?: number
+}
+
+export function parseArchiveSegments(archive?: string): string[] {
+  const normalized = archive?.trim()
+  if (!normalized) {
+    return [uncategorizedArchive]
+  }
+
+  const segments = normalized
+    .split('/')
+    .map(segment => segment.trim())
+    .filter(Boolean)
+
+  return segments.length > 0 ? segments : [uncategorizedArchive]
+}
+
+export function getArchivePathFromSegments(segments: string[]): string {
+  return segments.join('/')
+}
+
+export function getPostArchiveSegments(post: CollectionEntry<'posts'>): string[] {
+  return parseArchiveSegments(post.data.archive)
+}
+
+export function getPostArchivePath(post: CollectionEntry<'posts'>): string {
+  return getArchivePathFromSegments(getPostArchiveSegments(post))
+}
+
+export function getArchiveBreadcrumbs(archivePath: string): ArchiveLink[] {
+  const segments = parseArchiveSegments(archivePath)
+
+  return segments.map((name, index) => ({
+    name,
+    path: getArchivePathFromSegments(segments.slice(0, index + 1)),
+  }))
+}
+
+function isArchiveSubtreeMatch(postSegments: string[], targetSegments: string[]): boolean {
+  if (targetSegments.length > postSegments.length) {
+    return false
+  }
+
+  return targetSegments.every((segment, index) => postSegments[index] === segment)
+}
+
+function isExactArchiveMatch(postSegments: string[], targetSegments: string[]): boolean {
+  return postSegments.length === targetSegments.length
+    && isArchiveSubtreeMatch(postSegments, targetSegments)
+}
 
 /**
  * Add metadata including reading time to a post
@@ -157,6 +212,183 @@ async function _getPostsByYear(lang?: Language): Promise<Map<number, Post[]>> {
 }
 
 export const getPostsByYear = memoize(_getPostsByYear)
+
+/**
+ * Get top-level archives and all posts under each subtree
+ *
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Top-level archive groups with descendant posts sorted by recent activity
+ */
+async function _getTopLevelArchiveGroups(lang?: Language) {
+  const posts = await getPosts(lang)
+  const archiveMap = new Map<string, Post[]>()
+
+  posts.forEach((post: Post) => {
+    const topLevelArchive = getPostArchiveSegments(post)[0]
+    let archivePosts = archiveMap.get(topLevelArchive)
+    if (!archivePosts) {
+      archivePosts = []
+      archiveMap.set(topLevelArchive, archivePosts)
+    }
+    archivePosts.push(post)
+  })
+
+  archiveMap.forEach((archivePosts) => {
+    archivePosts.sort((a, b) =>
+      b.data.published.valueOf() - a.data.published.valueOf(),
+    )
+  })
+
+  return new Map(
+    [...archiveMap.entries()].sort((a, b) => {
+      const latestA = a[1][0]?.data.published.valueOf() ?? 0
+      const latestB = b[1][0]?.data.published.valueOf() ?? 0
+      return latestB - latestA
+        || b[1].length - a[1].length
+        || a[0].localeCompare(b[0], 'zh-Hans-CN')
+    }),
+  )
+}
+
+export const getTopLevelArchiveGroups = memoize(_getTopLevelArchiveGroups)
+
+/**
+ * Get top-level archives with descendant post counts
+ *
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Archive links for the `/archives/` index page
+ */
+async function _getTopLevelArchives(lang?: Language): Promise<ArchiveLink[]> {
+  const archiveMap = await getTopLevelArchiveGroups(lang)
+
+  return Array.from(archiveMap.entries(), ([name, posts]) => ({
+    name,
+    path: name,
+    count: posts.length,
+  }))
+}
+
+export const getTopLevelArchives = memoize(_getTopLevelArchives)
+
+/**
+ * Get all archive node paths, including intermediate parents
+ *
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns All archive nodes that should have pages
+ */
+async function _getAllArchiveNodePaths(lang?: Language): Promise<string[]> {
+  const posts = await getPosts(lang)
+  const archivePaths = new Set<string>()
+
+  posts.forEach((post) => {
+    const segments = getPostArchiveSegments(post)
+    for (let index = 1; index <= segments.length; index++) {
+      archivePaths.add(getArchivePathFromSegments(segments.slice(0, index)))
+    }
+  })
+
+  return [...archivePaths].sort((a, b) => {
+    const aSegments = parseArchiveSegments(a)
+    const bSegments = parseArchiveSegments(b)
+
+    return aSegments.length - bSegments.length
+      || a.localeCompare(b, 'zh-Hans-CN')
+  })
+}
+
+export const getAllArchiveNodePaths = memoize(_getAllArchiveNodePaths)
+
+/**
+ * Get direct child archives of the current archive node
+ *
+ * @param archivePath Current archive node path
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Direct child archives with descendant post counts
+ */
+async function _getDirectChildArchives(archivePath: string, lang?: Language): Promise<ArchiveLink[]> {
+  const posts = await getPosts(lang)
+  const parentSegments = parseArchiveSegments(archivePath)
+  const childMap = new Map<string, { name: string, path: string, count: number, latest: number }>()
+
+  posts.forEach((post) => {
+    const postSegments = getPostArchiveSegments(post)
+    if (!isArchiveSubtreeMatch(postSegments, parentSegments) || postSegments.length <= parentSegments.length) {
+      return
+    }
+
+    const childSegments = postSegments.slice(0, parentSegments.length + 1)
+    const childPath = getArchivePathFromSegments(childSegments)
+    const childName = childSegments[childSegments.length - 1]
+    const latest = post.data.published.valueOf()
+    const existing = childMap.get(childPath)
+
+    if (existing) {
+      existing.count += 1
+      existing.latest = Math.max(existing.latest, latest)
+      return
+    }
+
+    childMap.set(childPath, {
+      name: childName,
+      path: childPath,
+      count: 1,
+      latest,
+    })
+  })
+
+  return [...childMap.values()]
+    .sort((a, b) =>
+      b.latest - a.latest
+      || b.count - a.count
+      || a.name.localeCompare(b.name, 'zh-Hans-CN'),
+    )
+    .map(({ name, path, count }) => ({ name, path, count }))
+}
+
+export const getDirectChildArchives = memoize(_getDirectChildArchives)
+
+/**
+ * Get posts mounted directly on the current archive node
+ *
+ * @param archivePath Current archive node path
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Posts assigned to the exact archive path
+ */
+async function _getPostsByArchive(archivePath: string, lang?: Language) {
+  const posts = await getPosts(lang)
+  const targetSegments = parseArchiveSegments(archivePath)
+
+  return posts.filter(post =>
+    isExactArchiveMatch(getPostArchiveSegments(post), targetSegments),
+  )
+}
+
+export const getPostsByArchive = memoize(_getPostsByArchive)
+
+/**
+ * Check which languages support a specific archive node
+ *
+ * @param archivePath Archive node path
+ * @returns Array of language codes that contain this archive node or descendants
+ */
+async function _getArchiveSupportedLangs(archivePath: string): Promise<Language[]> {
+  const posts = await getCollection(
+    'posts',
+    ({ data }) => !data.draft,
+  )
+  const targetSegments = parseArchiveSegments(archivePath)
+  const { allLocales } = await import('@/config')
+
+  return allLocales.filter(locale =>
+    posts.some((post) => {
+      const postSegments = getPostArchiveSegments(post)
+      return isArchiveSubtreeMatch(postSegments, targetSegments)
+        && (post.data.lang === locale || post.data.lang === '')
+    }),
+  )
+}
+
+export const getArchiveSupportedLangs = memoize(_getArchiveSupportedLangs)
 
 /**
  * Group posts by their tags

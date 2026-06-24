@@ -2,9 +2,9 @@
 title: 普通物理学I(H)
 published: 2026-06-23
 description: 'Go Ogiya'
+archive: 大一下
 updated: ''
 tags:
-  - 大一下
   - 专业基础
 draft: false
 pin: 0
